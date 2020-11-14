@@ -1,11 +1,11 @@
 PATTERN decimal
-stemMul dec
+stemDec dec
 
 PATTERN centi
-stemMul cent
+stemCent cent
 
 PATTERN milli
-stemMul mil
+stemCent mil
 
 PATTERNS
 stemInit end # да
@@ -15,7 +15,7 @@ decimal decComp # ацал, связка в 11-19
 decimal end # ацада
 decimal part # ацала
 decimal end part # ацадала
-stemMul conjDec # ац, связка в 21-29
+stemDec conjDec # ац, связка в 21-29
 centi # бешен
 centi end # бешенда
 centi end part # бешендала
@@ -54,18 +54,29 @@ LEXICON stemInit
 3:гьаб
 4:буъу
 5:инщтуд
-6:инкӀи
+6:инлӀи
 7:гьакьу
 8:бикьи
 9:гьачӀва
 
-LEXICON stemMul
-1:
+LEXICON stemDec
+1:гь
 2:чӀ
 3:гьаб
 4:буъ
 5:инщвд
-6:инкӀ
+6:инлӀ
 7:гьакьв
 8:бикь
 9:гьачӀв
+
+LEXICON stemCent
+1:
+2:чӀе
+3:гьаб
+4:буъ
+5:инщв
+6:инлӀ
+7:гьакьв
+8:бикь
+9:гьачӀа
