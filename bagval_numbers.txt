@@ -1,0 +1,71 @@
+PATTERN decimal
+stemMul dec
+
+PATTERN centi
+stemMul cent
+
+PATTERN milli
+stemMul mil
+
+PATTERNS
+stemInit end # да
+stemInit end part # дала
+decimal # аца
+decimal decComp # ацал, связка в 11-19
+decimal end # ацада
+decimal part # ацала
+decimal end part # ацадала
+stemMul conjDec # ац, связка в 21-29
+centi # бешен
+centi end # бешенда
+centi end part # бешендала
+centi conjCentMil # связка в 101-199
+milli end # азарда
+milli end part # азардала
+milli conjCentMil # связка в 10001-1999
+
+LEXICON end
+:да
+
+LEXICON part
+:ла
+
+LEXICON dec
+<*10>:ацӀа
+
+LEXICON conjDec
+<*10>:ацӀ # 21-29
+
+LEXICON decComp
+:л # 11-19
+
+LEXICON cent
+<*100>:бешен
+
+LEXICON mil
+<*1000>:азар
+
+LEXICON conjCentMil
+:чӀекӀуб
+
+LEXICON stemInit
+1:цеб
+2:чӀе
+3:гьаб
+4:буъу
+5:инщтуд
+6:инкӀи
+7:гьакьу
+8:бикьи
+9:гьачӀва
+
+LEXICON stemMul
+1:
+2:чӀ
+3:гьаб
+4:буъ
+5:инщвд
+6:инкӀ
+7:гьакьв
+8:бикь
+9:гьачӀв
