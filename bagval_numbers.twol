@@ -6,7 +6,6 @@ Alphabet
 	%{а%}:а %{а%}:0
 	%{т%}:т %{т%}:0
 	%{в%}:в %{в%}:0
-	%{д%}:д %{д%}:0
 ;
 
 Sets
@@ -20,28 +19,28 @@ Rules
 %{е%}:0 <=> _ suffixes ;
 
 "i realisation_2"
-%{и%}:0 <=> _ suffixes;
+%{и%}:0 <=> _ suffixes ;
 
-"д realisation"
-%{д%}:д <=> в _ V;
+!"д realisation"
+!%{д%}:д <=> в _ V ;
 
-"д realisation2"
-%{д%}:0 <=> _ C;
+!"д realisation2"
+!%{д%}:0 <=> _ C ;
 
 "u in bu'uda & haquda"
-%{у%}:у <=> _ ends;
+%{у%}:у <=> _ ends ;
 
 "u in bu'besenda"
-%{у%}:0 <=> V _ suffixes;
+%{у%}:0 <=> V _ suffixes ;
 
 "u in haqvbesenda"
-%{у%}:в <=> C _ suffixes;
+%{у%}:в <=> C _ suffixes ;
 
 "а realisation"
-%{а%}:0 <=> _ V;
+%{а%}:0 <=> _ V ;
 
 "v realisation"
-%{в%}:0 <=> _ C;
+%{в%}:0 <=> _ C ;
 
 "t realisation"
-%{т%}:0 <=> _ C;
+%{т%}:0 <=> _ C ;
