@@ -9,7 +9,7 @@ stemInit mil
 
 PATTERNS
 stemUnum
-stemExcl end2 # ра
+stemExcl end2 # ра, Кибрик et al. С. 155
 stemInit end # да
 stemInit end col # дала
 decimal # аца
@@ -62,28 +62,28 @@ LEXICON conjCentMil
 # stems
 
 LEXICON stemUnum
-1<num>:цей
-1<num>:цев
-1<num>:цеб
+цей<num>:цей # 1
+цев<num>:цев # 1
+цеб<num>:цеб # 1
 
 LEXICON stemExcl
-2<num>:чӀе
-4<num>:буъу
-5<num>:инщту
-6<num>:инлӀи
-7<num>:гьакьу
-8<num>:бикьи
-9<num>:гьачӀва
+чӀера<num>:чӀе # 2
+буъура<num>:буъу # 4
+инщтура<num>:инщту # 5
+инлӀира<num>:инлӀи # 6
+гьакьура<num>:гьакьу # 7
+бикьира<num>:бикьи # 8
+гьачӀвара<num>:гьачӀва # 9
 
 LEXICON stemInit
-2<num>:чӀ{е}
-3<num>:гьаб
-4<num>:буъ{у}
-5<num>:инщ{т}{у}{д}
-6<num>:инлӀ{и}
-7<num>:гьакь{у}
-8<num>:бикь{и}
-9<num>:гьачӀ{в}{а}
+чӀеда<num>:чӀ{е} # 2
+гьабда<num>:гьаб # 3
+буъуда<num>:буъ{у} # 4
+инщтуда<num>:инщ{т}{у}{д} # 5
+инлӀида<num>:инлӀ{и} # 6
+гьакьуда<num>:гьакь{у} # 7
+бикьида<num>:бикь{и} # 8
+гьачӀвада<num>:гьачӀ{в}{а} # 9
 
 #5<num>:инщвд
 #5<num>:инщв

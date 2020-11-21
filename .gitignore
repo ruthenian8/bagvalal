@@ -1,0 +1,7 @@
+books
+rus
+*Makefile
+*Makefile.in
+.Makefile.swp 
+*.hfst
+*.att

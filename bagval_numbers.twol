@@ -1,0 +1,47 @@
+Alphabet 
+	а б в г д е и й л р с у х ч щ ъ ь т н I А Б В Г Д Е И Й Л Р С У Х Ч Щ Ъ Ь Т Н
+	%{у%}:у %{у%}:в %{у%}:0
+	%{и%}:и %{и%}:0
+	%{е%}:е %{е%}:0
+	%{а%}:а %{а%}:0
+	%{т%}:т %{т%}:0
+	%{в%}:в %{в%}:0
+	%{д%}:д %{д%}:0
+;
+
+Sets
+ends = р д ;
+suffixes = б а ;
+C = ч щ в д к р л с г х Ӏ б т л н т ;
+V = а е и у А Е И У ъ Ъ ;
+
+Rules
+"e realisation"
+%{е%}:0 <=> _ suffixes ;
+
+"i realisation_2"
+%{и%}:0 <=> _ suffixes;
+
+"д realisation"
+%{д%}:д <=> в _ V;
+
+"д realisation2"
+%{д%}:0 <=> _ C;
+
+"u in bu'uda & haquda"
+%{у%}:у <=> _ ends;
+
+"u in bu'besenda"
+%{у%}:0 <=> V _ suffixes;
+
+"u in haqvbesenda"
+%{у%}:в <=> C _ suffixes;
+
+"а realisation"
+%{а%}:0 <=> _ V;
+
+"v realisation"
+%{в%}:0 <=> _ C;
+
+"t realisation"
+%{т%}:0 <=> _ C;
