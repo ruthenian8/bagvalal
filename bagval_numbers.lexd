@@ -41,7 +41,7 @@ LEXICON agrSingular
 <F><sg>:й
 <N><sg>:б
 
-LEXICON agrPlural
+#LEXICON agrPlural
 #<H><pl>:{б}а
 #<N><pl>:{р}
 
