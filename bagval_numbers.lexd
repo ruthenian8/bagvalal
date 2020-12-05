@@ -76,14 +76,14 @@ LEXICON rootOne
 цев<num>:це # 1
 
 LEXICON rootInit
-чӀеда<num>:чӀе[DaNumber, RaNumber]
+чӀеда<num>:чӀе[DaNumber,RaNumber]
 гьабда<num>:гьаб[DaNumber]
-буъуда<num>:буъу[DaNumber, RaNumber]
-инщтуда<num>:инщту[DaNumber, RaNumber]
-инлӀида<num>:инлӀи[DaNumber, RaNumber]
-гьакьуда<num>:гьакьу[DaNumber, RaNumber]
-бикьида<num>:бикьи[DaNumber, RaNumber]
-гьачӀвада<num>:гьачӀва[DaNumber, RaNumber]
+буъуда<num>:буъу[DaNumber,RaNumber]
+инщтуда<num>:инщту[DaNumber,RaNumber]
+инлӀида<num>:инлӀи[DaNumber,RaNumber]
+гьакьуда<num>:гьакьу[DaNumber,RaNumber]
+бикьида<num>:бикьи[DaNumber,RaNumber]
+гьачӀвада<num>:гьачӀва[DaNumber,RaNumber]
 
 LEXICON rootDec
 цев<num>:гь
