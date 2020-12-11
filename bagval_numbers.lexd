@@ -8,7 +8,8 @@ PATTERN milli
 rootCent mil
 
 PATTERN singles
-(rootInit[DaNumber] end[DaNumber] | rootInit[RaNumber] end[RaNumber]) # ра, Кибрик et al. С. 155
+rootInit[DaNumber] end[DaNumber]
+rootInit[RaNumber] end[RaNumber] # ра, Кибрик et al. С. 155
 
 PATTERNS
 rootOne agrSingular
@@ -21,10 +22,16 @@ milli end[DaNumber] # азарда
 #forms with links
 decimal decComp # ацал, link in 11-19
 rootDec conjDec # ац, link in 21-29
-(centi | milli) conjCentMil # links in 101-199, 10001-1999
+centi conjCentMil  
+milli conjCentMil # links in 101-199, 10001-1999
 #collective forms
-(singles | (decimal | decimal end[DaNumber]) | centi end | milli end[DaNumber]) col # collective
+singles col 
+decimal col 
+decimal end[DaNumber] col 
+centi end[DaNumber] col 
+milli end[DaNumber] col # collective
 
+#
 # suffixes
 
 LEXICON end
@@ -34,6 +41,7 @@ LEXICON end
 LEXICON col
 <col>:ла
 
+#
 # agreement markers
 
 LEXICON agrSingular
