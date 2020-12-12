@@ -4,3 +4,5 @@ Makefile.in
 .Makefile.swp 
 *.hfst
 *.att
+*.mchar
+*.res 
