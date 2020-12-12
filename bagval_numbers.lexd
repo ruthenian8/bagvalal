@@ -84,7 +84,7 @@ LEXICON rootOne
 цев<num>:це # 1
 
 LEXICON rootInit
-чӀеда<num>:чӀе[DaNumber,RaNumber]
+чӀеда<num>:чӀ{е}[DaNumber,RaNumber]
 гьабда<num>:гьаб[DaNumber]
 буъуда<num>:буъу[DaNumber,RaNumber]
 инщтуда<num>:инщту[DaNumber,RaNumber]
@@ -95,7 +95,7 @@ LEXICON rootInit
 
 LEXICON rootDec
 цев<num>:гь
-чӀеда<num>:чӀ # 2
+чӀеда<num>:чӀ{е} # 2
 гьабда<num>:гьаб # 3
 буъуда<num>:буъ # 4
 инщтуда<num>:инщвд # 5
@@ -106,7 +106,7 @@ LEXICON rootDec
 
 LEXICON rootCent
 цев<num>:
-чӀеда<num>:чӀе # 2
+чӀеда<num>:чӀ{е} # 2
 гьабда<num>:гьаб # 3
 буъуда<num>:буъ # 4
 инщтуда<num>:инщв # 5
