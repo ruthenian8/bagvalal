@@ -11,29 +11,58 @@ PATTERN singles
 rootInit[DaNumber] end[DaNumber]
 rootInit[RaNumber] end[RaNumber] # ра, Кибрик et al. С. 155
 
+PATTERN DaSuffixedNums
+decimal end[DaNumber]
+milli end[DaNumber]
+centi end[DaNumber]
+
+PATTERN NomNumbersAgr
+singles ( OblSingular[OblSu] | OblPlural[OblPlLu] )
+DaSuffixedNums ( OblSingular[OblSu] | OblPlural[OblPlLu] )
+
+PATTERN NomNumbersNonAgr
+singles OblSingular[OblLi]
+DaSuffixedNums OblSingular[OblLi]
+
 PATTERNS
+# regular numbers
+#
 rootOne agrSingular
 singles
 decimal # аца
-decimal end[DaNumber] # ацада
 centi # бешен
-centi end[DaNumber] # бешенда
-milli end[DaNumber] # азарда
+DaSuffixedNums
+#
 #forms with links
+#
 decimal decComp # ацал, link in 11-19
 rootDec conjDec # ац, link in 21-29
 centi conjCentMil  
 milli conjCentMil # links in 101-199, 10001-1999
+#
 #collective forms
+#
 singles col 
 decimal col 
-decimal end[DaNumber] col 
-centi end[DaNumber] col 
-milli end[DaNumber] col # collective
-
+DaSuffixedNums col
 #
-# suffixes
+#distributional forms
+#
+rootCent centDist cent end[DaNumber]
+rootCent milDist mil end[DaNumber]
+decDist dec ( end[DaNumber] | end[RaNumber] )
+#
+#nominalised numbers
+#
+singles DatExceptions[-OblPlAlu]
+DaSuffixedNums DatExceptions[-OblPlAlu]
+( NomNumbersAgr | NomNumbersNonAgr ) CaseMain[-RegDat,ErgR]
+NomNumbersAgr genitiveCase[GenAgr] 
+NomNumbersNonAgr genitiveCase[-GenAgr]
 
+# LEXICON ENTRIES
+# number suffixes
+# 
 LEXICON end
 <num>:да[DaNumber]
 <num>:ра[RaNumber]
@@ -41,21 +70,66 @@ LEXICON end
 LEXICON col
 <col>:ла
 
+# Oblique stem markers
 #
-# agreement markers
+LEXICON OblSingular
+<sg><obl>:а[OblA]
+<sg><obl>:и[OblI]
+<sg><obl>:е[OblE]
+<sg><obl>:у[OblU]
+<sg><obl>:шу[OblSu]
+<sg><obl>:лу[OblLu]
+<sg><obl>:лъи[OblLi]
 
+LEXICON OblPlural
+<obl>:а[OblPlA]
+<obl>:алу[OblPlAlu]
+<obl>:лу[OblPlLu]
+
+# Noun plural suffixes
+#
+LEXICON PlAbs
+<pl>:аби
+
+LEXICON PlObl
+<pl>:аб # for oblique stems
+
+# case markers
+# 
+LEXICON CaseMain
+<dat>:ла[ErgD,ErgR,RegDat]
+<erg>:д[ErgD]
+<erg>:р[ErgR]
+<aff>:ба[ErgD,ErgR]
+<subst>:бас[ErgD,ErgR]
+
+LEXICON DatExceptions
+<sg><obl><dat>:ша[ErgD,ErgR,OblSu]
+<sg><obl><dat>:лъа[ErgD,ErgR,OblLi]
+<pl><obl><dat>:лла[ErgD,ErgR,OblPlAlu]
+<pl><obl><dat>:ла[ErgD,ErgR,OblPlLu]
+
+LEXICON genitiveCase
+<gen>:лъ
+<gen><M><sg>:в[GenAgr]
+<gen><F><sg>:й[GenAgr]
+<gen><N><sg>:б[GenAgr]
+<gen><H><pl>:ба[GenAgr]
+<gen><N><pl>:р[GenAgr]
+
+# agreement markers
+# 
 LEXICON agrSingular
 <M><sg>:в
 <F><sg>:й
 <N><sg>:б
 
-#LEXICON agrPlural
-#<H><pl>:{б}а
-#<N><pl>:{р}
+LEXICON agrPlural
+<H><pl>:ба
+<N><pl>:р
 
-#
-# modifiers
-
+# number modifiers
+# 
 LEXICON dec
 <*>гьаца<num>:ацӀа
 
@@ -68,18 +142,27 @@ LEXICON cent
 LEXICON mil
 <*>азарда<num><thousand>:азар
 
+# distributional modifiers
 #
-# links
+LEXICON decDist
+цев<num><distr>:гьацӀигь
 
+LEXICON centDist
+<distr>:беши
+
+LEXICON milDist
+<distr>:ази
+
+# number links
+# 
 LEXICON decComp
 <lnk>:л # 11-19
 
 LEXICON conjCentMil
 <lnk>:чӀекӀуб
 
-#
-# roots
-
+# number roots
+# 
 LEXICON rootOne
 цев<num>:це # 1
 
@@ -114,3 +197,12 @@ LEXICON rootCent
 гьакьуда<num>:гьакьв # 7
 бикьида<num>:бикь # 8
 гьачӀвада<num>:гьачӀа # 9
+
+# noun roots
+#
+LEXICON nounSu
+има<noun>:има # father
+
+LEXICON nounLi
+гьакӀуй<noun>:гьакӀуй # woman
+гьезеб<noun>:гьезеб # stock

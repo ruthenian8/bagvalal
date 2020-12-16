@@ -1,0 +1,22 @@
+14.12.20
+# entries decDist, centDist & milDist introduced to cover reduplication in distributive numbers
+# (new sets of stems may be necessary?)
+# unable to cover reduplication in other distributive numbers
+16.12.20
+# entries case & genitiveCase introduced to cover the case system
+# genitives formed separately because of untersections with agreement markers
+# classes OblSu, OblLi & OblPlLu introduced to distinguish between types of stems
+# classes ErgD & ErgR introduced to distinguish the ergative markers
+# class GenAgr introduced to distinguish between words that agree in the genitive and words that don't
+# deleted Lexicon NumDative (no need for a special marker)
+# added classes PlAbs & PlObl for noun plural marker
+# RegDat class added to distinguish regular dative forms
+# Lexicon DatExceptions added to cover irregular dative forms
+#
+# Oblique stems for nominalized numbers specified as 2 patterns
+# One for those with agreement, see NomNumbersAgr
+# One for items without agreement, see NomNumbersNonAgr
+# Agreement & declension specified for all numbers with -da suffix
+# ...
+# Pattern DaSuffixedNums added not to repeat oneself
+# replaced the older version in collective numbers
