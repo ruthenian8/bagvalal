@@ -6,3 +6,4 @@ Makefile.in
 *.att
 *.mchar
 *.res 
+bagval_numbers.txt

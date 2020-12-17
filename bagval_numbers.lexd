@@ -24,10 +24,13 @@ PATTERN NomNumbersNonAgr
 singles OblSingular[OblLi]
 DaSuffixedNums OblSingular[OblLi]
 
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# MAIN PATTERNS
 PATTERNS
 # regular numbers
 #
-rootOne agrSingular
+rootOne agrFinal[-pl]
 singles
 decimal # аца
 centi # бешен
@@ -56,12 +59,26 @@ decDist dec ( end[DaNumber] | end[RaNumber] )
 #
 singles DatExceptions[-OblPlAlu]
 DaSuffixedNums DatExceptions[-OblPlAlu]
-( NomNumbersAgr | NomNumbersNonAgr ) CaseMain[-RegDat,ErgR]
+( NomNumbersAgr | NomNumbersNonAgr ) CaseMain[-nullNom,-RegDat,ErgR]
 NomNumbersAgr genitiveCase[GenAgr] 
 NomNumbersNonAgr genitiveCase[-GenAgr]
+#
+#adjective agreement
+#
+agrInitial adjDouble agrFinal # can agree with 2 heads, see Kibrik et al.
+adjSingle agrFinal
+#
+#pronoun declension
+#
+PerPronounStems genitiveCase[GenAgr]
+PerPronounStems[PrExc] CaseMain[ErgR,-RegErg,-nullNom]
+PerPronounStems[-PrExc] CaseMain[ErgR]
+PerPronounExc
 
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
 # LEXICON ENTRIES
-# number suffixes
+# NUMBER DERIVATION
 # 
 LEXICON end
 <num>:да[DaNumber]
@@ -69,64 +86,6 @@ LEXICON end
 
 LEXICON col
 <col>:ла
-
-# Oblique stem markers
-#
-LEXICON OblSingular
-<sg><obl>:а[OblA]
-<sg><obl>:и[OblI]
-<sg><obl>:е[OblE]
-<sg><obl>:у[OblU]
-<sg><obl>:шу[OblSu]
-<sg><obl>:лу[OblLu]
-<sg><obl>:лъи[OblLi]
-
-LEXICON OblPlural
-<obl>:а[OblPlA]
-<obl>:алу[OblPlAlu]
-<obl>:лу[OblPlLu]
-
-# Noun plural suffixes
-#
-LEXICON PlAbs
-<pl>:аби
-
-LEXICON PlObl
-<pl>:аб # for oblique stems
-
-# case markers
-# 
-LEXICON CaseMain
-<dat>:ла[ErgD,ErgR,RegDat]
-<erg>:д[ErgD]
-<erg>:р[ErgR]
-<aff>:ба[ErgD,ErgR]
-<subst>:бас[ErgD,ErgR]
-
-LEXICON DatExceptions
-<sg><obl><dat>:ша[ErgD,ErgR,OblSu]
-<sg><obl><dat>:лъа[ErgD,ErgR,OblLi]
-<pl><obl><dat>:лла[ErgD,ErgR,OblPlAlu]
-<pl><obl><dat>:ла[ErgD,ErgR,OblPlLu]
-
-LEXICON genitiveCase
-<gen>:лъ
-<gen><M><sg>:в[GenAgr]
-<gen><F><sg>:й[GenAgr]
-<gen><N><sg>:б[GenAgr]
-<gen><H><pl>:ба[GenAgr]
-<gen><N><pl>:р[GenAgr]
-
-# agreement markers
-# 
-LEXICON agrSingular
-<M><sg>:в
-<F><sg>:й
-<N><sg>:б
-
-LEXICON agrPlural
-<H><pl>:ба
-<N><pl>:р
 
 # number modifiers
 # 
@@ -142,7 +101,7 @@ LEXICON cent
 LEXICON mil
 <*>азарда<num><thousand>:азар
 
-# distributional modifiers
+# distributional number modifiers
 #
 LEXICON decDist
 цев<num><distr>:гьацӀигь
@@ -161,6 +120,82 @@ LEXICON decComp
 LEXICON conjCentMil
 <lnk>:чӀекӀуб
 
+# --------------------------------------------------------------------------------------------
+# NOMINAL INFLECTION
+# Oblique stem markers
+#
+LEXICON OblSingular
+<sg><obl>:[OblZero]
+<sg><obl>:а[OblA]
+<sg><obl>:и[OblI]
+<sg><obl>:е[OblE]
+<sg><obl>:у[OblU]
+<sg><obl>:щу[OblSu]
+<sg><obl>:лу[OblLu]
+<sg><obl>:лъи[OblLi]
+
+LEXICON OblPlural
+<obl>:а[OblPlA]
+<obl>:алу[OblPlAlu]
+<obl>:лу[OblPlLu]
+
+# Noun plural suffixes
+#
+LEXICON PlAbs
+<nom>:и
+
+LEXICON PlMain
+<pl>:{б}[PlBi]
+<pl>:дар[PlDari]
+
+# ----------------------------------------------------------------------------------------------
+# CASE MARKERS
+LEXICON CaseMain
+<nom>:[ErgD,ErgR,nullNom]
+<dat>:ла[ErgD,ErgR,RegDat]
+<erg>:д[ErgD]
+<erg>:р[ErgR,RegErg]
+<aff>:ба[ErgD,ErgR]
+<subst>:бас[ErgD,ErgR]
+
+LEXICON DatExceptions
+<sg><obl><dat>:ща[ErgD,ErgR,OblSu]
+<sg><obl><dat>:лъа[ErgD,ErgR,OblLi]
+<pl><obl><dat>:лла[ErgD,ErgR,OblPlAlu]
+<pl><obl><dat>:ла[ErgD,ErgR,OblPlLu]
+
+LEXICON genitiveCase
+<gen>:лъ
+<gen><M><sg>:в[GenAgr]
+<gen><F><sg>:й[GenAgr]
+<gen><N><sg>:б[GenAgr]
+<gen><H><pl>:ба[GenAgr]
+<gen><N><pl>:р[GenAgr]
+
+# ---------------------------------------------------------------------------------------------
+# AGREEMENT MARKERS
+LEXICON agrInitial
+:в
+:й
+:б
+:р
+
+LEXICON agrMiddle
+<M><sg>:в
+<F><sg>:й
+<N><sg>:{б}
+<H><pl>:{р}
+<N><pl>:{р}
+
+LEXICON agrFinal
+<M><sg>:в
+<F><sg>:й
+<N><sg>:{б}
+<H><pl>:{б}а[pl]
+<N><pl>:{р}[pl]
+
+# ---------------------------------------------------------------------------------------------
+# ROOTS
 # number roots
 # 
 LEXICON rootOne
@@ -206,3 +241,26 @@ LEXICON nounSu
 LEXICON nounLi
 гьакӀуй<noun>:гьакӀуй # woman
 гьезеб<noun>:гьезеб # stock
+
+# adjective roots
+#
+LEXICON adjDouble
+вагьарув<adjective>:агьару
+
+LEXICON adjSingle
+гьацӀав<adjective>:гьацӀа
+
+#pronouns
+#
+LEXICON PerPronounStems
+де<pronoun><sg><1P>:ди[PrExc]
+ме<pronoun><sg><2P>:ду[PrExc]
+ищи<pronoun><pl><1P>:ищи
+инлӀи<pronoun><pl><1P>:инлӀи
+бишти<pronoun><pl><2P>:бишти
+
+LEXICON PerPronounExc
+де<pronoun><sg><1P><nom>:де
+де<pronoun><sg><1P><erg>:ден
+ме<pronoun><sg><2P><nom>:ме
+ме<pronoun><sg><2P><erg>:мен

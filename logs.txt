@@ -20,3 +20,39 @@
 # ...
 # Pattern DaSuffixedNums added not to repeat oneself
 # replaced the older version in collective numbers
+17.12.20
+# Posited -i as a separate absolutive marker for plural noun forms (can be glossed as nominative)
+# Exceptions in nominal morphology to memorize:
+# Ras 'шкура' — GEN SG Rass-u-l— NOM PL Rass-abi. Исходная основа содержит геминированный согласный, теряющий геминацию в позиции передпаузой. Таких основ только три: Ras 'шкура', as 'кожаная привязь' и гаХ 'мерный кувшин объемом 5-6 литров'.
+# j исходной основы перед суффиксом на согласный факультативно или обязательно — точная закономерность не установлена — выпадает; выпадение компенсируется удлинением предшествующего гласного, например: hjaj 'собака'— ERG SG hД-r, s'aj 'соль' — GEN SG s'a-l. To же может происходить, впрочем, и в абсолютном конце слова, ср. варианты Sij и ST 'молоко', GEN SG Si-i
+# (twol rule may be required to handle the above regulation)
+# ...
+# added adjDouble & adjSingle for testing adjective agreement rules
+# added agrInitial, agrMiddle & agrFinal to implement the agreement
+# 2 twol rules for consonant conversion after nasalized vowels need to be implemented 
+# ᵸ is to be used in the rules
+# not sure, how to gloss initial agreement markers in verbs & adjectives, so that glosses don't come before the lemma
+# left them without glosses for the time being
+# ...
+# implemented the 2 twol rules
+# may need a rule for -a reduction at the end of the stem
+# a common pattern in nominal declension
+# ...
+# question for the next time: which form should be used as the lemma for words with agreement markers
+# -i at the end of the plural marker -abi can be either implemented as the absolutive case marker or via twol rule
+# the latter approach makes it difficult to gloss it
+# decided to implement it separately with a "nom" gloss
+# temporarily changed PlAbi to PlBi.
+# Need to decide, how to implement the vowel joints
+# ...
+# The absolutive stem might have a final -a that would be reduced in the oblique forms
+# This makes the solution with a reduceable archphoneme -a at the end of the stem and a vowel at the start of the marker more convenient
+# ...
+# converbs & participles: may agree with 2 targets, so the scheme of "double adjectives" is reusable
+# negative markers will be added to nominalized nouns as an optional suffix
+# ...
+# zero-marker nominative added to cases, classs nullNom to make an exception for nominalized numbers
+# ...
+# dative fusion is denied in the bagvalal vocabulary, it seems reasonable to cover both options
+# Personal pronouns added in PerPronStems lexicon entry, exceptions listed in PerPronounExc
+# added RegErg class to cases for correct personal pronoun coverage. PrExc added to pronouns for the same purpose
