@@ -1,7 +1,7 @@
 14.12.20
 # entries decDist, centDist & milDist introduced to cover reduplication in distributive numbers
 # (new sets of stems may be necessary?)
-# unable to cover reduplication in other distributive numbers
+# ? unable to cover reduplication in other distributive numbers
 16.12.20
 # entries case & genitiveCase introduced to cover the case system
 # genitives formed separately because of untersections with agreement markers
@@ -38,12 +38,12 @@
 # may need a rule for -a reduction at the end of the stem
 # a common pattern in nominal declension
 # ...
-# question for the next time: which form should be used as the lemma for words with agreement markers
-# -i at the end of the plural marker -abi can be either implemented as the absolutive case marker or via twol rule
+# ? question for the next time: which form should be used as the lemma for words with agreement markers
+# ? -i at the end of the plural marker -abi can be either implemented as the absolutive case marker or via twol rule
 # the latter approach makes it difficult to gloss it
 # decided to implement it separately with a "nom" gloss
 # temporarily changed PlAbi to PlBi.
-# Need to decide, how to implement the vowel joints
+# ? Need to decide, how to implement the vowel joints
 # ...
 # The absolutive stem might have a final -a that would be reduced in the oblique forms
 # This makes the solution with a reduceable archphoneme -a at the end of the stem and a vowel at the start of the marker more convenient
@@ -53,6 +53,11 @@
 # ...
 # zero-marker nominative added to cases, classs nullNom to make an exception for nominalized numbers
 # ...
-# dative fusion is denied in the bagvalal vocabulary, it seems reasonable to cover both options
+# ? dative fusion is denied in the bagvalal vocabulary, it seems reasonable to cover both options
 # Personal pronouns added in PerPronStems lexicon entry, exceptions listed in PerPronounExc
 # added RegErg class to cases for correct personal pronoun coverage. PrExc added to pronouns for the same purpose
+# ...
+# optional negative suffixes added to personal pronouns, nominalized numbers - excluding genitive forms
+# future goal: specify nominalized adjectives
+# ...
+# added ordinal lexicon entry to describe ordinal numbers

@@ -30,7 +30,7 @@ DaSuffixedNums OblSingular[OblLi]
 PATTERNS
 # regular numbers
 #
-rootOne agrFinal[-pl]
+rootOne agrFinal
 singles
 decimal # аца
 centi # бешен
@@ -43,25 +43,31 @@ rootDec conjDec # ац, link in 21-29
 centi conjCentMil  
 milli conjCentMil # links in 101-199, 10001-1999
 #
-#collective forms
+#collective numbers
 #
 singles col 
 decimal col 
 DaSuffixedNums col
 #
-#distributional forms
+#ordinal numbers
+#
+singles [ла]? ordinal[ser1] agrFinal 
+singles [ла] ordinal[ser2]
+DaSuffixedNums [ла]? ordinal[ser1] agrFinal 
+DaSuffixedNums [ла] ordinal[ser2]
+#distributional numbers
 #
 rootCent centDist cent end[DaNumber]
 rootCent milDist mil end[DaNumber]
 decDist dec ( end[DaNumber] | end[RaNumber] )
 #
-#nominalised numbers
+#nominalized numbers
 #
-singles DatExceptions[-OblPlAlu]
-DaSuffixedNums DatExceptions[-OblPlAlu]
-( NomNumbersAgr | NomNumbersNonAgr ) CaseMain[-nullNom,-RegDat,ErgR]
-NomNumbersAgr genitiveCase[GenAgr] 
-NomNumbersNonAgr genitiveCase[-GenAgr]
+singles DatExceptions[-OblPlAlu] negSuffix[pst]?
+DaSuffixedNums DatExceptions[-OblPlAlu] negSuffix[pst]?
+( NomNumbersAgr | NomNumbersNonAgr ) CaseMain[-nullNom,-RegDat,ErgR] negSuffix[pst]?
+NomNumbersAgr genitiveCase[GenAgr] negSuffix[pst]?
+NomNumbersNonAgr genitiveCase[-GenAgr] negSuffix[pst]?
 #
 #adjective agreement
 #
@@ -70,14 +76,22 @@ adjSingle agrFinal
 #
 #pronoun declension
 #
-PerPronounStems genitiveCase[GenAgr]
-PerPronounStems[PrExc] CaseMain[ErgR,-RegErg,-nullNom]
-PerPronounStems[-PrExc] CaseMain[ErgR]
-PerPronounExc
+PerPronounStems genitiveCase[GenAgr] negSuffix[pst]?
+PerPronounStems[PrExc] CaseMain[ErgR,-RegErg,-nullNom] negSuffix[pst]?
+PerPronounStems[-PrExc] CaseMain[ErgR] negSuffix[pst]?
+PerPronounExc negSuffix[pst]?
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
 # LEXICON ENTRIES
+#
+# COMMON MARKERS
+#
+LEXICON negSuffix
+<neg>:чӀи[pst]
+<neg>:чӀе[fut]
+
+# -----------------------------------------------------------------------------------------------
 # NUMBER DERIVATION
 # 
 LEXICON end
@@ -89,6 +103,10 @@ LEXICON col
 
 # number modifiers
 # 
+LEXICON ordinal
+<ord>:ло[ser1]
+<ord>:ла[ser2]
+
 LEXICON dec
 <*>гьаца<num>:ацӀа
 
@@ -191,8 +209,8 @@ LEXICON agrFinal
 <M><sg>:в
 <F><sg>:й
 <N><sg>:{б}
-<H><pl>:{б}а[pl]
-<N><pl>:{р}[pl]
+<H><pl>:{б}а
+<N><pl>:{р}
 
 # ---------------------------------------------------------------------------------------------
 # ROOTS
@@ -205,7 +223,7 @@ LEXICON rootInit
 чӀеда<num>:чӀ{е}[DaNumber,RaNumber]
 гьабда<num>:гьаб[DaNumber]
 буъуда<num>:буъу[DaNumber,RaNumber]
-инщтуда<num>:инщту[DaNumber,RaNumber]
+иᵸщтуда<num>:иᵸщту[DaNumber,RaNumber]
 инлӀида<num>:инлӀи[DaNumber,RaNumber]
 гьакьуда<num>:гьакьу[DaNumber,RaNumber]
 бикьида<num>:бикьи[DaNumber,RaNumber]
@@ -216,7 +234,7 @@ LEXICON rootDec
 чӀеда<num>:чӀ{е} # 2
 гьабда<num>:гьаб # 3
 буъуда<num>:буъ # 4
-инщтуда<num>:инщвд # 5
+иᵸщтуда<num>:иᵸщвд # 5
 инлӀида<num>:инлӀ # 6
 гьакьуда<num>:гьакьв # 7
 бикьида<num>:бикь # 8
@@ -227,7 +245,7 @@ LEXICON rootCent
 чӀеда<num>:чӀ{е} # 2
 гьабда<num>:гьаб # 3
 буъуда<num>:буъ # 4
-инщтуда<num>:инщв # 5
+иᵸщтуда<num>:иᵸщв # 5
 инлӀида<num>:инлӀ # 6
 гьакьуда<num>:гьакьв # 7
 бикьида<num>:бикь # 8
