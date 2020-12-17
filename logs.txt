@@ -61,3 +61,10 @@
 # future goal: specify nominalized adjectives
 # ...
 # added ordinal lexicon entry to describe ordinal numbers
+# ...
+# distributive numbers need a separate lexicon entry for exceptions and one for reduced stems
+# decided to add distributive one to rootOne as a separate class
+# all the others merged in 2xrootinit & 2xrootdec
+18.12.20
+# added gloss <ten> to -аца, -ац modifiers to equal them with hundreds and thousands
+# implemented all the distributive numbers
