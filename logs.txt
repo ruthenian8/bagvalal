@@ -68,3 +68,19 @@
 18.12.20
 # added gloss <ten> to -аца, -ац modifiers to equal them with hundreds and thousands
 # implemented all the distributive numbers
+# ...
+# ? need to add locative markers to nominalized numbers
+# I suppose classes will be needed for the agreement markers to work properly
+# the type of oblique stem in nominalized stem depends on the preceding agreement suffix
+# need to specify a pattern for ser1 & ser2 ordinals not to repeat myself
+# combinations of agreement markers with oblique stem markers might prove useful to be abstracted in the future
+# after checking on the grammar decided to implement it as the OblAdj pattern
+# need to add oblPlLi marker and fix the preceding
+# OblAdjDative specified separately for mapping between agreement and reduced oblique stems
+# ...
+# OblAdj split between OblAdjAgr & OblAdjNonAgr to distinguish between terms that agree in the genitive and terms that do not
+# ? might be necessary to consult the tutors on the removal of the negative marker for the time being
+# it makes the forms too numerous and impossible to track down
+# ...
+# oblique stems and agreement markers may gloss the number differently, thus the analysis is not always consistent
+# might need to remove the number glosses from the oblique stem markers

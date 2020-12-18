@@ -21,8 +21,32 @@ singles ( OblSingular[OblSu] | OblPlural[OblPlLu] )
 DaSuffixedNums ( OblSingular[OblSu] | OblPlural[OblPlLu] )
 
 PATTERN NomNumbersNonAgr
-singles OblSingular[OblLi]
-DaSuffixedNums OblSingular[OblLi]
+singles ( OblSingular[OblLi] | OblPlural[OblPlLi] )
+DaSuffixedNums ( OblSingular[OblLi] | OblPlural[OblPlLi] )
+
+PATTERN OrdNumbersSer1
+singles [ла]? ordinal[ser1] 
+DaSuffixedNums [ла]? ordinal[ser1]
+
+PATTERN OrdNumbersSer2
+singles [ла] ordinal[ser2] 
+DaSuffixedNums [ла] ordinal[ser2]
+
+PATTERN OblAdjAgr
+agrFinal[Msg] OblSingular[OblSu]
+agrFinal[Hpl] OblPlural[OblPlLu]
+
+PATTERN OblAdjNonAgr
+agrFinal[Fsg] OblSingular[OblLi]
+agrFinal[Nsg] OblSingular[OblLi]
+agrFinal[Npl] OblPlural[OblPlLi]
+
+PATTERN OblAdjDative
+agrFinal[Msg] DatExceptions[OblSu]
+agrFinal[Fsg] DatExceptions[OblLi]
+agrFinal[Nsg] DatExceptions[OblLi]
+agrFinal[Hpl] DatExceptions[OblPlLu]
+agrFinal[Npl] DatExceptions[OblLi]
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
@@ -43,6 +67,14 @@ rootDec conjDec # ац, link in 21-29
 centi conjCentMil  
 milli conjCentMil # links in 101-199, 10001-1999
 #
+#nominalized cardinal numbers
+#
+singles DatExceptions[-OblPlAlu] negSuffix[pst]?
+DaSuffixedNums DatExceptions[-OblPlAlu] negSuffix[pst]?
+( NomNumbersAgr | NomNumbersNonAgr ) CaseMain[-nullNom,-RegDat,ErgR] negSuffix[pst]?
+NomNumbersAgr genitiveCase[GenAgr] negSuffix[pst]?
+NomNumbersNonAgr genitiveCase[-GenAgr] negSuffix[pst]?
+#
 #collective numbers
 #
 singles col 
@@ -51,10 +83,18 @@ DaSuffixedNums col
 #
 #ordinal numbers
 #
-singles [ла]? ordinal[ser1] agrFinal 
-singles [ла] ordinal[ser2]
-DaSuffixedNums [ла]? ordinal[ser1] agrFinal 
-DaSuffixedNums [ла] ordinal[ser2]
+rootOne[ord]
+OrdNumbersSer1 agrFinal
+OrdNumbersSer2
+#
+#nominalized ordinals
+#
+OrdNumbersSer1 agrFinal CaseMain[nullNom] negSuffix[pst]?
+OrdNumbersSer1 OblAdjAgr CaseMain[-nullNom,ErgR] negSuffix[pst]?
+OrdNumbersSer1 OblAdjAgr genitiveCase[GenAgr] negSuffix[pst]?
+OrdNumbersSer1 OblAdjNonAgr CaseMain[-nullNom,ErgR] negSuffix[pst]?
+OrdNumbersSer1 OblAdjNonAgr genitiveCase[-GenAgr] negSuffix[pst]?
+OrdNumbersSer1 OblAdjDative negSuffix[pst]?
 #
 #distributional numbers
 #
@@ -67,18 +107,28 @@ decDist dec ( end[DaNumber] | end[RaNumber] ) # гьабдигьабда = 10
 2xRootInit[-excl,RaNumber] end[RaNumber]
 2xRootDec dec
 #
-#nominalized numbers
-#
-singles DatExceptions[-OblPlAlu] negSuffix[pst]?
-DaSuffixedNums DatExceptions[-OblPlAlu] negSuffix[pst]?
-( NomNumbersAgr | NomNumbersNonAgr ) CaseMain[-nullNom,-RegDat,ErgR] negSuffix[pst]?
-NomNumbersAgr genitiveCase[GenAgr] negSuffix[pst]?
-NomNumbersNonAgr genitiveCase[-GenAgr] negSuffix[pst]?
-#
 #adjective agreement
 #
 agrInitial adjDouble agrFinal # can agree with 2 heads, see Kibrik et al.
 adjSingle agrFinal
+#
+#nominalized adjectives
+#double
+agrInitial[Msg] adjDouble agrFinal[Msg] ( CaseMain[nullNom] | DatExceptions[OblSu] )
+agrInitial[Fsg] adjDouble agrFinal[Fsg] ( CaseMain[nullNom] | DatExceptions[OblLi] )
+agrInitial[Nsg] adjDouble agrFinal[Nsg] ( CaseMain[nullNom] | DatExceptions[OblLi] )
+agrInitial[Hpl] adjDouble agrFinal[Hpl] ( CaseMain[nullNom] | DatExceptions[OblPlLu] )
+agrInitial[Npl] adjDouble agrFinal[Npl] ( CaseMain[nullNom] | DatExceptions[OblLi] )
+agrInitial[Msg] adjDouble agrFinal[Msg] OblSingular[OblSu] ( CaseMain[-nullNom,ErgR] | genitiveCase[GenAgr] )
+agrInitial[Fsg] adjDouble agrFinal[Fsg] OblSingular[OblLi] ( CaseMain[-nullNom,ErgR] | genitiveCase[-GenAgr] )
+agrInitial[Nsg] adjDouble agrFinal[Nsg] OblSingular[OblLi] ( CaseMain[-nullNom,ErgR] | genitiveCase[-GenAgr] )
+agrInitial[Hpl] adjDouble agrFinal[Hpl] OblPlural[OblPlLu] ( CaseMain[-nullNom,ErgR] | genitiveCase[GenAgr] )
+agrInitial[Npl] adjDouble agrFinal[Npl] OblPlural[OblPlLi] ( CaseMain[-nullNom,ErgR] | genitiveCase[-GenAgr] )
+#single
+adjSingle agrFinal CaseMain[nullNom]
+adjSingle OblAdjAgr ( CaseMain[-nullNom,ErgR] | genitiveCase[GenAgr] )
+adjSingle OblAdjNonAgr ( CaseMain[-nullNom,ErgR] | genitiveCase[-GenAgr] )
+adjSingle OblAdjDative negSuffix[pst]?
 #
 #pronoun declension
 #
@@ -149,19 +199,20 @@ LEXICON conjCentMil
 # Oblique stem markers
 #
 LEXICON OblSingular
-<sg><obl>:[OblZero]
-<sg><obl>:а[OblA]
-<sg><obl>:и[OblI]
-<sg><obl>:е[OblE]
-<sg><obl>:у[OblU]
-<sg><obl>:щу[OblSu]
-<sg><obl>:лу[OblLu]
-<sg><obl>:лъи[OblLi]
+<obl>:[OblZero]
+<obl>:а[OblA]
+<obl>:и[OblI]
+<obl>:е[OblE]
+<obl>:у[OblU]
+<obl>:щу[OblSu]
+<obl>:лу[OblLu]
+<obl>:лъи[OblLi]
 
 LEXICON OblPlural
 <obl>:а[OblPlA]
 <obl>:алу[OblPlAlu]
 <obl>:лу[OblPlLu]
+<obl>:лъи[OblPlLi]
 
 # Noun plural suffixes
 #
@@ -199,10 +250,10 @@ LEXICON genitiveCase
 # ---------------------------------------------------------------------------------------------
 # AGREEMENT MARKERS
 LEXICON agrInitial
-:в
-:й
-:б
-:р
+:в[Msg]
+:й[Fsg]
+:б[Nsg,Hpl]
+:р[Npl]
 
 LEXICON agrMiddle
 <M><sg>:в
@@ -212,11 +263,11 @@ LEXICON agrMiddle
 <N><pl>:{р}
 
 LEXICON agrFinal
-<M><sg>:в
-<F><sg>:й
-<N><sg>:{б}
-<H><pl>:{б}а
-<N><pl>:{р}
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:{б}[Nsg]
+<H><pl>:{б}а[Hpl]
+<N><pl>:{р}[Npl]
 
 # ---------------------------------------------------------------------------------------------
 # ROOTS
@@ -225,6 +276,7 @@ LEXICON agrFinal
 LEXICON rootOne # 1
 цев<num>:це[norm]
 цев<num><dist>:цеце[red]
+цев<num><ord>:гьечӀисес[ord]
 
 LEXICON rootInit
 чӀеда<num>:чӀ{е}[DaNumber,RaNumber]
