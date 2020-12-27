@@ -84,3 +84,58 @@
 # ...
 # oblique stems and agreement markers may gloss the number differently, thus the analysis is not always consistent
 # might need to remove the number glosses from the oblique stem markers
+23.12.20
+# added glosses to prefixal agreement markers
+# added glosses <excl> & <incl> to personal pronouns
+# Распределение показателей {1а} и {11а} локализаци и SUP , по-видимому,
+# синхронно не мотивировано. Показатель {11а} отмечен в следующих случаях: 
+# c'il-illa от с'ila 'щека', sim-i-lla от sim 'губа', mis'-i-lla от mis' 'язык', 
+# hac'a-lla от hac'a 'глаз
+...
+# Since vowels always merge with preceding vowels when near each other, it may be helpful
+# to describe the reduction of -i- before the directCase pattern with a twol rule.
+...
+# will try replacing some of the double strings with pipes
+# added locative markers to all the present nominal forms
+# created a twol rule for {i} deletion after any vowel
+...
+# twol converges as expected
+# may be necesssary to specify the optional -ла- marker for ordinals
+# replaced it with ordinalOpt marker
+24.12.20
+# I'm currently wondering, if there must be a gender gloss for oblique stem markers, 
+since in the textbook it's they that get glossed as masculine or feminine
+# number and gender in oblique stem markers are redundant in the case of nominalized order numerals
+# and in nominalized adjectives as well, since the number there is given by the agreement marker
+# still, it might be of use for all other parts of speech
+# the textbook denotes the hpl demonstrative as "orur", while the dictionary as "obalur"
+# orir and obalur for NPL in the respective order
+...
+# feels like the solution is to create two separate sets of oblique stem markers, one of which will
+# have the relevant glosses (number & gender), while the other one wouldn't
+# added -ха to DatExceptions for interrogatives (class Pron)
+# added classes: interPronouns logPronouns demPronouns
+# created oblAdjSingular & oblAdjPlural for cases in which gender & number glosses are required
+# need to configure the relevant parts of speech
+# adding -alu- to oblAdjPlural for the quantity pronoun
+...
+# RefSuffix for reflexives added
+25.12.20
+specified dative & superessive fusion for Li obliques in a separate pattern
+Corrected the DatExceptions entry and all the related patterns.
+Will need to make patterns for cases of super-essive fusion
+...
+Need to swap the obl gloss & gender + number glosses in relevant affixes
+...
+I probably should create an entry for dative exceptions with minimal glosses, name DatExcMin
+OblPlAlu ought to be removed there
+Now I should put DatExcMin & SupExcMin to forms, where additional glosses are not required
+26.12.20
+-ala - ending needed for dative & superessive cases of the quantity interrogative marker
+...
+-ala endings created in a separate voccabulary entry
+...
+i discovered that I haven't been supplying the superessive exclusions with directionality case markers
+proceeding to correct
+...
+Added directCase to all the forms with the sup- marker

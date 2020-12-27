@@ -17,20 +17,24 @@ milli end[DaNumber]
 centi end[DaNumber]
 
 PATTERN NomNumbersAgr
-singles ( OblSingular[OblSu] | OblPlural[OblPlLu] )
-DaSuffixedNums ( OblSingular[OblSu] | OblPlural[OblPlLu] )
+singles ( OblAdjSingular[OblSu] | OblAdjPlural[OblPlLu] )
+DaSuffixedNums ( OblAdjSingular[OblSu] | OblAdjPlural[OblPlLu] )
 
 PATTERN NomNumbersNonAgr
-singles ( OblSingular[OblLi] | OblPlural[OblPlLi] )
-DaSuffixedNums ( OblSingular[OblLi] | OblPlural[OblPlLi] )
+singles OblAdjSingular[OblFLi]
+singles OblAdjSingular[OblNLi]
+singles OblAdjPlural[OblPlLi]
+DaSuffixedNums OblAdjSingular[OblLi]
+DaSuffixedNums OblAdjSingular[OblNLi]
+DaSuffixedNums OblAdjPlural[OblPlLi]
 
 PATTERN OrdNumbersSer1
-singles [ла]? ordinal[ser1] 
-DaSuffixedNums [ла]? ordinal[ser1]
+singles ordinalOpt? ordinal[ser1] 
+DaSuffixedNums ordinalOpt? ordinal[ser1]
 
 PATTERN OrdNumbersSer2
-singles [ла] ordinal[ser2] 
-DaSuffixedNums [ла] ordinal[ser2]
+singles ordinalOpt ordinal[ser2] 
+DaSuffixedNums ordinalOpt ordinal[ser2]
 
 PATTERN OblAdjAgr
 agrFinal[Msg] OblSingular[OblSu]
@@ -42,11 +46,28 @@ agrFinal[Nsg] OblSingular[OblLi]
 agrFinal[Npl] OblPlural[OblPlLi]
 
 PATTERN OblAdjDative
-agrFinal[Msg] DatExceptions[OblSu]
-agrFinal[Fsg] DatExceptions[OblLi]
-agrFinal[Nsg] DatExceptions[OblLi]
-agrFinal[Hpl] DatExceptions[OblPlLu]
-agrFinal[Npl] DatExceptions[OblLi]
+agrFinal[Msg] DatExcMin[OblSu]
+agrFinal[Fsg] DatExcMin[OblLi]
+agrFinal[Nsg] DatExcMin[OblLi]
+agrFinal[Hpl] DatExcMin[OblPlLu]
+agrFinal[Npl] DatExcMin[OblLi]
+
+PATTERN OblAdjSup
+agrFinal[Msg] SupExcMin[OblSu] directCase
+agrFinal[Fsg] SupExcMin[OblLi] directCase
+agrFinal[Nsg] SupExcMin[OblLi] directCase
+agrFinal[Hpl] SupExcMin[OblPlLu] directCase
+agrFinal[Npl] SupExcMin[OblLi] directCase
+
+PATTERN LiFusion
+SupExceptions[OblFLi]
+SupExceptions[OblNLi]
+DatExceptions[OblFLi]
+DatExceptions[OblNLi]
+
+PATTERN PronModifiers
+NegPronounSuffix
+IndefPronounSuffix
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
@@ -54,7 +75,7 @@ agrFinal[Npl] DatExceptions[OblLi]
 PATTERNS
 # regular numbers
 #
-rootOne[norm] agrFinal
+rootOne[norm] agrFinal[-Hpl,-Npl]
 singles
 decimal # аца
 centi # бешен
@@ -69,11 +90,14 @@ milli conjCentMil # links in 101-199, 10001-1999
 #
 #nominalized cardinal numbers
 #
-singles DatExceptions[-OblPlAlu] negSuffix[pst]?
-DaSuffixedNums DatExceptions[-OblPlAlu] negSuffix[pst]?
-( NomNumbersAgr | NomNumbersNonAgr ) CaseMain[-nullNom,-RegDat,ErgR] negSuffix[pst]?
-NomNumbersAgr genitiveCase[GenAgr] negSuffix[pst]?
-NomNumbersNonAgr genitiveCase[-GenAgr] negSuffix[pst]?
+singles DatExceptions[-OblPlRu,-OblPlDu] # negSuffix[pst]?
+DaSuffixedNums DatExceptions[-OblPlRu,-OblPlDu] # negSuffix[pst]?
+NomNumbersAgr CaseMain[-nullNom,-RegDat,ErgR] # negSuffix[pst]?
+NomNumbersNonAgr CaseMain[-nullNom,-RegDat,ErgR] # negSuffix[pst]?
+NomNumbersAgr locMain directCase
+NomNumbersNonAgr locMain directCase
+NomNumbersAgr genitiveCase[GenAgr] # negSuffix[pst]?
+NomNumbersNonAgr genitiveCase[-GenAgr] # negSuffix[pst]?
 #
 #collective numbers
 #
@@ -89,12 +113,15 @@ OrdNumbersSer2
 #
 #nominalized ordinals
 #
-OrdNumbersSer1 agrFinal CaseMain[nullNom] negSuffix[pst]?
-OrdNumbersSer1 OblAdjAgr CaseMain[-nullNom,ErgR] negSuffix[pst]?
-OrdNumbersSer1 OblAdjAgr genitiveCase[GenAgr] negSuffix[pst]?
-OrdNumbersSer1 OblAdjNonAgr CaseMain[-nullNom,ErgR] negSuffix[pst]?
-OrdNumbersSer1 OblAdjNonAgr genitiveCase[-GenAgr] negSuffix[pst]?
-OrdNumbersSer1 OblAdjDative negSuffix[pst]?
+OrdNumbersSer1 agrFinal CaseMain[nullNom] # negSuffix[pst]?
+OrdNumbersSer1 OblAdjAgr CaseMain[-nullNom,ErgR] # negSuffix[pst]?
+OrdNumbersSer1 OblAdjNonAgr CaseMain[-nullNom,ErgR] # negSuffix[pst]?
+OrdNumbersSer1 OblAdjAgr genitiveCase[GenAgr] # negSuffix[pst]?
+OrdNumbersSer1 OblAdjNonAgr genitiveCase[-GenAgr] # negSuffix[pst]?
+OrdNumbersSer1 OblAdjAgr locMain directCase
+OrdNumbersSer1 OblAdjNonAgr locMain directCase
+OrdNumbersSer1 OblAdjDative # negSuffix[pst]?
+OrdNumbersSer1 OblAdjSup # negSuffix[pst]?
 #
 #distributional numbers
 #
@@ -114,28 +141,103 @@ adjSingle agrFinal
 #
 #nominalized adjectives
 #double
-agrInitial[Msg] adjDouble agrFinal[Msg] ( CaseMain[nullNom] | DatExceptions[OblSu] )
-agrInitial[Fsg] adjDouble agrFinal[Fsg] ( CaseMain[nullNom] | DatExceptions[OblLi] )
-agrInitial[Nsg] adjDouble agrFinal[Nsg] ( CaseMain[nullNom] | DatExceptions[OblLi] )
-agrInitial[Hpl] adjDouble agrFinal[Hpl] ( CaseMain[nullNom] | DatExceptions[OblPlLu] )
-agrInitial[Npl] adjDouble agrFinal[Npl] ( CaseMain[nullNom] | DatExceptions[OblLi] )
+agrInitial[Msg] adjDouble agrFinal[Msg] ( CaseMain[nullNom] | ( DatExcMin[OblSu] | SupExcMin[OblSu] directCase ) )
+agrInitial[Fsg] adjDouble agrFinal[Fsg] ( CaseMain[nullNom] | ( DatExcMin[OblLi] | SupExcMin[OblLi] directCase ) )
+agrInitial[Nsg] adjDouble agrFinal[Nsg] ( CaseMain[nullNom] | ( DatExcMin[OblLi] | SupExcMin[OblLi] directCase ) )
+agrInitial[Hpl] adjDouble agrFinal[Hpl] ( CaseMain[nullNom] | ( DatExcMin[OblPlLu] | SupExcMin[OblPlLu] directCase ) )
+agrInitial[Npl] adjDouble agrFinal[Npl] ( CaseMain[nullNom] | ( DatExcMin[OblLi] | SupExcMin[OblLi] directCase ) )
 agrInitial[Msg] adjDouble agrFinal[Msg] OblSingular[OblSu] ( CaseMain[-nullNom,ErgR] | genitiveCase[GenAgr] )
 agrInitial[Fsg] adjDouble agrFinal[Fsg] OblSingular[OblLi] ( CaseMain[-nullNom,ErgR] | genitiveCase[-GenAgr] )
 agrInitial[Nsg] adjDouble agrFinal[Nsg] OblSingular[OblLi] ( CaseMain[-nullNom,ErgR] | genitiveCase[-GenAgr] )
 agrInitial[Hpl] adjDouble agrFinal[Hpl] OblPlural[OblPlLu] ( CaseMain[-nullNom,ErgR] | genitiveCase[GenAgr] )
 agrInitial[Npl] adjDouble agrFinal[Npl] OblPlural[OblPlLi] ( CaseMain[-nullNom,ErgR] | genitiveCase[-GenAgr] )
+agrInitial[Msg] adjDouble agrFinal[Msg] OblSingular[OblSu] locMain directCase
+agrInitial[Fsg] adjDouble agrFinal[Fsg] OblSingular[OblLi] locMain directCase
+agrInitial[Nsg] adjDouble agrFinal[Nsg] OblSingular[OblLi] locMain directCase
+agrInitial[Hpl] adjDouble agrFinal[Hpl] OblPlural[OblPlLu] locMain directCase
+agrInitial[Npl] adjDouble agrFinal[Npl] OblPlural[OblPlLi] locMain directCase
 #single
 adjSingle agrFinal CaseMain[nullNom]
 adjSingle OblAdjAgr ( CaseMain[-nullNom,ErgR] | genitiveCase[GenAgr] )
 adjSingle OblAdjNonAgr ( CaseMain[-nullNom,ErgR] | genitiveCase[-GenAgr] )
-adjSingle OblAdjDative negSuffix[pst]?
+adjSingle OblAdjAgr locMain directCase
+adjSingle OblAdjNonAgr locMain directCase
+adjSingle OblAdjDative # negSuffix[pst]?
 #
-#pronoun declension
+#personal pronouns
 #
-PerPronounStems genitiveCase[GenAgr] negSuffix[pst]?
-PerPronounStems[PrExc] CaseMain[ErgR,-RegErg,-nullNom] negSuffix[pst]?
-PerPronounStems[-PrExc] CaseMain[ErgR] negSuffix[pst]?
-PerPronounExc negSuffix[pst]?
+PerPronounStems genitiveCase[GenAgr] # negSuffix[pst]?
+PerPronounStems[PrExc] CaseMain[ErgR,-RegErg,-nullNom] # negSuffix[pst]?
+PerPronounStems[-PrExc] CaseMain[ErgR] # negSuffix[pst]?
+PerPronounExc # negSuffix[pst]?
+PerPronounStems locMain directCase
+#
+#demonstrative pronouns
+#
+DemPronoun agrFinal CaseMain[nullNom]
+# vocab plurals
+DemPronoun agrFinal[Npl] OblSingular[OblU] ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) # o-r-u , see vocab, 580
+DemPronoun agrFinal[Npl] OblSingular[OblU] locMain directCase
+DemPronoun agrFinal[Hpl] OblPlural[OblPlLu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) # o-ba-lu- , see vocab, 580
+DemPronoun agrFinal[Hpl] OblPlural[OblPlLu] locMain directCase
+# Kibrik plurals
+DemPronoun OblAdjPlural[OblPlRu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] )
+DemPronoun ( DatExceptions[OblPlRu] | SupExceptions[OblPlRu] )
+DemPronoun OblAdjPlural[OblPlRi] ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] )
+DemPronoun ( OblAdjPlural[OblPlRu] | OblAdjPlural[OblPlRi] ) locMain directCase
+# F / N sg
+DemPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] )
+DemPronoun LiFusion
+DemPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) locMain directCase
+# M sg
+DemPronoun OblAdjSingular[OblSu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] )
+DemPronoun ( DatExceptions[OblSu] | SupExceptions[OblSu] )
+DemPronoun OblAdjSingular[OblSu] locMain directCase
+#
+#logophoric pronouns + reflexive pronouns, see Kibrik et al. 162-163
+#
+LogPronoun[nom] agrFinal CaseMain[nullNom] RefSuffix?
+# F / N sg
+LogPronoun[obl] ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) RefSuffix?
+LogPronoun[obl] LiFusion RefSuffix?
+LogPronoun[obl] ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) locMain directCase RefSuffix?
+# M sg
+LogPronoun[obl] OblAdjSingular[OblSu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) RefSuffix?
+LogPronoun[obl] ( DatExceptions[OblSu] | SupExceptions[OblSu] ) RefSuffix?
+LogPronoun[obl] OblAdjSingular[OblSu] locMain directCase RefSuffix?
+# plurals
+LogPronoun[obl] OblAdjPlural[OblPlDu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) RefSuffix?
+LogPronoun[obl] ( DatExceptions[OblPlDu] | SupExceptions[OblPlDu] ) RefSuffix?
+LogPronoun[obl] OblAdjPlural[OblPlDu] locMain directCase RefSuffix?
+LogPronoun[obl] OblAdjPlural[OblPlDiri] ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) RefSuffix?
+LogPronoun[obl] OblAdjPlural[OblPlDiri] locMain directCase RefSuffix?
+#
+#interrogative & negative pronouns
+#
+InterPronounExc PronModifiers? # nominative, see Kibrik et al, 164 & vocab, 580
+InterPronoun[H] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) PronModifiers?
+InterPronoun[H] DatExceptions[pron] PronModifiers?
+InterPronoun[H] locMain directCase PronModifiers?
+InterPronoun[N] OblSingular[OblLi] ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) PronModifiers?
+InterPronoun[N] OblSingular[OblLi] locMain directCase PronModifiers?
+#which pronoun
+WhichPronoun ( agrInitial[Msg] | ( agrInitial[Fsg] | agrInitial[Nsg] ) ) WhichInfix[sg] CaseMain[nullNom] PronModifiers?
+WhichPronoun ( agrInitial[Hpl] | agrInitial[Npl] ) WhichInfix[pl] CaseMain[nullNom] PronModifiers?
+WhichPronoun agrInitial[Msg] WhichInfix[sg] OblSingular[OblSu] ( CaseMain[ErgR,-nullNom] | ( genitiveCase[GenAgr] | locMain directCase ) ) PronModifiers?
+WhichPronoun agrInitial[Fsg] WhichInfix[sg] OblSingular[OblLi] ( CaseMain[ErgR,-nullNom] | ( genitiveCase[-GenAgr] | locMain directCase ) ) PronModifiers?
+WhichPronoun agrInitial[Nsg] WhichInfix[sg] OblSingular[OblLi] ( CaseMain[ErgR,-nullNom] | ( genitiveCase[-GenAgr] | locMain directCase ) ) PronModifiers?
+WhichPronoun agrInitial[Hpl] WhichInfix[pl] OblPlural[OblPlU] ( CaseMain[ErgR,-nullNom] | ( genitiveCase[GenAgr] | locMain directCase ) ) PronModifiers?
+WhichPronoun agrInitial[Npl] WhichInfix[pl] OblPlural[OblPlU] ( CaseMain[ErgR,-nullNom] | ( genitiveCase[-GenAgr] | locMain directCase ) ) PronModifiers?
+WhichPronoun agrInitial[Msg] WhichInfix[sg] ( DatExcMin[-OblPlLu,-OblPlAlu,-pron] | SupExcMin[-OblPlLu,-OblPlAlu] directCase )
+#number interrogative
+NumPronoun CaseMain[nullNom] PronModifiers?
+NumPronoun OblAdjSingular[OblSu] ( CaseMain[ErgR,-nullNom] | ( genitiveCase[GenAgr] | locMain directCase ) ) PronModifiers?
+NumPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) ( CaseMain[ErgR,-nullNom] | ( genitiveCase[-GenAgr] | locMain directCase ) ) PronModifiers?
+NumPronoun OblPlural[OblPlAlu] ( CaseMain[ErgR,-nullNom] | ( genitiveCase[GenAgr] | locMain directCase ) ) PronModifiers?
+NumPronoun ( DatExceptions[OblSu] | ( DatExceptions[OblFLi] | DatExceptions[OblNLi] ) ) PronModifiers?
+NumPronoun ( SupExceptions[OblSu] | ( SupExceptions[OblFLi] | SupExceptions[OblNLi] ) ) PronModifiers?
+NumPronounExc[sup] directCase
+NumPronounExc[-sup]
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
@@ -162,6 +264,9 @@ LEXICON col
 LEXICON ordinal
 <ord>:ло[ser1]
 <ord>:ла[ser2]
+
+LEXICON ordinalOpt
+:ла
 
 LEXICON dec
 <*>гьацӀа<num><ten>:ацӀа
@@ -213,6 +318,21 @@ LEXICON OblPlural
 <obl>:алу[OblPlAlu]
 <obl>:лу[OblPlLu]
 <obl>:лъи[OblPlLi]
+<obl>:у[OblPlU]
+
+LEXICON OblAdjSingular
+<M><sg><obl>:щу[OblSu]
+<F><sg><obl>:лъи[OblFLi]
+<N><sg><obl>:лъи[OblNLi]
+
+LEXICON OblAdjPlural
+<H><pl><obl>:лу[OblPlLu]
+<H><pl><obl>:алу[OblPlAlu]
+<N><pl><obl>:лъи[OblPlLi]
+<H><pl><obl>:ру[OblPlRu]
+<N><pl><obl>:ри[OblPlRi]
+<H><pl><obl>:ду[OblPlDu]
+<N><pl><obl>:дири[OblPlDiri]
 
 # Noun plural suffixes
 #
@@ -234,10 +354,40 @@ LEXICON CaseMain
 <subst>:бас[ErgD,ErgR]
 
 LEXICON DatExceptions
-<sg><obl><dat>:ща[ErgD,ErgR,OblSu]
-<sg><obl><dat>:лъа[ErgD,ErgR,OblLi]
-<pl><obl><dat>:лла[ErgD,ErgR,OblPlAlu]
-<pl><obl><dat>:ла[ErgD,ErgR,OblPlLu]
+<M><sg><obl><dat>:ща[ErgD,ErgR,OblSu]
+<F><sg><obl><dat>:лъа[ErgD,ErgR,OblFLi]
+<N><sg><obl><dat>:лъа[ErgD,ErgR,OblNLi]
+<N><pl><obl><dat>:лъа[ErgD,ErgR,OblPlLi]
+<H><pl><obl><dat>:ла[ErgD,ErgR,OblPlLu]
+<H><pl><obl><dat>:ра[ErgD,ErgR,OblPlRu] # see Kibrik et al. 162
+<H><pl><obl><dat>:рва[ErgD,ErgR,OblPlRu] # see Kibrik et al. 162
+<H><pl><obl><dat>:да[ErgD,ErgR,OblPlDu] # see Kibrik et al. 163
+<H><pl><obl><dat>:два[ErgD,ErgR,OblPlDu] # see Kibrik et al. 163
+
+LEXICON DatExcMin
+<obl><dat>:ща[OblSu]
+<obl><dat>:лъа[OblLi]
+<obl><dat>:ла[OblPlLu]
+<obl><dat>:лла[OblPlAlu]
+<dat>:ха[pron]
+
+LEXICON SupExceptions
+<M><sg><obl><sup>:ща[OblSu]
+<F><sg><obl><sup>:лъа[OblFLi]
+<N><sg><obl><sup>:лъа[OblNLi]
+<N><pl><obl><sup>:лъа[OblPlLi]
+<H><pl><obl><sup>:лла[OblPlAlu]
+<H><pl><obl><sup>:ла[OblPlLu]
+<H><pl><obl><sup>:ра[OblPlRu] # see Kibrik et al. 162
+<H><pl><obl><sup>:рва[OblPlRu] # see Kibrik et al. 162
+<H><pl><obl><sup>:да[OblPlDu] # see Kibrik et al. 163
+<H><pl><obl><sup>:два[OblPlDu] # see Kibrik et al. 163
+
+LEXICON SupExcMin
+<obl><sup>:ща[OblSu]
+<obl><sup>:лъа[OblLi]
+<obl><sup>:ла[OblPlLu]
+<obl><sup>:лла[OblPlAlu]
 
 LEXICON genitiveCase
 <gen>:лъ
@@ -250,17 +400,18 @@ LEXICON genitiveCase
 # ---------------------------------------------------------------------------------------------
 # AGREEMENT MARKERS
 LEXICON agrInitial
-:в[Msg]
-:й[Fsg]
-:б[Nsg,Hpl]
-:р[Npl]
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:б[Nsg]
+<H><pl>:б[Hpl]
+<N><pl>:р[Npl]
 
 LEXICON agrMiddle
-<M><sg>:в
-<F><sg>:й
-<N><sg>:{б}
-<H><pl>:{р}
-<N><pl>:{р}
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:{б}[Nsg]
+<H><pl>:{б}[Hpl]
+<N><pl>:{р}[Npl]
 
 LEXICON agrFinal
 <M><sg>:в[Msg]
@@ -269,14 +420,31 @@ LEXICON agrFinal
 <H><pl>:{б}а[Hpl]
 <N><pl>:{р}[Npl]
 
+#----------------------------------------------------------------------------------------------
+# LOCALIZATION MARKERS
+LEXICON locMain
+<sup>:ла
+<sub>:кьи
+<in>:{и}ни # irregular, must be configured separately, see Kibrik et al. 142
+<inter>:лъи
+<cont>:чӀ
+<ad>:х
+<locposs>:лъа
+
+LEXICON directCase
+<ess>:
+<lat>:
+<el>:{и}с
+<trans>:{и}сини
+
 # ---------------------------------------------------------------------------------------------
 # ROOTS
 # number roots
 # 
 LEXICON rootOne # 1
-цев<num>:це[norm]
-цев<num><dist>:цеце[red]
-цев<num><ord>:гьечӀисес[ord]
+цеб<num>:це[norm]
+цеб<num><dist>:цеце[red]
+цеб<num><ord>:гьечӀисес[ord]
 
 LEXICON rootInit
 чӀеда<num>:чӀ{е}[DaNumber,RaNumber]
@@ -293,7 +461,7 @@ LEXICON rootDec
 чӀеда<num>:чӀ{е} # 2
 гьабда<num>:гьаб # 3
 буъуда<num>:буъ # 4
-иᵸщтуда<num>:иᵸщвд # 5
+иᵸщтуда<num>:иᵸщвт # 5
 инлӀида<num>:инлӀ # 6
 гьакьуда<num>:гьакьв # 7
 бикьида<num>:бикь # 8
@@ -324,7 +492,7 @@ LEXICON 2xRootDec
 чӀеда<num><dist>:чӀечӀ{е} # 2
 гьабда<num><dist>:гьабигьаб # 3
 буъуда<num><dist>:бубуъ # 4
-иᵸщтуда<num><dist>:иᵸщтуиᵸщвд # 5
+иᵸщтуда<num><dist>:иᵸщтуиᵸщвт # 5
 инлӀида<num><dist>:инлӀиъинлӀ # 6
 гьакьуда<num><dist>:гьакьугьакьв # 7
 бикьида<num><dist>:бикьибикь # 8
@@ -342,22 +510,87 @@ LEXICON nounLi
 # adjective roots
 #
 LEXICON adjDouble
-вагьарув<adjective>:агьару
+багьаруб<adjective>:агьару
 
 LEXICON adjSingle
-гьацӀав<adjective>:гьацӀа
+гьацӀаб<adjective>:гьацӀа
 
-#pronouns
+#pronoun roots
 #
 LEXICON PerPronounStems
-де<pronoun><sg><1P>:ди[PrExc]
-ме<pronoun><sg><2P>:ду[PrExc]
-ищи<pronoun><pl><1P>:ищи
-инлӀи<pronoun><pl><1P>:инлӀи
-бишти<pronoun><pl><2P>:бишти
+де<pronoun><1P><sg><obl>:ди[PrExc]
+ме<pronoun><2P><sg><obl>:ду[PrExc]
+ищи<pronoun><1P><pl><incl><obl>:ищи
+инлӀи<pronoun><1P><pl><excl><obl>:инлӀи
+бишти<pronoun><2P><pl><obl>:бишти
 
+LEXICON DemPronoun
+аб<pronoun><3P>:а
+об<pronoun><3P>:о
+
+LEXICON LogPronoun
+эб<pronoun><log><3P>:э[nom]
+эб<pronoun><log><3P>:ин[obl]
+
+LEXICON InterPronoun
+эба<pronoun><inter><H><obl>:лъо[H]
+эба<pronoun><inter><N>:э[N]
+
+LEXICON InterAdjPronoun
+эщдуб<pronoun><inter>:эщду
+эщтуб<pronoun><inter>:эщту
+
+LEXICON WhichPronoun
+эбел<pronoun><inter>:э
+
+LEXICON EachPronoun # Kibrik et al., 167
+эбэб<pronoun>:э
+
+LEXICON NumPronoun # 2 possible alternations, according to Kibrik et al., 164
+чвам<pronoun><inter>:чвам 
+чом<pronoun><inter>:чом
+
+#pronoun modifiers
+#
+LEXICON NegPronounSuffix
+<neg>:дала
+
+LEXICON IndefPronounSuffix
+<indef>:гӀагила
+
+LEXICON RefSuffix
+<ref>:да
+
+LEXICON WhichInfix
+:ел[sg]
+:ал[pl]
+
+#pronoun exclusions
+#
 LEXICON PerPronounExc
-де<pronoun><sg><1P><nom>:де
-де<pronoun><sg><1P><erg>:ден
-ме<pronoun><sg><2P><nom>:ме
-ме<pronoun><sg><2P><erg>:мен
+де<pronoun><1P><sg><nom>:де
+де<pronoun><1P><sg><erg>:ден
+ме<pronoun><2P><sg><nom>:ме
+ме<pronoun><2P><sg><erg>:мен
+инлӀи<pronoun><1P><pl><excl><nom>:инлӀи
+ищи<pronoun><1P><pl><incl><nom>:ищи
+бишти<pronoun><2P><pl><obl><nom>:бишти
+ищи<pronoun><1P><pl><incl><obl><dat>:ища
+ищи<pronoun><1P><pl><incl><obl><sup>:ища
+инлӀи<pronoun><1P><pl><excl><obl><dat>:инлӀа
+инлӀи<pronoun><1P><pl><excl><obl><sup>:инлӀа
+бишти<pronoun><2P><pl><obl><dat>:бишда
+бишти<pronoun><2P><pl><obl><sup>:бишда
+
+LEXICON InterPronounExc
+эба<pronoun><inter><H><nom>:има
+эба<pronoun><inter><N><nom>:эба
+эба<pronoun><inter><H><nom>:эм
+эба<pronoun><inter><N><sg><nom>:эб
+эба<pronoun><inter><N><pl><nom>:эр
+
+LEXICON NumPronounExc
+чвам<pronoun><inter><H><pl><obl><dat>:чвамала
+чвам<pronoun><inter><H><pl><obl><sup>:чвамала[sup]
+чом<pronoun><inter><H><pl><obl><dat>:чомала
+чом<pronoun><inter><H><pl><obl><sup>:чомала[sup]
