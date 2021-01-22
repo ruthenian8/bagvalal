@@ -139,3 +139,15 @@ i discovered that I haven't been supplying the superessive exclusions with direc
 proceeding to correct
 ...
 Added directCase to all the forms with the sup- marker
+22.01.20
+#introduced DaPostfix for "da" with no grammatical meaning
+#speccified allPronoun stem
+# specified AltIndefPronounSuffix
+# thinking of creating patterns for standard case affix combinations
+# added patterns CasesGenAgr CasesGenNonAgr
+# + additional patterns that depend on the agreement:
+# AddCasesMsg AddCasesFNsg AddCasesHpl AddCasesNpl
+# corrected log pronouns using the above patterns
+# did the same with double adjectives
+# did the same to OrdNumbersSer1 
+# added classes Hsg Nsg & Npl to InterPronounExc
