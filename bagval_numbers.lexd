@@ -163,11 +163,11 @@ adjSingle agrFinal
 #
 #nominalized adjectives
 #double
-agrInitial[Msg] adjDouble agrFinal[Msg] ( CaseMain[nullNom] | ( DatExcMin[OblSu] | SupExcMin[OblSu] directCase ) )
-agrInitial[Fsg] adjDouble agrFinal[Fsg] ( CaseMain[nullNom] | ( DatExcMin[OblLi] | SupExcMin[OblLi] directCase ) )
-agrInitial[Nsg] adjDouble agrFinal[Nsg] ( CaseMain[nullNom] | ( DatExcMin[OblLi] | SupExcMin[OblLi] directCase ) )
-agrInitial[Hpl] adjDouble agrFinal[Hpl] ( CaseMain[nullNom] | ( DatExcMin[OblPlLu] | SupExcMin[OblPlLu] directCase ) )
-agrInitial[Npl] adjDouble agrFinal[Npl] ( CaseMain[nullNom] | ( DatExcMin[OblLi] | SupExcMin[OblLi] directCase ) )
+agrInitial[Msg] adjDouble agrFinal[Msg] AddCasesMsg
+agrInitial[Fsg] adjDouble agrFinal[Fsg] AddCasesFNsg
+agrInitial[Nsg] adjDouble agrFinal[Nsg] AddCasesFNsg
+agrInitial[Hpl] adjDouble agrFinal[Hpl] AddCasesHpl
+agrInitial[Npl] adjDouble agrFinal[Npl] AddCasesNpl
 agrInitial[Msg] adjDouble agrFinal[Msg] OblSingular[OblSu] CasesGenAgr
 agrInitial[Fsg] adjDouble agrFinal[Fsg] OblSingular[OblLi] CasesGenNonAgr 
 agrInitial[Nsg] adjDouble agrFinal[Nsg] OblSingular[OblLi] CasesGenNonAgr
@@ -237,7 +237,7 @@ WhichPronoun agrInitial[Fsg] WhichInfix[sg] OblSingular[OblLi] CasesGenNonAgr Pr
 WhichPronoun agrInitial[Nsg] WhichInfix[sg] OblSingular[OblLi] CasesGenNonAgr PronModifiers?
 WhichPronoun agrInitial[Hpl] WhichInfix[pl] OblPlural[OblPlU] CasesGenAgr PronModifiers?
 WhichPronoun agrInitial[Npl] WhichInfix[pl] OblPlural[OblPlU] CasesGenNonAgr PronModifiers?
-WhichPronoun agrInitial[Msg] WhichInfix[sg] ( DatExcMin[-OblPlLu,-OblPlAlu,-pron] | SupExcMin[-OblPlLu,-OblPlAlu] directCase )
+WhichPronoun agrInitial[Msg] WhichInfix[sg] ( DatExcMin[-OblPlLu,-OblPlAlu,-pron] | ( SupExcMin[-OblPlLu,-OblPlAlu] directCase ) )
 #number interrogative
 NumPronoun CaseMain[nullNom] PronModifiers?
 NumPronoun OblAdjSingular[OblSu] CasesGenAgr PronModifiers?
@@ -269,11 +269,12 @@ InterPronounExc[Nsg] CaseMain[nullNom] AltIndefPronounSuffix[Nsg]
 InterPronounExc[Hsg] CaseMain[nullNom] AltIndefPronounSuffix[Hpl]
 InterPronounExc[Npl] CaseMain[nullNom] AltIndefPronounSuffix[Npl]
 InterPronoun[H] CasesGenAgr ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) )
-InterPronoun[H] ( DatExcMin[pron] | SupExcMin[pron] directCase ) ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) )
+InterPronoun[H] DatExcMin[pron] ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) )
+InterPronoun[H] SupExcMin[pron] directCase ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) )
 InterPronoun[N] OblAdjSingular[OblNLi] CasesGenNonAgr AltIndefPronounSuffix[Nsg]
-InterPronoun[N] ( DatExcMin[OblLi] | SupExcMin[OblLi] directCase ) AltIndefPronounSuffix[Nsg]
+InterPronoun[N] ( DatExcMin[OblLi] | ( SupExcMin[OblLi] directCase ) ) AltIndefPronounSuffix[Nsg]
 InterPronoun[N] OblAdjPlural[OblPlLi] CasesGenNonAgr AltIndefPronounSuffix[Npl]
-InterPronoun[N] ( DatExcMin[OblLi] | SupExcMin[OblLi] directCase ) AltIndefPronounSuffix[Npl]
+InterPronoun[N] ( DatExcMin[OblLi] | ( SupExcMin[OblLi] directCase ) ) AltIndefPronounSuffix[Npl]
 #anypronoun
 AnyPronoun agrFinal[Msg] AddCasesMsg
 AnyPronoun ( agrFinal[Fsg] | agrFinal[Nsg] ) AddCasesFNsg
@@ -330,7 +331,7 @@ LEXICON col
 # number modifiers
 # 
 LEXICON ordinal
-<ord>:ло[ser1]
+<ord>:лъо[ser1]
 <ord>:ла[ser2]
 
 LEXICON ordinalOpt

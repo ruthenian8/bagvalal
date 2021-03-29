@@ -1,0 +1,301 @@
+PATTERN aPlusHpl
+hplPlOblVowel[preA] PlOblMarker[hpl]
+
+# patterns to implement variations of the Vbi marker, see Kibrik 133
+PATTERN AbiPl
+biPlVowel[Abi] PlMarker[plBi]
+PATTERN UbiPl
+biPlVowel[Ubi] PlMarker[plBi]
+PATTERN IbiPl
+biPlVowel[Ibi] PlMarker[plBi]
+PATTERN EbiPl
+biPlVowel[Ebi] PlMarker[plBi]
+PATTERN JabiPl
+biPlVowel[Jabi] PlMarker[plBi]
+PATTERN NoVbiPl
+biPlVowel[noVbi] PlMarker[plBi]
+
+PATTERNS
+#sg absolutives
+NounAbs
+#sg obliques
+NounOblSame OblSingular[OblZero]
+NounOblSu OblSingular[OblSu]
+NounOblLi OblSingular[OblLi]
+NounOblI OblSingular[OblI]
+NounOblA OblSingular[OblA]
+NounOblU OblSingular[OblU]
+NounOblE OblSingular[OblE]
+NounOblSon OblSingular[OblZero]
+NounOblIrreg OblSingular[OblZero]
+#absolutives
+NounPlBi NoVbiPl
+NounPlAbi AbiPl
+NounPlIbi IbiPl
+NounPlUbi UbiPl
+NounPlEbi EbiPl
+NounPlJabi JabiPl
+NounPlMi PlMarker[plMi]
+NounPlZabi PlMarker[plZabi] # zabi adi & ari only used in animate naouns, see Kibrik 132
+NounPlBadi PlMarker[plBadi]
+NounPlAdi PlMarker[plAdi]
+NounPlAri PlMarker[plAri]
+NounPlAli PlMarker[plAli]
+NounPlDari PlMarker[plDari]
+NounPlDi PlMarker[plDi]
+NounPlI PlMarker[plI]
+NounPlA PlMarker[plA]
+NounPlIrreg
+#hpl obliques
+NounPlAbi[hpl] AbiPl aPlusHpl
+NounPlUbi[hpl] UbiPl aPlusHpl
+NounPlIbi[hpl] IbiPl aPlusHpl
+NounPlEbi[hpl] EbiPl aPlusHpl
+NounPlJabi[hpl] JabiPl aPlusHpl
+NounPlBi[hpl] NoVbiPl aPlusHpl
+# 
+NounPlZabi PlMarker[plZabi] aPlusHpl #zabi adi & ari only used in animate nouns, see Kibrik 132
+NounPlAdi PlMarker[plAdi] aPlusHpl
+NounPlAri PlMarker[plAri] aPlusHpl
+#
+NounPlDari[hpl] PlMarker[plDari] aPlusHpl
+NounPlBadi[hpl] PlMarker[plBadi] aPlusHpl
+NounPlDi[hpl] PlMarker[plDi] PlOblMarker[hpl]
+NounPlI[hpl] PlMarker[plI] aPlusHpl
+NounPlA[npl] PlMarker[plA] aPlusHpl
+#npl obliques
+NounPlAbi[npl] AbiPl PlOblMarker[npl,plBi]
+NounPlUbi[npl] UbiPl PlOblMarker[npl,plBi]
+NounPlIbi[npl] IbiPl PlOblMarker[npl,plBi]
+NounPlEbi[npl] EbiPl PlOblMarker[npl,plBi]
+NounPlJabi[npl] JabiPl PlOblMarker[npl,plBi]
+NounPlBi[npl] NoVbiPl PlOblMarker[npl,plBi]
+NounPlMi[npl] PlMarker[plMi] PlOblMarker[npl,plBi]
+NounPlAli[npl] PlMarker[plAli] PlOblMarker[npl,plBi]
+NounPlDari[npl] PlMarker[plDari] PlOblMarker[npl,plDari]
+NounPlDi[npl] PlMarker[plDi] PlOblMarker[npl,plBi]
+NounPlI[npl] PlMarker[plI] PlOblMarker[npl,plI]
+# plural "a" gets replaced by "e" in oblique forms
+NounPlA[npl] PlMarker[plA] PlOblMarker[npl,plA]
+# exclusions "horse" and "goat", see Kibrik 138.
+NounPlI[excl] PlMarker[plI] PlOblMarker[npl,plA]
+NounPlIrreg PlOblMarker[npl,plI]
+
+LEXICON NounAbs
+бежун<noun>:бежун
+эла<noun>:эла
+дарам<noun>:дарам
+чӀачӀан<noun>:чӀачӀан
+бигъвам<noun>:бигъвам
+бесун<noun>:бесун
+игьва<noun>:игьва
+нуса<noun>:нуса
+тудар<masd>:тудар
+бар<masd>:бар
+ила<noun>:ила # 136
+хъаранис<noun>:хъаранис
+эл<noun>:эл
+чаш<noun>:чаш
+раж<noun>:раж
+мува<noun>:мува
+муч<noun>:муч
+нусийа<noun>:нусийа # 136
+има<noun>:има # 136
+беса<noun>:беса # 136
+кIунй<noun>:кIунй # 136
+чиᵸдв<noun>:чиᵸдв # 136
+гьуᵸша<noun>:гьуᵸша # 136
+сIекIер<noun>:сIекIер # 136
+кьерер<noun>:кьерер # 136
+гьерер<noun>:гьерер # 136
+чIехил<noun>:чIехил # 136
+чIара<noun>:чIара # 136
+гьвай<noun>:гьвай # 136
+кунтIа<noun>:кунтIа # 136
+гьваб<noun>:гьваб # 136
+чIвай<noun>:чIвай # 136
+чӀантӀа<noun>:чӀантӀа
+бел<noun>:бел # 132
+аᵸс<noun>:аᵸс # 132
+рагъ<noun>:рагъ # 132
+гьакIуй<noun>:гьакIуй
+арам<noun>:арам # 137
+мисI<noun>:мисI # 134
+чIама<noun>:чIама
+гIила<noun>:гIила
+лачIис<noun>:лачIис
+тухтур<noun>:тухтур
+гьанла<noun>:гьанла
+сIенелъ<noun>:сIенелъ
+
+LEXICON NounOblSame
+бежун<noun>:бежун # 840
+дарам<noun>:дарам #843
+чӀачӀан<noun>:чӀачӀан #841
+бигъвам<noun>:бигъвам #840
+бесун<noun>:бесун
+эла<noun>:эла
+
+LEXICON NounOblSu
+нуса<noun>:нуса # M 576
+игьва<noun>:игьва # M 576
+
+LEXICON NounOblLi
+ила<noun>:ила # 129
+тудар<masd>:тудар #плевок
+бар<masd>:бар # 131
+
+LEXICON NounOblI
+чӀача<noun>:чӀач #841
+тудар<masd>:тудар #плевок
+бар<masd>:бар # 131
+
+LEXICON NounOblA
+хъаранис<noun>:хъаранис
+эл<noun>:эл
+
+LEXICON NounOblU
+ат<noun>:ат
+
+LEXICON NounOblE
+чӀантӀа<noun>:чӀантӀ
+
+LEXICON NounOblSon
+бежун<noun>:бежван # 840
+бесун<noun>:бесван # 840
+бехун<noun>:бехван #840
+беркӀун<noun>:беркӀван #840
+бертин<noun>:бертин #840
+
+LEXICON NounOblIrreg
+чаш<noun>:чашда # 131
+раж<noun>:ражда # 131
+мува<noun>:му # 132
+муч<noun>:мучула # 132
+нусийа<noun>:нуси # 132
+
+LEXICON NounPlBi
+эла<noun>:эла[npl]
+нусийа<noun><pl>:нуси[npl] # 136
+
+LEXICON NounPlAbi
+бел<noun>:бел[npl] # 132
+аᵸс<noun>:аᵸс[hpl] # 132
+рагъ<noun>:рагъ[npl] # 132
+гьакIуй<noun>:гьакIуй[hpl] # 137
+гьуᵸша<noun>:гьур[npl] # 136
+
+LEXICON NounPlUbi
+гъанкIва<noun>:гъанкI[npl] # 132
+
+LEXICON NounPlIbi
+чӀача<noun>:чӀач[npl] #841
+
+LEXICON NounPlEbi
+гьанла<noun>:гьанл[npl] # 132
+
+LEXICON NounPlJabi
+гIила<noun>:гIила[npl] # 132
+
+LEXICON NounPlZabi
+тухтур<noun>:тухтур[hpl] # 132
+
+LEXICON NounPlMi
+бежун<noun>:бежва[npl] #840
+бесун<noun>:бесва[npl] #840
+бехун<noun>:бехва[npl] #840
+беркӀун<noun>:беркӀва[npl] #840
+гӀолокан<noun>:гӀолока[hpl] #840
+чӀачӀан<noun>:чӀачӀа[npl] #841
+
+LEXICON NounPlDari
+кунй<noun>:кунй[npl]
+эгьун<noun>:эгьун[hpl] # 134
+има<noun>:имид[hpl] # 136
+ила<noun>:илид[hpl] # 136
+чIехил<noun>:чIех[npl] # 136
+кунтIа<noun>:кунтIур[hpl] # 136
+чIвай<noun>:чIвам[npl] # 136
+чIара<noun>:чIарид[npl] # 136
+
+LEXICON NounPlDi
+гьиᵸду<noun>:гьиᵸду[hpl]
+арам<noun>:арам[hpl]
+
+LEXICON NounPlAli
+мисI<noun>:мисI[npl] # 134
+чIама<noun>:чIам[npl] # 134
+
+LEXICON NounPlAdi
+пасажир<noun>:пасажир[hpl] # 135
+
+LEXICON NounPlAri
+тухтур<noun>:тухтур[hpl] # 136
+
+LEXICON NounPlBadi
+вас<noun>:васи[hpl] # 135
+йас<noun>:йаси[hpl] # 135
+
+LEXICON NounPlA
+муса<noun>:мус[npl] # 135
+щIинщI<noun>:щIинщI[npl] # 135
+кIунй<noun>:кIум[npl] # 136
+гьерер<noun>:гьериб[npl] # 136
+лачIис<noun>:лачIис[hpl]
+
+LEXICON NounPlI
+сIенелъ<noun>:сIен[npl,excl] # 138
+хван<noun>:хван[npl,excl] # 138
+мачI<noun>:мачI[npl] # 134
+сIекIер<noun>:сIекI[npl] # 136
+кьерер<noun>:кьил[npl] # 136
+йас<noun>:йас[hpl] # 136
+
+LEXICON NounPlIrreg
+чиᵸдв<noun><pl>:чиᵸдун{и}
+гьвай<noun><pl>:гьварал # 136
+беса<noun><pl>:бесийалъ # 136
+гьваб<noun><pl>:гьвабийалъ # 136
+
+# vowel to insert before bi
+LEXICON biPlVowel
+:а[Abi]
+:у[Ubi]
+:и[Ibi]
+:е[Ebi]
+:йа[Jabi]
+:[noVbi]
+
+LEXICON PlMarker
+<pl>:б{и}[plBi]
+<pl>:дар{и}[plDari]
+<pl>:бад{и}[plBadi]
+<pl>:д{и}[plDi]
+<pl>:{и}[plI]
+<pl>:{а}[plA]
+<pl>:ал{и}[plAli]
+<pl>:заб{и}[plZabi]
+<pl>:ар{и}[plAri]
+<pl>:ад{и}[plAdi]
+<pl>:м{и}[plMi]
+
+#vowels to insert before -lu in hpl forms
+LEXICON hplPlOblVowel
+:а[preA]
+:и[preI]
+
+LEXICON PlOblMarker
+<obl>:лу[hpl]
+<obl>:а[npl,plDari,plBi]
+<obl>:и[npl,plI]
+<obl>:е[npl,plA]
+
+LEXICON OblSingular
+<obl>:[OblZero]
+<obl>:а[OblA]
+<obl>:и[OblI]
+<obl>:е[OblE]
+<obl>:у[OblU]
+<obl>:щу[OblSu]
+<obl>:лу[OblLu]
+<obl>:лъи[OblLi]
