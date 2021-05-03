@@ -62,7 +62,7 @@ NounPlDari[hpl] PlMarker[plDari] aPlusHpl
 NounPlBadi[hpl] PlMarker[plBadi] aPlusHpl
 NounPlDi[hpl] PlMarker[plDi] PlOblMarker[hpl]
 NounPlI[hpl] PlMarker[plI] aPlusHpl
-NounPlA[npl] PlMarker[plA] aPlusHpl
+NounPlA[hpl] PlMarker[plA] aPlusHpl
 #npl obliques
 NounPlAbi[npl] AbiPl PlOblMarker[npl,plBi]
 NounPlUbi[npl] UbiPl PlOblMarker[npl,plBi]
@@ -82,6 +82,21 @@ NounPlI[excl] PlMarker[plI] PlOblMarker[npl,plA]
 NounPlIrreg PlOblMarker[npl,plI]
 
 LEXICON NounAbs
+кумук<noun>:кумук # help
+анж<noun>:анж # mark
+рикь<noun>:рикь # meat
+бищалъ<noun>:бищалъ # sheep
+къула<noun>:къула # skin, Gudava
+ракь<noun>:ракь # bone, Gudava
+сIев<noun>:сIев # 860 guest
+сIей<noun>:сIей
+цIев<noun>:цIев # guest, Gudava
+цIей<noun>:цIей
+эхва<noun>:эхва #844 herdsman
+квачI<noun>:квачI # hand
+кьор<noun>:кьор
+гьан<noun>:гьан
+кIван<noun>:кIван
 бежун<noun>:бежун
 эла<noun>:эла
 дарам<noun>:дарам
@@ -127,30 +142,63 @@ LEXICON NounAbs
 тухтур<noun>:тухтур
 гьанла<noun>:гьанла
 сIенелъ<noun>:сIенелъ
+гьекIва<noun>:гьекIва
+дибир<noun>:дибир
+халкъ<noun>:халкъ # 864
+йаш<noun>:йаш # 851
+бегол<noun>:бегол
+малайасадин<noun><prop>:малайасадин
+агьан<noun>:агьан # 837
+алгьан<noun>:алгьан
+пацI<noun>:пацI
+пас<noun>:пас
+рокьи<noun>:рокьи
 
 LEXICON NounOblSame
+цIев<noun>:цIе
+гьан<noun>:гьан # exclusion, see Gudava
+кIван<noun>:кIван
 бежун<noun>:бежун # 840
 дарам<noun>:дарам #843
 чӀачӀан<noun>:чӀачӀан #841
 бигъвам<noun>:бигъвам #840
 бесун<noun>:бесун
 эла<noun>:эла
+агьан<noun>:агьан # 837
+алгьан<noun>:алгьан
+рокьи<noun>:рокьи
 
 LEXICON NounOblSu
+сIев<noun>:сIев # 860 male guest
 нуса<noun>:нуса # M 576
 игьва<noun>:игьва # M 576
+гьекIва<noun>:гьекIва 
+дибир<noun>:дибир
+бегол<noun>:бегол
 
 LEXICON NounOblLi
+сIей<noun>:сIей # 860 female guest
 ила<noun>:ила # 129
 тудар<masd>:тудар #плевок
 бар<masd>:бар # 131
+йаш<noun>:йаш # 851
+гьакIуй<noun>:гьакIуй
 
 LEXICON NounOblI
+ракь<noun>:ракь # bone, Gudava
+квачI<noun>:квачI
+кьор<noun>:кьор # 853
+гьан<noun>:гьан # 846
 чӀача<noun>:чӀач #841
 тудар<masd>:тудар #плевок
 бар<masd>:бар # 131
+халкъ<noun>:халкъ # 864
+малайасадин<noun><prop>:малайасадин
+пацI<noun>:пацI
+пас<noun>:пас
 
 LEXICON NounOblA
+кьор<noun>:кьор
 хъаранис<noun>:хъаранис
 эл<noun>:эл
 
@@ -179,16 +227,23 @@ LEXICON NounPlBi
 нусийа<noun><pl>:нуси[npl] # 136
 
 LEXICON NounPlAbi
+ракь<noun>:ракь[npl] # bone, Gudava
+квачI<noun>:квачI[npl]
+кьор<noun>:кьор[npl] # 853
 бел<noun>:бел[npl] # 132
 аᵸс<noun>:аᵸс[hpl] # 132
 рагъ<noun>:рагъ[npl] # 132
 гьакIуй<noun>:гьакIуй[hpl] # 137
 гьуᵸша<noun>:гьур[npl] # 136
+алгьан<noun>:алгьан
+пацI<noun>:пацI
+пас<noun>:пас
 
 LEXICON NounPlUbi
 гъанкIва<noun>:гъанкI[npl] # 132
 
 LEXICON NounPlIbi
+гьан<noun>:гьан[npl] # 846
 чӀача<noun>:чӀач[npl] #841
 
 LEXICON NounPlEbi
@@ -199,6 +254,7 @@ LEXICON NounPlJabi
 
 LEXICON NounPlZabi
 тухтур<noun>:тухтур[hpl] # 132
+дибир<noun>:дибир[hpl]
 
 LEXICON NounPlMi
 бежун<noun>:бежва[npl] #840
@@ -217,12 +273,16 @@ LEXICON NounPlDari
 кунтIа<noun>:кунтIур[hpl] # 136
 чIвай<noun>:чIвам[npl] # 136
 чIара<noun>:чIарид[npl] # 136
+агьан<noun>:агьан[npl]
 
 LEXICON NounPlDi
 гьиᵸду<noun>:гьиᵸду[hpl]
 арам<noun>:арам[hpl]
+агьан<noun>:агьан[npl]
 
 LEXICON NounPlAli
+сIев<noun>:сIеб[hpl]
+цIев<noun>:цIеб[hpl]
 мисI<noun>:мисI[npl] # 134
 чIама<noun>:чIам[npl] # 134
 
@@ -242,6 +302,7 @@ LEXICON NounPlA
 кIунй<noun>:кIум[npl] # 136
 гьерер<noun>:гьериб[npl] # 136
 лачIис<noun>:лачIис[hpl]
+гьекIва<noun>:гьекIв[hpl] # 846
 
 LEXICON NounPlI
 сIенелъ<noun>:сIен[npl,excl] # 138
@@ -250,6 +311,7 @@ LEXICON NounPlI
 сIекIер<noun>:сIекI[npl] # 136
 кьерер<noun>:кьил[npl] # 136
 йас<noun>:йас[hpl] # 136
+йаш<noun>:йаш[hpl] # 851
 
 LEXICON NounPlIrreg
 чиᵸдв<noun><pl>:чиᵸдун{и}
@@ -267,17 +329,17 @@ LEXICON biPlVowel
 :[noVbi]
 
 LEXICON PlMarker
-<pl>:б{и}[plBi]
-<pl>:дар{и}[plDari]
-<pl>:бад{и}[plBadi]
-<pl>:д{и}[plDi]
-<pl>:{и}[plI]
-<pl>:{а}[plA]
-<pl>:ал{и}[plAli]
-<pl>:заб{и}[plZabi]
-<pl>:ар{и}[plAri]
-<pl>:ад{и}[plAdi]
-<pl>:м{и}[plMi]
+<pl>:би[plBi]
+<pl>:дари[plDari]
+<pl>:бади[plBadi]
+<pl>:ди[plDi]
+<pl>:и[plI]
+<pl>:а[plA]
+<pl>:али[plAli]
+<pl>:заби[plZabi]
+<pl>:ари[plAri]
+<pl>:ади[plAdi]
+<pl>:ми[plMi]
 
 #vowels to insert before -lu in hpl forms
 LEXICON hplPlOblVowel

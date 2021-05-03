@@ -424,6 +424,7 @@ LEXICON CaseMain
 
 LEXICON DatExceptions
 <M><sg><obl><dat>:ща[ErgD,ErgR,OblSu]
+<M><sg><obl><dat>:щва[ErgD,ErgR,OblSu]
 <F><sg><obl><dat>:лъа[ErgD,ErgR,OblFLi]
 <N><sg><obl><dat>:лъа[ErgD,ErgR,OblNLi]
 <N><pl><obl><dat>:лъа[ErgD,ErgR,OblPlLi]
@@ -435,6 +436,7 @@ LEXICON DatExceptions
 
 LEXICON DatExcMin
 <obl><dat>:ща[OblSu]
+<obl><dat>:щва[OblSu] # variation from Gudava
 <obl><dat>:лъа[OblLi]
 <obl><dat>:ла[OblPlLu]
 <obl><dat>:лла[OblPlAlu]
@@ -442,6 +444,7 @@ LEXICON DatExcMin
 
 LEXICON SupExceptions
 <M><sg><obl><sup>:ща[OblSu]
+<M><sg><obl><sup>:щва[OblSu]
 <F><sg><obl><sup>:лъа[OblFLi]
 <N><sg><obl><sup>:лъа[OblNLi]
 <N><pl><obl><sup>:лъа[OblPlLi]
@@ -454,6 +457,7 @@ LEXICON SupExceptions
 
 LEXICON SupExcMin
 <obl><sup>:ща[OblSu]
+<obl><sup>:щва[OblSu] # variation from Gudava
 <obl><sup>:лъа[OblLi]
 <obl><sup>:ла[OblPlLu]
 <obl><sup>:лла[OblPlAlu]
@@ -463,8 +467,8 @@ LEXICON genitiveCase
 <gen>:лъ
 <gen><M><sg>:в[GenAgr]
 <gen><F><sg>:й[GenAgr]
-<gen><N><sg>:б[GenAgr]
-<gen><H><pl>:ба[GenAgr]
+<gen><N><sg>:{б}[GenAgr]
+<gen><H><pl>:{б}а[GenAgr]
 <gen><N><pl>:р[GenAgr]
 
 # ---------------------------------------------------------------------------------------------
@@ -480,7 +484,7 @@ LEXICON agrMiddle
 <M><sg>:в[Msg]
 <F><sg>:й[Fsg]
 <N><sg>:{б}[Nsg]
-<H><pl>:{б}[Hpl]
+<H><pl>:{б}{agrA}[Hpl]
 <N><pl>:{р}[Npl]
 
 LEXICON agrFinal
@@ -495,7 +499,7 @@ LEXICON agrFinal
 LEXICON locMain
 <sup>:ла
 <sub>:кьи
-<in>:{и}ни # irregular, must be configured separately, see Kibrik et al. 142
+<in>:{n.и}ни # irregular, must be configured separately, see Kibrik et al. 142
 <inter>:лъи
 <cont>:чӀ
 <ad>:х
@@ -504,8 +508,8 @@ LEXICON locMain
 LEXICON directCase
 <ess>:
 <lat>:
-<el>:{и}с
-<trans>:{и}сини
+<el>:{n.и}с
+<trans>:{n.и}сини
 
 # ---------------------------------------------------------------------------------------------
 # ROOTS
@@ -528,7 +532,7 @@ LEXICON rootInit
 
 LEXICON rootDec
 цеб<num>:гь
-чӀеда<num>:чӀ{е} # 2
+чӀеда<num>:чӀе # 2
 гьабда<num>:гьаб # 3
 буъуда<num>:буъ # 4
 иᵸщтуда<num>:иᵸщвд # 5
@@ -539,7 +543,7 @@ LEXICON rootDec
 
 LEXICON rootCent
 цеб<num>:
-чӀеда<num>:чӀ{е} # 2
+чӀеда<num>:чӀе # 2
 гьабда<num>:гьаб # 3
 буъуда<num>:буъ # 4
 иᵸщтуда<num>:иᵸщв # 5
@@ -584,6 +588,7 @@ LEXICON adjDouble
 
 LEXICON adjSingle
 гьацӀаб<adjective>:гьацӀа
+хабхаруб<adjective>:хабхару
 
 #pronoun roots
 #
@@ -689,3 +694,49 @@ LEXICON NumPronounExc
 чвам<pronoun><inter><H><pl><obl><sup>:чвамала[sup]
 чом<pronoun><inter><H><pl><obl><dat>:чомала
 чом<pronoun><inter><H><pl><obl><sup>:чомала[sup]
+
+#adverbs
+LEXICON Adverb
+ахила<adverb>:ахила #839
+ахирала<adverb>:ахирала #839
+аᵸщ<adverb>:аᵸщ #838
+аᵸщила<adverb>:аᵸщила #838
+аᵸщис<adverb>:аᵸщис #838
+батӀеслъах<adverb>:батӀаслъах #839
+батӀаслъах<adverb>:батӀаслъах #839
+#гӀарих<adverb>:гӀарах #849
+#гӀарах<adverb>:гӀарах #849
+гье<adverb>:гье #847
+гьащӀах<adverb>:гьащӀах #846
+гьащӀа<adverb>:гьащӀа #846
+дагьабда<adverb>:дагьабда
+кутакила<adverb>:кутакила
+ощинар<adverb>:ощинар
+одобщинаб<adverb>:одобщинаб
+ошта<adverb>:ошта #855
+ошта<adverb>:ошда #855
+орбу<adverb>:орбуда
+орбу<adverb>:орбу
+ори<adverb>:ори #855 to there
+сани<adverb>:сани # 860 together
+сани<adverb>:санида # 860 together
+се<adverb>:се # 861
+сер<adverb>:сер # 861
+серах<adverb>:серах # 861
+серол<adverb>:серол # 861
+сесер<adverb>:сесер # 861
+шири<adverb>:шири # 861
+
+#clitics
+LEXICON Clitic
+гьини<postpos>:гьини # inside
+гьерах<postpos>:гьерах # behind
+гӀарих<postpos>:гӀарах #849
+гӀарах<postpos>:гӀарах #849
+гьес<postpos>:гьес #847
+гье<postpos>:гье #847
+серухъ<postpos>:серухъ # 861
+
+#particles
+LEXICON Particle
+битӀилах<particle>:битӀилах

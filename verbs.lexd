@@ -1,0 +1,313 @@
+PATTERN Prateritum
+(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] PratAdd[Idecl]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] PratAdd[Idecl]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] PratAdd[IIdecl]
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] PratAdd[IIIdecl]
+(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] PratAdd[reg]
+(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] PratAdd[reg]
+
+PATTERN Imperfect
+(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] ImperfAdd[IVdecl]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] ImperfAdd[IIdecl]
+(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] ImperfAdd[Idecl]
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] ImperfAdd[reg]
+(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] ImperfAdd[reg]
+
+PATTERN Potentialis
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] PotAdd[IIIdecl]
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] PotAdd[Vdecl]
+(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] PotAdd[reg]
+
+PATTERN Prohibitive
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] ProhAdd[IIIdecl]
+(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] ProhAdd[Idecl]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] ProhAdd[IIdecl]
+(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] ProhAdd[IVdecl]
+(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] ProhAdd[Vdecl]
+
+PATTERN EmphStem
+Imperfect EmphAffix
+
+PATTERN PratPart # p. 91
+Prateritum PartAffix[irreg] agrMiddle
+
+PATTERN NegPratPart # p. 91
+Prateritum negSuffix[pst] PartAffix[irreg] agrMiddle
+
+PATTERN ImpPart # p. 92
+Imperfect PartAffix[reg] agrMiddle
+
+PATTERN FutPart # p. 94
+Potentialis FutAffix PartAffix[reg] agrMiddle
+
+PATTERN FutNegPartI # pp. 95-96
+Prohibitive negSuffix[pst] PartAffix[irreg] agrMiddle
+
+PATTERN FutNegPartII # pp. 95-96
+Prohibitive negSuffix[pst] CvbAffix[negFut] FutAffix PartAffix[reg] agrMiddle
+
+PATTERN Masdar # pp. 90-91
+Prateritum MasdarEnd[reg]
+
+PATTERN NegMasdar # p. 91
+Prateritum negSuffix[pst] MasdarEnd[neg]
+
+PATTERN EmphNegMasdar # p. 95
+EmphStem negSuffix[pst] MasdarEnd[neg]
+
+PATTERN EmphNegPratPart # p. 95
+EmphStem negSuffix[pst] PartAffix[irreg] agrMiddle
+
+PATTERN EmphFutNegPartI # p. 95
+EmphStem ProhAdd[IIIdecl] negSuffix[pst] PartAffix[irreg] agrMiddle
+
+PATTERN EmphFutNegPartII # p. 95
+EmphStem ProhAdd[IIIdecl] negSuffix[pst] CvbAffix[negFut] FutAffix PartAffix[reg] agrMiddle
+
+PATTERN IrrPart # p. 99
+VerbCopula agrMiddle
+IrrPrtStem agrMiddle
+
+PATTERN AllMasdars
+Masdar
+NegativeMasdar
+EmphNegMasdar
+
+PATTERN AllParticiples
+PratPart
+NegPratPart
+ImpPart
+FutNegPartI
+FutNegPartII
+EmphNegPratPart
+EmphNegPratPart
+EmphFutNegPartI
+EmphFutNegPartII
+CopulaPart
+
+PATTERNS
+VerbCopula
+IrrPart
+IrrCvb
+#
+## PRATERITUM DERIVATIVES
+#
+# ! prateritum, p. 91#Prateritum
+# ! negative prateritum, p. 91#Prateritum negSuffix[pst]
+# ! Prateritum converb, p. 91#Prateritum agrVerb CvbEnd[past]
+# ! negative Prateritum converb, p. 91#Prateritum negSuffix[pst] CvbAffix[negCvb] agrVerb CvbEnd[past]
+# ! Irrealis, p. 91
+#Prateritum IrrAffix
+# ! posterior converb, pp. 90-91
+#Prateritum CvbEnd[post]
+#Potentialis CvbEnd[post]
+# ! limitative converb, pp. 90-91
+#Prateritum CvbEnd[lim]
+#Potentialis CvbEnd[lim]
+# ! I imperative for intransitive, p. 97
+#Prateritum ImperAffix[ImpI]
+# ! II imperative for intransitive, p. 97
+#Prateritum ImperAffix[ImpII]
+# Positive Optative for intransitive, p. 97
+#Prateritum ImperAffix[ImpII] OptEnd
+#
+## IMPERFECT DERIVATIVES
+#
+# ! imperfect infinitive, p. 92
+#Imperfect InfAffix[reg]
+# ! negative future, p. 92
+#Imperfect negSuffix[fut]
+# ! imperfect converb, p. 92
+#Imperfect CvbEnd[praes]
+#
+## POTENTIALIS DERIVATIVES
+#
+# ! potentialis infinitive, p. 94#Potentialis InfAffix[reg]
+# ! potentialis prospective converb, p. 94#Potentialis CvbAffix[prosp] agrVerb CvbEnd[past]
+# ! potentialis future converb, p. 94#Potentialis FutAffix CvbEnd[praes]
+# ! synth future, p. 93#Potentialis FutEnd[synth]
+# ! reactive future, p. 93#Potentialis FutEnd[react]
+# ! conditional converb, p. 93#Potentialis CvbEnd[cond]
+# ! reason converb, p. 93
+#Potentialis CvbEnd[rsn]
+# ! conclusive converb, p. 93#Potentialis CvbEnd[conc]
+# ! posterior converb, p. 93#Potentialis CvbEnd[post]
+# ! I anterior converb, p. 93#Potentialis CvbEnd[antI]
+# ! II anterior converb, p. 93#Potentialis CvbEnd[antII]
+# ! imperative for transitive, pp. 96-97#Potentialis ImperAffix[ImpI]
+# ! positive optative for transitive, p. 97#Potentialis ImperAffix[ImpI] OptEnd
+#
+## PROHIBITIVE DERIVATIVES
+#
+# ! regular prohibitive, pp. 94, 96#Prohibitive ProhEnd 
+# ! negative infinitive p. 96#Prohibitive negSuffix[past] InfAffix[neg]
+# ! negative future converb, p. 96#Prohibitive negSuffix[past] CvbAffix[negFut] FutAffix CvbEnd[praes]
+# ! negative optative#Prohibitive ProhEnd OptEnd
+#
+## EMPHATIC NEGATIVE DERIVATIVES
+#
+# ! negative prateritum, 95#EmphStem negSuffix[pst]
+# ! negative Prateritum converb, 95#EmphStem negSuffix[pst] CvbAffix[negCvb] agrVerb CvbEnd[past]
+# ! negative future, p. 95#EmphStem negSuffix[fut]
+# ! negative prohibitive, p. 95#EmphStem ProhAdd[IIIdecl] ProhEnd
+# ! negative infinitive, p. 95#EmphStem ProhAdd[IIIdecl] negSuffix[past] InfAffix[neg]
+# ! negative future converb, p. 95#EmphStem ProhAdd[IIIdecl] negSuffix[past] CvbAffix[negFut] FutAffix CvbEnd[praes]
+
+# -----------------------------------------------------------------------------------------------
+# VERB STEMS
+# 
+LEXICON VerbStem
+багьи<verb>:агьи[Idecl,AgrInit] # 104 take away (irregular)
+багьи<verb>:игьи[Idecl,AgrInit] # 104 take away (irregular)
+белъви<verb>:елъви[Idecl,AgrInit] # 89
+букӀвиᵸ<verb>:укӀвиᵸ[Idecl,AgrInit] # 89
+гьекьи<verb>:гьекьи[Idecl] #846
+квахи<verb>:квахи[Idecl]
+кваххи<verb>:кваххи[Idecl] # 89
+цӀахиᵸ<verb>:цӀахиᵸ[Idecl] 
+цӀаххиᵸ<verb>:цӀаххиᵸ[Idecl] # 89
+ба<verb>:а[IIdecl,AgrInit] # 101 go (irregular)
+бета<verb>:ета[IIdecl,AgrInit] # 89 leave
+бикӀйаᵸ:икӀйаᵸ[IIdecl] # look (irregular)
+битаᵸ<verb>:итаᵸ[IIdecl,AgrInit] # 89 miss
+бичӀаᵸ:ичӀаᵸ[IIdecl] # 849 look (irregular)
+бугъа<verb>:бугъа[IIdecl] # 89
+букӀа<verb>:укӀа[IIdecl,AgrInit] # 101 be (irregular)
+букӀа<verb>:укӀва[IIdecl,AgrInit] # 101 be (irregular)
+букӀа<verb>:акӀа[IIdecl,AgrInit] # 101 be (irregular)
+рекӀваᵸ<verb>:рекӀваᵸ[IIdecl]
+эхва<verb>:эхва[IIdecl] #844
+ба<verb>:е[IIIdecl,AgrInit] # 101 go (irregular)
+бегъе<verb>:егъе[IIIdecl,AgrInit] #92
+бугье<verb>:угье[IIIdecl,AgrInit] # throw (Gudava)
+гьаᵸ<verb>:гьаᵸ[IIIdecl] # 104 see (irregular)
+рекӀвеᵸ<verb>:рекӀвеᵸ[IIIdecl] #92
+белъи<verb>:елъи[IVdecl,AgrInit] # 101
+мади<verb>:мади[IVdecl]
+мари<verb>:мари[IVdecl] #92
+гьаᵸ<verb>:гьаᵸ[Vdecl] # 104 see (irregular)
+тӀа<verb>:тӀа[Vdecl] #92
+
+# -----------------------------------------------------------------------------------------------
+# VERB DERIVATION
+# 
+LEXICON PratAdd
+<aor>:[reg]
+<aor>:{ᵸ}[IIdecl,IIIdecl]
+<aor>:{v.и}{ᵸ}[Idecl] #83 for I declension and hpl forms of the II
+
+LEXICON ImperfAdd
+<imperf>:{р}а[reg]
+<imperf>:{v.и}{ᵸ}{р}а[IIdecl,Idecl] #83
+<imperf>:а{ᵸ}[IVdecl]
+
+LEXICON PotAdd
+<pot>:а{ᵸ}[reg]
+<pot>:а{ᵸ}{л}а[IIIdecl]
+<pot>:{р}а[Vdecl]
+
+LEXICON ProhAdd
+<proh>:{б}и[IIIdecl]
+<proh>:{v.и}{ᵸ}{б}и[IIdecl,Idecl] #83
+<proh>:аби[IVdecl]
+<proh>:раби[Vdecl]
+
+#derivational suffixes
+LEXICON InfAffix
+<inf>:[reg]
+<inf>:а[neg]
+
+LEXICON CvbEnd
+<cvb>:о[past]
+<cvb>:х[praes]
+<cvb>:лис[post]
+<cvb>:била[antI]
+<cvb>:лъена[antII]
+<cvb>:лъиба[lim]
+<cvb>:къалъани[temp]
+<cvb>:ра[cond]
+<cvb>:рала[conc]
+<cvb>:ла[rsn]
+
+LEXICON FutAffix
+<fut>:лъи
+
+LEXICON FutEnd
+<fut><synth>:с[synth]
+<fut><react>:са[react]
+
+LEXICON ProhEnd
+:се
+
+LEXICON EmphAffix
+:да
+
+LEXICON IrrAffix
+<irr>:гъалир
+
+LEXICON CvbAffix
+<prosp>:ди[prosp]
+:ра[negCvb]
+:а[negFut]
+
+LEXICON PartAffix
+<part>:{prt}[irreg]
+<part>:о[reg]
+
+#verb copulas
+LEXICON VerbCopula
+экӀва<verb><cop>:экӀва # 106
+экӀва<verb><cop><neg>:вечӀе # 99
+#ида<cop>:ида # М. 584
+
+LEXICON MasdarEnd
+<masd>:{р}[reg]
+<masd>:р[neg]
+
+LEXICON ImperAffix
+<imp>:[ImpI]
+<imp>:{б}е[ImpII]
+
+LEXICON OptEnd
+<opt>:ла
+
+LEXICON IrrPrtStem
+белъи<verb><part>:белъилъо
+ба<verb><part>:балъо
+
+LEXICON IrrCvb
+белъи<verb><cvb>:белъилъах
+ба<verb><cvb>:балъах
+
+# -----------------------------------------------------------------------------------------------
+# VERB INFLECTION
+# 
+#agrInitial as ersatz
+LEXICON agrInitial
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:б[Nsg]
+<H><pl>:б[Hpl]
+<N><pl>:р[Npl]
+
+LEXICON agrMiddle
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:{б}[Nsg]
+<H><pl>:{б}{agrA}[Hpl]
+<N><pl>:{р}[Npl]
+
+LEXICON agrVerb
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:{б}[Nsg]
+<H><pl>:{р}[Hpl]
+<H><pl>:{б}{agrA}[Hpl]
+<N><pl>:{р}[Npl]
+
+LEXICON negSuffix
+<neg>:чӀи[pst]
+<fut><neg>:чӀе[fut]

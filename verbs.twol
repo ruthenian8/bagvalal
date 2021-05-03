@@ -1,0 +1,92 @@
+Alphabet 
+	б г д й л р с х ч щ ъ ь т н I А Б В Г Д Е И Й Л Р С У Х Ч Щ Ъ Ь Т Н ᵸ ᵸ:0
+	а:а у:у и:и о:о е:е в:в
+	а:0 у:0 и:0 о:0 е:0 в:0
+	%{р%}:р %{р%}:н
+	%{л%}:л %{л%}:н
+	%{б%}:б %{б%}:м
+	%{n.и%}:0 %{n.и%}:и
+	%{v.и%}:у %{v.и%}:и %{v.и%}:0
+	%{agrA%}:а %{agrA%}:0
+! additional nasalization marker to insert in the verb forms, see Kibrik pp. 88-89
+	%{ᵸ%}:0 %{ᵸ%}:ᵸ %{ᵸ%}:н
+	%{prt%}:у %{prt%}:о %{prt%}:0
+	%>
+	
+	%{ep.е%}:е %{ep.и%}:и %{ep.а%}:а %{ep.о%}:о %{ep.у%}:у %{ep.й%}:0 %{ep.й%}:й
+;
+
+Sets
+! eps = vowels with -j epenthesis before them, see Kibrik p. 50
+	eps = %{ep.е%} %{ep.и%} %{ep.а%} %{ep.о%} %{ep.у%} ;
+! reps: vowels subjected to the replacement rule: see Kibrik pp. 49-50
+	reps = а е и у о ;
+! cons: regular consonants
+	cons = ч щ в д к р л с г х Ӏ б т л н т ;
+! ncons: consonants participating in the nasalization rule, see Kibrik pp. 52-53.
+	ncons = %{р%} %{л%} %{б%} ;
+! mods: modifiers	
+	mods = ъ Ъ Ӏ ь Ь ;
+! V: regular vowels
+	V = а е и у о А Е И У О %{v.и%} %{prt%} ;
+
+Definitions
+
+C = :cons [ :mods ]*;
+
+Rules
+
+"drop morpheme boundary"
+%>:0 <=> _ ;
+
+"epenthesis rule, see Kibrik p. 50"
+%{ep.й%}:й <=> V _ X; where X in eps;
+
+"replacement rule, see Kibrik pp. 49-50"
+X:0 <=> _ ( ᵸ:0 ) ( %>: ) ( %{ᵸ%}: ) V; where X in reps;
+
+"{и} persistence"
+%{v.и%}:и <= V ( ᵸ:0 ) _ ;
+	except
+		в:0 ?* _ ; _ ( %>: ) ( %{ᵸ%}: ) ?:V;
+
+"{и} to у after labialized"
+%{v.и%}:у <=> в:0 ?* _ ; 
+	except
+		_ ( %>: ) ( %{ᵸ%}: ) ?:V;
+
+"{и} to zero before other vowels"
+%{v.и%}:0 <=> _ ( %{ᵸ%}: ) ?:V;
+	
+"labialization deletion"
+в:0 <=> _ [ ? | ?^2 ] %>: %{v.и%}:?;
+
+"ᵸ at the end"
+%{ᵸ%}:ᵸ <=> .#. ?+ ᵸ:0 ?* _ .#.;
+
+"ᵸ as n before regular consonants"
+%{ᵸ%}:н <=> _ ( %>: ) [ с | ч ];
+
+"nasalization deletion"
+ᵸ:0 <=> _ ( %>: ) [ V | ?* ncons:* ];
+
+"Р after nasalized vowels"
+%{р%}:н <=> ᵸ:0 [ ? | ?^2 | ?^3 ] _;
+
+"Б after nasalized vowels"
+%{б%}:м <=> ᵸ:0 [ ? | ?^2 | ?^3 ] _;
+
+"Л after nasalized vowels"
+%{л%}:н <=> ᵸ:0 ?* _;
+
+"zero in participles after а"
+%{prt%}:0 <=> [ ?:о | ?:а ] ( ᵸ: ) ( %>: ) ( %{ᵸ%}: ) _;
+
+"о in participles after е"
+%{prt%}:о <=> [ е:? | ?:е ] ( ᵸ: ) ( %>: ) ( %{ᵸ%}: ) _;
+
+"у in participles after и"
+%{prt%}:у <=> [ и:? | ?:и ] ( ᵸ: ) ( %>: ) ( %{ᵸ%}: ) _; %{v.и%}:? ( %{ᵸ%}: ) _;
+
+"ба in HPL agreement markers"
+%{agrA%}:а <=> .#. ?+ _ .#.;
