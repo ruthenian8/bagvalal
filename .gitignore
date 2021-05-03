@@ -1,9 +1,5 @@
-books
-rus
-Makefile.in
-.Makefile.swp 
-*.hfst
-*.att
-*.mchar
-*.res 
-bagval_numbers.txt
+**/*.hfst
+**/*.att
+*-test.*
+*.txt*
+*/*
