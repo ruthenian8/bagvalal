@@ -82,79 +82,108 @@ NounPlI[excl] PlMarker[plI] PlOblMarker[npl,plA]
 NounPlIrreg PlOblMarker[npl,plI]
 
 LEXICON NounAbs
-кумук<noun>:кумук # help
-анж<noun>:анж # mark
-рикь<noun>:рикь # meat
-бищалъ<noun>:бищалъ # sheep
-къула<noun>:къула # skin, Gudava
-ракь<noun>:ракь # bone, Gudava
-сIев<noun>:сIев # 860 guest
-сIей<noun>:сIей
-цIев<noun>:цIев # guest, Gudava
-цIей<noun>:цIей
-эхва<noun>:эхва #844 herdsman
-квачI<noun>:квачI # hand
-кьор<noun>:кьор
-гьан<noun>:гьан
-кIван<noun>:кIван
-бежун<noun>:бежун
-эла<noun>:эла
-дарам<noun>:дарам
-чӀачӀан<noun>:чӀачӀан
-бигъвам<noun>:бигъвам
-бесун<noun>:бесун
-игьва<noun>:игьва
-нуса<noun>:нуса
-тудар<masd>:тудар
+агьан<noun>:агьан # 837
+аздагьо<noun>:аздагьо # 839
+алгьан<noun>:алгьан
+анжв<noun>:анжв # 838 mark
+анж<noun>:анж # Gudava mark
+аш<noun>:аш # 858 rope
+ащ<noun>:ащ # M 43
+аᵸс<noun>:аᵸс # 132
+арам<noun>:арам # 137
 бар<masd>:бар
+бегол<noun>:бегол
+бежун<noun>:бежун
+бел<noun>:бел # 132
+беса<noun>:беса # 136
+бесун<noun>:бесун
+бигъвам<noun>:бигъвам
+бищалъ<noun>:бищалъ # sheep
+буцIур<noun>:буцIур # Gudava cattle
+гIила<noun>:гIила
+гъваргъвар<noun>:гъваргъвар # 859 noise
+гъварза<noun>:гъварза # 859 clothhing
+гъварза<noun>:гъорза # 859
+гьакIуй<noun>:гьакIуй
+гьан<noun>:гьан
+гьанла<noun>:гьанла
+гьваб<noun>:гьваб # 136
+гьвай<noun>:гьвай # 136
+гьекIва<noun>:гьекIва
+гьерер<noun>:гьерер # 136
+гьуᵸша<noun>:гьуᵸша # 136
+дарам<noun>:дарам
+дибир<noun>:дибир
+игьва<noun>:игьва
 ила<noun>:ила # 136
-хъаранис<noun>:хъаранис
-эл<noun>:эл
-чаш<noun>:чаш
-раж<noun>:раж
+има<noun>:има # 136
+йаш<noun>:йаш # 851
+картI<noun>:картI # 851
+кIван<noun>:кIван
+кIунй<noun>:кIунй # 136
+квачI<noun>:квачI # hand
+кумук<noun>:кумук # help
+кунтIа<noun>:кунтIа # 136
+къабул<noun>:къабул # 856
+къани<noun>:къани # 856, bread
+къула<noun>:къула # skin, Gudava
+кьерер<noun>:кьерер # 136
+кьор<noun>:кьор
+лачIис<noun>:лачIис
+малайасадин<noun><prop>:малайасадин
+мисI<noun>:мисI # 134
 мува<noun>:мува
 муч<noun>:муч
+нуса<noun>:нуса
 нусийа<noun>:нусийа # 136
-има<noun>:има # 136
-беса<noun>:беса # 136
-кIунй<noun>:кIунй # 136
-чиᵸдв<noun>:чиᵸдв # 136
-гьуᵸша<noun>:гьуᵸша # 136
-сIекIер<noun>:сIекIер # 136
-кьерер<noun>:кьерер # 136
-гьерер<noun>:гьерер # 136
-чIехил<noun>:чIехил # 136
-чIара<noun>:чIара # 136
-гьвай<noun>:гьвай # 136
-кунтIа<noun>:кунтIа # 136
-гьваб<noun>:гьваб # 136
-чIвай<noun>:чIвай # 136
-чӀантӀа<noun>:чӀантӀа
-бел<noun>:бел # 132
-аᵸс<noun>:аᵸс # 132
-рагъ<noun>:рагъ # 132
-гьакIуй<noun>:гьакIуй
-арам<noun>:арам # 137
-мисI<noun>:мисI # 134
-чIама<noun>:чIама
-гIила<noun>:гIила
-лачIис<noun>:лачIис
-тухтур<noun>:тухтур
-гьанла<noun>:гьанла
-сIенелъ<noun>:сIенелъ
-гьекIва<noun>:гьекIва
-дибир<noun>:дибир
-халкъ<noun>:халкъ # 864
-йаш<noun>:йаш # 851
-бегол<noun>:бегол
-малайасадин<noun><prop>:малайасадин
-агьан<noun>:агьан # 837
-алгьан<noun>:алгьан
-пацI<noun>:пацI
+палигьан<noun>:палигьан # M 284
+палигьан<noun>:палугьан # M 284
 пас<noun>:пас
+пацI<noun>:пацI
+рагъ<noun>:рагъ # 132
+раж<noun>:раж
+ракь<noun>:ракь # bone, Gudava
+регьа<noun>:регьа # 858
+рекъеᵸс<noun>:рекъеᵸс # M 300 half
+рекъеᵸс<noun>:рекъен # Gudava half
+рекъеᵸлгьар<noun>:рекъеᵸлгьар # M 300 half
+рекъелъ<noun>:рекъелъ # 858 back
+рикь<noun>:рикь # meat
 рокьи<noun>:рокьи
+рущI<noun>:рущI # 858
+рущIа<noun>:рущIа # M 513 cave
+ручIа<noun>:ручIа # Gudava, cave
+сIев<noun>:сIев # 860 guest
+сIей<noun>:сIей
+сIекIер<noun>:сIекIер # 136
+сIенелъ<noun>:сIенелъ
+салам<noun>:салам
+тудар<masd>:тудар
+тухтур<noun>:тухтур
+халкъ<noun>:халикъ # Gudava, folk
+халкъ<noun>:халкъ
+хъаранис<noun>:хъаранис
+хъирис<noun>:хъирис # M 363
+хъоча<noun>:хъоча # 855 sheep skin
+цIев<noun>:цIев # guest, Gudava
+цIей<noun>:цIей
+чIама<noun>:чIама
+чIара<noun>:чIара # 136
+чIвай<noun>:чIвай # 136
+чIехил<noun>:чIехил # 136
+чаш<noun>:чаш
+чиᵸдв<noun>:чиᵸдв # 136
+чӀантӀа<noun>:чӀантӀа
+чӀачӀан<noun>:чӀачӀан
+эл<noun>:эл
+эла<noun>:эла
+эхва<noun>:эхва #844 herdsman
 
 LEXICON NounOblSame
+гъваргъвар<noun>:гъваргъвар
+рущIа<noun>:рущIа # M 513 cave
+ручIа<noun>:ручIа # Gudava, cave
+аздагьо<noun>:аздагьо # 839
 цIев<noun>:цIе
 гьан<noun>:гьан # exclusion, see Gudava
 кIван<noun>:кIван
@@ -175,8 +204,12 @@ LEXICON NounOblSu
 гьекIва<noun>:гьекIва 
 дибир<noun>:дибир
 бегол<noun>:бегол
+палигьан<noun>:палигьан # M 284
+палигьан<noun>:палугьан # M 284
 
 LEXICON NounOblLi
+регьа<noun>:регьа # 858
+къула<noun>:къу
 сIей<noun>:сIей # 860 female guest
 ила<noun>:ила # 129
 тудар<masd>:тудар #плевок
@@ -185,6 +218,14 @@ LEXICON NounOblLi
 гьакIуй<noun>:гьакIуй
 
 LEXICON NounOblI
+картI<noun>:картI # 851
+аш<noun>:ашш # 858 rope
+ащ<noun>:ащ # M 43
+гъварза<noun>:гъварз # 859 clothhing
+гъварза<noun>:гъорз # 859
+рущI<noun>:рущI
+хъирис<noun>:хъирис # M 363
+хъоча<noun>:хъоч # 855 sheep skin
 ракь<noun>:ракь # bone, Gudava
 квачI<noun>:квачI
 кьор<noun>:кьор # 853
@@ -193,16 +234,24 @@ LEXICON NounOblI
 тудар<masd>:тудар #плевок
 бар<masd>:бар # 131
 халкъ<noun>:халкъ # 864
+халкъ<noun>:халикъ # Gudava, folk
 малайасадин<noun><prop>:малайасадин
 пацI<noun>:пацI
 пас<noun>:пас
 
 LEXICON NounOblA
+картI<noun>:картI # 851
+къула<noun>:къулъ
+рущI<noun>:рущI
 кьор<noun>:кьор
 хъаранис<noun>:хъаранис
 эл<noun>:эл
 
 LEXICON NounOblU
+арам<noun>:арам # 137
+анжв<noun>:анжв # 838 mark
+анж<noun>:анж # Gudava mark
+рекъелъ<noun>:рекъ # 858 back
 ат<noun>:ат
 
 LEXICON NounOblE
@@ -223,10 +272,20 @@ LEXICON NounOblIrreg
 нусийа<noun>:нуси # 132
 
 LEXICON NounPlBi
+регьа<noun>:регьа[npl] # 858
+рущIа<noun>:рущIа[npl] # M 513 cave
+рущIа<noun>:ручIа[npl] # Gudava, cave
+аздагьо<noun>:аздагьо[npl] # 839
 эла<noun>:эла[npl]
 нусийа<noun><pl>:нуси[npl] # 136
 
 LEXICON NounPlAbi
+картI<noun>:картI[npl] # 851
+анжв<noun>:анжв[npl] # 838 mark
+анж<noun>:анж[npl] # Gudava mark
+ащ<noun>:ащ[npl] # M 43 rope
+аш<noun>:ашш[npl] # 858 rope
+рущI<noun>:рущI[npl] # 853 cave
 ракь<noun>:ракь[npl] # bone, Gudava
 квачI<noun>:квачI[npl]
 кьор<noun>:кьор[npl] # 853
@@ -235,14 +294,18 @@ LEXICON NounPlAbi
 рагъ<noun>:рагъ[npl] # 132
 гьакIуй<noun>:гьакIуй[hpl] # 137
 гьуᵸша<noun>:гьур[npl] # 136
-алгьан<noun>:алгьан
-пацI<noun>:пацI
-пас<noun>:пас
+алгьан<noun>:алгьан[npl]
+пацI<noun>:пацI[npl]
+пас<noun>:пас[npl]
 
 LEXICON NounPlUbi
 гъанкIва<noun>:гъанкI[npl] # 132
 
 LEXICON NounPlIbi
+анжв<noun>:анжв[npl] # 838 mark
+анж<noun>:анж[npl] # Gudava mark
+къула<noun>:къулъ[npl] # 857
+хъоча<noun>:хъоч[npl] # 855 sheep skin
 гьан<noun>:гьан[npl] # 846
 чӀача<noun>:чӀач[npl] #841
 
@@ -255,6 +318,8 @@ LEXICON NounPlJabi
 LEXICON NounPlZabi
 тухтур<noun>:тухтур[hpl] # 132
 дибир<noun>:дибир[hpl]
+палигьан<noun>:палигьан[hpl] # M 284
+палигьан<noun>:палугьан[hpl] # M 284
 
 LEXICON NounPlMi
 бежун<noun>:бежва[npl] #840
@@ -297,6 +362,8 @@ LEXICON NounPlBadi
 йас<noun>:йаси[hpl] # 135
 
 LEXICON NounPlA
+гъварза<noun>:гъварз[npl] # 859 clothhing
+гъварза<noun>:гъорз[npl] # 859
 муса<noun>:мус[npl] # 135
 щIинщI<noun>:щIинщI[npl] # 135
 кIунй<noun>:кIум[npl] # 136
@@ -314,7 +381,8 @@ LEXICON NounPlI
 йаш<noun>:йаш[hpl] # 851
 
 LEXICON NounPlIrreg
-чиᵸдв<noun><pl>:чиᵸдун{и}
+рущI<noun>:речIелъ{n.и} # 858
+чиᵸдв<noun><pl>:чиᵸдун{n.и}
 гьвай<noun><pl>:гьварал # 136
 беса<noun><pl>:бесийалъ # 136
 гьваб<noun><pl>:гьвабийалъ # 136

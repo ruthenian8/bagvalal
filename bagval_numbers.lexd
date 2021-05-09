@@ -510,6 +510,7 @@ LEXICON directCase
 <lat>:
 <el>:{n.и}с
 <trans>:{n.и}сини
+<in>:{n.и}ни # to cover cases from Gudava
 
 # ---------------------------------------------------------------------------------------------
 # ROOTS
@@ -581,15 +582,6 @@ LEXICON nounLi
 гьакӀуй<noun>:гьакӀуй # woman
 гьезеб<noun>:гьезеб # stock
 
-# adjective roots
-#
-LEXICON adjDouble
-багьаруб<adjective>:агьару
-
-LEXICON adjSingle
-гьацӀаб<adjective>:гьацӀа
-хабхаруб<adjective>:хабхару
-
 #pronoun roots
 #
 LEXICON PerPronounStems
@@ -614,6 +606,7 @@ LEXICON InterPronoun
 LEXICON InterAdjPronoun
 эщдуб<pronoun><inter>:эщду
 эщтуб<pronoun><inter>:эщту
+эщдуб<pronoun><inter>:гъешду # dialectal, from Gudava
 
 LEXICON WhichPronoun
 эбел<pronoun><inter>:э
@@ -695,6 +688,227 @@ LEXICON NumPronounExc
 чом<pronoun><inter><H><pl><obl><dat>:чомала
 чом<pronoun><inter><H><pl><obl><sup>:чомала[sup]
 
+LEXICON MiscPronounExc
+агьи<pronoun>:агьи # 837 here
+аща<pronoun>:аща # Gudava thus
+ашта<pronoun>:ашда # Gudava thus
+ашта<pronoun>:ашта # 838 thus
+эджа<pronoun><inter>:эджа # 846 why
+эджа<pronoun><inter>:эджала # 846 why
+эджа<pronoun><inter>:эджали # 846 why
+эщда<pronoun><inter>:эщда # M 522 why
+элъила<pronoun><inter>:элъила # M 522 why
+
+# adjective roots
+#
+LEXICON adjDouble
+багьаруб<adjective>:агьару
+багӀаб<adjective>:агӀа
+басӀараб<adjective>:асӀара
+бачакӀуб<adjective>:ачакӀу
+башшадаб<adjective>:ашшада
+башшибашшадаб<adjective>:ашшибашшада
+бекъуб<adjective>:екъу
+белъаб<adjective>:елъа
+бехалаб<adjective>:ехала
+бехъӀуб<adjective>:ехъӀу
+бечӀатуб<adjective>:ечӀату
+бечӀураб<adjective>:ечӀура
+бещаб<adjective>:еща
+бикьироб<adjective>:икьиро
+битӀуб<adjective>:итӀу
+бичӀаб<adjective>:ичӀа
+бусӀаб<adjective>:усӀа
+
+LEXICON adjSingle
+анзикъуб<adjective>:анзикъу
+анзугьацӀаб<adjective>:анзугьацӀа
+ансаб<adjective>:анса
+ахирийаб<adjective>:ахирийа
+аштоб<adjective>:ашто
+аштуб<adjective>:ашту
+балугъаб<adjective>:балугъа
+балъкойаб<adjective>:балъкойа
+бацӀараб<adjective>:бацӀара # Gudava clean
+бегъинуб<adjective>:бегъину
+берцинаб<adjective>:берцина
+бесуб<adjective>:бесу
+бечераб<adjective>:бечера # rich
+бечӀураб<adjective>:бечӀура
+бечӀетӀуб<adjective>:бечӀетӀу # Gudava black
+бижижуб<adjective>:бижижу
+бискинаб<adjective>:бискина # poor
+бокьараб<adjective>:бокьара
+бокьироб<adjective>:бокьиро
+бусурманаб<adjective>:бусурмана
+гандуйабахуб<adjective>:гандуйабаху
+гургинаб<adjective>:гургина
+гурхӀелтуб<adjective>:гурхӀелту
+гучаб<adjective>:гуча
+гъвануб<adjective>:гъвану
+гьоб<adjective>:гьо # good
+гьанхдалуб<adjective>:гьанхдалу
+гьанчӀуб<adjective>:гьанчӀу
+гьатуб<adjective>:гьату
+гьатӀуб<adjective>:гьатӀу
+гьацӀаб<adjective>:гьацӀа
+гъачуб<adjective>:гъачу # only 859
+гъачуб<adjective>:гъачӀу # Gudava only
+гьардуб<adjective>:гьарду # Gudava full
+гьашӀибаб<adjective>:гьашӀиба
+гьащӀибаб<adjective>:гьащӀиба
+гьерахуб<adjective>:гьераху
+гьестоб<adjective>:гьесто
+гьецӀуб<adjective>:гьецӀу # 846 tall
+гьецӀуб<adjective>:гьекӀйа # Gudava tall
+гьинцӀибахуб<adjective>:гьинцӀибаху
+гьинчӀаб<adjective>:гьинчӀа
+гьоб<adjective>:гьо
+гьунаб<adjective>:гьуна
+гьункӀалаб<adjective>:гьункӀала
+гӀабийаб<adjective>:гӀабийа
+гӀабуб<adjective>:гӀабу
+гӀадалуб<adjective>:гӀадалу
+гӀадатийаб<adjective>:гӀадатийа
+гӀакълуйаб<adjective>:гӀакълуйа
+гӀаламатаб<adjective>:гӀаламата
+гӀамалтуб<adjective>:гӀамалту
+гӀачуб<adjective>:гӀачу
+дагьаб<adjective>:дагьа
+жаруб<adjective>:жару
+жиммагӀацуб<adjective>:жиммагӀацу
+загӀибаб<adjective>:загӀиба
+заралийаб<adjective>:заралийа
+заруб<adjective>:зару
+захӀматаб<adjective>:захӀмата
+зулмуйаб<adjective>:зулмуйа
+игьатуб<adjective>:игьату
+инджитаб<adjective>:инджита
+итаб<adjective>:ита
+капуруб<adjective>:капуру
+кванцӀаб<adjective>:кванцӀа
+кванчӀаб<adjective>:кванчӀа
+кепаб<adjective>:кепа
+куватаб<adjective>:кувата
+кусакъуб<adjective>:кусакъу
+кусатуб<adjective>:кусату
+къадараб<adjective>:къадара # low-quality
+къакъатӀуб<adjective>:къакъатӀу
+къасануб<adjective>:къасану
+къвараб<adjective>:къвара
+къинаб<adjective>:къина
+къолабахуб<adjective>:къолабаху
+къораб<adjective>:къора
+къотӀуб<adjective>:къотӀу
+кьануб<adjective>:кьану
+кьванхуб<adjective>:кьванху
+кьварируб<adjective>:кьвариру
+кьераб<adjective>:кьера
+кьерикъуб<adjective>:кьерикъу
+кьираб<adjective>:кьира
+кьокъаб<adjective>:кьокъа
+кӀантӀаб<adjective>:кӀантӀа
+ленкъуб<adjective>:ленкъу
+лехъуб<adjective>:лехъу
+мадараб<adjective>:мадара # 853, good
+мадараб<adjective>:мадараху # Gudava good
+макалаб<adjective>:макала
+махӀачӀуб<adjective>:махӀачӀу
+мачӀитуб<adjective>:мачӀиту
+мекъаб<adjective>:мекъа
+мехъӀаб<adjective>:мехъӀа
+мигъатуб<adjective>:мигъату
+мисӀаб<adjective>:мисӀа
+мичаб<adjective>:мича
+мукагӀатаб<adjective>:мукагӀата
+мукӀуб<adjective>:мукӀу
+мутӀигӀаб<adjective>:мутӀигӀа
+нуритуб<adjective>:нуриту
+папаб<adjective>:папа
+пасихӀаб<adjective>:пасихӀа
+пахилъаб<adjective>:пахилъа
+пахилаб<adjective>:пахила # greedy
+разийаб<adjective>:разийа
+ракъвагьоб<adjective>:ракъвагьо
+ракъвакъвараб<adjective>:ракъвакъвара
+ракъвахъуб<adjective>:ракъвахъу
+рахъӀвагьоб<adjective>:рахъӀвагьо
+рахъӀвакъвараб<adjective>:рахъӀвакъвара
+рахъӀвахъуб<adjective>:рахъӀвахъу
+решатуб<adjective>:решату
+рошибахуб<adjective>:рошибаху
+сагъаб<adjective>:сагъа
+саламатаб<adjective>:саламата
+санагӀатаб<adjective>:санагӀата
+селухуб<adjective>:селуху
+синдуб<adjective>:синду
+синуб<adjective>:сину
+согӀаб<adjective>:согӀа
+сурмейаб<adjective>:сурмейа
+сурмийаб<adjective>:сурмийа
+сӀингьанб<adjective>:сӀингьан
+сӀинкӀуб<adjective>:сӀинкӀу
+сӀинтуб<adjective>:сӀинту
+сӀорибахуб<adjective>:сӀорибаху
+сӀоролуб<adjective>:сӀоролу
+табаб<adjective>:таба
+тавакалъаб<adjective>:тавакалъа
+тамашайаб<adjective>:тамашайа
+татихуб<adjective>:татиху
+тӀагӀамаб<adjective>:тӀагӀама
+учузаб<adjective>:учуза
+хамитуб<adjective>:хамиту
+хабхаруб<adjective>:хабхару # torn
+хехаб<adjective>:хеха
+хехуб<adjective>:хеху
+хирийаб<adjective>:хирийа
+хируб<adjective>:хиру
+холуб<adjective>:холу
+христиъанаб<adjective>:христиъана
+хъалуб<adjective>:хъалу
+хъалъуб<adjective>:хъалъу
+хъарталаб<adjective>:хъартала
+хъачӀуб<adjective>:хъачӀу
+хъирисехуб<adjective>:хъирисеху # Gudava mangy
+хъуб<adjective>:хъу
+хӀадураб<adjective>:хӀадура
+хӀаликатаб<adjective>:хӀаликата
+хӀалимаб<adjective>:хӀалима
+хӀарзайаб<adjective>:хӀарзайа
+хӀикматаб<adjective>:хӀикмата
+цехӀеб<adjective>:цехӀе
+цӀажаруб<adjective>:цӀажару
+цӀашишуб<adjective>:цӀашишу
+цӀашищуб<adjective>:цӀашищу
+цӀащишуб<adjective>:цӀащишу
+цӀащищуб<adjective>:цӀащищу
+цӀинуб<adjective>:цӀину
+чаруб<adjective>:чару
+чачайоб<adjective>:чачайо
+чинчуб<adjective>:чинчу
+чӀагойаб<adjective>:чӀагойа
+чӀагьаб<adjective>:чӀагьа
+чӀекуб<adjective>:чӀеку
+чӀетаб<adjective>:чӀета
+чӀунчӀаб<adjective>:чӀунчӀа
+шинхуб<adjective>:шинху
+шишуб<adjective>:шишу
+шищуб<adjective>:шищу
+шкъасануб<adjective>:шкъасану
+шӀануб<adjective>:шӀану
+шӀерелуб<adjective>:шӀерелу
+щинхуб<adjective>:щинху
+щишуб<adjective>:щишу
+щищуб<adjective>:щищу
+щӀануб<adjective>:щӀану
+щӀерелуб<adjective>:щӀерелу
+эрахуб<adjective>:эраху
+эруб<adjective>:эру
+эстоб<adjective>:эсто
+эхъанб<adjective>:эхъан
+эцӀуб<adjective>:эцӀу
+эчуб<adjective>:эчу
+
 #adverbs
 LEXICON Adverb
 ахила<adverb>:ахила #839
@@ -704,13 +918,29 @@ LEXICON Adverb
 аᵸщис<adverb>:аᵸщис #838
 батӀеслъах<adverb>:батӀаслъах #839
 батӀаслъах<adverb>:батӀаслъах #839
+баха<adverb>:баха # 839 outside (of)
+баха<adverb>:ваха # 839 outside (of)
+баха<adverb>:йаха # 839 outside (of)
 #гӀарих<adverb>:гӀарах #849
 #гӀарах<adverb>:гӀарах #849
-гье<adverb>:гье #847
 гьащӀах<adverb>:гьащӀах #846
 гьащӀа<adverb>:гьащӀа #846
+гье<adverb>:гье #847
+гьечи<adverb>:гьечи #846
+гьечи<adverb>:гьечӀи # Gudava
+гьикьа<adverb>:гьикьа # 847 downwards
+гьикьах<adverb>:гьикьах # 847 down
+гьикьа<adverb>:гьикьахинди # down Gudava
+гьикьарах<adverb>:гьикьарах # 847 from down
+гьикьи<adverb>:гьикьи
+гьини<adverb>:гьини
+гьини<adverb><el>:гьинис
 дагьабда<adverb>:дагьабда
+данд<adverb>:данд # M 176
+йера<adverb>:йера # 851
+йера<adverb>:йерала # 851
 кутакила<adverb>:кутакила
+къина<adverb>:къина # 856 in the summer
 ощинар<adverb>:ощинар
 одобщинаб<adverb>:одобщинаб
 ошта<adverb>:ошта #855
@@ -718,6 +948,10 @@ LEXICON Adverb
 орбу<adverb>:орбуда
 орбу<adverb>:орбу
 ори<adverb>:ори #855 to there
+регьала<adverb>:регьала #858 at night
+регьала<adverb>:регьалада #858 at night
+регьала<adverb>:регьалъа # Gudava at night
+регьала<adverb>:регьалъада # Gudava at night
 сани<adverb>:сани # 860 together
 сани<adverb>:санида # 860 together
 се<adverb>:се # 861
@@ -725,17 +959,33 @@ LEXICON Adverb
 серах<adverb>:серах # 861
 серол<adverb>:серол # 861
 сесер<adverb>:сесер # 861
+суни<adverb>:суни # yesterday
+хех<adverb>:хех # rapidly, Gudava
+хъапилибо<adverb>:хъапилибо # M 359 suddenly
+хъапилибо<adverb>:къапилӀида # Gudava suddenly
+хъатлӀидахда<adverb>:хъатлӀидахда # M 359 suddenly
+цӀакъ<adverb>:цӀакъ # very
+цӀа<adverb>:цӀа # very
+чӀера<adverb>:чӀера # 842 up
+чӀерах<adverb>:чӀерах # 842 upwards
+#чӀера<adverb>:кӀйера # Gudava
+#чӀера<adverb>:кӀйерахинди # Gudava
 шири<adverb>:шири # 861
 
 #clitics
 LEXICON Clitic
+данд<postpos>:данд # M 176
+гъуруб<postpos>:гъуруб
 гьини<postpos>:гьини # inside
+гьини<postpos><el>:гьинис # inside
+гьикьи<postpos>:гьикьи # 847 under
 гьерах<postpos>:гьерах # behind
 гӀарих<postpos>:гӀарах #849
 гӀарах<postpos>:гӀарах #849
 гьес<postpos>:гьес #847
 гье<postpos>:гье #847
 серухъ<postpos>:серухъ # 861
+ва<conj>:ва
 
 #particles
 LEXICON Particle

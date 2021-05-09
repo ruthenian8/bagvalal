@@ -162,14 +162,25 @@ IrrCvb
 LEXICON VerbStem
 багьи<verb>:агьи[Idecl,AgrInit] # 104 take away (irregular)
 багьи<verb>:игьи[Idecl,AgrInit] # 104 take away (irregular)
-белъви<verb>:елъви[Idecl,AgrInit] # 89
-букӀвиᵸ<verb>:укӀвиᵸ[Idecl,AgrInit] # 89
+басиᵸ<verb>:асвиᵸ[Idecl,AgrInit] # ask Gudava
+белъу<verb>:елъви[Idecl,AgrInit] # 89
+белъи<verb>:елъи[Idecl,AgrInit] # 876
+бихи<verb>:ихи[Idecl,AgrInit] # 850 please
+бихи<verb>:ихи[Idecl] # Gudava, please 
+букӀуᵸ<verb>:укӀвиᵸ[Idecl,AgrInit] # 89
+букъу<verb>:укъви[Idecl,AgrInit] # 863 cut
+букъу<verb>:ухъви[Idecl,AgrInit] # Gudava cut
 гьекьи<verb>:гьекьи[Idecl] #846
+ичи<verb>:ичи[Idecl] # 849 give
 квахи<verb>:квахи[Idecl]
 кваххи<verb>:кваххи[Idecl] # 89
 цӀахиᵸ<verb>:цӀахиᵸ[Idecl] 
 цӀаххиᵸ<verb>:цӀаххиᵸ[Idecl] # 89
+ангьаᵸ<verb>:ангьаᵸ[IIdecl] # 839 hear
+агьаᵸ<verb>:агьаᵸ[IIdecl] # Gudava hear
+алгьаᵸ<verb>:алхаᵸ[IIdecl] # M 37 hear
 ба<verb>:а[IIdecl,AgrInit] # 101 go (irregular)
+багӀари<verb>:багӀа[IIdecl] # bleat Gudava
 бета<verb>:ета[IIdecl,AgrInit] # 89 leave
 бикӀйаᵸ:икӀйаᵸ[IIdecl] # look (irregular)
 битаᵸ<verb>:итаᵸ[IIdecl,AgrInit] # 89 miss
@@ -178,16 +189,30 @@ LEXICON VerbStem
 букӀа<verb>:укӀа[IIdecl,AgrInit] # 101 be (irregular)
 букӀа<verb>:укӀва[IIdecl,AgrInit] # 101 be (irregular)
 букӀа<verb>:акӀа[IIdecl,AgrInit] # 101 be (irregular)
+къочаᵸ<verb>:къочаᵸ[IIdecl] # 856 want
 рекӀваᵸ<verb>:рекӀваᵸ[IIdecl]
 эхва<verb>:эхва[IIdecl] #844
 ба<verb>:е[IIIdecl,AgrInit] # 101 go (irregular)
 бегъе<verb>:егъе[IIIdecl,AgrInit] #92
+бихе<verb>:ихе[IIIdecl,AgrInit] # 850 
 бугье<verb>:угье[IIIdecl,AgrInit] # throw (Gudava)
+бугье<verb>:угьеᵸ[IIIdecl,AgrInit] # 863 explain
 гьаᵸ<verb>:гьаᵸ[IIIdecl] # 104 see (irregular)
+дже<verb>:дже[IIIdecl] # 843
 рекӀвеᵸ<verb>:рекӀвеᵸ[IIIdecl] #92
+хъаре<verb>:хъаре[IIIdecl] # 855
+багӀари<verb>:багӀари[IVdecl] # 839 bleat
+басаᵸ<verb>:асаᵸ[IVdecl,AgrInit] # 838 narrate
+басиᵸ<verb>:асиᵸ[IVdecl,AgrInit]  # 838 ask
+бешта<verb>:ешта[IVdecl,AgrInit] # 844 let go
+бешта<verb>:ешда[IVdecl,AgrInit] # Gudava let go
 белъи<verb>:елъи[IVdecl,AgrInit] # 101
+гьигьвари<verb>:гьигьвари[IVdecl] # 847
+къани<verb>:къани[IVdecl] # 856 eat
 мади<verb>:мади[IVdecl]
 мари<verb>:мари[IVdecl] #92
+гьари<verb>:гьари[IVdecl] #846 ask
+гьари<verb>:гьаари[IVdecl] # Gudava, ask
 гьаᵸ<verb>:гьаᵸ[Vdecl] # 104 see (irregular)
 тӀа<verb>:тӀа[Vdecl] #92
 
@@ -227,7 +252,9 @@ LEXICON CvbEnd
 <cvb>:била[antI]
 <cvb>:лъена[antII]
 <cvb>:лъиба[lim]
-<cvb>:къалъани[temp]
+<cvb>:къалъани[temp] # 597
+<cvb>:къолъани[temp] # M 483
+<cvb>:къалъир[temp] # M 483
 <cvb>:ра[cond]
 <cvb>:рала[conc]
 <cvb>:ла[rsn]
@@ -311,3 +338,8 @@ LEXICON agrVerb
 LEXICON negSuffix
 <neg>:чӀи[pst]
 <fut><neg>:чӀе[fut]
+
+LEXICON TimeMarker
+<temp>:къалъани[temp] # 597
+<temp>:къолъани[temp] # M 483
+<temp>:къалъир[temp] # M 483

@@ -1,0 +1,1884 @@
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# VERB PATTERNS
+PATTERN Prateritum
+(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] PratAdd[Idecl]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] PratAdd[Idecl]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] PratAdd[IIdecl]
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] PratAdd[IIIdecl]
+(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] PratAdd[reg]
+(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] PratAdd[reg]
+
+PATTERN Imperfect
+(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] ImperfAdd[IVdecl]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] ImperfAdd[IIdecl]
+(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] ImperfAdd[Idecl]
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] ImperfAdd[reg]
+(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] ImperfAdd[reg]
+
+PATTERN Potentialis
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] PotAdd[IIIdecl]
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] PotAdd[Vdecl]
+(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] PotAdd[reg]
+
+PATTERN Prohibitive
+(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] ProhAdd[IIIdecl]
+(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] ProhAdd[Idecl]
+(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] ProhAdd[IIdecl]
+(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] ProhAdd[IVdecl]
+(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] ProhAdd[Vdecl]
+
+PATTERN EmphStem
+Imperfect EmphAffix
+
+PATTERN PratPart # p. 91
+Prateritum PartAffix[irreg]
+
+PATTERN NegPratPart # p. 91
+Prateritum negSuffix[pst] PartAffix[irreg]
+
+PATTERN ImpPart # p. 92
+Imperfect PartAffix[reg]
+
+PATTERN FutPart # p. 94
+Potentialis FutAffix PartAffix[reg]
+
+PATTERN FutNegPartI # pp. 95-96
+Prohibitive negSuffix[pst] PartAffix[irreg]
+
+PATTERN FutNegPartII # pp. 95-96
+Prohibitive negSuffix[pst] CvbAffix[negFut] FutAffix PartAffix[reg]
+
+PATTERN Masdar # pp. 90-91
+Prateritum MasdarEnd[reg]
+
+PATTERN NegMasdar # p. 91
+Prateritum negSuffix[pst] MasdarEnd[neg]
+
+PATTERN EmphNegMasdar # p. 95
+EmphStem negSuffix[pst] MasdarEnd[neg]
+
+PATTERN EmphNegPratPart # p. 95
+EmphStem negSuffix[pst] PartAffix[irreg]
+
+PATTERN EmphFutNegPartI # p. 95
+EmphStem ProhAdd[IIIdecl] negSuffix[pst] PartAffix[irreg]
+
+PATTERN EmphFutNegPartII # p. 95
+EmphStem ProhAdd[IIIdecl] negSuffix[pst] CvbAffix[negFut] FutAffix PartAffix[reg]
+
+PATTERN IrrPart # p. 99
+VerbCopula
+IrrPrtStem
+
+PATTERN AllMasdars
+Masdar
+NegMasdar
+EmphNegMasdar
+
+PATTERN AllParticiples
+PratPart
+NegPratPart
+ImpPart
+FutNegPartI
+FutNegPartII
+EmphNegPratPart
+EmphNegPratPart
+EmphFutNegPartI
+EmphFutNegPartII
+IrrPart
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# NOUN PATTERNS
+PATTERN aPlusHpl
+hplPlOblVowel[preA] PlOblMarker[hpl]
+
+# patterns to implement variations of the Vbi marker, see Kibrik 133
+PATTERN AbiPl
+biPlVowel[Abi] PlMarker[plBi]
+
+PATTERN UbiPl
+biPlVowel[Ubi] PlMarker[plBi]
+
+PATTERN IbiPl
+biPlVowel[Ibi] PlMarker[plBi]
+
+PATTERN EbiPl
+biPlVowel[Ebi] PlMarker[plBi]
+
+PATTERN JabiPl
+biPlVowel[Jabi] PlMarker[plBi]
+
+PATTERN NoVbiPl
+biPlVowel[noVbi] PlMarker[plBi]
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# NUMERAL PATTERNS
+PATTERN decimal
+rootDec dec
+
+PATTERN centi
+rootCent cent
+
+PATTERN milli
+rootCent mil
+
+PATTERN singles
+rootInit[DaNumber] end[DaNumber]
+rootInit[RaNumber] end[RaNumber] # ра, Кибрик et al. С. 155
+
+PATTERN DaSuffixedNums
+decimal end[DaNumber]
+milli end[DaNumber]
+centi end[DaNumber]
+
+PATTERN NomNumbersAgr
+singles ( OblAdjSingular[OblSu] | OblAdjPlural[OblPlLu] )
+DaSuffixedNums ( OblAdjSingular[OblSu] | OblAdjPlural[OblPlLu] )
+
+PATTERN NomNumbersNonAgr
+singles OblAdjSingular[OblFLi]
+singles OblAdjSingular[OblNLi]
+singles OblAdjPlural[OblPlLi]
+DaSuffixedNums OblAdjSingular[OblLi]
+DaSuffixedNums OblAdjSingular[OblNLi]
+DaSuffixedNums OblAdjPlural[OblPlLi]
+
+PATTERN OrdNumbersSer1
+singles ordinalOpt? ordinal[ser1] 
+DaSuffixedNums ordinalOpt? ordinal[ser1]
+
+PATTERN OrdNumbersSer2
+singles ordinalOpt ordinal[ser2] 
+DaSuffixedNums ordinalOpt ordinal[ser2]
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# CASE SYSTEM PATTERNS
+PATTERN OblAdjAgr
+agrFinal[Msg] OblSingular[OblSu]
+agrFinal[Hpl] OblPlural[OblPlLu]
+
+PATTERN OblAdjNonAgr
+agrFinal[Fsg] OblSingular[OblLi]
+agrFinal[Nsg] OblSingular[OblLi]
+agrFinal[Npl] OblPlural[OblPlLi]
+
+PATTERN OblAdjDative
+agrFinal[Msg] DatExcMin[OblSu]
+agrFinal[Fsg] DatExcMin[OblLi]
+agrFinal[Nsg] DatExcMin[OblLi]
+agrFinal[Hpl] DatExcMin[OblPlLu]
+agrFinal[Npl] DatExcMin[OblLi]
+
+PATTERN OblAdjSup
+agrFinal[Msg] SupExcMin[OblSu] directCase
+agrFinal[Fsg] SupExcMin[OblLi] directCase
+agrFinal[Nsg] SupExcMin[OblLi] directCase
+agrFinal[Hpl] SupExcMin[OblPlLu] directCase
+agrFinal[Npl] SupExcMin[OblLi] directCase
+
+PATTERN LiFusion
+SupExceptions[OblFLi]
+SupExceptions[OblNLi]
+DatExceptions[OblFLi]
+DatExceptions[OblNLi]
+
+PATTERN CasesGenAgr
+CaseMain[ErgR,-nullNom]
+genitiveCase[GenAgr]
+locMain directCase
+
+PATTERN CasesGenNonAgr
+CaseMain[ErgR,-nullNom]
+genitiveCase[-GenAgr]
+locMain directCase
+
+PATTERN CasesAll
+CaseMain[ErgR,-nullNom]
+genitiveCase
+locMain directCase
+
+PATTERN AddCasesMsg
+CaseMain[nullNom]
+DatExcMin[OblSu]
+SupExcMin[OblSu] directCase
+
+PATTERN AddCasesFNsg
+CaseMain[nullNom]
+DatExcMin[OblLi]
+SupExcMin[OblLi] directCase
+
+PATTERN AddCasesHpl
+CaseMain[nullNom]
+DatExcMin[OblPlLu]
+SupExcMin[OblPlLu] directCase
+
+PATTERN AddCasesNpl
+CaseMain[nullNom]
+DatExcMin[OblLi]
+SupExcMin[OblLi] directCase
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# MISCELLANEOUS PATTERNS
+PATTERN PronModifiers
+NegPronounSuffix
+IndefPronounSuffix
+
+PATTERN UCl # = Universal clitics
+PostClitic[all]
+RestrParticle
+ModalParticle
+UQparticle
+QuestParticle
+negSuffix[pst]
+
+PATTERN NCl # = Nominal clitics
+PostClitic
+RestrParticle
+ModalParticle
+UQparticle
+QuestParticle
+negSuffix[pst]
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# MAIN PATTERNS
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+PATTERNS
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# NUMBERS
+#
+rootOne[norm] agrFinal[-Hpl,-Npl]
+singles
+decimal # аца
+centi # бешен
+DaSuffixedNums
+#
+#forms with links
+#
+decimal decComp # ацал, link in 11-19
+rootDec conjDec # ац, link in 21-29
+centi conjCentMil  
+milli conjCentMil # links in 101-199, 10001-1999
+#
+#nominalized cardinal numbers
+#
+singles DatExceptions[-OblPlRu,-OblPlDu] NCl?
+DaSuffixedNums DatExceptions[-OblPlRu,-OblPlDu] NCl?
+NomNumbersAgr CasesGenAgr NCl?
+NomNumbersNonAgr CasesGenNonAgr NCl?
+#
+#collective numbers
+#
+singles col 
+decimal col 
+DaSuffixedNums col
+#
+#ordinal numbers
+#
+rootOne[ord]
+OrdNumbersSer1 agrFinal
+OrdNumbersSer2
+#
+#nominalized ordinals
+#
+OrdNumbersSer1 agrFinal CaseMain[nullNom] NCl?
+OrdNumbersSer1 OblAdjAgr CasesGenAgr NCl?
+OrdNumbersSer1 OblAdjNonAgr CasesGenNonAgr NCl?
+OrdNumbersSer1 OblAdjDative NCl?
+OrdNumbersSer1 OblAdjSup NCl?
+#
+#distributional numbers
+#
+rootOne[red] agrFinal # цецеб = 1
+rootCent centDist cent end[DaNumber]
+rootCent milDist mil end[DaNumber]?
+decDist dec ( end[DaNumber] | end[RaNumber] ) # гьабдигьабда = 10
+2xRootInit[excl] # 2
+2xRootInit[-excl,DaNumber] end[DaNumber]
+2xRootInit[-excl,RaNumber] end[RaNumber]
+2xRootDec dec
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# ADJECTIVE
+#adjective agreement
+#
+agrInitial adjDouble agrFinal # can agree with 2 heads, see Kibrik et al.
+adjSingle agrFinal
+#
+#nominalized adjectives
+#double
+agrInitial[Msg] adjDouble agrFinal[Msg] AddCasesMsg NCl?
+agrInitial[Fsg] adjDouble agrFinal[Fsg] AddCasesFNsg NCl?
+agrInitial[Nsg] adjDouble agrFinal[Nsg] AddCasesFNsg NCl?
+agrInitial[Hpl] adjDouble agrFinal[Hpl] AddCasesHpl NCl?
+agrInitial[Npl] adjDouble agrFinal[Npl] AddCasesNpl NCl?
+agrInitial[Msg] adjDouble agrFinal[Msg] OblSingular[OblSu] CasesGenAgr NCl?
+agrInitial[Fsg] adjDouble agrFinal[Fsg] OblSingular[OblLi] CasesGenNonAgr NCl?
+agrInitial[Nsg] adjDouble agrFinal[Nsg] OblSingular[OblLi] CasesGenNonAgr NCl?
+agrInitial[Hpl] adjDouble agrFinal[Hpl] OblPlural[OblPlLu] CasesGenAgr NCl?
+agrInitial[Npl] adjDouble agrFinal[Npl] OblPlural[OblPlLi] CasesGenNonAgr NCl?
+#single
+adjSingle agrFinal CaseMain[nullNom] NCl?
+adjSingle OblAdjAgr CasesGenAgr NCl?
+adjSingle OblAdjNonAgr CasesGenNonAgr NCl?
+adjSingle OblAdjDative NCl? 
+adjSingle OblAdjSup NCl?
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# PRONOUN
+#personal pronouns
+#
+PerPronounStems genitiveCase[GenAgr] NCl?
+PerPronounStems[PrExc] CaseMain[ErgR,-RegErg,-nullNom] NCl?
+PerPronounStems[-PrExc] CaseMain[ErgR] NCl?
+PerPronounExc NCl?
+PerPronounStems locMain directCase NCl?
+#
+#demonstrative pronouns
+#
+DemPronoun agrFinal CaseMain[nullNom] NCl?
+# vocab plurals
+DemPronoun agrFinal[Npl] OblSingular[OblU] ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) NCl? # o-r-u , see vocab, 580
+DemPronoun agrFinal[Npl] OblSingular[OblU] locMain directCase NCl?
+DemPronoun agrFinal[Hpl] OblPlural[OblPlLu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) NCl? # o-ba-lu- , see vocab, 580
+DemPronoun agrFinal[Hpl] OblPlural[OblPlLu] locMain directCase NCl?
+# Kibrik plurals
+DemPronoun OblAdjPlural[OblPlRu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) NCl?
+DemPronoun ( DatExceptions[OblPlRu] | SupExceptions[OblPlRu] ) NCl?
+DemPronoun OblAdjPlural[OblPlRi] ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) NCl?
+DemPronoun ( OblAdjPlural[OblPlRu] | OblAdjPlural[OblPlRi] ) locMain directCase NCl?
+# F / N sg
+DemPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) NCl?
+DemPronoun LiFusion NCl?
+DemPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) locMain directCase NCl?
+# M sg
+DemPronoun OblAdjSingular[OblSu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) NCl?
+DemPronoun ( DatExceptions[OblSu] | SupExceptions[OblSu] ) NCl?
+DemPronoun OblAdjSingular[OblSu] locMain directCase NCl?
+#
+#logophoric pronouns + reflexive pronouns, see Kibrik et al. 162-163
+#
+LogPronoun[nom] agrFinal CaseMain[nullNom] RefSuffix? NCl?
+# F / N sg
+LogPronoun[obl] ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) CasesGenNonAgr RefSuffix? NCl?
+LogPronoun[obl] LiFusion RefSuffix? NCl?
+# M sg 
+LogPronoun[obl] OblAdjSingular[OblSu] CasesGenAgr RefSuffix? NCl?
+LogPronoun[obl] ( DatExceptions[OblSu] | SupExceptions[OblSu] ) RefSuffix? NCl?
+# plurals
+LogPronoun[obl] OblAdjPlural[OblPlDu] CasesGenAgr RefSuffix? NCl?
+LogPronoun[obl] ( DatExceptions[OblPlDu] | SupExceptions[OblPlDu] ) RefSuffix? NCl?
+LogPronoun[obl] OblAdjPlural[OblPlDiri] CasesGenNonAgr RefSuffix? NCl?
+#
+#interrogative & negative pronouns
+#
+InterPronounExc PronModifiers? # nominative, see Kibrik et al, 164 & vocab, 580
+InterPronoun[H] CasesGenAgr PronModifiers? NCl?
+InterPronoun[H] DatExcMin[pron] PronModifiers? NCl?
+InterPronoun[N] OblSingular[OblLi] CasesGenNonAgr PronModifiers? NCl?
+#which pronoun
+WhichPronoun ( agrInitial[Msg] | ( agrInitial[Fsg] | agrInitial[Nsg] ) ) WhichInfix[sg] CaseMain[nullNom] PronModifiers? NCl?
+WhichPronoun ( agrInitial[Hpl] | agrInitial[Npl] ) WhichInfix[pl] CaseMain[nullNom] PronModifiers? NCl?
+WhichPronoun agrInitial[Msg] WhichInfix[sg] OblSingular[OblSu] CasesGenAgr PronModifiers? NCl?
+WhichPronoun agrInitial[Fsg] WhichInfix[sg] OblSingular[OblLi] CasesGenNonAgr PronModifiers? NCl?
+WhichPronoun agrInitial[Nsg] WhichInfix[sg] OblSingular[OblLi] CasesGenNonAgr PronModifiers? NCl?
+WhichPronoun agrInitial[Hpl] WhichInfix[pl] OblPlural[OblPlU] CasesGenAgr PronModifiers? NCl?
+WhichPronoun agrInitial[Npl] WhichInfix[pl] OblPlural[OblPlU] CasesGenNonAgr PronModifiers? NCl?
+WhichPronoun agrInitial[Msg] WhichInfix[sg] ( DatExcMin[-OblPlLu,-OblPlAlu,-pron] | ( SupExcMin[-OblPlLu,-OblPlAlu] directCase ) )
+#number interrogative
+NumPronoun CaseMain[nullNom] PronModifiers? NCl?
+NumPronoun OblAdjSingular[OblSu] CasesGenAgr PronModifiers? NCl?
+NumPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) CasesGenNonAgr PronModifiers? NCl?
+NumPronoun OblPlural[OblPlAlu] CasesGenAgr PronModifiers? NCl?
+NumPronoun ( DatExceptions[OblSu] | ( DatExceptions[OblFLi] | DatExceptions[OblNLi] ) ) PronModifiers? NCl?
+NumPronoun ( SupExceptions[OblSu] | ( SupExceptions[OblFLi] | SupExceptions[OblNLi] ) ) PronModifiers? NCl?
+NumPronounExc[sup] directCase NCl?
+NumPronounExc[-sup] NCl?
+#"Each" pronoun
+EachPronoun agrMiddle[Msg] EachPronoun agrMiddle[Msg] AddCasesMsg NCl?
+EachPronoun agrMiddle[Fsg] EachPronoun agrMiddle[Fsg] AddCasesFNsg NCl?
+EachPronoun agrMiddle[Nsg] EachPronoun agrMiddle[Nsg] AddCasesFNsg NCl?
+EachPronoun agrMiddle[Msg] EachPronoun agrMiddle[Msg] OblSingular[OblSu] CasesGenAgr NCl?
+EachPronoun agrMiddle[Fsg] EachPronoun agrMiddle[Fsg] OblSingular[OblLi] CasesGenNonAgr NCl?
+EachPronoun agrMiddle[Nsg] EachPronoun agrMiddle[Nsg] OblSingular[OblLi] CasesGenNonAgr NCl?
+#Interrogative adjective pronoun 
+InterAdjPronoun agrFinal[Msg] AddCasesMsg NCl?
+InterAdjPronoun ( agrFinal[Fsg] | agrFinal[Nsg] ) AddCasesFNsg NCl?
+InterAdjPronoun agrFinal[Msg] OblSingular[OblSu] CasesGenAgr NCl?
+InterAdjPronoun ( agrFinal[Fsg] | agrFinal[Nsg] ) OblSingular[OblLi] CasesGenNonAgr NCl?
+InterAdjPronoun agrFinal[Hpl] AddCasesHpl NCl?
+InterAdjPronoun agrFinal[Npl] AddCasesNpl NCl?
+InterAdjPronoun agrFinal[Hpl] OblPlural[OblPlLu] CasesGenAgr NCl?
+InterAdjPronoun agrFinal[Npl] OblPlural[OblPlLi] CasesGenNonAgr NCl?
+#indef pronoun ser. #2
+InterPronounExc[Hsg] CaseMain[nullNom] ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) NCl?
+InterPronounExc[Nsg] CaseMain[nullNom] AltIndefPronounSuffix[Nsg] NCl?
+InterPronounExc[Hsg] CaseMain[nullNom] AltIndefPronounSuffix[Hpl] NCl?
+InterPronounExc[Npl] CaseMain[nullNom] AltIndefPronounSuffix[Npl] NCl?
+InterPronoun[H] CasesGenAgr ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) ) NCl?
+InterPronoun[H] DatExcMin[pron] ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) ) NCl?
+InterPronoun[H] SupExcMin[pron] directCase ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) ) NCl?
+InterPronoun[N] OblAdjSingular[OblNLi] CasesGenNonAgr AltIndefPronounSuffix[Nsg] NCl?
+InterPronoun[N] ( DatExcMin[OblLi] | ( SupExcMin[OblLi] directCase ) ) AltIndefPronounSuffix[Nsg] NCl?
+InterPronoun[N] OblAdjPlural[OblPlLi] CasesGenNonAgr AltIndefPronounSuffix[Npl] NCl?
+InterPronoun[N] ( DatExcMin[OblLi] | ( SupExcMin[OblLi] directCase ) ) AltIndefPronounSuffix[Npl] NCl?
+#anypronoun
+AnyPronoun agrFinal[Msg] AddCasesMsg NCl?
+AnyPronoun ( agrFinal[Fsg] | agrFinal[Nsg] ) AddCasesFNsg NCl?
+AnyPronoun agrFinal[Msg] OblSingular[OblSu] CasesGenAgr NCl?
+AnyPronoun ( agrFinal[Fsg] | agrFinal[Nsg] ) OblSingular[OblLi] CasesGenNonAgr NCl?
+AnyPronoun agrFinal[Hpl] AddCasesHpl NCl?
+AnyPronoun agrFinal[Npl] AddCasesNpl NCl?
+AnyPronoun agrFinal[Hpl] OblPlural[OblPlLu] CasesGenAgr NCl?
+AnyPronoun agrFinal[Npl] OblPlural[OblPlLi] CasesGenNonAgr NCl?
+#allpronoun
+agrInitial[Msg] AllPronoun agrMiddle[Msg] AddCasesMsg DaPostfix
+agrInitial[Fsg] AllPronoun agrMiddle[Fsg] AddCasesFNsg DaPostfix
+agrInitial[Nsg] AllPronoun agrMiddle[Nsg] AddCasesFNsg DaPostfix
+agrInitial[Hpl] AllPronoun agrMiddle[Hpl] AddCasesHpl DaPostfix
+agrInitial[Nsg] AllPronoun agrMiddle[Npl] AddCasesNpl DaPostfix
+agrInitial[Msg] AllPronoun agrMiddle[Msg] OblSingular[OblSu] CasesGenAgr DaPostfix
+agrInitial[Fsg] AllPronoun agrMiddle[Fsg] OblSingular[OblLi] CasesGenNonAgr DaPostfix
+agrInitial[Nsg] AllPronoun agrMiddle[Nsg] OblSingular[OblLi] CasesGenNonAgr DaPostfix
+agrInitial[Hpl] AllPronoun agrMiddle[Hpl] OblSingular[OblSu] CasesGenAgr DaPostfix
+agrInitial[Nsg] AllPronoun agrMiddle[Npl] OblPlural[OblPlLi] CasesGenNonAgr DaPostfix
+#universal ser. #3, see Kibrik et al. 166
+InterPronounExc[Hsg] IndefPronounSuffix ( AddCasesMsg | AddCasesFNsg ) NCl?
+InterPronounExc[Hsg] IndefPronounSuffix OblSingular[OblSu] CasesGenAgr NCl?
+InterPronounExc[Hsg] IndefPronounSuffix OblSingular[OblLi] CasesGenNonAgr NCl?
+InterPronounExc[Nsg] IndefPronounSuffix ( OblSingular[OblLi] CasesGenNonAgr | AddCasesFNsg ) NCl?
+InterPronounExc[Npl] IndefPronounSuffix ( OblPlural[OblPlLi] CasesGenNonAgr | AddCasesNpl ) NCl?
+#Misc. pronouns
+HowPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
+WhenPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
+NumPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
+LocPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
+InterAdjPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# NOUN
+#sg absolutives
+NounAbs CaseMain[nullNom] NCl?
+#sg obliques
+NounOblSame OblSingular[OblZero] CasesAll NCl?
+NounOblSu OblSingular[OblSu] CasesGenAgr NCl?
+NounOblSu OblSingular[OblSu] AddCasesMsg NCl?
+NounOblLi OblSingular[OblLi] CasesGenNonAgr NCl?
+NounOblLi OblSingular[OblLi] AddCasesFNsg NCl?
+NounOblI OblSingular[OblI] CasesAll NCl?
+NounOblA OblSingular[OblA] CasesAll NCl?
+NounOblU OblSingular[OblU] CasesAll NCl?
+NounOblE OblSingular[OblE] CasesAll NCl?
+NounOblSon OblSingular[OblZero] CasesAll NCl?
+NounOblIrreg OblSingular[OblZero] CasesAll NCl?
+#absolutives
+NounPlBi NoVbiPl CaseMain[nullNom] NCl?
+NounPlAbi AbiPl CaseMain[nullNom] NCl?
+NounPlIbi IbiPl CaseMain[nullNom] NCl?
+NounPlUbi UbiPl CaseMain[nullNom] NCl?
+NounPlEbi EbiPl CaseMain[nullNom] NCl?
+NounPlJabi JabiPl CaseMain[nullNom] NCl?
+NounPlMi PlMarker[plMi] CaseMain[nullNom] NCl?
+NounPlZabi PlMarker[plZabi] CaseMain[nullNom] NCl? # zabi adi & ari only used in animate naouns, see Kibrik 132
+NounPlBadi PlMarker[plBadi] CaseMain[nullNom] NCl?
+NounPlAdi PlMarker[plAdi] CaseMain[nullNom] NCl?
+NounPlAri PlMarker[plAri] CaseMain[nullNom] NCl?
+NounPlAli PlMarker[plAli] CaseMain[nullNom] NCl?
+NounPlDari PlMarker[plDari] CaseMain[nullNom] NCl?
+NounPlDi PlMarker[plDi] CaseMain[nullNom] NCl?
+NounPlI PlMarker[plI] CaseMain[nullNom] NCl?
+NounPlA PlMarker[plA] CaseMain[nullNom] NCl?
+NounPlIrreg NCl?
+#hpl obliques
+NounPlAbi[hpl] AbiPl aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlUbi[hpl] UbiPl aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlIbi[hpl] IbiPl aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlEbi[hpl] EbiPl aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlJabi[hpl] JabiPl aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlBi[hpl] NoVbiPl aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+# 
+NounPlZabi PlMarker[plZabi] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl? #zabi adi & ari only used in animate nouns, see Kibrik 132
+NounPlAdi PlMarker[plAdi] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlAri PlMarker[plAri] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+#
+NounPlDari[hpl] PlMarker[plDari] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlBadi[hpl] PlMarker[plBadi] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlDi[hpl] PlMarker[plDi] PlOblMarker[hpl] ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlI[hpl] PlMarker[plI] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlA[hpl] PlMarker[plA] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+#npl obliques
+NounPlAbi[npl] AbiPl PlOblMarker[npl,plBi] CasesGenNonAgr NCl?
+NounPlUbi[npl] UbiPl PlOblMarker[npl,plBi] CasesGenNonAgr NCl?
+NounPlIbi[npl] IbiPl PlOblMarker[npl,plBi] CasesGenNonAgr NCl?
+NounPlEbi[npl] EbiPl PlOblMarker[npl,plBi] CasesGenNonAgr NCl?
+NounPlJabi[npl] JabiPl PlOblMarker[npl,plBi] CasesGenNonAgr NCl?
+NounPlBi[npl] NoVbiPl PlOblMarker[npl,plBi] CasesGenNonAgr NCl?
+NounPlMi[npl] PlMarker[plMi] PlOblMarker[npl,plBi] CasesGenNonAgr NCl?
+NounPlAli[npl] PlMarker[plAli] PlOblMarker[npl,plBi] CasesGenNonAgr NCl?
+NounPlDari[npl] PlMarker[plDari] PlOblMarker[npl,plDari] CasesGenNonAgr NCl?
+NounPlDi[npl] PlMarker[plDi] PlOblMarker[npl,plBi] CasesGenNonAgr NCl?
+NounPlI[npl] PlMarker[plI] PlOblMarker[npl,plI] CasesGenNonAgr NCl?
+# plural "a" gets replaced by "e" in oblique forms
+NounPlA[npl] PlMarker[plA] PlOblMarker[npl,plA] CasesGenNonAgr NCl?
+# exclusions "horse" and "goat", see Kibrik 138.
+NounPlI[excl] PlMarker[plI] PlOblMarker[npl,plA] CasesGenNonAgr NCl?
+NounPlIrreg PlOblMarker[npl,plI] CasesGenNonAgr NCl?
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# VERB
+VerbCopula
+IrrCvb
+#
+# inflective verb derivatives
+#
+AllMasdars AddCasesFNsg NCl?
+AllMasdars OblSingular[OblA] CasesGenNonAgr NCl?
+AllMasdars OblSingular[OblI] CasesGenNonAgr NCl?
+AllMasdars OblSingular[OblLi] CasesGenNonAgr NCl?
+AllParticiples agrFinal ( UCl | TimeMarker )?
+# case forms
+AllParticiples agrFinal CaseMain[nullNom] NCl?
+AllParticiples OblAdjAgr CasesGenAgr NCl?
+AllParticiples OblAdjNonAgr CasesGenNonAgr NCl?
+AllParticiples OblAdjDative NCl?
+AllParticiples OblAdjSup NCl?
+#
+## PRATERITUM DERIVATIVES
+#
+# ! prateritum, p. 91
+Prateritum UCl?
+# ! negative prateritum, p. 91
+Prateritum negSuffix[pst] UCl?
+# ! Prateritum converb, p. 91
+Prateritum agrVerb CvbEnd[past] UCl?
+# ! negative Prateritum converb, p. 91
+Prateritum negSuffix[pst] CvbAffix[negCvb] agrVerb CvbEnd[past] UCl?
+# ! Irrealis, p. 91
+Prateritum IrrAffix
+# ! posterior converb, pp. 90-91
+Prateritum CvbEnd[post] UCl?
+Potentialis CvbEnd[post] UCl?
+# ! limitative converb, pp. 90-91
+Prateritum CvbEnd[lim] UCl?
+Potentialis CvbEnd[lim] UCl?
+# ! I imperative for intransitive, p. 97
+Prateritum ImperAffix[ImpI] UCl?
+# ! II imperative for intransitive, p. 97
+Prateritum ImperAffix[ImpII] UCl?
+# Positive Optative for intransitive, p. 97
+Prateritum ImperAffix[ImpII] OptEnd UCl?
+#
+## IMPERFECT DERIVATIVES
+#
+# ! imperfect infinitive, p. 92
+Imperfect InfAffix[reg] UCl?
+# ! negative future, p. 92
+Imperfect negSuffix[fut] UCl?
+# ! imperfect converb, p. 92
+Imperfect CvbEnd[praes] UCl?
+#
+## POTENTIALIS DERIVATIVES
+#
+# ! potentialis infinitive, p. 94
+Potentialis InfAffix[reg] UCl?
+# ! potentialis prospective converb, p. 94
+Potentialis CvbAffix[prosp] agrVerb CvbEnd[past] UCl?
+# ! potentialis future converb, p. 94
+Potentialis FutAffix CvbEnd[praes] UCl?
+# ! synth future, p. 93
+Potentialis FutEnd[synth] UCl?
+# ! reactive future, p. 93
+Potentialis FutEnd[react] UCl?
+# ! conditional converb, p. 93
+Potentialis CvbEnd[cond] UCl?
+# ! reason converb, p. 93
+Potentialis CvbEnd[rsn] UCl?
+# ! conclusive converb, p. 93
+Potentialis CvbEnd[conc] UCl?
+# ! posterior converb, p. 93
+Potentialis CvbEnd[post] UCl?
+# ! I anterior converb, p. 93
+Potentialis CvbEnd[antI] UCl?
+# ! II anterior converb, p. 93
+Potentialis CvbEnd[antII] UCl?
+# ! imperative for transitive, pp. 96-97
+Potentialis ImperAffix[ImpI] UCl?
+# ! positive optative for transitive, p. 97
+Potentialis ImperAffix[ImpI] OptEnd UCl?
+#
+## PROHIBITIVE DERIVATIVES
+#
+# ! regular prohibitive, pp. 94, 96
+Prohibitive ProhEnd UCl?
+# ! negative infinitive p. 96
+Prohibitive negSuffix[past] InfAffix[neg] UCl?
+# ! negative future converb, p. 96
+Prohibitive negSuffix[past] CvbAffix[negFut] FutAffix CvbEnd[praes] UCl?
+# ! negative optative
+Prohibitive ProhEnd OptEnd UCl?
+#
+## EMPHATIC NEGATIVE DERIVATIVES
+#
+# ! negative prateritum, 95
+EmphStem negSuffix[pst] UCl?
+# ! negative Prateritum converb, 95
+EmphStem negSuffix[pst] CvbAffix[negCvb] agrVerb CvbEnd[past] UCl?
+# ! negative future, p. 95
+EmphStem negSuffix[fut] UCl?
+# ! negative prohibitive, p. 95
+EmphStem ProhAdd[IIIdecl] ProhEnd UCl?
+# ! negative infinitive, p. 95
+EmphStem ProhAdd[IIIdecl] negSuffix[past] InfAffix[neg] UCl?
+# ! negative future converb, p. 95
+EmphStem ProhAdd[IIIdecl] negSuffix[past] CvbAffix[negFut] FutAffix CvbEnd[praes] UCl?
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# MISCELLANEOUS
+TimeMarker
+Clitic
+Particle
+Adverb UCl?
+MiscPronounExc UCl?
+Interjection
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# LEXICON ENTRIES
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+#
+# COMMON MARKERS
+#
+LEXICON negSuffix
+<neg>:чӀи[pst]
+<fut><neg>:чӀе[fut]
+
+LEXICON TimeMarker
+<temp>:къалъани[temp] # 597
+<temp>:къолъани[temp] # M 483
+<temp>:къалъир[temp] # M 483
+
+LEXICON PostClitic
+<restr>:{ep.й}{ep.е}л[all]
+<quot>:ди[all]
+<quot>:гъе[all]
+<quot>:гъала[all]
+<quot>:гъеди[all]
+<quot><add>:дила[all]
+<all>:гъаби[nom]
+<add>:ла[all] # 179
+<add>:лъа[all] # 179
+<int>:да[all] # 180
+<int><add>:дала[all] # 180
+<comit>:лена[nom]
+<comit>:ена[nom]
+<rula>:гъула[all] # 180
+<uq>:хъал[all] # 182
+
+# -----------------------------------------------------------------------------------------------
+# NUMBER DERIVATION
+# 
+LEXICON end
+<num>:да[DaNumber]
+<num>:ра[RaNumber]
+
+LEXICON col
+<col>:ла
+
+# number modifiers
+# 
+LEXICON ordinal
+<ord>:лъо[ser1]
+<ord>:ла[ser2]
+
+LEXICON ordinalOpt
+:ла
+
+LEXICON dec
+<*>гьацӀа<num><ten>:ацӀа
+
+LEXICON conjDec
+<*>гьацӀа<num><ten>:ацӀ # 21-29
+
+LEXICON cent
+<*>бешенда<num><hundred>:бешен
+
+LEXICON mil
+<*>азарда<num><thousand>:азар
+
+# distributional number modifiers
+#
+LEXICON decDist
+цев<num><distr>:гьацӀигь
+
+LEXICON centDist
+<distr>:беши
+
+LEXICON milDist
+<distr>:ази
+
+# number links
+# 
+LEXICON decComp
+<lnk>:л # 11-19
+
+LEXICON conjCentMil
+<lnk>:чӀекӀуб
+
+# --------------------------------------------------------------------------------------------
+# NOMINAL INFLECTION
+# Oblique stem markers
+#
+LEXICON OblSingular
+<obl>:[OblZero]
+<obl>:а[OblA]
+<obl>:и[OblI]
+<obl>:е[OblE]
+<obl>:у[OblU]
+<obl>:щу[OblSu]
+<obl>:лу[OblLu]
+<obl>:лъи[OblLi]
+
+LEXICON OblPlural
+<obl>:а[OblPlA]
+<obl>:алу[OblPlAlu]
+<obl>:лу[OblPlLu]
+<obl>:лъи[OblPlLi]
+<obl>:у[OblPlU]
+
+LEXICON hplPlOblVowel
+:а[preA]
+:и[preI]
+
+LEXICON PlOblMarker
+<obl>:лу[hpl]
+<obl>:а[npl,plDari,plBi]
+<obl>:и[npl,plI]
+<obl>:е[npl,plA]
+
+LEXICON OblAdjSingular
+<M><sg><obl>:щу[OblSu]
+<F><sg><obl>:лъи[OblFLi]
+<N><sg><obl>:лъи[OblNLi]
+
+LEXICON OblAdjPlural
+<H><pl><obl>:лу[OblPlLu]
+<H><pl><obl>:алу[OblPlAlu]
+<N><pl><obl>:лъи[OblPlLi]
+<H><pl><obl>:ру[OblPlRu]
+<N><pl><obl>:ри[OblPlRi]
+<H><pl><obl>:ду[OblPlDu]
+<N><pl><obl>:дири[OblPlDiri]
+
+# Noun plural suffixes
+#
+LEXICON biPlVowel
+:а[Abi]
+:у[Ubi]
+:и[Ibi]
+:е[Ebi]
+:йа[Jabi]
+:[noVbi]
+
+LEXICON PlMarker
+<pl>:би[plBi]
+<pl>:дари[plDari]
+<pl>:бади[plBadi]
+<pl>:ди[plDi]
+<pl>:и[plI]
+<pl>:а[plA]
+<pl>:али[plAli]
+<pl>:заби[plZabi]
+<pl>:ари[plAri]
+<pl>:ади[plAdi]
+<pl>:ми[plMi]
+
+# ----------------------------------------------------------------------------------------------
+# CASE MARKERS
+LEXICON CaseMain
+<nom>:[ErgD,ErgR,nullNom]
+<dat>:ла[ErgD,ErgR,RegDat]
+<erg>:д[ErgD]
+<erg>:р[ErgR,RegErg]
+<aff>:ба[ErgD,ErgR]
+<subst>:бас[ErgD,ErgR]
+
+LEXICON DatExceptions
+<M><sg><obl><dat>:ща[ErgD,ErgR,OblSu]
+<M><sg><obl><dat>:щва[ErgD,ErgR,OblSu]
+<F><sg><obl><dat>:лъа[ErgD,ErgR,OblFLi]
+<N><sg><obl><dat>:лъа[ErgD,ErgR,OblNLi]
+<N><pl><obl><dat>:лъа[ErgD,ErgR,OblPlLi]
+<H><pl><obl><dat>:ла[ErgD,ErgR,OblPlLu]
+<H><pl><obl><dat>:ра[ErgD,ErgR,OblPlRu] # see Kibrik et al. 162
+<H><pl><obl><dat>:рва[ErgD,ErgR,OblPlRu] # see Kibrik et al. 162
+<H><pl><obl><dat>:да[ErgD,ErgR,OblPlDu] # see Kibrik et al. 163
+<H><pl><obl><dat>:два[ErgD,ErgR,OblPlDu] # see Kibrik et al. 163
+
+LEXICON DatExcMin
+<obl><dat>:ща[OblSu]
+<obl><dat>:щва[OblSu] # variation from Gudava
+<obl><dat>:лъа[OblLi]
+<obl><dat>:ла[OblPlLu]
+<obl><dat>:лла[OblPlAlu]
+<dat>:ха[pron]
+
+LEXICON SupExceptions
+<M><sg><obl><sup>:ща[OblSu]
+<M><sg><obl><sup>:щва[OblSu]
+<F><sg><obl><sup>:лъа[OblFLi]
+<N><sg><obl><sup>:лъа[OblNLi]
+<N><pl><obl><sup>:лъа[OblPlLi]
+<H><pl><obl><sup>:лла[OblPlAlu]
+<H><pl><obl><sup>:ла[OblPlLu]
+<H><pl><obl><sup>:ра[OblPlRu] # see Kibrik et al. 162
+<H><pl><obl><sup>:рва[OblPlRu] # see Kibrik et al. 162
+<H><pl><obl><sup>:да[OblPlDu] # see Kibrik et al. 163
+<H><pl><obl><sup>:два[OblPlDu] # see Kibrik et al. 163
+
+LEXICON SupExcMin
+<obl><sup>:ща[OblSu]
+<obl><sup>:щва[OblSu] # variation from Gudava
+<obl><sup>:лъа[OblLi]
+<obl><sup>:ла[OblPlLu]
+<obl><sup>:лла[OblPlAlu]
+<dat>:ха[pron]
+
+LEXICON genitiveCase
+<gen>:лъ
+<gen><M><sg>:в[GenAgr]
+<gen><F><sg>:й[GenAgr]
+<gen><N><sg>:{б}[GenAgr]
+<gen><H><pl>:{б}а[GenAgr]
+<gen><N><pl>:р[GenAgr]
+
+# ---------------------------------------------------------------------------------------------
+# AGREEMENT MARKERS
+LEXICON agrInitial
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:б[Nsg]
+<H><pl>:б[Hpl]
+<N><pl>:р[Npl]
+
+LEXICON agrMiddle
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:{б}[Nsg]
+<H><pl>:{б}{agrA}[Hpl]
+<N><pl>:{р}[Npl]
+
+LEXICON agrFinal
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:{б}[Nsg]
+<H><pl>:{б}а[Hpl]
+<N><pl>:{р}[Npl]
+
+LEXICON agrVerb
+<M><sg>:в[Msg]
+<F><sg>:й[Fsg]
+<N><sg>:{б}[Nsg]
+<H><pl>:{р}[Hpl]
+<H><pl>:{б}{agrA}[Hpl]
+<N><pl>:{р}[Npl]
+
+#----------------------------------------------------------------------------------------------
+# LOCALIZATION MARKERS
+LEXICON locMain
+<sup>:ла
+<sub>:кьи
+<in>:{n.и}ни # irregular, must be configured separately, see Kibrik et al. 142
+<inter>:лъи
+<cont>:чӀ
+<ad>:х
+<locposs>:лъа
+
+LEXICON directCase
+<ess>:
+<lat>:
+<el>:{n.и}с
+<trans>:{n.и}сини
+<in>:{n.и}ни # to cover cases from Gudava
+
+# -----------------------------------------------------------------------------------------------
+# VERB DERIVATION
+# 
+LEXICON PratAdd
+<aor>:[reg]
+<aor>:{ᵸ}[IIdecl,IIIdecl]
+<aor>:{v.и}{ᵸ}[Idecl] #83 for I declension and hpl forms of the II
+
+LEXICON ImperfAdd
+<imperf>:{р}а[reg]
+<imperf>:{v.и}{ᵸ}{р}а[IIdecl,Idecl] #83
+<imperf>:а{ᵸ}[IVdecl]
+
+LEXICON PotAdd
+<pot>:а{ᵸ}[reg]
+<pot>:а{ᵸ}{л}а[IIIdecl]
+<pot>:{р}а[Vdecl]
+
+LEXICON ProhAdd
+<proh>:{б}и[IIIdecl]
+<proh>:{v.и}{ᵸ}{б}и[IIdecl,Idecl] #83
+<proh>:аби[IVdecl]
+<proh>:раби[Vdecl]
+
+#derivational suffixes
+LEXICON InfAffix
+<inf>:[reg]
+<inf>:а[neg]
+
+LEXICON CvbEnd
+<cvb>:о[past]
+<cvb>:х[praes]
+<cvb>:лис[post]
+<cvb>:била[antI]
+<cvb>:лъена[antII]
+<cvb>:лъиба[lim]
+<cvb>:къалъани[temp] # 597
+<cvb>:къолъани[temp] # M 483
+<cvb>:къалъир[temp] # M 483
+<cvb>:ра[cond]
+<cvb>:рала[conc]
+<cvb>:ла[rsn]
+
+LEXICON FutAffix
+<fut>:лъи
+
+LEXICON FutEnd
+<fut><synth>:с[synth]
+<fut><react>:са[react]
+
+LEXICON ProhEnd
+:се
+
+LEXICON EmphAffix
+:да
+
+LEXICON IrrAffix
+<irr>:гъалир
+
+LEXICON CvbAffix
+<prosp>:ди[prosp]
+:ра[negCvb]
+:а[negFut]
+
+LEXICON PartAffix
+<part>:{prt}[irreg]
+<part>:о[reg]
+
+#verb copulas
+LEXICON VerbCopula
+экӀва<verb><cop>:экӀва # 106
+экӀва<verb><cop><neg>:вечӀе # 99
+#ида<cop>:ида # М. 584
+
+LEXICON MasdarEnd
+<masd>:{р}[reg]
+<masd>:р[neg]
+
+LEXICON ImperAffix
+<imp>:[ImpI]
+<imp>:{б}е[ImpII]
+
+LEXICON OptEnd
+<opt>:ла
+
+LEXICON IrrPrtStem
+белъи<verb><part>:белъилъо
+ба<verb><part>:балъо
+
+LEXICON IrrCvb
+белъи<verb><cvb>:белъилъах
+ба<verb><cvb>:балъах
+
+# ---------------------------------------------------------------------------------------------
+# NUMBER ROOTS
+# 
+LEXICON rootOne # 1
+цеб<num>:це[norm]
+цеб<num><dist>:цеце[red]
+цеб<num><ord>:гьечӀисес[ord]
+
+LEXICON rootInit
+чӀеда<num>:чӀе[DaNumber,RaNumber]
+гьабда<num>:гьаб[DaNumber]
+буъуда<num>:буъу[DaNumber,RaNumber]
+иᵸщтуда<num>:иᵸщту[DaNumber,RaNumber]
+инлӀида<num>:инлӀи[DaNumber,RaNumber]
+гьакьуда<num>:гьакьу[DaNumber,RaNumber]
+бикьида<num>:бикьи[DaNumber,RaNumber]
+гьачӀвада<num>:гьачӀва[DaNumber,RaNumber]
+
+LEXICON rootDec
+цеб<num>:гь
+чӀеда<num>:чӀе # 2
+гьабда<num>:гьаб # 3
+буъуда<num>:буъ # 4
+иᵸщтуда<num>:иᵸщвд # 5
+инлӀида<num>:инлӀ # 6
+гьакьуда<num>:гьакьв # 7
+бикьида<num>:бикь # 8
+гьачӀвада<num>:гьачӀв # 9
+
+LEXICON rootCent
+цеб<num>:
+чӀеда<num>:чӀе # 2
+гьабда<num>:гьаб # 3
+буъуда<num>:буъ # 4
+иᵸщтуда<num>:иᵸщв # 5
+инлӀида<num>:инлӀ # 6
+гьакьуда<num>:гьакьв # 7
+бикьида<num>:бикь # 8
+гьачӀвада<num>:гьачӀа # 9
+
+LEXICON 2xRootInit
+чӀеда<num><dist>:чӀечӀе[excl]
+гьабда<num><dist>:гьабдигьаб[DaNumber]
+буъуда<num><dist>:бубуъу[DaNumber,RaNumber]
+иᵸщтуда<num><dist>:иᵸщтуиᵸщту[DaNumber,RaNumber]
+инлӀида<num><dist>:инлӀиъинлӀи[DaNumber,RaNumber]
+гьакьуда<num><dist>:гьакьугьакьу[DaNumber,RaNumber]
+бикьида<num><dist>:бикьибикьи[DaNumber,RaNumber]
+гьачӀвада<num><dist>:гьачӀигьачӀва[DaNumber,RaNumber]
+
+LEXICON 2xRootDec
+чӀеда<num><dist>:чӀечӀе # 2
+гьабда<num><dist>:гьабигьаб # 3
+буъуда<num><dist>:бубуъ # 4
+иᵸщтуда<num><dist>:иᵸщтуиᵸщвд # 5
+инлӀида<num><dist>:инлӀиъинлӀ # 6
+гьакьуда<num><dist>:гьакьугьакьв # 7
+бикьида<num><dist>:бикьибикь # 8
+гьачӀвада<num><dist>:гьачӀигьачӀв # 9
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# PRONOUN ROOTS
+LEXICON PerPronounStems
+де<pronoun><1P><sg><obl>:ди[PrExc]
+ме<pronoun><2P><sg><obl>:ду[PrExc]
+ищи<pronoun><1P><pl><incl><obl>:ищи
+инлӀи<pronoun><1P><pl><excl><obl>:инлӀи
+бишти<pronoun><2P><pl><obl>:бишти
+
+LEXICON DemPronoun
+аб<pronoun><3P>:а
+об<pronoun><3P>:о
+
+LEXICON LogPronoun
+эб<pronoun><log><3P>:э[nom]
+эб<pronoun><log><3P>:ин[obl]
+
+LEXICON InterPronoun
+эба<pronoun><inter><H><obl>:лъо[H]
+эба<pronoun><inter><N>:э[N]
+
+LEXICON InterAdjPronoun
+эщдуб<pronoun><inter>:эщду
+эщтуб<pronoun><inter>:эщту
+эщдуб<pronoun><inter>:гъешду # dialectal, from Gudava
+
+LEXICON WhichPronoun
+эбел<pronoun><inter>:э
+
+LEXICON EachPronoun # Kibrik et al., 167
+эбэб<pronoun>:э
+
+LEXICON NumPronoun # 2 possible alternations, according to Kibrik et al., 164
+чвам<pronoun><inter>:чвам 
+чом<pronoun><inter>:чом
+
+LEXICON HowPronoun
+эщта<pronoun><inter>:эщта
+
+LEXICON WhenPronoun
+инда<pronoun><inter>:инда
+
+LEXICON LocPronoun
+инди<pronoun><inter>:инди
+
+LEXICON AllPronoun
+бусӀабда<pronoun>:усӀа
+
+LEXICON AnyPronoun
+бокьироб<pronoun>:бокьиро
+
+#pronoun modifiers
+#
+LEXICON NegPronounSuffix
+<neg>:дала
+
+LEXICON IndefPronounSuffix
+<indef>:гӀагила
+
+LEXICON AltIndefPronounSuffix
+<N><sg><indef><N><sg>:вукӀавола[Msg]
+<N><sg><indef><N><sg>:йукӀайола[Fsg]
+<N><sg><indef><N><sg>:букӀабола[Nsg]
+<N><sg><indef><N><sg>:букӀурола[Hpl]
+<N><sg><indef><N><sg>:рукӀарола[Npl]
+
+LEXICON RefSuffix
+<ref>:да
+
+LEXICON DaPostfix
+:да
+
+LEXICON WhichInfix
+:ел[sg]
+:ал[pl]
+
+#pronoun exclusions
+#
+LEXICON PerPronounExc
+де<pronoun><1P><sg><nom>:де
+де<pronoun><1P><sg><erg>:ден
+ме<pronoun><2P><sg><nom>:ме
+ме<pronoun><2P><sg><erg>:мен
+инлӀи<pronoun><1P><pl><excl><nom>:инлӀи
+ищи<pronoun><1P><pl><incl><nom>:ищи
+бишти<pronoun><2P><pl><obl><nom>:бишти
+ищи<pronoun><1P><pl><incl><obl><dat>:ища
+ищи<pronoun><1P><pl><incl><obl><sup>:ища
+инлӀи<pronoun><1P><pl><excl><obl><dat>:инлӀа
+инлӀи<pronoun><1P><pl><excl><obl><sup>:инлӀа
+бишти<pronoun><2P><pl><obl><dat>:бишда
+бишти<pronoun><2P><pl><obl><sup>:бишда
+
+LEXICON InterPronounExc
+эба<pronoun><inter><H><nom>:има
+эба<pronoun><inter><N><nom>:эба
+эба<pronoun><inter><H><nom>:эм[Hsg]
+эба<pronoun><inter><N><sg><nom>:эб[Nsg]
+эба<pronoun><inter><N><pl><nom>:эр[Npl]
+
+LEXICON NumPronounExc
+чвам<pronoun><inter><H><pl><obl><dat>:чвамала
+чвам<pronoun><inter><H><pl><obl><sup>:чвамала[sup]
+чом<pronoun><inter><H><pl><obl><dat>:чомала
+чом<pronoun><inter><H><pl><obl><sup>:чомала[sup]
+
+LEXICON MiscPronounExc
+агьи<pronoun>:агьи # 837 here
+аща<pronoun>:аща # Gudava thus
+ашта<pronoun>:ашда # Gudava thus
+ашта<pronoun>:ашта # 838 thus
+эджа<pronoun><inter>:эджа # 846 why
+эджа<pronoun><inter>:эджала # 846 why
+эджа<pronoun><inter>:эджали # 846 why
+эщда<pronoun><inter>:эщда # M 522 why
+элъила<pronoun><inter>:элъила # M 522 why
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# ADJECTIVE ROOTS
+LEXICON adjDouble
+багьаруб<adjective>:агьару
+багӀаб<adjective>:агӀа
+басӀараб<adjective>:асӀара
+бачакӀуб<adjective>:ачакӀу
+башшадаб<adjective>:ашшада
+башшибашшадаб<adjective>:ашшибашшада
+бекъуб<adjective>:екъу
+белъаб<adjective>:елъа
+бехалаб<adjective>:ехала
+бехъӀуб<adjective>:ехъӀу
+бечӀатуб<adjective>:ечӀату
+бечӀураб<adjective>:ечӀура
+бещаб<adjective>:еща
+бикьироб<adjective>:икьиро
+битӀуб<adjective>:итӀу
+бичӀаб<adjective>:ичӀа
+бусӀаб<adjective>:усӀа
+
+LEXICON adjSingle
+анзикъуб<adjective>:анзикъу
+анзугьацӀаб<adjective>:анзугьацӀа
+ансаб<adjective>:анса
+ахирийаб<adjective>:ахирийа
+аштоб<adjective>:ашто
+аштуб<adjective>:ашту
+балугъаб<adjective>:балугъа
+балъкойаб<adjective>:балъкойа
+бацӀараб<adjective>:бацӀара # Gudava clean
+бегъинуб<adjective>:бегъину
+берцинаб<adjective>:берцина
+бесуб<adjective>:бесу
+бечераб<adjective>:бечера # rich
+бечӀураб<adjective>:бечӀура
+бечӀетӀуб<adjective>:бечӀетӀу # Gudava black
+бижижуб<adjective>:бижижу
+бискинаб<adjective>:бискина # poor
+бокьараб<adjective>:бокьара
+бокьироб<adjective>:бокьиро
+бусурманаб<adjective>:бусурмана
+гандуйабахуб<adjective>:гандуйабаху
+гургинаб<adjective>:гургина
+гурхӀелтуб<adjective>:гурхӀелту
+гучаб<adjective>:гуча
+гъвануб<adjective>:гъвану
+гьоб<adjective>:гьо # good
+гьанхдалуб<adjective>:гьанхдалу
+гьанчӀуб<adjective>:гьанчӀу
+гьатуб<adjective>:гьату
+гьатӀуб<adjective>:гьатӀу
+гьацӀаб<adjective>:гьацӀа
+гъачуб<adjective>:гъачу # only 859
+гъачуб<adjective>:гъачӀу # Gudava only
+гьардуб<adjective>:гьарду # Gudava full
+гьашӀибаб<adjective>:гьашӀиба
+гьащӀибаб<adjective>:гьащӀиба
+гьерахуб<adjective>:гьераху
+гьестоб<adjective>:гьесто
+гьецӀуб<adjective>:гьецӀу # 846 tall
+гьецӀуб<adjective>:гьекӀйа # Gudava tall
+гьинцӀибахуб<adjective>:гьинцӀибаху
+гьинчӀаб<adjective>:гьинчӀа
+гьоб<adjective>:гьо
+гьунаб<adjective>:гьуна
+гьункӀалаб<adjective>:гьункӀала
+гӀабийаб<adjective>:гӀабийа
+гӀабуб<adjective>:гӀабу
+гӀадалуб<adjective>:гӀадалу
+гӀадатийаб<adjective>:гӀадатийа
+гӀакълуйаб<adjective>:гӀакълуйа
+гӀаламатаб<adjective>:гӀаламата
+гӀамалтуб<adjective>:гӀамалту
+гӀачуб<adjective>:гӀачу
+дагьаб<adjective>:дагьа
+жаруб<adjective>:жару
+жиммагӀацуб<adjective>:жиммагӀацу
+загӀибаб<adjective>:загӀиба
+заралийаб<adjective>:заралийа
+заруб<adjective>:зару
+захӀматаб<adjective>:захӀмата
+зулмуйаб<adjective>:зулмуйа
+игьатуб<adjective>:игьату
+инджитаб<adjective>:инджита
+итаб<adjective>:ита
+капуруб<adjective>:капуру
+кванцӀаб<adjective>:кванцӀа
+кванчӀаб<adjective>:кванчӀа
+кепаб<adjective>:кепа
+куватаб<adjective>:кувата
+кусакъуб<adjective>:кусакъу
+кусатуб<adjective>:кусату
+къадараб<adjective>:къадара # low-quality
+къакъатӀуб<adjective>:къакъатӀу
+къасануб<adjective>:къасану
+къвараб<adjective>:къвара
+къинаб<adjective>:къина
+къолабахуб<adjective>:къолабаху
+къораб<adjective>:къора
+къотӀуб<adjective>:къотӀу
+кьануб<adjective>:кьану
+кьванхуб<adjective>:кьванху
+кьварируб<adjective>:кьвариру
+кьераб<adjective>:кьера
+кьерикъуб<adjective>:кьерикъу
+кьираб<adjective>:кьира
+кьокъаб<adjective>:кьокъа
+кӀантӀаб<adjective>:кӀантӀа
+ленкъуб<adjective>:ленкъу
+лехъуб<adjective>:лехъу
+мадараб<adjective>:мадара # 853, good
+мадараб<adjective>:мадараху # Gudava good
+макалаб<adjective>:макала
+махӀачӀуб<adjective>:махӀачӀу
+мачӀитуб<adjective>:мачӀиту
+мекъаб<adjective>:мекъа
+мехъӀаб<adjective>:мехъӀа
+мигъатуб<adjective>:мигъату
+мисӀаб<adjective>:мисӀа
+мичаб<adjective>:мича
+мукагӀатаб<adjective>:мукагӀата
+мукӀуб<adjective>:мукӀу
+мутӀигӀаб<adjective>:мутӀигӀа
+нуритуб<adjective>:нуриту
+папаб<adjective>:папа
+пасихӀаб<adjective>:пасихӀа
+пахилъаб<adjective>:пахилъа
+пахилаб<adjective>:пахила # greedy
+разийаб<adjective>:разийа
+ракъвагьоб<adjective>:ракъвагьо
+ракъвакъвараб<adjective>:ракъвакъвара
+ракъвахъуб<adjective>:ракъвахъу
+рахъӀвагьоб<adjective>:рахъӀвагьо
+рахъӀвакъвараб<adjective>:рахъӀвакъвара
+рахъӀвахъуб<adjective>:рахъӀвахъу
+решатуб<adjective>:решату
+рошибахуб<adjective>:рошибаху
+сагъаб<adjective>:сагъа
+саламатаб<adjective>:саламата
+санагӀатаб<adjective>:санагӀата
+селухуб<adjective>:селуху
+синдуб<adjective>:синду
+синуб<adjective>:сину
+согӀаб<adjective>:согӀа
+сурмейаб<adjective>:сурмейа
+сурмийаб<adjective>:сурмийа
+сӀингьанб<adjective>:сӀингьан
+сӀинкӀуб<adjective>:сӀинкӀу
+сӀинтуб<adjective>:сӀинту
+сӀорибахуб<adjective>:сӀорибаху
+сӀоролуб<adjective>:сӀоролу
+табаб<adjective>:таба
+тавакалъаб<adjective>:тавакалъа
+тамашайаб<adjective>:тамашайа
+татихуб<adjective>:татиху
+тӀагӀамаб<adjective>:тӀагӀама
+учузаб<adjective>:учуза
+хамитуб<adjective>:хамиту
+хабхаруб<adjective>:хабхару # torn
+хехаб<adjective>:хеха
+хехуб<adjective>:хеху
+хирийаб<adjective>:хирийа
+хируб<adjective>:хиру
+холуб<adjective>:холу
+христиъанаб<adjective>:христиъана
+хъалуб<adjective>:хъалу
+хъалъуб<adjective>:хъалъу
+хъарталаб<adjective>:хъартала
+хъачӀуб<adjective>:хъачӀу
+хъирисехуб<adjective>:хъирисеху # Gudava mangy
+хъуб<adjective>:хъу
+хӀадураб<adjective>:хӀадура
+хӀаликатаб<adjective>:хӀаликата
+хӀалимаб<adjective>:хӀалима
+хӀарзайаб<adjective>:хӀарзайа
+хӀикматаб<adjective>:хӀикмата
+цехӀеб<adjective>:цехӀе
+цӀажаруб<adjective>:цӀажару
+цӀашишуб<adjective>:цӀашишу
+цӀашищуб<adjective>:цӀашищу
+цӀащишуб<adjective>:цӀащишу
+цӀащищуб<adjective>:цӀащищу
+цӀинуб<adjective>:цӀину
+чаруб<adjective>:чару
+чачайоб<adjective>:чачайо
+чинчуб<adjective>:чинчу
+чӀагойаб<adjective>:чӀагойа
+чӀагьаб<adjective>:чӀагьа
+чӀекуб<adjective>:чӀеку
+чӀетаб<adjective>:чӀета
+чӀунчӀаб<adjective>:чӀунчӀа
+шинхуб<adjective>:шинху
+шишуб<adjective>:шишу
+шищуб<adjective>:шищу
+шкъасануб<adjective>:шкъасану
+шӀануб<adjective>:шӀану
+шӀерелуб<adjective>:шӀерелу
+щинхуб<adjective>:щинху
+щишуб<adjective>:щишу
+щищуб<adjective>:щищу
+щӀануб<adjective>:щӀану
+щӀерелуб<adjective>:щӀерелу
+эрахуб<adjective>:эраху
+эруб<adjective>:эру
+эстоб<adjective>:эсто
+эхъанб<adjective>:эхъан
+эцӀуб<adjective>:эцӀу
+эчуб<adjective>:эчу
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# ADVERB ROOTS
+LEXICON Adverb
+ахила<adverb>:ахила #839
+ахирала<adverb>:ахирала #839
+аᵸщ<adverb>:аᵸщ #838
+аᵸщила<adverb>:аᵸщила #838
+аᵸщис<adverb>:аᵸщис #838
+батӀеслъах<adverb>:батӀаслъах #839
+батӀаслъах<adverb>:батӀаслъах #839
+баха<adverb>:баха # 839 outside (of)
+баха<adverb>:ваха # 839 outside (of)
+баха<adverb>:йаха # 839 outside (of)
+#гӀарих<adverb>:гӀарах #849
+#гӀарах<adverb>:гӀарах #849
+гьащӀах<adverb>:гьащӀах #846
+гьащӀа<adverb>:гьащӀа #846
+гье<adverb>:гье #847
+гьечи<adverb>:гьечи #846
+гьечи<adverb>:гьечӀи # Gudava
+гьикьа<adverb>:гьикьа # 847 downwards
+гьикьах<adverb>:гьикьах # 847 down
+гьикьа<adverb>:гьикьахинди # down Gudava
+гьикьарах<adverb>:гьикьарах # 847 from down
+гьикьи<adverb>:гьикьи
+гьини<adverb>:гьини
+гьини<adverb><el>:гьинис
+дагьабда<adverb>:дагьабда
+данд<adverb>:данд # M 176
+йера<adverb>:йера # 851
+йера<adverb>:йерала # 851
+кутакила<adverb>:кутакила
+къина<adverb>:къина # 856 in the summer
+ощинар<adverb>:ощинар
+одобщинаб<adverb>:одобщинаб
+ошта<adverb>:ошта #855
+ошта<adverb>:ошда #855
+орбу<adverb>:орбуда
+орбу<adverb>:орбу
+ори<adverb>:ори #855 to there
+регьала<adverb>:регьала #858 at night
+регьала<adverb>:регьалада #858 at night
+регьала<adverb>:регьалъа # Gudava at night
+регьала<adverb>:регьалъада # Gudava at night
+сани<adverb>:сани # 860 together
+сани<adverb>:санида # 860 together
+се<adverb>:се # 861
+сер<adverb>:сер # 861
+серах<adverb>:серах # 861
+серол<adverb>:серол # 861
+сесер<adverb>:сесер # 861
+суни<adverb>:суни # yesterday
+хех<adverb>:хех # rapidly, Gudava
+хъапилибо<adverb>:хъапилибо # M 359 suddenly
+хъапилибо<adverb>:къапилӀида # Gudava suddenly
+хъатлӀидахда<adverb>:хъатлӀидахда # M 359 suddenly
+цӀакъ<adverb>:цӀакъ # very
+цӀа<adverb>:цӀа # very
+чӀера<adverb>:чӀера # 842 up
+чӀерах<adverb>:чӀерах # 842 upwards
+#чӀера<adverb>:кӀйера # Gudava
+#чӀера<adverb>:кӀйерахинди # Gudava
+шири<adverb>:шири # 861
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# CLITIC ROOTS
+LEXICON Clitic
+данд<postpos>:данд # M 176
+гъуруб<postpos>:гъуруб
+гьини<postpos>:гьини # inside
+гьини<postpos><el>:гьинис # inside
+гьикьи<postpos>:гьикьи # 847 under
+гьерах<postpos>:гьерах # behind
+гӀарих<postpos>:гӀарах #849
+гӀарах<postpos>:гӀарах #849
+гьес<postpos>:гьес #847
+гье<postpos>:гье #847
+серухъ<postpos>:серухъ # 861
+ва<conj>:ва
+йа<conj>:йа
+йаги<conj>:йаги
+ми<conj>:ми
+э<conj>:э
+йе<conj>:йе
+
+#particles
+LEXICON Particle
+битӀилах<particle>:битӀилах
+
+LEXICON UQparticle
+<uq>:хъал
+
+LEXICON ModalParticle
+<m>:гъо
+<f>:гъа
+<m>:гъасо
+<f>:гъаса
+<m>:гъабо
+<f>:гъаба
+
+LEXICON QuestParticle
+<quest><M>:{ep.й}{ep.и}што
+<quest><F>:{ep.й}{ep.и}шта
+<quest>:{ep.й}{ep.и}шт
+<quest>:{ep.й}{ep.и}ш
+<quest>:{ep.й}{ep.и}ле
+<quest>:{ep.й}{ep.и}лах
+<quest>:{ep.й}{ep.и}
+
+LEXICON RestrParticle
+<restr>:тара
+<restr>:гъачӀу
+
+LEXICON Interjection
+вай<interj>:вай
+вай<interj>:ва
+хаᵸ<interj>:хаᵸ
+гва<interj>:гва
+
+# ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
+# NOUN ROOTS
+LEXICON NounAbs
+агьан<noun>:агьан # 837
+аздагьо<noun>:аздагьо # 839
+алгьан<noun>:алгьан
+анжв<noun>:анжв # 838 mark
+анж<noun>:анж # Gudava mark
+аш<noun>:аш # 858 rope
+ащ<noun>:ащ # M 43
+аᵸс<noun>:аᵸс # 132
+арам<noun>:арам # 137
+бар<masd>:бар
+бегол<noun>:бегол
+бежун<noun>:бежун
+бел<noun>:бел # 132
+беса<noun>:беса # 136
+бесун<noun>:бесун
+бигъвам<noun>:бигъвам
+бищалъ<noun>:бищалъ # sheep
+буцӀур<noun>:буцӀур # Gudava cattle
+гӀила<noun>:гӀила
+гъваргъвар<noun>:гъваргъвар # 859 noise
+гъварза<noun>:гъварза # 859 clothhing
+гъварза<noun>:гъорза # 859
+гьакӀуй<noun>:гьакӀуй
+гьан<noun>:гьан
+гьанла<noun>:гьанла
+гьваб<noun>:гьваб # 136
+гьвай<noun>:гьвай # 136
+гьекӀва<noun>:гьекӀва
+гьерер<noun>:гьерер # 136
+гьуᵸша<noun>:гьуᵸша # 136
+дарам<noun>:дарам
+дибир<noun>:дибир
+игьва<noun>:игьва
+ила<noun>:ила # 136
+има<noun>:има # 136
+йаш<noun>:йаш # 851
+картӀ<noun>:картӀ # 851
+кӀван<noun>:кӀван
+кӀунй<noun>:кӀунй # 136
+квачӀ<noun>:квачӀ # hand
+кумук<noun>:кумук # help
+кунтӀа<noun>:кунтӀа # 136
+къабул<noun>:къабул # 856
+къани<noun>:къани # 856, bread
+къула<noun>:къула # skin, Gudava
+кьерер<noun>:кьерер # 136
+кьор<noun>:кьор
+лачӀис<noun>:лачӀис
+малайасадин<noun><prop>:малайасадин
+мисӀ<noun>:мисӀ # 134
+мува<noun>:мува
+муч<noun>:муч
+нуса<noun>:нуса
+нусийа<noun>:нусийа # 136
+палигьан<noun>:палигьан # M 284
+палигьан<noun>:палугьан # M 284
+пас<noun>:пас
+пацӀ<noun>:пацӀ
+рагъ<noun>:рагъ # 132
+раж<noun>:раж
+ракь<noun>:ракь # bone, Gudava
+регьа<noun>:регьа # 858
+рекъеᵸс<noun>:рекъеᵸс # M 300 half
+рекъеᵸс<noun>:рекъен # Gudava half
+рекъеᵸлгьар<noun>:рекъеᵸлгьар # M 300 half
+рекъелъ<noun>:рекъелъ # 858 back
+рикь<noun>:рикь # meat
+рокьи<noun>:рокьи
+рущӀ<noun>:рущӀ # 858
+рущӀа<noun>:рущӀа # M 513 cave
+ручӀа<noun>:ручӀа # Gudava, cave
+сӀев<noun>:сӀев # 860 guest
+сӀей<noun>:сӀей
+сӀекӀер<noun>:сӀекӀер # 136
+сӀенелъ<noun>:сӀенелъ
+салам<noun>:салам
+тудар<masd>:тудар
+тухтур<noun>:тухтур
+халкъ<noun>:халикъ # Gudava, folk
+халкъ<noun>:халкъ
+хъаранис<noun>:хъаранис
+хъирис<noun>:хъирис # M 363
+хъоча<noun>:хъоча # 855 sheep skin
+цӀев<noun>:цӀев # guest, Gudava
+цӀей<noun>:цӀей
+чӀама<noun>:чӀама
+чӀара<noun>:чӀара # 136
+чӀвай<noun>:чӀвай # 136
+чӀехил<noun>:чӀехил # 136
+чаш<noun>:чаш
+чиᵸдв<noun>:чиᵸдв # 136
+чӀантӀа<noun>:чӀантӀа
+чӀачӀан<noun>:чӀачӀан
+эл<noun>:эл
+эла<noun>:эла
+эхва<noun>:эхва #844 herdsman
+
+LEXICON NounOblSame
+гъваргъвар<noun>:гъваргъвар
+рущӀа<noun>:рущӀа # M 513 cave
+ручӀа<noun>:ручӀа # Gudava, cave
+аздагьо<noun>:аздагьо # 839
+цӀев<noun>:цӀе
+гьан<noun>:гьан # exclusion, see Gudava
+кӀван<noun>:кӀван
+бежун<noun>:бежун # 840
+дарам<noun>:дарам #843
+чӀачӀан<noun>:чӀачӀан #841
+бигъвам<noun>:бигъвам #840
+бесун<noun>:бесун
+эла<noun>:эла
+агьан<noun>:агьан # 837
+алгьан<noun>:алгьан
+рокьи<noun>:рокьи
+
+LEXICON NounOblSu
+сӀев<noun>:сӀев # 860 male guest
+нуса<noun>:нуса # M 576
+игьва<noun>:игьва # M 576
+гьекӀва<noun>:гьекӀва 
+дибир<noun>:дибир
+бегол<noun>:бегол
+палигьан<noun>:палигьан # M 284
+палигьан<noun>:палугьан # M 284
+
+LEXICON NounOblLi
+регьа<noun>:регьа # 858
+къула<noun>:къу
+сӀей<noun>:сӀей # 860 female guest
+ила<noun>:ила # 129
+тудар<masd>:тудар #плевок
+бар<masd>:бар # 131
+йаш<noun>:йаш # 851
+гьакӀуй<noun>:гьакӀуй
+
+LEXICON NounOblI
+картӀ<noun>:картӀ # 851
+аш<noun>:ашш # 858 rope
+ащ<noun>:ащ # M 43
+гъварза<noun>:гъварз # 859 clothhing
+гъварза<noun>:гъорз # 859
+рущӀ<noun>:рущӀ
+хъирис<noun>:хъирис # M 363
+хъоча<noun>:хъоч # 855 sheep skin
+ракь<noun>:ракь # bone, Gudava
+квачӀ<noun>:квачӀ
+кьор<noun>:кьор # 853
+гьан<noun>:гьан # 846
+чӀача<noun>:чӀач #841
+тудар<masd>:тудар #плевок
+бар<masd>:бар # 131
+халкъ<noun>:халкъ # 864
+халкъ<noun>:халикъ # Gudava, folk
+малайасадин<noun><prop>:малайасадин
+пацӀ<noun>:пацӀ
+пас<noun>:пас
+
+LEXICON NounOblA
+картӀ<noun>:картӀ # 851
+къула<noun>:къулъ
+рущӀ<noun>:рущӀ
+кьор<noun>:кьор
+хъаранис<noun>:хъаранис
+эл<noun>:эл
+
+LEXICON NounOblU
+арам<noun>:арам # 137
+анжв<noun>:анжв # 838 mark
+анж<noun>:анж # Gudava mark
+рекъелъ<noun>:рекъ # 858 back
+ат<noun>:ат
+
+LEXICON NounOblE
+чӀантӀа<noun>:чӀантӀ
+
+LEXICON NounOblSon
+бежун<noun>:бежван # 840
+бесун<noun>:бесван # 840
+бехун<noun>:бехван #840
+беркӀун<noun>:беркӀван #840
+бертин<noun>:бертин #840
+
+LEXICON NounOblIrreg
+чаш<noun>:чашда # 131
+раж<noun>:ражда # 131
+мува<noun>:му # 132
+муч<noun>:мучула # 132
+нусийа<noun>:нуси # 132
+
+LEXICON NounPlBi
+регьа<noun>:регьа[npl] # 858
+рущӀа<noun>:рущӀа[npl] # M 513 cave
+рущӀа<noun>:ручӀа[npl] # Gudava, cave
+аздагьо<noun>:аздагьо[npl] # 839
+эла<noun>:эла[npl]
+нусийа<noun><pl>:нуси[npl] # 136
+
+LEXICON NounPlAbi
+картӀ<noun>:картӀ[npl] # 851
+анжв<noun>:анжв[npl] # 838 mark
+анж<noun>:анж[npl] # Gudava mark
+ащ<noun>:ащ[npl] # M 43 rope
+аш<noun>:ашш[npl] # 858 rope
+рущӀ<noun>:рущӀ[npl] # 853 cave
+ракь<noun>:ракь[npl] # bone, Gudava
+квачӀ<noun>:квачӀ[npl]
+кьор<noun>:кьор[npl] # 853
+бел<noun>:бел[npl] # 132
+аᵸс<noun>:аᵸс[hpl] # 132
+рагъ<noun>:рагъ[npl] # 132
+гьакӀуй<noun>:гьакӀуй[hpl] # 137
+гьуᵸша<noun>:гьур[npl] # 136
+алгьан<noun>:алгьан[npl]
+пацӀ<noun>:пацӀ[npl]
+пас<noun>:пас[npl]
+
+LEXICON NounPlUbi
+гъанкӀва<noun>:гъанкӀ[npl] # 132
+
+LEXICON NounPlIbi
+анжв<noun>:анжв[npl] # 838 mark
+анж<noun>:анж[npl] # Gudava mark
+къула<noun>:къулъ[npl] # 857
+хъоча<noun>:хъоч[npl] # 855 sheep skin
+гьан<noun>:гьан[npl] # 846
+чӀача<noun>:чӀач[npl] #841
+
+LEXICON NounPlEbi
+гьанла<noun>:гьанл[npl] # 132
+
+LEXICON NounPlJabi
+гӀила<noun>:гӀила[npl] # 132
+
+LEXICON NounPlZabi
+тухтур<noun>:тухтур[hpl] # 132
+дибир<noun>:дибир[hpl]
+палигьан<noun>:палигьан[hpl] # M 284
+палигьан<noun>:палугьан[hpl] # M 284
+
+LEXICON NounPlMi
+бежун<noun>:бежва[npl] #840
+бесун<noun>:бесва[npl] #840
+бехун<noun>:бехва[npl] #840
+беркӀун<noun>:беркӀва[npl] #840
+гӀолокан<noun>:гӀолока[hpl] #840
+чӀачӀан<noun>:чӀачӀа[npl] #841
+
+LEXICON NounPlDari
+кунй<noun>:кунй[npl]
+эгьун<noun>:эгьун[hpl] # 134
+има<noun>:имид[hpl] # 136
+ила<noun>:илид[hpl] # 136
+чӀехил<noun>:чӀех[npl] # 136
+кунтӀа<noun>:кунтӀур[hpl] # 136
+чӀвай<noun>:чӀвам[npl] # 136
+чӀара<noun>:чӀарид[npl] # 136
+агьан<noun>:агьан[npl]
+
+LEXICON NounPlDi
+гьиᵸду<noun>:гьиᵸду[hpl]
+арам<noun>:арам[hpl]
+агьан<noun>:агьан[npl]
+
+LEXICON NounPlAli
+сӀев<noun>:сӀеб[hpl]
+цӀев<noun>:цӀеб[hpl]
+мисӀ<noun>:мисӀ[npl] # 134
+чӀама<noun>:чӀам[npl] # 134
+
+LEXICON NounPlAdi
+пасажир<noun>:пасажир[hpl] # 135
+
+LEXICON NounPlAri
+тухтур<noun>:тухтур[hpl] # 136
+
+LEXICON NounPlBadi
+вас<noun>:васи[hpl] # 135
+йас<noun>:йаси[hpl] # 135
+
+LEXICON NounPlA
+гъварза<noun>:гъварз[npl] # 859 clothhing
+гъварза<noun>:гъорз[npl] # 859
+муса<noun>:мус[npl] # 135
+щӀинщӀ<noun>:щӀинщӀ[npl] # 135
+кӀунй<noun>:кӀум[npl] # 136
+гьерер<noun>:гьериб[npl] # 136
+лачӀис<noun>:лачӀис[hpl]
+гьекӀва<noun>:гьекӀв[hpl] # 846
+
+LEXICON NounPlI
+сӀенелъ<noun>:сӀен[npl,excl] # 138
+хван<noun>:хван[npl,excl] # 138
+мачӀ<noun>:мачӀ[npl] # 134
+сӀекӀер<noun>:сӀекӀ[npl] # 136
+кьерер<noun>:кьил[npl] # 136
+йас<noun>:йас[hpl] # 136
+йаш<noun>:йаш[hpl] # 851
+
+LEXICON NounPlIrreg
+рущӀ<noun>:речӀелъ{n.и} # 858
+чиᵸдв<noun><pl>:чиᵸдун{n.и}
+гьвай<noun><pl>:гьварал # 136
+беса<noun><pl>:бесийалъ # 136
+гьваб<noun><pl>:гьвабийалъ # 136
+
+# -----------------------------------------------------------------------------------------------
+# VERB ROOTS
+# 
+LEXICON VerbStem
+багьи<verb>:агьи[Idecl,AgrInit] # 104 take away (irregular)
+багьи<verb>:игьи[Idecl,AgrInit] # 104 take away (irregular)
+басиᵸ<verb>:асвиᵸ[Idecl,AgrInit] # ask Gudava
+белъу<verb>:елъви[Idecl,AgrInit] # 89
+белъи<verb>:елъи[Idecl,AgrInit] # 876
+бихи<verb>:ихи[Idecl,AgrInit] # 850 please
+бихи<verb>:ихи[Idecl] # Gudava, please 
+букӀуᵸ<verb>:укӀвиᵸ[Idecl,AgrInit] # 89
+букъу<verb>:укъви[Idecl,AgrInit] # 863 cut
+букъу<verb>:ухъви[Idecl,AgrInit] # Gudava cut
+гьекьи<verb>:гьекьи[Idecl] #846
+ичи<verb>:ичи[Idecl] # 849 give
+квахи<verb>:квахи[Idecl]
+кваххи<verb>:кваххи[Idecl] # 89
+цӀахиᵸ<verb>:цӀахиᵸ[Idecl] 
+цӀаххиᵸ<verb>:цӀаххиᵸ[Idecl] # 89
+ангьаᵸ<verb>:ангьаᵸ[IIdecl] # 839 hear
+агьаᵸ<verb>:агьаᵸ[IIdecl] # Gudava hear
+алгьаᵸ<verb>:алхаᵸ[IIdecl] # M 37 hear
+ба<verb>:а[IIdecl,AgrInit] # 101 go (irregular)
+багӀари<verb>:багӀа[IIdecl] # bleat Gudava
+бета<verb>:ета[IIdecl,AgrInit] # 89 leave
+бикӀйаᵸ:икӀйаᵸ[IIdecl] # look (irregular)
+битаᵸ<verb>:итаᵸ[IIdecl,AgrInit] # 89 miss
+бичӀаᵸ:ичӀаᵸ[IIdecl] # 849 look (irregular)
+бугъа<verb>:бугъа[IIdecl] # 89
+букӀа<verb>:укӀа[IIdecl,AgrInit] # 101 be (irregular)
+букӀа<verb>:укӀва[IIdecl,AgrInit] # 101 be (irregular)
+букӀа<verb>:акӀа[IIdecl,AgrInit] # 101 be (irregular)
+къочаᵸ<verb>:къочаᵸ[IIdecl] # 856 want
+рекӀваᵸ<verb>:рекӀваᵸ[IIdecl]
+эхва<verb>:эхва[IIdecl] #844
+ба<verb>:е[IIIdecl,AgrInit] # 101 go (irregular)
+бегъе<verb>:егъе[IIIdecl,AgrInit] #92
+бихе<verb>:ихе[IIIdecl,AgrInit] # 850 
+бугье<verb>:угье[IIIdecl,AgrInit] # throw (Gudava)
+бугье<verb>:угьеᵸ[IIIdecl,AgrInit] # 863 explain
+гьаᵸ<verb>:гьаᵸ[IIIdecl] # 104 see (irregular)
+дже<verb>:дже[IIIdecl] # 843
+рекӀвеᵸ<verb>:рекӀвеᵸ[IIIdecl] #92
+хъаре<verb>:хъаре[IIIdecl] # 855
+багӀари<verb>:багӀари[IVdecl] # 839 bleat
+басаᵸ<verb>:асаᵸ[IVdecl,AgrInit] # 838 narrate
+басиᵸ<verb>:асиᵸ[IVdecl,AgrInit]  # 838 ask
+бешта<verb>:ешта[IVdecl,AgrInit] # 844 let go
+бешта<verb>:ешда[IVdecl,AgrInit] # Gudava let go
+белъи<verb>:елъи[IVdecl,AgrInit] # 101
+гьигьвари<verb>:гьигьвари[IVdecl] # 847
+къани<verb>:къани[IVdecl] # 856 eat
+мади<verb>:мади[IVdecl]
+мари<verb>:мари[IVdecl] #92
+гьари<verb>:гьари[IVdecl] #846 ask
+гьари<verb>:гьаари[IVdecl] # Gudava, ask
+гьаᵸ<verb>:гьаᵸ[Vdecl] # 104 see (irregular)
+тӀа<verb>:тӀа[Vdecl] #92
