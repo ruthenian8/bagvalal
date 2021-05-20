@@ -1,5 +1,7 @@
 .DEFAULT_GOAL := bagval_numbers.gen.hfst
 .PHONY: check check-gen check-ana
+%.tr.hfst: %.ana.hfst
+	hfst-compose translit/translit.hfst $< -o $@
 %.lexd.hfst: %.lexd
 	lexd $< | hfst-txt2fst -o $@
 %.ana.hfst: %.gen.hfst

@@ -257,18 +257,18 @@ PATTERNS
 # ----------------------------------------------------------------------------------------------
 # NUMBERS
 #
-rootOne[norm] agrFinal[-Hpl,-Npl]
-singles
-decimal # аца
-centi # бешен
-DaSuffixedNums
+rootOne[norm] agrFinal[-Hpl,-Npl] UCl?
+singles UCl?
+decimal UCl? # аца
+centi UCl? # бешен
+DaSuffixedNums UCl?
 #
 #forms with links
 #
-decimal decComp # ацал, link in 11-19
-rootDec conjDec # ац, link in 21-29
-centi conjCentMil  
-milli conjCentMil # links in 101-199, 10001-1999
+decimal decComp UCl? # ацал, link in 11-19
+rootDec conjDec UCl? # ац, link in 21-29
+centi conjCentMil UCl? 
+milli conjCentMil UCl? # links in 101-199, 10001-1999
 #
 #nominalized cardinal numbers
 #
@@ -310,10 +310,12 @@ decDist dec ( end[DaNumber] | end[RaNumber] ) # гьабдигьабда = 10
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
 # ADJECTIVE
+agrInitial adjNoDeclAgr UCl?
+adjNoDecl UCl?
 #adjective agreement
 #
-agrInitial adjDouble agrFinal # can agree with 2 heads, see Kibrik et al.
-adjSingle agrFinal
+agrInitial adjDouble agrFinal UCl? # can agree with 2 heads, see Kibrik et al.
+adjSingle agrFinal UCl?
 #
 #nominalized adjectives
 #double
@@ -1185,278 +1187,1224 @@ LEXICON MiscPronounExc
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
 # ADJECTIVE ROOTS
+LEXICON adjNoDeclAgr
+бахас<adjective>:ахас
+бакьанис<adjective>:акьанис
+бакьахис<adjective>:акьахис
+бакьис<adjective>:акьис
+батӀес<adjective>:атӀес
+бечӀурас<adjective>:ечӀурас
+
+LEXICON adjNoDecl
+абарлъ<adjective>:абарлъ # talkative
+агьис<adjective>:агьис # Upper
+агьрахис<adjective>:агьрахис # superficial
+адабчӀанас<adjective>:адабчӀанас # polite
+анис<adjective>:анис # local
+бажаричӀанас<adjective>:бажаричӀанас # capable
+бакъадас<adjective>:бакъадас # longtime
+балалъас<adjective>:балалъас # extreme
+балъгодас<adjective>:балъгодас # secret
+бекъвалъ<adjective>:бекъвалъ # empty
+бигьес<adjective>:бигьес # easy going
+божарчӀанас<adjective>:божарчӀанас # reliable
+бокьудуӀас<adjective>:бокьудуӀас # from anywhere
+вис<adjective>:вис # there in
+гӀададас<adjective>:гӀададас # vain
+гӀаджебис<adjective>:гӀаджебис # extraordinary
+гӀакълучӀанас<adjective>:гӀакълучӀанас # intelligent
+гӀурус<adjective>:гӀурус # Russian
+гурхӀилчӀанас<adjective>:гурхӀилчӀанас # compassionate
+гьаргӀилъ<adjective>:гьаргӀилъ # Kumyk
+гьачӀлъ<adjective>:гьачӀлъ # rubbish
+гьегьерис<adjective>:гьегьерис # Next
+гьелалъ<adjective>:гьелалъ # night
+гьес<adjective>:гьес # back
+гьечӀибигьайс<adjective>:гьечӀибигьайс # lightest
+гьечӀигьес<adjective>:гьечӀигьес # final
+гьечӀисес<adjective>:гьечӀисес # first
+гьечӀичӀолъис<adjective>:гьечӀичӀолъис # final
+гьикьис<adjective>:гьикьис # lower
+гьинибаас<adjective>:гьинибаас # adjacent 
+гьинилъ<adjective>:гьинилъ # generic
+гьинис<adjective>:гьинис # inner
+дабагъваралъис<adjective>:дабагъваралъис # yellow
+дарулъ<adjective>:дарулъ # medicinal
+джанчӀанас<adjective>:джанчӀанас # strong
+джахӀдалъ<adjective>:джахӀдалъ # envious
+джигарчӀанас<adjective>:джигарчӀанас # energetic
+загьрулъ<adjective>:загьрулъ # poisonous
+зулмулъ<adjective>:зулмулъ # violent
+индадалас<adjective>:индадалас # permanent
+индийалъ<adjective>:индийалъ # Indian
+йерас<adjective>:йерас # current 
+кирилъ<adjective>:кирилъ # God Pleasing
+кӀарчамис<adjective>:кӀарчамис # unscrupulous
+кубилъ<adjective>:кубилъ # iron
+кучӀилъ<adjective>:кучӀилъ # left
+къагӀидебалъ<adjective>:къагӀидебалъ # mannered
+магӀналъ<adjective>:магӀналъ # standing
+макӀачӀулъ<adjective>:макӀачӀулъ # twilight
+меселъ<adjective>:меселъ # golden
+месерлъ<adjective>:месерлъ # golden
+мигьилъ<adjective>:мигьилъ # wool
+мунагьилъ<adjective>:мунагьилъ # sinful
+пагьмалъ<adjective>:пагьмалъ # capable
+пикролъ<adjective>:пикролъ # thoughtful
+рагьалъис<adjective>:рагьалъис # morning
+раталилъ<adjective>:раталилъ # solid
+роалъ<adjective>:роалъ # joyful
+росилъ<adjective>:росилъ # red
+сагьас<adjective>:сагьас # last year's
+сандас<adjective>:сандас #  joint 
+себерас<adjective>:себерас # the year before
+серис<adjective>:серис # last last
+сес<adjective>:сес # front
+сесерис<adjective>:сесерис # old
+сибаерис<adjective>:сибаерис # autumn
+сӀотӀалъ<adjective>:сӀотӀалъ # crested
+сунис<adjective>:сунис # yesterday's
+талихӀчӀанас<adjective>:талихӀчӀанас # happy
+тарзчӀанас<adjective>:тарзчӀанас # slender
+тӀабигӀатчӀанас<adjective>:тӀабигӀатчӀанас # docile
+тӀагӀамчӀанас<adjective>:тӀагӀамчӀанас # delicious high
+тӀалабалъ<adjective>:тӀалабалъ # altitude
+туркӀударчӀанас<adjective>:туркӀударчӀанас # intense
+удис<adjective>:удис # from there
+унгодас<adjective>:унгодас # right
+унис<adjective>:унис # from there
+хайрчӀанас<adjective>:хайрчӀанас # profitable
+хидихис<adjective>:хидихис # nearby
+хӀащилъ<adjective>:хӀащилъ # tubular
+чалаалъ<adjective>:чалаалъ # shaggy
+чӀалгӀадас<adjective>:чӀалгӀадас # futile
+щвалас<adjective>:щвалас # tomorrow's
+щӀирис<adjective>:щӀирис # distant
+щундалъ<adjective>:щундалъ # basement
+щурдалъ<adjective>:щурдалъ # basement
+эгьелис<adjective>:эгьелис # today's
+эсебахис<adjective>:эсебахис # near
+эшинас<adjective>:эшинас # present
+
 LEXICON adjDouble
-багьаруб<adjective>:агьару
-багӀаб<adjective>:агӀа
-басӀараб<adjective>:асӀара
-бачакӀуб<adjective>:ачакӀу
+багӀаб<adjective>:агӀа # sharp
+багьаруб<adjective>:агьару # old
+байдуб<adjective>:айду # dependent
+балъуᴴб<adjective>:алъуᴴ # similar
+басӀадаб<adjective>:асӀада # clean
+басӀараб<adjective>:асӀара # clean
+батӀес–цӀинуб<adjective>:атӀес–цӀину # new
+батӀулаб<adjective>:атӀула # different
+бахахуб<adjective>:ахаху # hot-tempered
+бахидоб<adjective>:ахидо # contagious
+бачакӀуб<adjective>:ачакӀу # short
+бачуйоб<adjective>:ачуйо # contagious
 башшадаб<adjective>:ашшада
 башшибашшадаб<adjective>:ашшибашшада
-бекъуб<adjective>:екъу
+бащадаб<adjective>:ащада # identical
+беалаб<adjective>:еала # long
+бекъуб<adjective>:екъу # dry
+белаб<adjective>:ела # thin
 белъаб<adjective>:елъа
+бесуб<adjective>:есу # dense
 бехалаб<adjective>:ехала
 бехъӀуб<adjective>:ехъӀу
+бечичичӀуб<adjective>:ечичичӀу # unforgettable
 бечӀатуб<adjective>:ечӀату
-бечӀураб<adjective>:ечӀура
+бечӀетӀуб<adjective>:ечӀетӀу # black
+бечӀуб<adjective>:ечӀу # unfamiliar
+бечӀураб<adjective>:ечӀура # empty
 бещаб<adjective>:еща
+бещваб<adjective>:ещва # twisted
+бийоб<adjective>:ийо # knowledgeable
 бикьироб<adjective>:икьиро
-битӀуб<adjective>:итӀу
-бичӀаб<adjective>:ичӀа
+билгьаᴴб<adjective>:илгьаᴴ # boiled
+бисӀиноб<adjective>:исӀино # respected
+бисуб<adjective>:ису # dense
+битӀуб<adjective>:итӀу # successful
+бичӀаб<adjective>:ичӀа # dilapidated
+бичӀех–бухехидаб<adjective>:ичӀех–бухехида # weak
+бичӀийоб<adjective>:ичӀийо # weak
+бичӀичӀаб<adjective>:ичӀичӀа # dilapidated
+бишуб<adjective>:ишу # large
+биъаб<adjective>:иъа # ripe
+биъачӀуб<adjective>:иъачӀу # immature
+букӀалуб<adjective>:укӀалу # yeast
+булъачӀуб<adjective>:улъачӀу # unreal the
 бусӀаб<adjective>:усӀа
+бухуб<adjective>:уху # rest
+бухуйоб<adjective>:ухуйо # weak
 
 LEXICON adjSingle
-анзикъуб<adjective>:анзикъу
-анзугьацӀаб<adjective>:анзугьацӀа
-ансаб<adjective>:анса
-ахирийаб<adjective>:ахирийа
-аштоб<adjective>:ашто
-аштуб<adjective>:ашту
-балугъаб<adjective>:балугъа
-балъкойаб<adjective>:балъкойа
-бацӀараб<adjective>:бацӀара # Gudava clean
-бегъинуб<adjective>:бегъину
-берцинаб<adjective>:берцина
-бесуб<adjective>:бесу
-бечераб<adjective>:бечера # rich
-бечӀураб<adjective>:бечӀура
-бечӀетӀуб<adjective>:бечӀетӀу # Gudava black
-бижижуб<adjective>:бижижу
+абадийаб<adjective>:абадийа # eternal
+абадуб<adjective>:абаду # ragged
+аваданаб<adjective>:авадана # cheerful
+агъазвачӀуб<adjective>:агъазвачӀу # carefree
+агьикьиуб<adjective>:агьикьиу # cool
+адабидаб<adjective>:адабида # polite ill
+адабочӀуб<adjective>:адабочӀу # mannered
+адамвачӀуб<adjective>:адамвачӀу # lonely
+адамгьелаб<adjective>:адамгьела # human
+азалийаб<adjective>:азалийа # eternal
+азалуб<adjective>:азалу # lean snow
+азигьацӀаб<adjective>:азигьацӀа # white
+алгьаб<adjective>:алгьа # this
+алгьандавачӀуб<adjective>:алгьандавачӀу # insignificant
+алгьащдуб<adjective>:алгьащду # such
+анзикъуб<adjective>:анзикъу # 
+анзугьацӀаб<adjective>:анзугьацӀа # 
+ансаб<adjective>:анса # 
+асаб<adjective>:аса # warm
+аслийаб<adjective>:аслийа # basic
+атаб<adjective>:ата # slightly warm
+ахатуб<adjective>:ахату # inconvenient
+ахирийаб<adjective>:ахирийа # last
+аштоб<adjective>:ашто # 
+аштуб<adjective>:ашту # 
+ащдуб<adjective>:ащду # such
+багьанавачӀуб<adjective>:багьанавачӀу # perfect
+бажаривачӀуб<adjective>:бажаривачӀу # incompetent
+бажаридаб<adjective>:бажарида # capable
+базалийаб<adjective>:базалийа # hefty
+байанаб<adjective>:байана # understandable
+бакьулъиджуб<adjective>:бакьулъиджу # extramarital
+балугъаб<adjective>:балугъа # 
+балъкойаб<adjective>:балъкойа # 
+басанидаб<adjective>:басанида # famous
+басасиноб<adjective>:басасино # famous
+басралгьуб<adjective>:басралгьу # exhausted
+батӀуйоб<adjective>:батӀуйо # tricky
+бахӀараб<adjective>:бахӀара # young
+бахӀарчийаб<adjective>:бахӀарчийа # brave
+бацӀараб<adjective>:бацӀара  #  Gudava clean
+бегӀетуб<adjective>:бегӀету # beautiful
+бегъинуб<adjective>:бегъину # 
+бегьидичӀуб<adjective>:бегьидичӀу # forbidden
+беелвачӀуб<adjective>:беелвачӀу # meaningless
+беелидаб<adjective>:беелида # reasonable
+берценаб<adjective>:берцена # beautiful
+берцинаб<adjective>:берцина # 
+бесуб<adjective>:бесу # blind
+бетӀергьанаб<adjective>:бетӀергьана # own
+беценаб<adjective>:бецена # beautiful
+бечедаб<adjective>:бечеда # rich
+бечераб<adjective>:бечера  #  rich
+бечичийоб<adjective>:бечичийо # forgetful
+бечӀетӀуб<adjective>:бечӀетӀу  #  Gudava black
+бечӀураб<adjective>:бечӀура # 
+бижижуб<adjective>:бижижу # 
+бийоб<adjective>:бийо # familiar
+бикьилъоб<adjective>:бикьилъо # eighth
 бискинаб<adjective>:бискина # poor
-бокьараб<adjective>:бокьара
-бокьироб<adjective>:бокьиро
-бусурманаб<adjective>:бусурмана
-гандуйабахуб<adjective>:гандуйабаху
-гургинаб<adjective>:гургина
-гурхӀелтуб<adjective>:гурхӀелту
-гучаб<adjective>:гуча
-гъвануб<adjective>:гъвану
+битӀуб<adjective>:битӀу # direct
+бишауб<adjective>:бишау # offensive
+биштиб<adjective>:бишти # your
+божарвачӀуб<adjective>:божарвачӀу # unreliable
+божийоб<adjective>:божийо # trusting
+бокьараб<adjective>:бокьара # 
+бокьироб<adjective>:бокьиро # 
+бокьудуб<adjective>:бокьуду # any
+бугъамахӀаб<adjective>:бугъамахӀа # bugayupodobny
+бужу–бугъаб<adjective>:бужу–бугъа # illegible
+буйлъоб<adjective>:буйлъо # fourth
+булгьатуб<adjective>:булгьату # blunt
+булгьуноб<adjective>:булгьуно # clear
+бусурманаб<adjective>:бусурмана # 
+вавануб<adjective>:вавану # crumpled
+варагӀаб<adjective>:варагӀа # neat
+вахӀшийаб<adjective>:вахӀшийа # wild
+вещдуб<adjective>:вещду # so
+гамгамидоб<adjective>:гамгамидо # light
+гандуйабахуб<adjective>:гандуйабаху # 
+гапардариуб<adjective>:гапардариу # bumpy
+гвагваноб<adjective>:гвагвано # cheerful
+гвагъидуб<adjective>:гвагъиду # bright
+гванзгьичӀаб<adjective>:гванзгьичӀа # huge
+гваноб<adjective>:гвано # butty
+гӀабдалмахӀаб<adjective>:гӀабдалмахӀа # stupid
+гӀабийаб<adjective>:гӀабийа # 
+гӀабуб<adjective>:гӀабу # wide
+гӀагӀауб<adjective>:гӀагӀау # dirty
+гӀадалгьийоб<adjective>:гӀадалгьийо # twisted
+гӀадалуб<adjective>:гӀадалу # stupid
+гӀадатаб<adjective>:гӀадата # simple
+гӀадатийаб<adjective>:гӀадатийа # 
+гӀадловачӀуб<adjective>:гӀадловачӀу # disorderly
+гӀазизаб<adjective>:гӀазиза # beloved
+гӀайбвачӀуба<adjective>:гӀайбвачӀу # innocent
+гӀакъилаб<adjective>:гӀакъила # wise
+гӀакълуйаб<adjective>:гӀакълуйа # smart
+гӀаламатаб<adjective>:гӀаламата # amazing
+гӀамаб<adjective>:гӀама # general
+гӀамалгьичӀаб<adjective>:гӀамалгьичӀа # arrogant 
+гӀамалгьоб<adjective>:гӀамалгьо # well behaved
+гӀамалтуб<adjective>:гӀамалту # 
+гӀандалаб<adjective>:гӀандала # dilapidated
+гӀасийаб<adjective>:гӀасийа # merciless
+гӀахьалаб<adjective>:гӀахьала # general
+гӀачӀуб<adjective>:гӀачӀу # cheerful
+гӀачуб<adjective>:гӀачу # yellow
+гӀугусуб<adjective>:гӀугусу # earless
+гӀузруйаб<adjective>:гӀузруйа # sick
+гӀучӀигудуб<adjective>:гӀучӀигуду # thin
+гугумауб<adjective>:гугумау # lumpy
+гудуб<adjective>:гуду # like
+гулакъуб<adjective>:гулакъу # silent
+гургинаб<adjective>:гургина # round
+гурхӀелтуб<adjective>:гурхӀелту # 
+гурхӀилвачӀуб<adjective>:гурхӀилвачӀу # cruel
+гучаб<adjective>:гуча # 
+гъажвачӀуб<adjective>:гъажвачӀу # armless
+гъамачӀуб<adjective>:гъамачӀу # unimportant
+гъамидаб<adjective>:гъамида # important
+гъапулаб<adjective>:гъапула # inattentive
+гъаримаб<adjective>:гъарима # pathetic
+гъачуб<adjective>:гъачӀу  #  Gudava only
+гъачуб<adjective>:гъачу  #  only 859
+гъвануб<adjective>:гъвану # thick
+гъолуб<adjective>:гъолу # hilly
+гъолатуб<adjective>:гъолату # senseless
+гъункидуб<adjective>:гъункиду # dense
+гьабалаб<adjective>:гьабала # trihedral
+гьавдалуб<adjective>:гьавдалу # deaf
+гьагаб<adjective>:гьага # stupid
+гьагмахӀаб<adjective>:гьагмахӀа # stupid
+гьадараб<adjective>:гьадара # happy
+гьайбатаб<adjective>:гьайбата # beautiful
+гьайвачӀуб<adjective>:гьайвачӀу # impractical
+гьайноб<adjective>:гьайно # familiar
+гьакӀубгудуб<adjective>:гьакӀубгуду # effeminate
+гьакӀумахӀаб<adjective>:гьакӀумахӀа # cowardly
+гьакъибауб<adjective>:гьакъибау # rocky
+гьакьагьацӀаб<adjective>:гьакьагьацӀа # white-fronted
+гьакьвацӀайлъоб<adjective>:гьакьвацӀайлъо # seventies
+гьакьулъоб<adjective>:гьакьулъо # seventh
+гьалагаб<adjective>:гьалага # threat
+гьалгьуб<adjective>:гьалгьу # manual
+гьалебахуб<adjective>:гьалебаху # rocky
+гьалибулъуйоб<adjective>:гьалибулъуйо # sociable
+гьалибулъучӀуб<adjective>:гьалибулъучӀу # sociable
+гьалийаб<adjective>:гьалийа # thick
+гьалоб<adjective>:гьало # sick
+гьандащдуб<adjective>:гьандащду # such
+гьанхдалуб<adjective>:гьанхдалу # 
+гьанчӀуб<adjective>:гьанчӀу # 
+гьардуб<adjective>:гьарду  #  Gudava full
+гьарзайаб<adjective>:гьарзайа # abundant
+гьаркъабауб<adjective>:гьаркъабау # rocky
+гьатолуб<adjective>:гьатолу # deaf
+гьатӀуб<adjective>:гьатӀу # raw
+гьатуб<adjective>:гьату # 
+гьацӀаб<adjective>:гьацӀа # white
+гьацӀайлъоб<adjective>:гьацӀайлъо # tenth
+гьацӀакъуб<adjective>:гьацӀакъу # whitish
+гьачӀвайлъоб<adjective>:гьачӀвайлъо # ninth
+гьашӀибаб<adjective>:гьашӀиба # 
+гьащӀибаб<adjective>:гьащӀиба # 
+гьвалъуб<adjective>:гьвалъу # rotten
+гьедарвачӀуб<adjective>:гьедарвачӀу # fearless
+гьедаридаб<adjective>:гьедарида # threat
+гьекӀйаб<adjective>:гьекӀйа  #  Gudava tall
+гьекӀуб<adjective>:гьекӀу # stranger
+гьелаб<adjective>:гьела # favorite
+гьерауб<adjective>:гьерау # cloudy
+гьерахуб<adjective>:гьераху # 
+гьерищищуб<adjective>:гьерищищу # blood red
+гьестоб<adjective>:гьесто # 
+гьецӀи–гъецӀуб<adjective>:гьецӀи–гъецӀу # dense
+гьецӀуб<adjective>:гьецӀу # high
+гьецӀуб<adjective>:гьецӀу  #  846 tall
+гьечӀигьоб<adjective>:гьечӀигьо # best
+гьечӀимукӀуб<adjective>:гьечӀимукӀу # the smallest
+гьечӀичичуб<adjective>:гьечӀичичу # worst
+гьинатуб<adjective>:гьинату # undersized
+гьинцӀибахуб<adjective>:гьинцӀибаху # 
+гьинчӀаб<adjective>:гьинчӀа # 
+гьисӀуб<adjective>:гьисӀу # true
+гьитӀаб<adjective>:гьитӀа # hateful
+гьичӀаб<adjective>:гьичӀа # large
 гьоб<adjective>:гьо # good
-гьанхдалуб<adjective>:гьанхдалу
-гьанчӀуб<adjective>:гьанчӀу
-гьатуб<adjective>:гьату
-гьатӀуб<adjective>:гьатӀу
-гьацӀаб<adjective>:гьацӀа
-гъачуб<adjective>:гъачу # only 859
-гъачуб<adjective>:гъачӀу # Gudava only
-гьардуб<adjective>:гьарду # Gudava full
-гьашӀибаб<adjective>:гьашӀиба
-гьащӀибаб<adjective>:гьащӀиба
-гьерахуб<adjective>:гьераху
-гьестоб<adjective>:гьесто
-гьецӀуб<adjective>:гьецӀу # 846 tall
-гьецӀуб<adjective>:гьекӀйа # Gudava tall
-гьинцӀибахуб<adjective>:гьинцӀибаху
-гьинчӀаб<adjective>:гьинчӀа
-гьоб<adjective>:гьо
-гьунаб<adjective>:гьуна
-гьункӀалаб<adjective>:гьункӀала
-гӀабийаб<adjective>:гӀабийа
-гӀабуб<adjective>:гӀабу
-гӀадалуб<adjective>:гӀадалу
-гӀадатийаб<adjective>:гӀадатийа
-гӀакълуйаб<adjective>:гӀакълуйа
-гӀаламатаб<adjective>:гӀаламата
-гӀамалтуб<adjective>:гӀамалту
-гӀачуб<adjective>:гӀачу
-дагьаб<adjective>:дагьа
-жаруб<adjective>:жару
-жиммагӀацуб<adjective>:жиммагӀацу
-загӀибаб<adjective>:загӀиба
-заралийаб<adjective>:заралийа
-заруб<adjective>:зару
-захӀматаб<adjective>:захӀмата
-зулмуйаб<adjective>:зулмуйа
-игьатуб<adjective>:игьату
-инджитаб<adjective>:инджита
-итаб<adjective>:ита
-капуруб<adjective>:капуру
-кванцӀаб<adjective>:кванцӀа
-кванчӀаб<adjective>:кванчӀа
-кепаб<adjective>:кепа
-куватаб<adjective>:кувата
-кусакъуб<adjective>:кусакъу
-кусатуб<adjective>:кусату
-къадараб<adjective>:къадара # low-quality
-къакъатӀуб<adjective>:къакъатӀу
-къасануб<adjective>:къасану
-къвараб<adjective>:къвара
-къинаб<adjective>:къина
-къолабахуб<adjective>:къолабаху
-къораб<adjective>:къора
-къотӀуб<adjective>:къотӀу
-кьануб<adjective>:кьану
-кьванхуб<adjective>:кьванху
-кьварируб<adjective>:кьвариру
-кьераб<adjective>:кьера
-кьерикъуб<adjective>:кьерикъу
-кьираб<adjective>:кьира
-кьокъаб<adjective>:кьокъа
-кӀантӀаб<adjective>:кӀантӀа
-ленкъуб<adjective>:ленкъу
-лехъуб<adjective>:лехъу
-мадараб<adjective>:мадара # 853, good
-мадараб<adjective>:мадараху # Gudava good
-макалаб<adjective>:макала
-махӀачӀуб<adjective>:махӀачӀу
-мачӀитуб<adjective>:мачӀиту
-мекъаб<adjective>:мекъа
-мехъӀаб<adjective>:мехъӀа
-мигъатуб<adjective>:мигъату
-мисӀаб<adjective>:мисӀа
-мичаб<adjective>:мича
-мукагӀатаб<adjective>:мукагӀата
-мукӀуб<adjective>:мукӀу
-мутӀигӀаб<adjective>:мутӀигӀа
-нуритуб<adjective>:нуриту
-папаб<adjective>:папа
-пасихӀаб<adjective>:пасихӀа
-пахилъаб<adjective>:пахилъа
-пахилаб<adjective>:пахила # greedy
-разийаб<adjective>:разийа
-ракъвагьоб<adjective>:ракъвагьо
-ракъвакъвараб<adjective>:ракъвакъвара
-ракъвахъуб<adjective>:ракъвахъу
-рахъӀвагьоб<adjective>:рахъӀвагьо
-рахъӀвакъвараб<adjective>:рахъӀвакъвара
-рахъӀвахъуб<adjective>:рахъӀвахъу
-решатуб<adjective>:решату
-рошибахуб<adjective>:рошибаху
-сагъаб<adjective>:сагъа
-саламатаб<adjective>:саламата
-санагӀатаб<adjective>:санагӀата
-селухуб<adjective>:селуху
-синдуб<adjective>:синду
-синуб<adjective>:сину
-согӀаб<adjective>:согӀа
-сурмейаб<adjective>:сурмейа
-сурмийаб<adjective>:сурмийа
-сӀингьанб<adjective>:сӀингьан
-сӀинкӀуб<adjective>:сӀинкӀу
-сӀинтуб<adjective>:сӀинту
-сӀорибахуб<adjective>:сӀорибаху
-сӀоролуб<adjective>:сӀоролу
-табаб<adjective>:таба
-тавакалъаб<adjective>:тавакалъа
-тамашайаб<adjective>:тамашайа
-татихуб<adjective>:татиху
-тӀагӀамаб<adjective>:тӀагӀама
-учузаб<adjective>:учуза
-хамитуб<adjective>:хамиту
-хабхаруб<adjective>:хабхару # torn
-хехаб<adjective>:хеха
-хехуб<adjective>:хеху
-хирийаб<adjective>:хирийа
-хируб<adjective>:хиру
-холуб<adjective>:холу
-христиъанаб<adjective>:христиъана
-хъалуб<adjective>:хъалу
-хъалъуб<adjective>:хъалъу
-хъарталаб<adjective>:хъартала
-хъачӀуб<adjective>:хъачӀу
-хъирисехуб<adjective>:хъирисеху # Gudava mangy
-хъуб<adjective>:хъу
-хӀадураб<adjective>:хӀадура
-хӀаликатаб<adjective>:хӀаликата
-хӀалимаб<adjective>:хӀалима
-хӀарзайаб<adjective>:хӀарзайа
-хӀикматаб<adjective>:хӀикмата
-цехӀеб<adjective>:цехӀе
-цӀажаруб<adjective>:цӀажару
-цӀашишуб<adjective>:цӀашишу
-цӀашищуб<adjective>:цӀашищу
-цӀащишуб<adjective>:цӀащишу
-цӀащищуб<adjective>:цӀащищу
-цӀинуб<adjective>:цӀину
-чаруб<adjective>:чару
-чачайоб<adjective>:чачайо
-чинчуб<adjective>:чинчу
-чӀагойаб<adjective>:чӀагойа
-чӀагьаб<adjective>:чӀагьа
-чӀекуб<adjective>:чӀеку
-чӀетаб<adjective>:чӀета
-чӀунчӀаб<adjective>:чӀунчӀа
-шинхуб<adjective>:шинху
-шишуб<adjective>:шишу
-шищуб<adjective>:шищу
-шкъасануб<adjective>:шкъасану
-шӀануб<adjective>:шӀану
-шӀерелуб<adjective>:шӀерелу
-щинхуб<adjective>:щинху
-щишуб<adjective>:щишу
-щищуб<adjective>:щищу
-щӀануб<adjective>:щӀану
-щӀерелуб<adjective>:щӀерелу
-эрахуб<adjective>:эраху
-эруб<adjective>:эру
-эстоб<adjective>:эсто
-эхъанб<adjective>:эхъан
-эцӀуб<adjective>:эцӀу
-эчуб<adjective>:эчу
+гьодоруб<adjective>:гьодору # hollow
+гьунаб<adjective>:гьуна # liquid
+гьунахьуб<adjective>:гьунахьу # watery
+гьункӀалаб<adjective>:гьункӀала # 
+дагьаб<adjective>:дагьа # 
+даимаб<adjective>:даима # eternal
+джавабийаб<adjective>:джавабийа # responsible
+джагъалаб<adjective>:джагъала # fragile
+джагьилаб<adjective>:джагьила # illiterate
+джахӀдалаб<adjective>:джахӀдала # envious
+джуб<adjective>:джу # perfect
+диб<adjective>:ди # my
+дидиналуб<adjective>:дидиналу # bent
+диналуб<adjective>:диналу # bent
+динийаб<adjective>:динийа # religious
+дунелбб<adjective>:дунелб # happy
+дунелбчӀуб<adjective>:дунелбчӀу # unlucky
+дурусаб<adjective>:дуруса # any
+жадуб<adjective>:жаду # brownish–red
+жаруб<adjective>:жару # 
+жибжибидуб<adjective>:жибжибиду # effervescent
+жиммагӀацуб<adjective>:жиммагӀацу # 
+жимугӀачуб<adjective>:жимугӀачу # dark green
+жимукьераб<adjective>:жимукьера # green
+жубайдуб<adjective>:жубайду # sociable
+загӀибаб<adjective>:загӀиба # weak
+загьираб<adjective>:загьира # overt
+загьруйаб<adjective>:загьруйа # poisonous
+задуб<adjective>:заду # cold
+законийаб<adjective>:законийа # legitimate
+залимаб<adjective>:залима # hefty
+запаб<adjective>:запа # strong
+заралийаб<adjective>:заралийа # noxious
+заргудуб<adjective>:заргуду # icy
+заруб<adjective>:зару # 
+затӀаб<adjective>:затӀа # clear
+захӀматаб<adjective>:захӀмата # difficult
+зедуб<adjective>:зеду # immodest
+зиридуб<adjective>:зириду # intrusively bright
+золийоб<adjective>:золийо # slippery
+зулмуйаб<adjective>:зулмуйа # violent
+игьатуб<adjective>:игьату # 
+идаб<adjective>:ида # actual
+иджитаб<adjective>:иджита # mean
+израгӀаб<adjective>:израгӀа # petty
+икъбалвачӀуб<adjective>:икъбалвачӀу # unlucky
+икъбалидаб<adjective>:икъбалида # lucky
+илгьатуб<adjective>:илгьату # sly
+илъацӀайлъоб<adjective>:илъацӀайлъо # sixty-
+илъийлъоб<adjective>:илъийлъо # six
+имуб<adjective>:иму # free
+инджитаб<adjective>:инджита # 
+инрийаб<adjective>:инрийа # valuable
+инруб<adjective>:инру # brown
+инсанийаб<adjective>:инсанийа # human
+инсапаб<adjective>:инсапа # fair
+инсрапаб<adjective>:инсрапа # wasteful
+интересаб<adjective>:интереса # interesting
+интуб<adjective>:инту # low
+инщвдацӀайлъоб<adjective>:инщвдацӀайлъо # fiftieth
+инщвдуйлъоб<adjective>:инщвдуйлъо # fifth
+инщиб<adjective>:инщи # our
+итаб<adjective>:ита # 
+йазихъаб<adjective>:йазихъа # calamitous
+йакъинаб<adjective>:йакъина # authentic
+йахӀвачӀуб<adjective>:йахӀвачӀу # impatient
+йахӀидаб<adjective>:йахӀида # generous
+йашалуб<adjective>:йашалу # feminine
+какуб<adjective>:каку # reprehensible
+камидуб<adjective>:камиду # moronic 
+камилаб<adjective>:камила # immaculate
+канчӀидуб<adjective>:канчӀиду # bright
+капруб<adjective>:капру # cruel
+капуруб<adjective>:капуру # 
+картӀабауб<adjective>:картӀабау # leaky 
+кашмийаб<adjective>:кашмийа # clairvoyant
+кашпуйаб<adjective>:кашпуйа # clairvoyant
+кванцӀаб<adjective>:кванцӀа # 
+кванчӀаб<adjective>:кванчӀа # 
+кванчӀидуб<adjective>:кванчӀиду # bright
+квачӀаб<adjective>:квачӀа # bright
+кващакъасануб<adjective>:кващакъасану # with mottled foot
+квегӀенаб<adjective>:квегӀена # comfortable
+кверекӀидуб<adjective>:кверекӀиду # capable
+кепаб<adjective>:кепа # cheerful
+кӀабщӀауб<adjective>:кӀабщӀау # dirty 
+кӀагьанбечӀатӀуб<adjective>:кӀагьанбечӀатӀу # black haired
+кӀагьанщищуб<adjective>:кӀагьанщищу # red haired
+кӀалабауб<adjective>:кӀалабау # precipitous
+кӀантӀаб<adjective>:кӀантӀа # 
+кӀащӀахуб<adjective>:кӀащӀаху # dirty
+кӀватӀаб<adjective>:кӀватӀа # small
+кӀвахӀалаб<adjective>:кӀвахӀала # lazy
+кӀолабауб<adjective>:кӀолабау # striped
+кӀунтӀабауб<adjective>:кӀунтӀабау # speckled
+куватаб<adjective>:кувата # 
+кусакъуб<adjective>:кусакъу # 
+кусатуб<adjective>:кусату # 
+кутакаб<adjective>:кутака # strong
+кутӀаб<adjective>:кутӀа # male
+кучигуб<adjective>:кучигу # ugly
+къабихӀаб<adjective>:къабихӀа # nasty
+къабулаб<adjective>:къабула # acceptable 
+къадараб<adjective>:къадара # low sort
+къадроидоб<adjective>:къадроидо # decent
+къакъатӀуб<adjective>:къакъатӀу # solid
+къалалъаблчӀуб<adjective>:къалалъаблчӀу # dull
+къамартӀаб<adjective>:къамартӀа # neat
+къанагӀатаб<adjective>:къанагӀата # rare
+къаноб<adjective>:къано # edible
+къарауб<adjective>:къарау # dirty
+къарумаб<adjective>:къарума # stingy
+къасануб<adjective>:къасану # flowery
+къатӀачуб<adjective>:къатӀачу # round
+къвакӀидуб<adjective>:къвакӀиду # hardy
+къвараб<adjective>:къвара # tight
+къиматидаб<adjective>:къиматида # respected 
+къиматӀвачӀуб<adjective>:къиматӀвачӀу # disrespectful
+къинаб<adjective>:къина # 
+къиноб<adjective>:къино # sewing
+къинуб<adjective>:къину # pregnant
+къобухӀидуб<adjective>:къобухӀиду # puny
+къолабахуб<adjective>:къолабаху # 
+къораб<adjective>:къора # 
+къотӀуб<adjective>:къотӀу # deep
+къохӀехьедуб<adjective>:къохӀехьеду # hardy
+къочам–котӀаб<adjective>:къочам–котӀа # necessary
+къочанб<adjective>:къочан # necessary
+къочанвачӀуб<adjective>:къочанвачӀу # unnecessary
+къочачӀуб<adjective>:къочачӀу # unnecessary
+къочиноб<adjective>:къочино # useful
+къуватаб<adjective>:къувата # strong
+къудратаб<adjective>:къудрата # All powerful
+къуеидуб<adjective>:къуеиду # hunchbacked
+къуркъудуб<adjective>:къуркъуду # curly
+кьадоб<adjective>:кьадо # milk (cow)
+кьакъуб<adjective>:кьакъу # rough
+кьануб<adjective>:кьану # thick
+кьану–сануб<adjective>:кьану–сану # thick
+кьатӀаб<adjective>:кьатӀа # strong
+кьвайуб<adjective>:кьвайу # rusty
+кьванхуб<adjective>:кьванху # 
+кьваридуб<adjective>:кьвариду # bold
+кьварируб<adjective>:кьвариру # 
+кьвар–къваридуб<adjective>:кьвар–къвариду # cheerful
+кьенийоб<adjective>:кьенийо # soporific
+кьераб<adjective>:кьера # 
+кьерикъуб<adjective>:кьерикъу # 
+кьираб<adjective>:кьира # 
+кьокъаб<adjective>:кьокъа # 
+кьущӀаб<adjective>:кьущӀа # reliable
+кьущӀатуб<adjective>:кьущӀату # fickle
+лагикъуб<adjective>:лагикъу # short
+лазатаб<adjective>:лазата # nice
+лазатвачӀуб<adjective>:лазатвачӀу # nasty
+лакъдалаб<adjective>:лакъдала # arid
+ламидуб<adjective>:ламиду # smooth
+лебалаб<adjective>:лебала # prompt
+ленкъуб<adjective>:ленкъу # 
+лехъуб<adjective>:лехъу # 
+лиидуб<adjective>:лииду # bright
+магӀдинаб<adjective>:магӀдина # very good
+магӀнавачӀуб<adjective>:магӀнавачӀу # stupid
+магӀнаидаб<adjective>:магӀнаида # standing
+магӀнатуб<adjective>:магӀнату # senseless
+мадараб<adjective>:мадара # tolerable
+мадараб<adjective>:мадара  #  853, good
+мадарахуб<adjective>:мадараху  #  Gudava good
+мазилвачӀуба<adjective>:мазилвачӀу # temper
+макалаб<adjective>:макала # 
+макасаб<adjective>:макаса # hungry
+малъикъаб<adjective>:малъикъа # cheesy
+матӀугудуб<adjective>:матӀугуду # crystal clear
+махӀалбулъуб<adjective>:махӀалбулъу # free
+махӀалвачӀуб<adjective>:махӀалвачӀу # busy
+махӀалидаб<adjective>:махӀалида # free
+махӀачӀуб<adjective>:махӀачӀу # 
+мачӀалуб<adjective>:мачӀалу # children's
+мачӀитуб<adjective>:мачӀиту # 
+машгъулаб<adjective>:машгъула # busy
+машгьураб<adjective>:машгьура # popular
+мегӀенуб<adjective>:мегӀену # fertile
+мекъаб<adjective>:мекъа # wrong
+мехъӀаб<adjective>:мехъӀа # 
+мигъатуб<adjective>:мигъату # kurguz
+милатвачӀуб<adjective>:милатвачӀу # carefree
+милгьуб<adjective>:милгьу # old
+милкаб<adjective>:милка # private
+минчаб<adjective>:минча # young
+миркаб<adjective>:мирка # private
+мисалийаб<adjective>:мисалийа # exemplary
+мисӀаб<adjective>:мисӀа # sweet
+мичаб<adjective>:мича # 
+мищӀаб<adjective>:мищӀа # rare
+модоруб<adjective>:модору # mentally retarded
+мугьмараб<adjective>:мугьмара # carefree
+мугьумадаб<adjective>:мугьумада # carefree
+мукагӀатаб<adjective>:мукагӀата # 
+мукӀуб<adjective>:мукӀу # small
+мукӀу–гьичӀаб<adjective>:мукӀу–гьичӀа # small
+мукъсанаб<adjective>:мукъсана # meager
+мунагьвачӀуб<adjective>:мунагьвачӀу # sinless
+мупагӀатаб<adjective>:мупагӀата # standing
+мупагӀатвачӀуб<adjective>:мупагӀатвачӀу # useless
+мурадвачӀуб<adjective>:мурадвачӀу # useless
+мутӀигӀаб<adjective>:мутӀигӀа # submissive
+мухӀканаб<adjective>:мухӀкана # careful
+мучулауб<adjective>:мучулау # vetrenny
+муъминаб<adjective>:муъмина # pious
+назукаб<adjective>:назука # small and exquisite
+ничвачӀуб<adjective>:ничвачӀу # ya
+нищӀаб<adjective>:нищӀа # rare
+нуридаб<adjective>:нурида # noble
+нуритуб<adjective>:нуриту # 
+одоб<adjective>:одо # the
+олгьащдуб<adjective>:олгьащду # such
+олгьоб<adjective>:олгьо # the
+олуб<adjective>:олу # gray
+ощдуб<adjective>:ощду # such a
+Ӏегьиноб<adjective>:Ӏегьино # watering
+ӀеӀераб<adjective>:ӀеӀера # smooth
+пагьмавачӀуб<adjective>:пагьмавачӀу # forgetful
+пайдавачӀуб<adjective>:пайдавачӀу # clueless
+пайдайаб<adjective>:пайдайа # useful
+пакъираб<adjective>:пакъира # poor
+памповачӀуб<adjective>:памповачӀу # forgetful
+папаб<adjective>:папа # easy
+паракъатаб<adjective>:паракъата # calm
+паризаб<adjective>:париза # mandatory
+пасихӀаб<adjective>:пасихӀа # eloquent
+пахилаб<adjective>:пахила # stingy
+пахилаб<adjective>:пахила  #  greedy
+пахилъаб<adjective>:пахилъа # 
+пахруйаб<adjective>:пахруйа # arrogant
+пашманаб<adjective>:пашмана # sad
+пикровачӀуб<adjective>:пикровачӀу # carefree
+пикротуб<adjective>:пикроту # carefree
+пишакъуб<adjective>:пишакъу # inept
+пишатуб<adjective>:пишату # inept
+пишидаба<adjective>:пишида # skilled
+пуланаб<adjective>:пулана # helpless
+пулнаб<adjective>:пулна # some
+пурхудуб<adjective>:пурхуду # loose
+рагьадуб<adjective>:рагьаду # smooth
+разийаб<adjective>:разийа # contented
+ракӀвартуб<adjective>:ракӀварту # unsympathetic
+ракӀвачӀвачӀуб<adjective>:ракӀвачӀвачӀу # unexpected
+ракъвагьоб<adjective>:ракъвагьо # 
+ракъвакъвараб<adjective>:ракъвакъвара # 
+ракъвахъуб<adjective>:ракъвахъу # 
+ракъиноб<adjective>:ракъино # neat
+ракъичӀуб<adjective>:ракъичӀу # inconvenient
+ракъуб<adjective>:ракъу # suitable
+рахӀатаб<adjective>:рахӀата # calm
+рахӀатвачӀуб<adjective>:рахӀатвачӀу # restless
+рахӀмовачӀуба<adjective>:рахӀмовачӀу # ruthless
+рахъӀвагьоб<adjective>:рахъӀвагьо # 
+рахъӀвакъвараб<adjective>:рахъӀвакъвара # 
+рахъӀвахъуб<adjective>:рахъӀвахъу # 
+регӀелвачӀуба<adjective>:регӀелвачӀу # busy
+регӀелидаба<adjective>:регӀелида # free
+регӀидуб<adjective>:регӀиду # free
+регьемауб<adjective>:регьемау # wrinkled
+рекӀидуб<adjective>:рекӀиду # sharp
+релгьаб<adjective>:релгьа # leather (boots)
+ресвачӀуб<adjective>:ресвачӀу # desperately needed 
+ресидаб<adjective>:ресида # well–off
+решатуб<adjective>:решату # 
+рещатуб<adjective>:рещату # unsightly
+ригьиноб<adjective>:ригьино # touchy
+ритӀуб<adjective>:ритӀу # clear
+роилвачӀуб<adjective>:роилвачӀу # joyless
+рошибахуб<adjective>:рошибаху # 
+русӀабауб<adjective>:русӀабау # gnarled
+рухӀанийаб<adjective>:рухӀанийа # spiritual
+рухӀвачӀуб<adjective>:рухӀвачӀу # powerless
+рухӀидаб<adjective>:рухӀида # strong
+рухӀикъуб<adjective>:рухӀикъу # weak
+рухӀ–хӀалидаб<adjective>:рухӀ–хӀалида # strong
+сагъаб<adjective>:сагъа # healthy
+садирахъаб<adjective>:садирахъа # stray
+сайахъаб<adjective>:сайахъа # wanton
+саламатаб<adjective>:саламата # decent
+санагӀатаб<adjective>:санагӀата # comfortable
+санагӀатидаб<adjective>:санагӀатида # wealthy
+сапровачӀуб<adjective>:сапровачӀу # unrestrained 
+сармахӀаб<adjective>:сармахӀа # cunning
+сахватаб<adjective>:сахвата # generous
+селухуб<adjective>:селуху # 
+сидагӀачуб<adjective>:сидагӀачу # dark green
+сидащищуб<adjective>:сидащищу # dark red
+сидуб<adjective>:сиду # dark
+симиуб<adjective>:симиу # angry
+синдуб<adjective>:синду # 
+синуб<adjective>:сину # 
+согӀаб<adjective>:согӀа # stubborn
+солгьуб<adjective>:солгьу # stubborn
+сӀабдуб<adjective>:сӀабду # tight
+сӀанабауб<adjective>:сӀанабау # prickly
+сӀароб<adjective>:сӀаро # drinkable
+сӀербелъуб<adjective>:сӀербелъу # eminent
+сӀигьаб<adjective>:сӀигьа # salty
+сӀикӀуб<adjective>:сӀикӀу # sour
+сӀингьанб<adjective>:сӀингьан # 
+сӀинкӀуб<adjective>:сӀинкӀу # 
+сӀинтуб<adjective>:сӀинту # 
+сӀихӀилаб<adjective>:сӀихӀила # cunning
+сӀобидаб<adjective>:сӀобида # merciful
+сӀодоруб<adjective>:сӀодору # sensitive
+сӀорибахуб<adjective>:сӀорибаху # 
+сӀоролуб<adjective>:сӀоролу # 
+сӀумуб<adjective>:сӀуму # sharp
+сӀуноб<adjective>:сӀуно # thoracic
+сулалгьийоб<adjective>:сулалгьийо # shamous
+сулалгьоб<adjective>:сулалгьо # shameful
+сулвачӀуб<adjective>:сулвачӀу # shameless
+сулидаб<adjective>:сулида # shameful
+суридуб<adjective>:суриду # ugly
+сурмейаб<adjective>:сурмейа # 
+сурмийаб<adjective>:сурмийа # smoky
+сусуридоб<adjective>:сусуридо # dull
+табаб<adjective>:таба # soft
+тавакалаб<adjective>:тавакала # resolute 
+тавакалъаб<adjective>:тавакалъа # 
+тамалаб<adjective>:тамала # long-lasting
+тамашайаб<adjective>:тамашайа # amazing
+тарзидаб<adjective>:тарзида # slender
+тасамухӀаб<adjective>:тасамухӀа # negligent
+татаб<adjective>:тата # weak
+татихуб<adjective>:татиху # 
+тегьидуб<adjective>:тегьиду # moderate
+тирийаб<adjective>:тирийа # agile
+тордуб<adjective>:торду # rotten
+тохаб<adjective>:тоха # weak
+тӀабигӀийаб<adjective>:тӀабигӀийа # spontaneous
+тӀагӀамаб<adjective>:тӀагӀама # 
+тӀагӀамидаб<adjective>:тӀагӀамида # delicious
+тӀагӀаночӀуб<adjective>:тӀагӀаночӀу # tasteless
+тӀадаб<adjective>:тӀада # obligatory 
+тӀадгӀанаб<adjective>:тӀадгӀана # high-ranking
+тӀадигӀанаб<adjective>:тӀадигӀана # high-ranking
+тӀалабвачӀуб<adjective>:тӀалабвачӀу # carefree
+тӀекъаб<adjective>:тӀекъа # unfair
+тӀобойдуб<adjective>:тӀобойду # whole
+тулакаб<adjective>:тулака # quick-witted
+тусӀигудуб<adjective>:тусӀигуду # swampy
+тусӀууб<adjective>:тусӀуу # swampy
+узданаб<adjective>:уздана # slender
+унго–угойаб<adjective>:унго–угойа # real
+унгьекӀвайаб<adjective>:унгьекӀвайа # own
+ургъидичӀуб<adjective>:ургъидичӀу # reckless
+ургъилвачӀуб<adjective>:ургъилвачӀу # carefree
+учузаб<adjective>:учуза # cheap
+хабхаруб<adjective>:хабхару  #  torn
+хайирвачӀуб<adjective>:хайирвачӀу # useless
+хайиридаб<adjective>:хайирида # profitable
+халкъийаб<adjective>:халкъийа # folk
+хамитуб<adjective>:хамиту # 
+хасаб<adjective>:хаса # special
+хехаб<adjective>:хеха # 
+хехуб<adjective>:хеху # 
+хийанатаб<adjective>:хийаната # unfaithful
+хилипаб<adjective>:хилипа # false
+хирийаб<adjective>:хирийа # 
+хируб<adjective>:хиру # 
+холуб<adjective>:холу # 
+хоходоб<adjective>:хоходо # crumbly
+хохумаб<adjective>:хохума # loose
+хӀадураб<adjective>:хӀадура # ready
+хӀажатаб<adjective>:хӀажата # needed
+хӀакъаб<adjective>:хӀакъа # true
+хӀакъикъийаб<adjective>:хӀакъикъийа # true
+хӀакъираб<adjective>:хӀакъира # despicable
+хӀалалаб<adjective>:хӀалала # labor
+хӀаликатаб<adjective>:хӀаликата # 
+хӀалилаб<adjective>:хӀалила # worthwhile
+хӀалимаб<adjective>:хӀалима # meek
+хӀалихьатаб<adjective>:хӀалихьата # mean
+хӀалкӀведуб<adjective>:хӀалкӀведу # powerful
+хӀарзайаб<adjective>:хӀарзайа # 
+хӀасратаб<adjective>:хӀасрата # passionate
+хӀащӀибаб<adjective>:хӀащӀиба # heavy
+хӀеренаб<adjective>:хӀерена # soft
+хӀикматаб<adjective>:хӀикмата # amazing
+хӀисабвачӀуб<adjective>:хӀисабвачӀу # innumerable
+хӀисуб<adjective>:хӀису # slow
+хӀурматидаб<adjective>:хӀурматида # respected
+христиъанаб<adjective>:христиъана # 
+хъалуб<adjective>:хъалу # 
+хъалъуб<adjective>:хъалъу # 
+хъарсимаб<adjective>:хъарсима # meager
+хъарталаб<adjective>:хъартала # 
+хъатӀуб<adjective>:хъатӀу # greedy
+хъахӀбайаб<adjective>:хъахӀбайа # depraved
+хъачӀуб<adjective>:хъачӀу # emaciated
+хъашхъаруб<adjective>:хъашхъару # lousy
+хъвануб<adjective>:хъвану # greedy
+хъелъибелъоб<adjective>:хъелъибелъо # emaciated
+хъехъедуб<adjective>:хъехъеду # rare
+хъирисехуб<adjective>:хъирисеху  #  Gudava mangy
+хъирхъиридуб<adjective>:хъирхъириду # rough
+хъитӀидуб<adjective>:хъитӀиду # stubborn
+хъуб<adjective>:хъу # dirty
+хьваралуб<adjective>:хьваралу # old
+цедагоб<adjective>:цедаго # single
+цехӀеб<adjective>:цехӀе # 
+це–цеб<adjective>:це–це # some
+цӀагьийоб<adjective>:цӀагьийо # hot
+цӀажаруб<adjective>:цӀажару # 
+цӀайгудуб<adjective>:цӀайгуду # hot
+цӀайкьераб<adjective>:цӀайкьера # fiery red
+цӀакъаб<adjective>:цӀакъа # excellent
+цӀакьуб<adjective>:цӀакьу # fast
+цӀахьутуб<adjective>:цӀахьуту # dense
+цӀашишуб<adjective>:цӀашишу # 
+цӀашищуб<adjective>:цӀашищу # 
+цӀащишуб<adjective>:цӀащишу # 
+цӀащищуб<adjective>:цӀащищу # 
+цӀинуб<adjective>:цӀину # new
+чадуб<adjective>:чаду # red
+чадукъасануб<adjective>:чадукъасану # red-motley
+чалаауб<adjective>:чалаау # hairy
+чалухаб<adjective>:чалуха # flirtatious
+чалъауб<adjective>:чалъау # promiscuous
+чаруб<adjective>:чару # 
+чахъарахъуб<adjective>:чахъарахъу # checkered
+чахьутуб<adjective>:чахьуту # barren
+чачайоб<adjective>:чачайо # 
+чинчуб<adjective>:чинчу # 
+чичуб<adjective>:чичу # bad
+чохӀаб<adjective>:чохӀа # dense
+чӀабчӀейоб<adjective>:чӀабчӀейо # sleepy
+чӀагойаб<adjective>:чӀагойа # lively
+чӀагьаб<adjective>:чӀагьа # 
+чӀамигӀаб<adjective>:чӀамигӀа # weak
+чӀамучӀаб<adjective>:чӀамучӀа # annoying
+чӀанкӀидуб<adjective>:чӀанкӀиду # dense
+чӀацӀайлъоб<adjective>:чӀацӀайлъо # twentieth
+чӀацӀалгьилалъоб<adjective>:чӀацӀалгьилалъо # twentieth
+чӀекуб<adjective>:чӀеку # 
+чӀетаб<adjective>:чӀета # thin
+чӀечӀилгьилалъоб<adjective>:чӀечӀилгьилалъо # second
+чӀечӀилъоб<adjective>:чӀечӀилъо # second
+чӀикӀидуб<adjective>:чӀикӀиду # bent
+чӀикӀ–чӀикӀидуб<adjective>:чӀикӀ–чӀикӀиду # curved 
+чӀилаб<adjective>:чӀила # two years old
+чӀимчӀидуб<adjective>:чӀимчӀиду # rough
+чӀунчӀаб<adjective>:чӀунчӀа # 
+чӀурканаб<adjective>:чӀуркана # elegant
+чӀухӀидуб<adjective>:чӀухӀиду # proud
+чӀучӀаб<adjective>:чӀучӀа # tasteless
+шинхуб<adjective>:шинху # 
+шишуб<adjective>:шишу # 
+шищуб<adjective>:шищу # 
+шкъасануб<adjective>:шкъасану # 
+шокъаб<adjective>:шокъа # sick
+шӀануб<adjective>:шӀану # 
+шӀерелуб<adjective>:шӀерелу # 
+щайтӀанаб<adjective>:щайтӀана # cunning
+щакаб<adjective>:щака # doubtful
+щакдайаб<adjective>:щакдайа # suspicious
+щакидоб<adjective>:щакидо # suspicious
+щанауб<adjective>:щанау # moldy
+щардуб<adjective>:щарду # flat
+щечӀибауб<adjective>:щечӀибау # wiry
+щечӀиуб<adjective>:щечӀиу # wiry
+щинхуб<adjective>:щинху # 
+щишуб<adjective>:щишу # 
+щищуб<adjective>:щищу # red
+щобараб<adjective>:щобара # plump
+щӀануб<adjective>:щӀану # small
+щӀаруб<adjective>:щӀару # porous
+щӀваркьидуб<adjective>:щӀваркьиду # brisk
+щӀедеруб<adjective>:щӀедеру # narrow
+щӀерелуб<adjective>:щӀерелу # 
+щӀхуб<adjective>:щӀху # dirty
+щулийаб<adjective>:щулийа # solid
+щутӀуб<adjective>:щутӀу # deaf
+эдуб<adjective>:эду # closed
+экӀвабатуб<adjective>:экӀвабату # insufficient
+экӀуб<adjective>:экӀу # superfluous
+эрахуб<adjective>:эраху # 
+эркенаб<adjective>:эркена # free
+эруб<adjective>:эру # some
+эстоб<adjective>:эсто # 
+эуб<adjective>:эу # quick
+эхъанб<adjective>:эхъан # 
+эцӀуб<adjective>:эцӀу # 
+эчуб<adjective>:эчу # 
+эщдуб<adjective>:эщду # which
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
 # ADVERB ROOTS
 LEXICON Adverb
-ахила<adverb>:ахила #839
-ахирала<adverb>:ахирала #839
+абадин–абадалъир<adverb>:абадин–абадалъир
+абадин–абадилъи<adverb>:абадин–абадилъи
+абцекъалъир<adverb>:абцекъалъир
+абцелъила<adverb>:абцелъила
+агьи<adverb>:агьи
+агьикьи<adverb>:агьикьи
+агьила<adverb>:агьила
+агьилалъби<adverb>:агьилалъби
+агьис<adverb>:агьис
+агьихинди<adverb>:агьихинди
+агьрахис<adverb>:агьрахис
+адуба<adverb>:адуба
+адубахис<adverb>:адубахис
+алгьалъгьис<adverb>:алгьалъгьис
+алгьащда<adverb>:алгьащда
+алгьи<adverb>:алгьи
+алъасгьерах<adverb>:алъасгьерах
+ани<adverb>:ани
+анис<adverb>:анис
 аᵸщ<adverb>:аᵸщ #838
-аᵸщила<adverb>:аᵸщила #838
+анщила<adverb>:анщила
 аᵸщис<adverb>:аᵸщис #838
-батӀеслъах<adverb>:батӀаслъах #839
+ара–гӀарих<adverb>:ара–гӀарих
+ари<adverb>:ари
+ахила<adverb>:ахила
+ахирала<adverb>:ахирала #839
+ахъула<adverb>:ахъула
+ацебӀир<adverb>:ацебӀир
+ащ<adverb>:ащ
+ащалъи<adverb>:ащалъи
+ащдада<adverb>:ащдада
+бакъа<adverb>:бакъа
+бакъа–бакъада<adverb>:бакъа–бакъада
+бакъада<adverb>:бакъада
+бакьах<adverb>:бакьах
+бакьбетӀул<adverb>:бакьбетӀул
+балъгода<adverb>:балъгода
+батӀада<adverb>:батӀада
 батӀаслъах<adverb>:батӀаслъах #839
-баха<adverb>:баха # 839 outside (of)
-баха<adverb>:ваха # 839 outside (of)
-баха<adverb>:йаха # 839 outside (of)
-#гӀарих<adverb>:гӀарах #849
-#гӀарах<adverb>:гӀарах #849
-гьащӀах<adverb>:гьащӀах #846
+батӀеслъах<adverb>:батӀеслъах
+батӀи–батӀада<adverb>:батӀи–батӀада
+баха<adverb>:баха #839outside(of)
+баха<adverb>:ваха #839outside(of)
+баха<adverb>:йаха #839outside(of)
+бебила<adverb>:бебила
+берцеда<adverb>:берцеда
+бесулгьах<adverb>:бесулгьах
+бечӀураракӀвалъа<adverb>:бечӀураракӀвалъа
+бигьада<adverb>:бигьада
+бийхдачӀана<adverb>:бийхдачӀана
+биӀалъи<adverb>:биӀалъи
+битӀ<adverb>:битӀ
+битӀ–битӀла<adverb>:битӀ–битӀла
+битӀубида<adverb>:битӀубида
+бокьудубмухада<adverb>:бокьудубмухада
+бокьудубӀа<adverb>:бокьудубӀа
+бокьудуӀас<adverb>:бокьудуӀас
+бокьухъ<adverb>:бокьухъ
+боцӀида<adverb>:боцӀида
+булгьунобмухада<adverb>:булгьунобмухада
+буралъа<adverb>:буралъа
+вахӀшида<adverb>:вахӀшида
+вещда<adverb>:вещда
+ви<adverb>:ви
+вис<adverb>:вис
+гӀадада<adverb>:гӀадада
+гӀаксл<adverb>:гӀаксл
+гӀарах<adverb>:гӀарах #849
+гӀарах<adverb>:гӀарих #849
+гъамочӀи<adverb>:гъамочӀи
+гъвакьи<adverb>:гъвакьи
+гъващах<adverb>:гъващах
+гь<adverb>:гь
+гьадащда<adverb>:гьадащда
+гьадибулгьах<adverb>:гьадибулгьах
+гьалгьаридаео<adverb>:гьалгьаридаео
+гьалда<adverb>:гьалда
+гьалуба<adverb>:гьалуба
+гьанщда<adverb>:гьанщда
+гьардида<adverb>:гьардида
+гьари–кӀвариво<adverb>:гьари–кӀвариво
+гьатубӀир<adverb>:гьатубӀир
+гьатусесер<adverb>:гьатусесер
+гьахъи<adverb>:гьахъи
+гьащда<adverb>:гьащда
 гьащӀа<adverb>:гьащӀа #846
+гьащӀах<adverb>:гьащӀах #846
 гье<adverb>:гье #847
+гьегьерис–гьегьер<adverb>:гьегьерис–гьегьер
+гьелала<adverb>:гьелала
+гьелалъи<adverb>:гьелалъи
+гьерах<adverb>:гьерах
+гьери<adverb>:гьери
 гьечи<adverb>:гьечи #846
-гьечи<adverb>:гьечӀи # Gudava
-гьикьа<adverb>:гьикьа # 847 downwards
-гьикьах<adverb>:гьикьах # 847 down
-гьикьа<adverb>:гьикьахинди # down Gudava
-гьикьарах<adverb>:гьикьарах # 847 from down
+гьечи<adverb>:гьечӀи #Gudava
+гьечӀигье<adverb>:гьечӀигье
+гьечӀисери<adverb>:гьечӀисери
+гьечӀисес<adverb>:гьечӀисес
+гьикьа<adverb>:гьикьа #847downwards
+гьикьа<adverb>:гьикьахинди #downGudava
+гьикьарах<adverb>:гьикьарах #847fromdown
+гьикьах<adverb>:гьикьах #847down
+гьикьгьида<adverb>:гьикьгьида
 гьикьи<adverb>:гьикьи
+гьикьис<adverb>:гьикьис
+гьикьисагьи<adverb>:гьикьисагьи
+гьикьисини<adverb>:гьикьисини
+гьикьр<adverb>:гьикьр
 гьини<adverb>:гьини
-гьини<adverb><el>:гьинис
+гьини<adverb>:гьинис
+гьини–гьини<adverb>:гьини–гьини
+гьинилъанасмуха<adverb>:гьинилъанасмуха
+гьобдалъа<adverb>:гьобдалъа
+гьобӀила<adverb>:гьобӀила
+гьобхӀалъа<adverb>:гьобхӀалъа
+гьундащда<adverb>:гьундащда
+гьунщда<adverb>:гьунщда
+гьусӀакьи<adverb>:гьусӀакьи
+гьусӀукьи<adverb>:гьусӀукьи
+дагь<adverb>:дагь
 дагьабда<adverb>:дагьабда
-данд<adverb>:данд # M 176
-йера<adverb>:йера # 851
-йера<adverb>:йерала # 851
+даимда<adverb>:даимда
+данд<adverb>:данд
+дандбитӀ<adverb>:дандбитӀ
+дандис–данди<adverb>:дандис–данди
+дарадала<adverb>:дарадала
+двардаридаео<adverb>:двардаридаео
+двардваридал<adverb>:двардваридал
+ди–ади<adverb>:ди–ади
+дунелбалалъа<adverb>:дунелбалалъа
+е<adverb>:е
+еда<adverb>:еда
+зеблас–зебла<adverb>:зеблас–зебла
+зебулъда<adverb>:зебулъда
+зебур<adverb>:зебур
+зулмуӀир<adverb>:зулмуӀир
+идалгьила<adverb>:идалгьила
+иджигобала<adverb>:иджигобала
+иджи–инджисла<adverb>:иджи–инджисла
+иджилъова<adverb>:иджилъова
+идулъидаэбада<adverb>:идулъидаэбада
+илала–билала<adverb>:илала–билала
+илала–гурала<adverb>:илала–гурала
+илъах<adverb>:илъах
+илъилъкъагӀидала<adverb>:илъилъкъагӀидала
+илъилъкъала<adverb>:илъилъкъала
+илъилъкъарла<adverb>:илъилъкъарла
+инда<adverb>:инда
+индабукӀайдала<adverb>:индабукӀайдала
+индадала<adverb>:индадала
+индасгьалубайа<adverb>:индасгьалубайа
+индас–идала<adverb>:индас–идала
+инджа<adverb>:инджа
+инджидала<adverb>:инджидала
+инджийа<adverb>:инджийа
+инджийх<adverb>:инджийх
+инджиса<adverb>:инджиса
+инджисдала<adverb>:инджисдала
+инлъах<adverb>:инлъах
+иргала<adverb>:иргала
+йазихъда<adverb>:йазихъда
+йакъинда<adverb>:йакъинда
+йера<adverb>:йера
+йера<adverb>:йерала #851
+йерада<adverb>:йерада
+йерада–йера<adverb>:йерада–йера
+йералъасгьалуба<adverb>:йералъасгьалуба
+йерелгьир<adverb>:йерелгьир
+йересеӀир<adverb>:йересеӀир
+йещолоӀи<adverb>:йещолоӀи
+квай<adverb>:квай
+квачӀалр<adverb>:квачӀалр
+квачӀалхда<adverb>:квачӀалхда
+кепила<adverb>:кепила
+кӀалгьикъидибо<adverb>:кӀалгьикъидибо
 кутакила<adverb>:кутакила
-къина<adverb>:къина # 856 in the summer
-ощинар<adverb>:ощинар
+къакъатӀвало<adverb>:къакъатӀвало
+къалада<adverb>:къалада
+къанагӀат<adverb>:къанагӀат
+къарзила<adverb>:къарзила
+къар–къарула<adverb>:къар–къарула
+къарлада<adverb>:къарлада
+къегьекьи<adverb>:къегьекьи
+къина<adverb>:къина
+къочамо<adverb>:къочамо
+къочамухада<adverb>:къочамухада
+кьабиди<adverb>:кьабиди
+кьебулах<adverb>:кьебулах
+кьущӀила<adverb>:кьущӀила
+лахъи<adverb>:лахъи
+лъай–вани<adverb>:лъай–вани
+лъехъулгьх<adverb>:лъехъулгьх
+лъихъулгьх<adverb>:лъихъулгьх
+магӀданла<adverb>:магӀданла
+мадугьаллъи<adverb>:мадугьаллъи
+макӀачӀулъи<adverb>:макӀачӀулъи
+макӀв–макӀуб<adverb>:макӀв–макӀуб
+макӀ–макӀула<adverb>:макӀ–макӀула
+махӀдала<adverb>:махӀдала
+машкъилчӀана<adverb>:машкъилчӀана
+мекъса<adverb>:мекъса
+микъар<adverb>:микъар
+микъса<adverb>:микъса
+мукӀубда<adverb>:мукӀубда
+мукӀуда<adverb>:мукӀуда
+мукӀумукӀуб–бищибо<adverb>:мукӀумукӀуб–бищибо
+мухӀканда<adverb>:мухӀканда
+нагагь–надир<adverb>:нагагь–надир
+нид<adverb>:нид
+нищӀикьи<adverb>:нищӀикьи
 одобщинаб<adverb>:одобщинаб
-ошта<adverb>:ошта #855
-ошта<adverb>:ошда #855
+одощда<adverb>:одощда
+олгьащда<adverb>:олгьащда
+олгьащдо<adverb>:олгьащдо
+оӀасгьерах<adverb>:оӀасгьерах
+оӀгьила<adverb>:оӀгьила
 орбу<adverb>:орбуда
 орбу<adverb>:орбу
-ори<adverb>:ори #855 to there
-регьала<adverb>:регьала #858 at night
-регьала<adverb>:регьалада #858 at night
-регьала<adverb>:регьалъа # Gudava at night
-регьала<adverb>:регьалъада # Gudava at night
-сани<adverb>:сани # 860 together
-сани<adverb>:санида # 860 together
-се<adverb>:се # 861
-сер<adverb>:сер # 861
-серах<adverb>:серах # 861
-серол<adverb>:серол # 861
-сесер<adverb>:сесер # 861
-суни<adverb>:суни # yesterday
-хех<adverb>:хех # rapidly, Gudava
-хъапилибо<adverb>:хъапилибо # M 359 suddenly
-хъапилибо<adverb>:къапилӀида # Gudava suddenly
-хъатлӀидахда<adverb>:хъатлӀидахда # M 359 suddenly
-цӀакъ<adverb>:цӀакъ # very
-цӀа<adverb>:цӀа # very
-чӀера<adverb>:чӀера # 842 up
-чӀерах<adverb>:чӀерах # 842 upwards
-#чӀера<adverb>:кӀйера # Gudava
-#чӀера<adverb>:кӀйерахинди # Gudava
-шири<adverb>:шири # 861
+ори<adverb>:ори #855tothere
+очула<adverb>:очула
+ошда<adverb>:ошда
+ошта<adverb>:ошта #855
+ощдобда–ощдоб<adverb>:ощдобда–ощдоб
+ощдоӀир<adverb>:ощдоӀир
+ощинар<adverb>:ощинар
+паракъат<adverb>:паракъат
+рагьалъи<adverb>:рагьалъи
+рагьи–рагьалъи<adverb>:рагьи–рагьалъи
+ракӀвабакь<adverb>:ракӀвабакь
+ракӀвалъисда<adverb>:ракӀвалъисда
+ракӀвах<adverb>:ракӀвах
+ракьзебула<adverb>:ракьзебула
+ракьилгьалъа<adverb>:ракьилгьалъа
+ракьирелгьала<adverb>:ракьирелгьала
+ракьух<adverb>:ракьух
+реба<adverb>:реба
+регьала<adverb>:регьала #858atnight
+регьала<adverb>:регьалада #858atnight
+регьала<adverb>:регьалъа #Gudavaatnight
+регьала<adverb>:регьалъада #Gudavaatnight
+регьера<adverb>:регьера
+регьерах<adverb>:регьерах
+релгьалъда<adverb>:релгьалъда
+решилъда<adverb>:решилъда
+с<adverb>:с
+саброчӀана<adverb>:саброчӀана
+сагъ–саламат<adverb>:сагъ–саламат
+сагьа<adverb>:сагьа
+сай<adverb>:сай
+саламатда<adverb>:саламатда
+санда<adverb>:санда
+сандасда<adverb>:сандасда
+сани<adverb>:сани
+сани<adverb>:санида #860together
+санитӀео<adverb>:санитӀео
+се<adverb>:се #861
+себера<adverb>:себера
+сер<adverb>:сер #861
+серах<adverb>:серах #861
+сери<adverb>:сери
+серисдагьалуба<adverb>:серисдагьалуба
+серол<adverb>:серол
+серрах<adverb>:серрах
+серх<adverb>:серх
+сесер<adverb>:сесер
+сесерда<adverb>:сесерда
+сесермуха<adverb>:сесермуха
+сибара<adverb>:сибара
+с–квай<adverb>:с–квай
+сӀабаео<adverb>:сӀабаео
+сӀелгьарад<adverb>:сӀелгьарад
+сӀелгьералъ<adverb>:сӀелгьералъ
+сӀер<adverb>:сӀер
+суни<adverb>:суни
+сунирегьера<adverb>:сунирегьера
+тох<adverb>:тох
+тӀана<adverb>:тӀана
+тӀири<adverb>:тӀири
+уд–гӀарих<adverb>:уд–гӀарих
+уди<adverb>:уди
+уди–ади<adverb>:уди–ади
+удис<adverb>:удис
+улгьгьи<adverb>:улгьгьи
+улгьи<adverb>:улгьи
+улгьис<adverb>:улгьис
+уналахинди<adverb>:уналахинди
+унгода<adverb>:унгода
+унгьдибо<adverb>:унгьдибо
+уни<adverb>:уни
+унис<adverb>:унис
+ургъидибода<adverb>:ургъидибода
+учузда<adverb>:учузда
+хайирчӀана<adverb>:хайирчӀана
+хех<adverb>:хех #rapidly,Gudava
+хидис–хидил<adverb>:хидис–хидил
+хӀаламадлъ<adverb>:хӀаламадлъ
+хӀалица<adverb>:хӀалица
+хӀаллъ<adverb>:хӀаллъ
+хӀахьди<adverb>:хӀахьди
+хӀащӀр<adverb>:хӀащӀр
+хӀисала<adverb>:хӀисала
+хъамаралъи<adverb>:хъамаралъи
+хъапилибо<adverb>:хъапилибо #M359suddenly
+хъапилибо<adverb>:къапилӀида #Gudavasuddenly
+хъатимасадибо<adverb>:хъатимасадибо
+хъатлӀидахда<adverb>:хъатлӀидахда #M359suddenly
+хъатлъидхда<adverb>:хъатлъидхда
+хъахӀличӀана<adverb>:хъахӀличӀана
+хъашдидибо<adverb>:хъашдидибо
+хьвахьваридабещдибо<adverb>:хьвахьваридабещдибо
+цебдакъайдалъа<adverb>:цебдакъайдалъа
+цебкъайдалъа<adverb>:цебкъайдалъа
+цемикъар<adverb>:цемикъар
+цеӀибагьегьерцеб<adverb>:цеӀибагьегьерцеб
+цецебащ<adverb>:цецебащ
+цецебмикъар<adverb>:цецебмикъар
+цечвамах<adverb>:цечвамах
+цечвамгобала<adverb>:цечвамгобала
+цӀ<adverb>:цӀ
+цӀа<adverb>:цӀа #very
+цӀакъ<adverb>:цӀакъ
+цӀакьи–гъвакьибо<adverb>:цӀакьи–гъвакьибо
+цӀидасан<adverb>:цӀидасан
+цӀисанда<adverb>:цӀисанда
+чвади<adverb>:чвади
+чвам<adverb>:чвам
+чвамгобала<adverb>:чвамгобала
+чвамгобалалъи<adverb>:чвамгобалалъи
+чвамла<adverb>:чвамла
+чванцӀгобала<adverb>:чванцӀгобала
+чвацӀа<adverb>:чвацӀа
+чеч<adverb>:чеч
+чечда<adverb>:чечда
+чичубджила<adverb>:чичубджила
+чӀалгӀада<adverb>:чӀалгӀада
+чӀацӀилгьила<adverb>:чӀацӀилгьила
+чӀацӀихинди<adverb>:чӀацӀихинди
+чӀванкъотӀидибо<adverb>:чӀванкъотӀидибо
+чӀваркьидибо<adverb>:чӀваркьидибо
+чӀера<adverb>:чӀера #842up
+чӀера<adverb>:чӀерахинди
+чӀера<adverb>:чӀерах #842upwards
+чӀмикъар<adverb>:чӀмикъар
+чӀухӀдала<adverb>:чӀухӀдала
+шири<adverb>:шири #861
+шушхъи<adverb>:шушхъи
+щатӀах<adverb>:щатӀах
+щваларегьера<adverb>:щваларегьера
+щвала–сай<adverb>:щвала–сай
+щимах<adverb>:щимах
+щӀири<adverb>:щӀири
+щӀитӀищӀмуха<adverb>:щӀитӀищӀмуха
+щуладжи<adverb>:щуладжи
+эгьели<adverb>:эгьели
+эгьелиӀасгьалуба<adverb>:эгьелиӀасгьалуба
+эгьеналъи<adverb>:эгьеналъи
+эзагӀан<adverb>:эзагӀан
+элала<adverb>:элала
+элдалъи<adverb>:элдалъи
+элъила<adverb>:элъила
+энани<adverb>:энани
+эркеда<adverb>:эркеда
+эрубкъоӀи<adverb>:эрубкъоӀи
+эрукъалъир<adverb>:эрукъалъир
+эсебагӀарих<adverb>:эсебагӀарих
+эсебах<adverb>:эсебах
+эсебер<adverb>:эсебер
+эсеблъи<adverb>:эсеблъи
+эсебх<adverb>:эсебх
+эселъи<adverb>:эселъи
+эшгӀарих<adverb>:эшгӀарих
+эшдабукӀадирала<adverb>:эшдабукӀадирала
+эши<adverb>:эши
+эшина<adverb>:эшина
+эшинас<adverb>:эшинас
+эщда<adverb>:эщда
+эщдабукӀайрала<adverb>:эщдабукӀайрала
+эщдайа<adverb>:эщдайа
+эщдала<adverb>:эщдала
+эщдидавала<adverb>:эщдидавала
+эщди–эщдала<adverb>:эщди–эщдала
+эщдоб<adverb>:эщдоб
+эщдобла<adverb>:эщдобла
+эщдобӀир<adverb>:эщдобӀир
+эщдубгӀагила<adverb>:эщдубгӀагила
+эщдубилгӀагила<adverb>:эщдубилгӀагила
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
@@ -1588,7 +2536,7 @@ LEXICON NounAbs
 рокьи<noun>:рокьи
 рущӀ<noun>:рущӀ # 858
 рущӀа<noun>:рущӀа # M 513 cave
-ручӀа<noun>:ручӀа # Gudava, cave
+рущӀа<noun>:ручӀа # Gudava, cave
 сӀев<noun>:сӀев # 860 guest
 сӀей<noun>:сӀей
 сӀекӀер<noun>:сӀекӀер # 136
