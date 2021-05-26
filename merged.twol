@@ -1,5 +1,5 @@
 Alphabet 
-	б г д й л р с х ч щ ъ ь т н I А Б В Г Д Е И Й Л Р С У Х Ч Щ Ъ Ь Т Н ᵸ ᵸ:0
+	б г д й л м р с х ч ц щ ш ж з ъ ь т н э I А Б В Г Д Е И Й М Л Р С У Х Ч Ц Щ Ш Ж Ъ Ь Т Н ᵸ ᵸ:0
 	а:а у:у и:и о:о е:е в:в
 	а:0 у:0 и:0 о:0 е:0 в:0
 	%{р%}:р %{р%}:н
@@ -22,7 +22,7 @@ Sets
 ! reps: vowels subjected to the replacement rule: see Kibrik pp. 49-50
 	reps = а е и у о ;
 ! cons: regular consonants
-	cons = ч щ в д к р л с г х Ӏ б т л н т ;
+	cons = ч щ ш ж з в д к р м л с з г х Ӏ б т н ;
 ! ncons: consonants participating in the nasalization rule, see Kibrik pp. 52-53.
 	ncons = %{р%} %{л%} %{б%} ;
 ! mods: modifiers	
@@ -65,7 +65,7 @@ X:0 <=> _ ( ᵸ:0 ) ( %>: ) ( %{ᵸ%}: ) V; where X in reps;
 %{ᵸ%}:ᵸ <=> .#. ?+ ᵸ:0 ?* _ .#.;
 
 "ᵸ as n before regular consonants"
-%{ᵸ%}:н <=> _ ( %>: ) [ с | ч ];
+%{ᵸ%}:н <=> _ ( %>: ) [ с | ч | л ];
 
 "nasalization deletion"
 ᵸ:0 <=> _ ( %>: ) [ V | ?* ncons:* ];

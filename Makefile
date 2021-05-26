@@ -10,6 +10,8 @@
 	hfst-twolc $< -o $@
 %.gen.hfst: %.lexd.hfst %.twol.hfst
 	hfst-compose-intersect $^ -o $@
+%.tr.hfst: %.ana.hfst
+	hfst-compose translit/translit.hfst $< -o $@
 check-ana: bagval_numbers.ana.hfst gold-standart.ana.txt
 	bash compare.sh $^
 check-gen: bagval_numbers.gen.hfst gold-standart.txt
