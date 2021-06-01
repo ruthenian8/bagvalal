@@ -474,9 +474,9 @@ NounAbs CaseMain[nullNom] NCl?
 #sg obliques
 NounOblSame OblSingular[OblZero] CasesAll NCl?
 NounOblSu OblSingular[OblSu] CasesGenAgr NCl?
-NounOblSu OblSingular[OblSu] AddCasesMsg NCl?
+NounOblSu AddCasesMsg NCl?
 NounOblLi OblSingular[OblLi] CasesGenNonAgr NCl?
-NounOblLi OblSingular[OblLi] AddCasesFNsg NCl?
+NounOblLi AddCasesFNsg NCl?
 NounOblI OblSingular[OblI] CasesAll NCl?
 NounOblA OblSingular[OblA] CasesAll NCl?
 NounOblU OblSingular[OblU] CasesAll NCl?
@@ -1072,16 +1072,17 @@ LEXICON 2xRootDec
 LEXICON PerPronounStems
 де<pronoun><1P><sg><obl>:ди[PrExc]
 ме<pronoun><2P><sg><obl>:ду[PrExc]
-ищи<pronoun><1P><pl><excl><obl>:ищи
-илӀи<pronoun><1P><pl><incl><obl>:илъи # Kibrik
-илӀи<pronoun><1P><pl><incl><obl>:илӀи #Magomedova
-бишти<pronoun><2P><pl><obl>:бишти # Magomedova
-бишти<pronoun><2P><pl><obl>:бищди # Kibrik
+ищи<pronoun><1P><pl><excl>:ищи
+илӀи<pronoun><1P><pl><incl>:илъи # Kibrik
+илӀи<pronoun><1P><pl><incl>:илӀи #Magomedova
+бишти<pronoun><2P><pl>:бишти # Magomedova
+бишти<pronoun><2P><pl>:бищди # Kibrik
 
 LEXICON DemPronoun
 аб<pronoun><3P>:а # Kibrik
 об<pronoun><3P>:о # Magomedova
-об<pronoun><3P>:у
+уб<pronoun><3P>:у
+угьуб<pronoun><3P>:угьу
 
 LEXICON LogPronoun
 эб<pronoun><log><3P>:э[nom]
@@ -1092,6 +1093,8 @@ LEXICON InterPronoun
 эба<pronoun><inter><N>:э[N]
 
 LEXICON InterAdjPronoun
+оштуб<pronoun>:ошту
+оштуб<pronoun>:ошду
 эщдуб<pronoun><inter>:эщду
 эщтуб<pronoun><inter>:эщту
 эщдуб<pronoun><inter>:гъешду # dialectal, from Gudava
@@ -2642,6 +2645,7 @@ LEXICON Clitic
 гьес<postpos>:гьес #847
 гье<postpos>:гье #847
 серухъ<postpos>:серухъ # 861
+хинди<postpos>:хинди
 ва<conj>:ва
 йа<conj>:йа
 йаги<conj>:йаги
@@ -2718,6 +2722,7 @@ LEXICON NounAbs
 аграном<noun>:аграном
 агъаз<noun>:агъаз
 агь<noun>:агь
+агьаᵸ<noun>:агьаᵸ
 агьан<noun>:агьан # 837
 агьикь<noun>:агьикь
 агьикьимакӀва<noun>:агьикьимакӀва
@@ -2891,6 +2896,7 @@ LEXICON NounAbs
 базарган<noun>:базарган
 байанлгьар<noun>:байанлгьар
 байаᵸджер<noun>:байаᵸджер
+байбихьи<noun>:байбихьи
 байбихьидар<noun>:байбихьидар
 байрахъ<noun>:байрахъ
 байрахъулав<noun>:байрахъулав
@@ -6494,7 +6500,7 @@ LEXICON NounOblSame
 аварийа<noun>:аварийа
 аваᵸтура<noun>:аваᵸтура
 аваᵸтуриска<noun>:аваᵸтуриска
-агьан<noun>:агьан
+агьаᵸ<noun>:агьаᵸ
 агьан<noun>:агьан # 837
 агьикьимакӀва<noun>:агьикьимакӀва
 агьим<noun>:агьим
@@ -10355,7 +10361,6 @@ LEXICON NounOblIrreg
 нусийа<noun>:нуси # 132
 
 LEXICON NounPlBi
-аздагьо<noun>:аздагьо[npl]
 аздагьо<noun>:аздагьо[npl] # 839
 багьана<noun>:багьана[npl]
 баркалла<noun>:баркалла[npl]
@@ -10848,6 +10853,7 @@ LEXICON NounPlMi
 
 LEXICON NounPlDari
 абагун<noun>:абагун[npl]
+агьаᵸ<noun>:агьаᵸ[npl]
 агьан<noun>:агьан[npl]
 агьим<noun>:агьим[npl]
 балъкӀолир<noun>:балъкӀолир[npl]
