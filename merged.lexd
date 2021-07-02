@@ -133,9 +133,9 @@ rootInit[DaNumber] end[DaNumber]
 rootInit[RaNumber] end[RaNumber] # ра, Кибрик et al. С. 155
 
 PATTERN DaSuffixedNums
-decimal end[DaNumber]
-milli end[DaNumber]
-centi end[DaNumber]
+decimal end
+milli end
+centi end
 
 PATTERN NomNumbersAgr
 singles ( OblAdjSingular[OblSu] | OblAdjPlural[OblPlLu] )
@@ -236,16 +236,16 @@ PostClitic[all]
 RestrParticle
 ModalParticle
 UQparticle
-QuestParticle
-negSuffix[pst]
+QuestParticle PostClitic[all]?
+negSuffix[pst] QuestParticle? PostClitic[all]?
 
 PATTERN NCl # = Nominal clitics
 PostClitic
 RestrParticle
 ModalParticle
 UQparticle
-QuestParticle
-negSuffix[pst]
+QuestParticle PostClitic?
+negSuffix[pst] QuestParticle? PostClitic?
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
@@ -342,6 +342,7 @@ adjSingle OblAdjSup NCl?
 #
 PerPronounStems genitiveCase[GenAgr] NCl?
 PerPronounStems[PrExc] CaseMain[ErgR,-RegErg,-nullNom] NCl?
+PerPronounStems[PrExc] ( DatExcMin[pron] | SupExcMin[pron] ) NCl?
 PerPronounStems[-PrExc] CaseMain[ErgR] NCl?
 PerPronounExc NCl?
 PerPronounStems locMain directCase NCl?
@@ -673,15 +674,21 @@ LEXICON TimeMarker
 LEXICON PostClitic
 <restr>:{ep.й}{ep.е}л[all]
 <quot>:ди[all]
-<quot>:гъе[all]
+<quot>:гъа[all]
+<quot>:гъади[all]
+<quot><add>:гъадила[all]
 <quot>:гъала[all]
+<quot>:гъалади[all]
+<quot><add>:гъаладила[all]
+<quot>:гъе[all]
 <quot>:гъеди[all]
+<quot><add>:гъедила[all]
 <quot><add>:дила[all]
 <all>:гъаби[nom]
 <add>:ла[all] # 179
 <add>:лъа[all] # 179
-<int>:да[all] # 180
-<int><add>:дала[all] # 180
+<ident>:да[all] # 180
+<ident><add>:дала[all] # 180
 <comit>:лена[nom]
 <comit>:ена[nom]
 <rula>:гъула[all] # 180
@@ -691,8 +698,8 @@ LEXICON PostClitic
 # NUMBER DERIVATION
 # 
 LEXICON end
-<num>:да[DaNumber]
-<num>:ра[RaNumber]
+:да[DaNumber]
+:ра[RaNumber]
 
 LEXICON col
 <col>:ла
@@ -833,7 +840,7 @@ LEXICON DatExcMin
 <obl><dat>:лъа[OblLi]
 <obl><dat>:ла[OblPlLu]
 <obl><dat>:лла[OblPlAlu]
-<dat>:ха[pron]
+<dat>:гьа[pron]
 
 LEXICON SupExceptions
 <M><sg><obl><sup>:ща[OblSu]
@@ -854,7 +861,7 @@ LEXICON SupExcMin
 <obl><sup>:лъа[OblLi]
 <obl><sup>:ла[OblPlLu]
 <obl><sup>:лла[OblPlAlu]
-<dat>:ха[pron]
+<dat>:гьа[pron]
 
 LEXICON genitiveCase
 <gen>:лъ
@@ -2661,21 +2668,30 @@ LEXICON UQparticle
 <uq>:хъал
 
 LEXICON ModalParticle
-<m>:гъо
-<f>:гъа
-<m>:гъасо
-<f>:гъаса
-<m>:гъабо
-<f>:гъаба
+<M>:гъо
+<F>:гъа
+<M>:гъасо
+<F>:гъаса
+<M>:гъабо
+<F>:гъаба
+<M>:або
+<F>:аба
+<M>:лъабо
+<F>:лъаба
 
 LEXICON QuestParticle
 <quest><M>:{ep.й}{ep.и}што
+<quest><M>:йшто
 <quest><F>:{ep.й}{ep.и}шта
+<quest><F>:йшта
 <quest>:{ep.й}{ep.и}шт
 <quest>:{ep.й}{ep.и}ш
 <quest>:{ep.й}{ep.и}ле
+<quest>:йле
 <quest>:{ep.й}{ep.и}лах
+<quest>:йлах
 <quest>:{ep.й}{ep.и}
+<quest>:{ep.й}{ep.и}ᵸ
 
 LEXICON RestrParticle
 <restr>:тара
@@ -4471,7 +4487,6 @@ LEXICON NounAbs
 лъедободоб<noun>:лъедободоб
 лъер<noun>:лъер
 лъехъулгьар<noun>:лъехъулгьар
-лъеᵸ<noun>:лъеᵸ
 лъеᵸ<noun>:лъеᵸ
 лъидир<noun>:лъидир
 лъилар<noun>:лъилар
@@ -9050,6 +9065,7 @@ LEXICON NounOblLi
 рекӀидалар<noun>:рекӀидалар
 рекӀидар<noun>:рекӀидар
 релгьаб<noun>:релгьаб
+решен<noun>:решен
 рещӀар<noun>:рещӀар
 рижи<noun>:рижи
 ритӀар<noun>:ритӀар
@@ -11120,8 +11136,8 @@ LEXICON VerbStem
 букъу<verb>:укъви[Idecl,AgrInit] # 863 cut
 букъу<verb>:ухъви[Idecl,AgrInit] # Gudava cut
 букъукъу<verb>:укъукъви[Idecl,AgrInit]
-букӀуᵸ<verb>:укӀуᵸ[Idecl,AgrInit]
 букӀуᵸ<verb>:укӀвиᵸ[Idecl,AgrInit] # 89
+букӀуᵸ<verb>:укӀуᵸ[Idecl,AgrInit]
 бущущу<verb>:ущущви[Idecl,AgrInit]
 гвагвани<verb>:гвагвани[Idecl]
 гъенбелгьи<verb>:гъенбелгьи[Idecl]
@@ -11135,9 +11151,16 @@ LEXICON VerbStem
 гьещӀи<verb>:гьещӀи[Idecl]
 гӀагалли<verb>:гӀагалли[Idecl]
 гӀаламатли<verb>:гӀаламатли[Idecl]
+елъдви[Idecl,AgrInit]
+етӀви[Idecl,AgrInit]
+жекъви[Idecl]
+жехъӀви[Idecl]
+жукъви[Idecl]
+жухъӀви[Idecl]
 зали<verb>:зали[Idecl]
 захӀматли<verb>:захӀматли[Idecl]
 игьвалъи<verb>:игьвалъи[Idecl]
+ижви[Idecl,AgrInit]
 ичи<verb>:ичи[Idecl]
 ичи<verb>:ичи[Idecl] # 849 give
 ичичи<verb>:ичичи[Idecl]
@@ -11167,8 +11190,23 @@ LEXICON VerbStem
 свадди<verb>:свадди[Idecl]
 сварди<verb>:сварди[Idecl]
 свари<verb>:свари[Idecl]
+сусукӀви[Idecl]
 сӀелли<verb>:сӀелли[Idecl]
+сӀухъви[Idecl]
 тӀоли<verb>:тӀоли[Idecl]
+угъви[Idecl,AgrInit]
+угьви[Idecl,AgrInit]
+укви[Idecl,AgrInit]
+укъви[Idecl,AgrInit]
+укъукъви[Idecl,AgrInit]
+укъухъӀви[Idecl,AgrInit]
+укӀвиᵸ[Idecl,AgrInit]
+улъви[Idecl,AgrInit]
+усшви[Idecl,AgrInit]
+ухъӀви[Idecl,AgrInit]
+ухъӀукъви[Idecl,AgrInit]
+ухъӀухъӀви[Idecl,AgrInit]
+ушшви[Idecl,AgrInit]
 хвасарли<verb>:хвасарли[Idecl]
 хъвани<verb>:хъвани[Idecl]
 хъони<verb>:хъони[Idecl]
@@ -11208,6 +11246,8 @@ LEXICON VerbStem
 аргъваᵸ<verb>:аргъваᵸ[IIdecl]
 атита<verb>:атита[IIdecl]
 ахбукӀва<verb>:ахбукӀва[IIdecl]
+ахъваᵸ[IIdecl,AgrInit]
+ачва[IIdecl,AgrInit]
 аша<verb>:аша[IIdecl]
 аща<verb>:аща[IIdecl]
 аᵸгьаᵸ<verb>:аᵸгьаᵸ[IIdecl]
@@ -11216,7 +11256,6 @@ LEXICON VerbStem
 багьа<verb>:агьа[IIdecl,AgrInit]
 багӀари<verb>:багӀа[IIdecl] # bleat Gudava
 бала<verb>:ала[IIdecl,AgrInit]
-басаᵸ<verb>:асаᵸ[IIdecl,AgrInit]
 басаᵸ<verb>:асаᵸ[IIdecl,AgrInit]
 басисаᵸ<verb>:асисаᵸ[IIdecl,AgrInit]
 бахиха<verb>:ахиха[IIdecl,AgrInit]
@@ -11246,7 +11285,6 @@ LEXICON VerbStem
 бичӀаᵸ<verb>:ичӀаᵸ[IIdecl,AgrInit] # 849 look (irregular)
 бичӀичӀа<verb>:ичӀичӀа[IIdecl,AgrInit]
 бишаᵸ<verb>:ишаᵸ[IIdecl,AgrInit]
-бишаᵸ<verb>:ишаᵸ[IIdecl,AgrInit]
 биъа<verb>:иъа[IIdecl,AgrInit]
 божа<verb>:ожа[IIdecl,AgrInit]
 бугъа<verb>:бугъа[IIdecl] # 89
@@ -11272,10 +11310,10 @@ LEXICON VerbStem
 гецӀа<verb>:гецӀа[IIdecl]
 гьаᵸдибугьа<verb>:гьаᵸдибугьа[IIdecl]
 гьекьаᵸ<verb>:гьекьаᵸ[IIdecl]
-гьекьаᵸ<verb>:гьекьаᵸ[IIdecl]
 гьекьикьаᵸ<verb>:гьекьикьаᵸ[IIdecl]
 гьикьибагьа<verb>:гьикьибагьа[IIdecl]
 джеллаᵸ<verb>:джеллаᵸ[IIdecl]
+зигьваᵸ[IIdecl]
 къебукӀва<verb>:къебукӀва[IIdecl]
 къоса<verb>:къоса[IIdecl]
 къосида<verb>:къосида[IIdecl]
@@ -11284,27 +11322,44 @@ LEXICON VerbStem
 кьарашаᵸ<verb>:кьарашаᵸ[IIdecl]
 кьегъаᵸ<verb>:кьегъаᵸ[IIdecl]
 кьигьаᵸ<verb>:кьигьаᵸ[IIdecl]
-ракъаᵸ<verb>:ракъаᵸ[IIdecl]
+ожа[IIdecl,AgrInit]
 ракъаᵸ<verb>:ракъаᵸ[IIdecl]
 ракъи–рашваᵸ<verb>:ракъи–рашваᵸ[IIdecl]
 ракӀвачӀбукӀва<verb>:ракӀвачӀбукӀва[IIdecl]
 рахъӀаᵸ<verb>:рахъӀаᵸ[IIdecl]
 рекӀваᵸ<verb>:рекӀваᵸ[IIdecl]
+рекӀваᵸ[IIdecl]
 ригьигьаᵸ<verb>:ригьигьаᵸ[IIdecl]
+ругьаᵸ[IIdecl]
 тӀекваᵸ<verb>:тӀекваᵸ[IIdecl]
+тӀекваᵸ[IIdecl]
+уваᵸ[IIdecl,AgrInit]
+угьа[IIdecl,AgrInit]
+угьаᵸ[IIdecl,AgrInit]
+угьаᵸ[IIdecl]
+укаᵸ[IIdecl,AgrInit]
+укӀа[IIdecl,AgrInit]
+уллаᵸ[IIdecl,AgrInit]
+ута[IIdecl,AgrInit]
+ухӀа[IIdecl,AgrInit]
+учаᵸ[IIdecl,AgrInit]
+учӀаᵸ[IIdecl,AgrInit]
+ушаᵸ[IIdecl,AgrInit]
+ущаᵸ[IIdecl,AgrInit]
 хъӀочаᵸ<verb>:хъӀочаᵸ[IIdecl]
 хӀащӀабагьа<verb>:хӀащӀабагьа[IIdecl]
 чӀалгӀайна<verb>:чӀалгӀайна[IIdecl]
 чӀалгӀаᵸ<verb>:чӀалгӀаᵸ[IIdecl]
 чӀата<verb>:чӀата[IIdecl]
+чӀунтӀа[IIdecl]
 экваᵸ<verb>:экваᵸ[IIdecl]
+экваᵸ[IIdecl]
 экукаᵸ<verb>:экукаᵸ[IIdecl]
 экьаᵸ<verb>:экьаᵸ[IIdecl]
 эта<verb>:эта[IIdecl]
 эхва<verb>:эхва[IIdecl] #844
 эхъаᵸ<verb>:эхъаᵸ[IIdecl]
 эшаᵸ<verb>:эшаᵸ[IIdecl]
-эщаᵸ<verb>:эщаᵸ[IIdecl]
 эщаᵸ<verb>:эщаᵸ[IIdecl]
 эщещаᵸ<verb>:эщещаᵸ[IIdecl]
 абатате<verb>:абатате[IIIdecl]
