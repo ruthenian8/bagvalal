@@ -1,5 +1,5 @@
 Alphabet 
-	б г д й л м р с х ч ц щ ш ж з ъ ь т н э I А Б В Г Д Е И Й М Л Р С У Х Ч Ц Щ Ш Ж Ъ Ь Т Н ᵸ ᵸ:0
+	б г д й м л р с х ч ц щ ш ж з ъ ь т н э I А Б В Г Д Е И Й М Л Р С У Х Ч Ц Щ Ш Ж Ъ Ь Т Н ᵸ ᵸ:0
 	а:а у:у и:и о:о е:е в:в
 	а:0 у:0 и:0 о:0 е:0 в:0
 	%{р%}:р %{р%}:н
@@ -12,17 +12,14 @@ Alphabet
 	%{ᵸ%}:0 %{ᵸ%}:ᵸ %{ᵸ%}:н
 	%{prt%}:у %{prt%}:о %{prt%}:0
 	%>
-	
-	%{ep.е%}:е %{ep.и%}:и %{ep.а%}:а %{ep.о%}:о %{ep.у%}:у %{ep.й%}:0 %{ep.й%}:й
+	%{ep.й%}:0 %{ep.й%}:й
 ;
 
 Sets
-! eps = vowels with -j epenthesis before them, see Kibrik p. 50
-	eps = %{ep.е%} %{ep.и%} %{ep.а%} %{ep.о%} %{ep.у%} ;
 ! reps: vowels subjected to the replacement rule: see Kibrik pp. 49-50
 	reps = а е и у о ;
 ! cons: regular consonants
-	cons = ч щ ш ж з в д к р м л с з г х Ӏ б т н ;
+	cons = ч щ ш ж з в д к р л с г х Ӏ б т н ;
 ! ncons: consonants participating in the nasalization rule, see Kibrik pp. 52-53.
 	ncons = %{р%} %{л%} %{б%} ;
 ! mods: modifiers	
@@ -40,7 +37,7 @@ Rules
 %>:0 <=> _ ;
 
 "epenthesis rule, see Kibrik p. 50"
-%{ep.й%}:й <=> V _ X; where X in eps;
+%{ep.й%}:й <=> X _ ; where X in V;
 
 "replacement rule, see Kibrik pp. 49-50"
 X:0 <=> _ ( ᵸ:0 ) ( %>: ) ( %{ᵸ%}: ) V; where X in reps;

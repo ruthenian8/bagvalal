@@ -1,0 +1,121 @@
+analysis,form,mustpass,source,page,description
+гьабда<num>,гьабда,pass,Magomedova,582,reg.numbers
+буъуда<num>,буъура,pass,Kibrik,155,reg.numbers
+гьабда<num><col>,гьабдала,pass,Kibrik,157,reg.numbers with -la
+буъуда<num><col>,буъурала,pass,Kibrik,157,reg.numbers with -la
+гьабда<num><*>гьацӀа<num><ten>,гьабацӀа,pass,Magomedova,582,divisible.by.10
+гьабда<num><*>гьацӀа<num><ten><lnk>,гьабацӀ,pass,Kibrik,156,when used in a compound numeral
+гьабда<num><*>гьацӀа<num><ten><col>,гьабацӀала,pass,Kibrik,157,divisible.by.10 with -la
+гьабда<num><*>бешенда<num><hundred>,гьаббешен,pass,Kibrik,156,divisible.by.100
+гьабда<num><*>азарда<num><thousand>,гьабазарда,pass,Kibrik,156,divisible.by.1000
+цеб<num><*>бешенда<num><hundred><M><sg><obl><gen><N><sg>,бешендащуб,pass,Magomedova,582,nums with agreement
+цеб<num><*>бешенда<num><hundred><H><pl><obl><gen><N><sg>,бешендалуб,pass,Magomedova,582,nums with agreement
+цеб<num><*>бешенда<num><hundred><N><sg><obl><gen>,бешендалъилъ,pass,Magomedova,582,nums without agreement
+цеб<num><*>гьацӀа<num><ten><lnk>,гьацӀал,pass,Magomedova,582,linking ten
+цеб<num><*>бешенда<num><hundred><lnk>,бешенчӀекӀуб,pass,Kibrik,156,linking 100
+цеб<num><*>азарда<num><thousand><lnk>,азарчӀекӀуб,pass,Kibrik,156,linking 1000
+гьабда<num><*>бешенда<num><hundred><lnk>,гьаббешенчӀекӀуб,pass,Kibrik,156,linking divisible.by.100
+гьабда<num><*>азарда<num><thousand><lnk>,гьабазарчӀекӀуб,pass,Kibrik,156,linking divisible.by.1000
+гьабда<num><mult>,гьабацӀис,pass,Kibrik,158,multiplicative nums below 10
+гьабда<num><*>гьацӀа<num><ten><mult>,гьабацӀалъир,pass,Kibrik,158,multiplicative nums over 10
+гьабда<num><distr><*>бешенда<num><hundred>,гьаббешибешенда,pass,Kibrik,158,distributional nums
+гьабда<num><distr><*>азарда<num><thousand>,гьабазиазарда,pass,Kibrik,158,distributional nums
+цеб<num><distr><*>бешенда<num><hundred>,бешибешенда,pass,Kibrik,158,distributional nums
+цеб<num><distr><*>азарда<num><thousand>,азиазарда,pass,Kibrik,158,distributional nums
+цеб<num><distr><N><sg>,цецеб,pass,Kibrik,158,distributional nums
+гьабда<num><distr><*>гьацӀа<num><ten>,гьабигьабацӀа,pass,Kibrik,158,distributional nums
+цеб<num><mult>,гьечӀисес,pass,Magomedova,582,ordinal one
+гьакьуда<num><ord><N><sg><nom>,гьакьуралалъоб,pass,Kibrik,159,ordinal
+гьакьуда<num><ord><N><sg><nom>,гьакьудалалъоб,pass,Kibrik,159,ordinal
+гьакьуда<num><ord><N><sg><nom>,гьакьудалъоб,pass,Kibrik,159,ordinal without -la- infix
+цеб<num><*>бешенда<num><hundred><ord><N><sg>,бешендалалъоб,pass,Kibrik,159,ordinal
+цеб<num><*>азарда<num><thousand><ord><N><sg>,азардалалъоб,pass,Kibrik,159,ordinal
+цеб<num><*>гьацӀа<num><ten><lnk>иᵸщтуда<num><ord><N><sg>,гьацӀалинщтуралалъоб,pass,Kibrik,159,ordinal complex
+гьакьуда<num><ord><N><sg><obl><erg>,гьакьудалалъобщур,pass,Kibrik,159,ordinal oblique case
+гьабда<num><distr>,гьабдигьабда,pass,Kibrik,158,regular distributional numeral
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Magomedova,91,neg.aor.participle.abs
+1,2,pass,Magomedova,91,neg.aor.participle.erg
+1,2,pass,Kibrik,92,Imperf.participle.abs
+1,2,pass,Kibrik,92,Imperf.participle.erg
+1,2,pass,Kibrik,94,future participle.abs
+1,2,pass,Kibrik,94,future participle.erg
+1,2,pass,Kibrik,95,neg.future participle I.abs
+1,2,pass,Kibrik,95,neg.future participle I.erg
+1,2,pass,Kibrik,96,neg.future participle II.abs
+1,2,pass,Kibrik,96,neg.future participle II.erg
+1,2,pass,Kibrik,91,neg.masdar.abs
+1,2,pass,Kibrik,91,neg.masdar.erg
+1,2,pass,Kibrik,90,masdar.abs
+1,2,pass,Kibrik,90,masdar.erg
+1,экваб,pass,Kibrik,99,verb copula participle.abs
+1,экваб,pass,Kibrik,99,verb copula participle.erg
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
