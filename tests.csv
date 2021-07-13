@@ -33,6 +33,64 @@ analysis,form,mustpass,source,page,description
 цеб<num><*>гьацӀа<num><ten><lnk>иᵸщтуда<num><ord><N><sg>,гьацӀалинщтуралалъоб,pass,Kibrik,159,ordinal complex
 гьакьуда<num><ord><N><sg><obl><erg>,гьакьудалалъобщур,pass,Kibrik,159,ordinal oblique case
 гьабда<num><distr>,гьабдигьабда,pass,Kibrik,158,regular distributional numeral
+де<pronoun><1P><sg><nom>,де,pass,Kibrik,161,per.pronoun 1 person absolutive
+де<pronoun><1P><sg><obl><erg>,ден,pass,Kibrik,161,per.pronoun 1 person oblique
+де<pronoun><1P><sg><obl><sup><ess>,дила,pass,Kibrik,161,per.pronoun 1 person oblique
+ме<pronoun><2P><sg><nom>,ме,pass,Magomedova,161,per.pronoun 2 person absolutive
+ме<pronoun><2P><sg><obl><erg>,мен,pass,Kibrik,161,per.pronoun 2 person oblique
+ме<pronoun><2P><sg><obl><sup><ess>,дула,pass,Magomedova,161,per.pronoun 2 person oblique
+ищи<pronoun><1P><pl><excl><nom>,ищи,pass,Kibrik,161,1p exclusive absolutive
+ищи<pronoun><1P><pl><excl><obl><erg>,ищир,pass,Magomedova,161,1p exclusive oblique
+илӀи<pronoun><1P><pl><incl><nom>,илъи,pass,Kibrik,161,1p inclusive absolutive
+илӀи<pronoun><1P><pl><incl><obl><erg>,илъир,pass,Kibrik,161,1p inclusive oblique
+бищти<pronoun><2P><pl><nom>,бищди,pass,Magomedova,161,2p absolutive
+бищти<pronoun><2P><pl><obl><erg>,бищдир,pass,Kibrik,161,2p oblique
+аб<pronoun><3P><M><sg><nom>,ав,pass,Kibrik,162,demonstratives
+аб<pronoun><3P><M><sg><obl><erg>,ащур,pass,Kibrik,162,demonstratives
+аб<pronoun><3P><H><pl><nom>,аба,pass,Kibrik,162,demonstratives
+аб<pronoun><3P><H><pl><obl><erg>,арур,pass,Kibrik,162,demonstratives
+аб<pronoun><3P><H><pl><obl><gen><N><sg>,аруб,pass,Kibrik,162,demonstratives
+аб<pronoun><3P><N><pl><nom>,ар,pass,Kibrik,162,demonstratives
+аб<pronoun><3P><N><pl><obl><erg>,арир,pass,Kibrik,162,demonstratives
+аб<pronoun><3P><N><pl><obl><gen>,арилъ,pass,Kibrik,162,demonstratives
+аб<pronoun><3P><H><pl><obl><dat>,ара,pass,Kibrik,162,demonstratives exclusive form
+аб<pronoun><3P><H><pl><obl><dat>,арва,pass,Kibrik,162,demonstratives exclusive form
+аб<pronoun><3P><H><pl><obl><sup>,ара,pass,Kibrik,162,demonstratives exclusive form
+аб<pronoun><3P><H><pl><obl><sup>,арва,pass,Kibrik,162,demonstratives exclusive form
+аб<pronoun><3P><M><sg><obl><dat>,ащва,pass,Kibrik,162,demonstratives exclusive form
+аб<pronoun><3P><M><sg><obl><sup>,ащва,pass,Kibrik,162,demonstratives exclusive form
+об<pronoun><3P><M><sg><nom>,ов,pass,Kibrik,162,demonstratives
+об<pronoun><3P><M><sg><obl><erg>,ощур,pass,Kibrik,162,demonstratives
+уб<pronoun><3P><M><sg><nom>,ув,pass,Kibrik,162,demonstratives
+уб<pronoun><3P><M><sg><obl><erg>,ущур,pass,Kibrik,162,demonstratives
+угьуб<pronoun><3P><M><sg><nom>,угьуб,pass,Kibrik,162,demonstratives
+угьуб<pronoun><3P><M><sg><obl><erg>,угьущур,pass,Kibrik,162,demonstratives
+об<pronoun><3P><N><sg><adverb>,обе,pass,Kibrik,161,adverbial pronoun
+угьуб<pronoun><3P><N><sg><adverb>,угьубе,pass,Kibrik,161,adverbial pronoun
+аб<pronoun><3P><N><sg><adverb>,агьибе,pass,Kibrik,161,adverbial pronoun
+эб<pronoun><log><3P><M><sg><nom>,эв,pass,Kibrik,162,logophoric absolutive
+эб<pronoun><log><3P><M><sg><nom><ref>,эвда,pass,Kibrik,161,reflexive absolutive
+эб<pronoun><log><3P><M><sg><erg>,инщур,pass,Kibrik,162,logophoric oblique
+эб<pronoun><log><3P><M><sg><erg><ref>,инщурда,pass,Kibrik,161,reflexive oblique
+эб<pronoun><log><3P><N><sg><erg>,инлъир,pass,Kibrik,162,logophoric oblique
+эб<pronoun><log><3P><N><sg><erg><ref>,инлъирда,pass,Kibrik,161,reflexive oblique
+эб<pronoun><log><3P><H><pl><erg>,индур,pass,Kibrik,162,logophoric oblique
+эб<pronoun><log><3P><H><pl><erg><ref>,индурда,pass,Kibrik,161,reflexive oblique
+эб<pronoun><log><3P><N><pl><erg>,индирир,pass,Kibrik,162,logophoric oblique
+эб<pronoun><log><3P><N><pl><erg><ref>,индирирда,pass,Kibrik,161,reflexive oblique
+чвам<pronoun><inter>,чвам,pass,Kibrik,163,inter.pronoun
+чвам<pronoun><inter>,чом,pass,Kibrik,163,inter.pronoun
+эшта<pronoun><inter>,эшта,pass,Kibrik,163,inter.pronoun
+инди<pronoun><inter>,инди,pass,Kibrik,163,inter.pronoun
+эб<pronoun><inter><H><nom>,эм,pass,Kibrik,164,inter.pronoun
+эб<pronoun><inter><N><sg><nom>,эб,pass,Kibrik,164,inter.pronoun
+эб<pronoun><inter><N><pl><nom>,эр,pass,Kibrik,164,inter.pronoun
+эб<pronoun><inter><H><obl><erg>,лъор,pass,Kibrik,164,inter.pronoun
+эб<pronoun><inter><N><obl><erg>,элъир,pass,Kibrik,164,inter.pronoun
+эб<pronoun><inter><H><nom><indef>,эмгӀагила,pass,Kibrik,166,univ.pronoun
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
 1,2,pass,Kibrik,666
 1,2,pass,Magomedova,666
 1,2,pass,Kibrik,666
@@ -59,44 +117,7 @@ analysis,form,mustpass,source,page,description
 1,2,pass,Kibrik,90,masdar.erg
 1,экваб,pass,Kibrik,99,verb copula participle.abs
 1,экваб,pass,Kibrik,99,verb copula participle.erg
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
+
 1,2,pass,Kibrik,666
 1,2,pass,Magomedova,666
 1,2,pass,Kibrik,666
