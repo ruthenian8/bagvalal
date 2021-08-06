@@ -70,16 +70,20 @@ analysis,form,mustpass,source,page,description
 аб<pronoun><3P><N><sg><adverb>,агьибе,pass,Kibrik,161,adverbial pronoun
 эб<pronoun><log><3P><M><sg><nom>,эв,pass,Kibrik,162,logophoric absolutive
 эб<pronoun><log><3P><M><sg><nom><ref>,эвда,pass,Kibrik,161,reflexive absolutive
-эб<pronoun><log><3P><M><sg><erg>,инщур,pass,Kibrik,162,logophoric oblique
-эб<pronoun><log><3P><M><sg><erg><ref>,инщурда,pass,Kibrik,161,reflexive oblique
-эб<pronoun><log><3P><N><sg><erg>,инлъир,pass,Kibrik,162,logophoric oblique
-эб<pronoun><log><3P><N><sg><erg><ref>,инлъирда,pass,Kibrik,161,reflexive oblique
-эб<pronoun><log><3P><H><pl><erg>,индур,pass,Kibrik,162,logophoric oblique
-эб<pronoun><log><3P><H><pl><erg><ref>,индурда,pass,Kibrik,161,reflexive oblique
-эб<pronoun><log><3P><N><pl><erg>,индирир,pass,Kibrik,162,logophoric oblique
-эб<pronoun><log><3P><N><pl><erg><ref>,индирирда,pass,Kibrik,161,reflexive oblique
-чвам<pronoun><inter>,чвам,pass,Kibrik,163,inter.pronoun
-чвам<pronoun><inter>,чом,pass,Kibrik,163,inter.pronoun
+эб<pronoun><log><3P><M><sg><obl><erg>,инщур,pass,Kibrik,162,logophoric oblique
+эб<pronoun><log><3P><M><sg><obl><erg><ref>,инщурда,pass,Kibrik,161,reflexive oblique
+эб<pronoun><log><3P><N><sg><obl><erg>,инлъир,pass,Kibrik,162,logophoric oblique
+эб<pronoun><log><3P><N><sg><obl><erg><ref>,инлъирда,pass,Kibrik,161,reflexive oblique
+эб<pronoun><log><3P><H><pl><obl><erg>,индур,pass,Kibrik,162,logophoric oblique
+эб<pronoun><log><3P><H><pl><obl><erg><ref>,индурда,pass,Kibrik,161,reflexive oblique
+эб<pronoun><log><3P><N><pl><obl><erg>,индирир,pass,Kibrik,162,logophoric oblique
+эб<pronoun><log><3P><N><pl><obl><erg><ref>,индирирда,pass,Kibrik,161,reflexive oblique
+чвам<pronoun><inter><nom>,чвам,pass,Kibrik,164,inter.pronoun absolutive
+чвам<pronoun><inter><M><sg><obl><erg>,чвамщур,pass,Kibrik,164,inter.pronoun oblique
+чвам<pronoun><inter><F><sg><obl><erg>,чвамлъир,pass,Kibrik,164,inter.pronoun oblique
+чвам<pronoun><inter><N><sg><obl><erg>,чвамлъир,pass,Kibrik,164,inter.pronoun oblique
+чвам<pronoun><inter><H><pl><obl><erg>,чвамалур,pass,Kibrik,164,inter.pronoun oblique
+чвам<pronoun><inter><nom>,чом,pass,Kibrik,163,inter.pronoun absolutive
 эшта<pronoun><inter>,эшта,pass,Kibrik,163,inter.pronoun
 инди<pronoun><inter>,инди,pass,Kibrik,163,inter.pronoun
 эб<pronoun><inter><H><nom>,эм,pass,Kibrik,164,inter.pronoun
@@ -87,12 +91,39 @@ analysis,form,mustpass,source,page,description
 эб<pronoun><inter><N><pl><nom>,эр,pass,Kibrik,164,inter.pronoun
 эб<pronoun><inter><H><obl><erg>,лъор,pass,Kibrik,164,inter.pronoun
 эб<pronoun><inter><N><obl><erg>,элъир,pass,Kibrik,164,inter.pronoun
-эб<pronoun><inter><H><nom><indef>,эмгӀагила,pass,Kibrik,166,univ.pronoun
+эб<pronoun><inter><H><nom><indef>,эмдала,pass,Kibrik,165,indef.pronoun ser1
+эб<pronoun><inter><H><nom><M><sg><indef><M><sg>,эмвукӀавола,pass,Kibrik,165,indef.pronoun ser2 Msg
+эб<pronoun><inter><N><sg><nom><N><sg><indef><N><sg>,эббукӀабола,pass,Kibrik,165,indef.pronoun ser2 Msg
+эб<pronoun><inter><H><nom><H><pl><indef><H><pl>,эмбукӀурола,pass,Kibrik,165,indef.pronoun ser2 Msg
+эб<pronoun><inter><N><pl><nom><N><pl><indef><N><pl>,эррукӀарола,pass,Kibrik,165,indef.pronoun ser2 Msg
+эб<pronoun><inter><H><nom><univ><nom>,эмгӀагила,pass,Kibrik,166,univ.pronoun absolutive
+эб<pronoun><inter><H><nom><univ><M><sg><obl><erg>,эмгӀагилащур,pass,Kibrik,166,univ.pronoun Msg oblique
+эб<pronoun><inter><H><nom><univ><N><sg><obl><erg>,эмгӀагилалъир,pass,Kibrik,166,univ.pronoun Nsg oblique
+эб<pronoun><inter><H><nom><univ><N><pl><obl><erg>,эмгӀагилалъир,pass,Kibrik,166,univ.pronoun Npl oblique
+эбеб<pronoun><M><sg><M><sg><nom>,эвев,pass,Kibrik,167,"Each" pronoun MSG absolutive
+эбеб<pronoun><F><sg><F><sg><nom>,эйей,pass,Kibrik,167,"Each" pronoun FSG absolutive
+эбеб<pronoun><N><sg><N><sg><nom>,эбеб,pass,Kibrik,167,"Each" pronoun NSG absolutive
+эбеб<pronoun><M><sg><M><sg><obl><erg>,эвевщур,pass,Kibrik,167,"Each" pronoun MSG oblique
+эбеб<pronoun><M><sg><M><sg><obl><gen><N><sg>,эвевщуб,pass,Kibrik,167,"Each" pronoun MSG genitive
+эбеб<pronoun><F><sg><F><sg><obl><erg>,эйейлъир,pass,Kibrik,167,"Each" pronoun FSG oblique
+эбеб<pronoun><N><sg><N><sg><obl><erg>,эбеблъир,pass,Kibrik,167,"Each" pronoun NSG oblique
 1,2,pass,Magomedova,666
 1,2,pass,Kibrik,666
 1,2,pass,Magomedova,666
 1,2,pass,Kibrik,666
 1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+1,2,pass,Magomedova,666
+1,2,pass,Magomedova,666
+1,2,pass,Kibrik,666
+кьираб<adjective><M><sg><nom>,кьирав,pass,Kibrik,154,class-final adjective absolutive MSG
+кьираб<adjective><M><sg><obl><erg>,кьиравщур,pass,Kibrik,154,class-final adjective oblique MSG
+<M><sg>багьаруб<adjective><M><sg><nom>,вагьарув,pass,Kibrik,153,class-initial adjective absolutive MSG
+<M><sg>багьаруб<adjective><M><sg><obl><erg>,вагьарувщур,pass,Kibrik,153,class-initial adjective oblique MSG
+<H><pl>багьаруб<adjective><H><pl><nom>,багьаруба,pass,Kibrik,154,class-initial adjective absolutive HPL
+<H><pl>багьаруб<adjective><H><pl><obl><erg>,багьарубалур,pass,Kibrik,154,class-initial adjective oblique HPL
 1,2,pass,Kibrik,666
 1,2,pass,Magomedova,666
 1,2,pass,Kibrik,666
