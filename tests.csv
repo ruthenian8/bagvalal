@@ -107,17 +107,17 @@ analysis,form,mustpass,source,page,description
 эбеб<pronoun><M><sg><M><sg><obl><gen><N><sg>,эвевщуб,pass,Kibrik,167,"Each" pronoun MSG genitive
 эбеб<pronoun><F><sg><F><sg><obl><erg>,эйейлъир,pass,Kibrik,167,"Each" pronoun FSG oblique
 эбеб<pronoun><N><sg><N><sg><obl><erg>,эбеблъир,pass,Kibrik,167,"Each" pronoun NSG oblique
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
+<M><sg>бусӀабда<pronoun><M><sg><nom>,вусӀавда,pass,Kibrik,167,Non-distribut.univ.pronoun MSG absolutive
+<M><sg>бусӀабда<pronoun><M><sg><obl><erg>,вусӀавщурда,pass,Kibrik,167,Non-distribut.univ.pronoun MSG oblique
+<M><sg>бусӀабда<pronoun><M><sg><obl><gen><N><sg>,вусӀавщубда,pass,Kibrik,167,Non-distribut.univ.pronoun MSG genitive
+<N><sg>бусӀабда<pronoun><N><sg><nom>,бусӀабда,pass,Kibrik,167,Non-distribut.univ.pronoun NSG absolutive
+<N><sg>бусӀабда<pronoun><N><sg><obl><erg>,бусӀаблъирда,pass,Kibrik,167,Non-distribut.univ.pronoun NSG oblique
+эштуб<pronoun><inter><M><sg><nom>,эштув,pass,Kibrik,164,
+эштуб<pronoun><inter><M><sg><obl><erg>,эштувщур,pass,Kibrik,164,
+эштуб<pronoun><inter><M><sg><obl><gen><N><sg>,эштувщуб,pass,Kibrik,164,
+эштуб<pronoun><inter><N><sg><nom>,эштуб,pass,Kibrik,164,
+эштуб<pronoun><inter><N><sg><obl><erg>,эштублъир,pass,Kibrik,164,
+эштуб<pronoun><inter><N><sg><univ>,эштубгӀагила,pass,Kibrik,164,
 кьираб<adjective><M><sg><nom>,кьирав,pass,Kibrik,154,class-final adjective absolutive MSG
 кьираб<adjective><M><sg><obl><erg>,кьиравщур,pass,Kibrik,154,class-final adjective oblique MSG
 <M><sg>багьаруб<adjective><M><sg><nom>,вагьарув,pass,Kibrik,153,class-initial adjective absolutive MSG
