@@ -124,14 +124,23 @@ analysis,form,mustpass,source,page,description
 <M><sg>багьаруб<adjective><M><sg><obl><erg>,вагьарувщур,pass,Kibrik,153,class-initial adjective oblique MSG
 <H><pl>багьаруб<adjective><H><pl><nom>,багьаруба,pass,Kibrik,154,class-initial adjective absolutive HPL
 <H><pl>багьаруб<adjective><H><pl><obl><erg>,багьарубалур,pass,Kibrik,154,class-initial adjective oblique HPL
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
-1,2,pass,Kibrik,666
-1,2,pass,Magomedova,666
+эб<pronoun><inter><H><nom>,има,pass,Magomedova,580,"What kind"pronoun MSG absolutive
+эб<pronoun><inter><N><nom>,эба,pass,Magomedova,580,"What kind"pronoun NSG absolutive
+эб<pronoun><inter><H><nom>,эм,pass,Kibrik,164,"What kind"pronoun MSG absolutive
+эб<pronoun><inter><N><sg><nom>,эб,pass,Kibrik,164,"What kind"pronoun NSG absolutive
+эб<pronoun><inter><N><pl><nom>,эр,pass,Kibrik,164,"What kind"pronoun absolutive
+эб<pronoun><inter><H><obl><erg>,лъор,pass,Magomedova,580,"What kind"pronoun MSG oblique
+эб<pronoun><inter><H><obl><gen><N><sg>,лъоб,pass,Magomedova,580,"What kind"pronoun MSG genitive
+эб<pronoun><inter><N><obl><erg>,элъир,pass,Magomedova,580,"What kind"pronoun NSG oblique
+агьи<pronoun>,агьи,pass,Kibrik,837,Adverbial loc pronoun
+аща<pronoun>,аща,pass,Kibrik,837,Adverbial pronoun (Gudava)
+ашта<pronoun>,ашда,pass,Kibrik,837,Adverbial pronoun (Gudava)
+ашта<pronoun>,ашта,pass,Kibrik,838,Adverbial pronoun
+эджа<pronoun><inter>,эджа,pass,Kibrik,846,Adverbial inter.pronoun
+эджа<pronoun><inter>,эджала,pass,Kibrik,846,Adverbial inter.pronoun
+эджа<pronoun><inter>,эджали,pass,Kibrik,846,Adverbial inter.pronoun
+эщда<pronoun><inter>,эщда,pass,Magomedova,522,Adverbial inter.pronoun
+элъила<pronoun><inter>,элъила,pass,Magomedova,522,Adverbial inter.pronoun
 1,2,pass,Magomedova,91,neg.aor.participle.abs
 1,2,pass,Magomedova,91,neg.aor.participle.erg
 1,2,pass,Kibrik,92,Imperf.participle.abs
