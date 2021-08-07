@@ -6,15 +6,16 @@ This repository contains a prototype for a Bagvalal morphological analyzer.
 ### Making the analyzers
 * run translit/make
 * run make merged.ana.hfst for cyrillic version
-* run make merged.tr.hfst for simplified IPA version
+* run make merged.tr.hfst for Caucasiologist transcription version
 ### Running the analyzers
-* run make corpora/\*corpus name\*.analyzed to analyze with the cyrillic transducer
-* run make corpora/\*corpus name\*.tr.analyzed to analyze with the IPA transducer
-* run bash corpora/tr_stats.sh \*corpus name\*.analyzed to view the statistics
+* run make check-coverage-stats to view the statistics
+* cd to corpora & run make \*corpus name\*.analyzed to analyze with the cyrillic transducer
+* cd to corpora & run make \*corpus name\*.tr.analyzed to analyze with the IPA transducer
 
-###Example:
+###Examples:
+* make check-coverage-stats
+
 * cd corpora
 * make k_newline.tr.analyzed
-* bash tr_stats.sh k_newline.tr.analyzed
 
-Current performance: ~65%
+Current performance: Naive Coverage ~82%
