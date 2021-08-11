@@ -40,7 +40,7 @@ Rules
 %{ep.й%}:й <=> X _ ; where X in V;
 
 "replacement rule, see Kibrik pp. 49-50"
-X:0 <=> _ ( ᵸ:0 ) ( %>: ) ( %{ᵸ%}: ) V; where X in reps;
+X:0 <=> _ ( ᵸ:0 ) ( %>: ) ( %{ᵸ%}: ) V|%{prt%}; where X in reps;
 
 "{и} persistence"
 %{v.и%}:и <= V ( ᵸ:0 ) _ ;
@@ -62,7 +62,7 @@ X:0 <=> _ ( ᵸ:0 ) ( %>: ) ( %{ᵸ%}: ) V; where X in reps;
 %{ᵸ%}:ᵸ <=> .#. ?+ ᵸ:0 ?* _ .#.;
 
 "ᵸ as n before regular consonants"
-%{ᵸ%}:н <=> _ ( %>: ) [ с | ч | л ];
+%{ᵸ%}:н <=> _ ( %>: ) [с|ч|л|?:0 в];
 
 "nasalization deletion"
 ᵸ:0 <=> _ ( %>: ) [ V | ?* ncons:* ];

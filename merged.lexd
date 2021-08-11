@@ -2,10 +2,14 @@
 # ----------------------------------------------------------------------------------------------
 # VERB PATTERNS
 PATTERN Prateritum
-(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] PratAdd[Idecl]
-(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] PratAdd[Idecl]
-(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] PratAdd[IIdecl]
-(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] PratAdd[IIIdecl]
+(( agrInitial VerbStem[Idecl,B,AgrInit] ) | VerbStem[Idecl,B,-AgrInit] ) [:>] PratAdd[IBdecl]
+(( agrInitial VerbStem[Idecl,A,AgrInit] ) | VerbStem[Idecl,A,-AgrInit] ) [:>] PratAdd[reg]
+(( agrInitial VerbStem[IIdecl,B,AgrInit] ) | VerbStem[IIdecl,B,-AgrInit] ) [:>] PratAdd[IBdecl]
+(( agrInitial VerbStem[IIdecl,B,AgrInit] ) | VerbStem[IIdecl,B,-AgrInit] ) [:>] PratAdd[IIBdecl]
+(( agrInitial VerbStem[IIdecl,A,AgrInit] ) | VerbStem[IIdecl,A,-AgrInit] ) [:>] PratAdd[IAdecl]
+(( agrInitial VerbStem[IIdecl,A,AgrInit] ) | VerbStem[IIdecl,A,-AgrInit] ) [:>] PratAdd[reg]
+(( agrInitial VerbStem[IIIdecl,B,AgrInit] ) | VerbStem[IIIdecl,B,-AgrInit] ) [:>] PratAdd[IIIBdecl]
+(( agrInitial VerbStem[IIIdecl,A,AgrInit] ) | VerbStem[IIIdecl,A,-AgrInit] ) [:>] PratAdd[reg]
 (( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] PratAdd[reg]
 (( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] PratAdd[reg]
 
@@ -17,11 +21,15 @@ PATTERN Imperfect
 (( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] ImperfAdd[reg]
 
 PATTERN Potentialis
-(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] PotAdd[IIIdecl]
-(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[IIIdecl,B,AgrInit] ) | VerbStem[IIIdecl,B,-AgrInit] ) [:>] PotAdd[IIIdecl]
+(( agrInitial VerbStem[IIIdecl,B,AgrInit] ) | VerbStem[IIIdecl,B,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[IIIdecl,A,AgrInit] ) | VerbStem[IIIdecl,A,-AgrInit] ) [:>] PotAdd[IIIAdecl]
+(( agrInitial VerbStem[IIIdecl,A,AgrInit] ) | VerbStem[IIIdecl,A,-AgrInit] ) [:>] PotAdd[Adecl]
 (( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] PotAdd[Vdecl]
-(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] PotAdd[reg]
-(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[Idecl,B,AgrInit] ) | VerbStem[Idecl,B,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[Idecl,A,AgrInit] ) | VerbStem[Idecl,A,-AgrInit] ) [:>] PotAdd[Adecl]
+(( agrInitial VerbStem[IIdecl,B,AgrInit] ) | VerbStem[IIdecl,B,-AgrInit] ) [:>] PotAdd[reg]
+(( agrInitial VerbStem[IIdecl,A,AgrInit] ) | VerbStem[IIdecl,A,-AgrInit] ) [:>] PotAdd[Adecl]
 (( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] PotAdd[reg]
 
 PATTERN Prohibitive
@@ -44,13 +52,13 @@ PATTERN ImpPart # p. 92
 Imperfect PartAffix[reg]
 
 PATTERN FutPart # p. 94
-Potentialis FutAffix PartAffix[reg]
+Potentialis FutAffix[part] PartAffix[reg]
 
 PATTERN FutNegPartI # pp. 95-96
 Prohibitive negSuffix[pst] PartAffix[irreg]
 
 PATTERN FutNegPartII # pp. 95-96
-Prohibitive negSuffix[pst] CvbAffix[negFut] FutAffix PartAffix[reg]
+Prohibitive negSuffix[pst] CvbAffix[negFut] FutAffix[part] PartAffix[reg]
 
 PATTERN Masdar # pp. 90-91
 Prateritum MasdarEnd[reg]
@@ -68,11 +76,11 @@ PATTERN EmphFutNegPartI # p. 95
 EmphStem ProhAdd[IIIdecl] negSuffix[pst] PartAffix[irreg]
 
 PATTERN EmphFutNegPartII # p. 95
-EmphStem ProhAdd[IIIdecl] negSuffix[pst] CvbAffix[negFut] FutAffix PartAffix[reg]
+EmphStem ProhAdd[IIIdecl] negSuffix[pst] CvbAffix[negFut] FutAffix[part] PartAffix[reg]
 
 PATTERN IrrPart # p. 99
-VerbCopula
-IrrPrtStem
+VerbCopula [<part>:]
+IrrPrtStem [<part>:]
 
 PATTERN AllMasdars
 Masdar
@@ -83,6 +91,7 @@ PATTERN AllParticiples
 PratPart
 NegPratPart
 ImpPart
+FutPart
 FutNegPartI
 FutNegPartII
 EmphNegPratPart
@@ -357,8 +366,9 @@ adjSingle OblAdjSup NCl?
 #personal pronouns
 #
 PerPronounStems genitiveCase[GenAgr] NCl?
-PerPronounStems[PrExc] CaseMain[ErgR,-RegErg,-nullNom] NCl?
-PerPronounStems[PrExc] ( DatExcMin[pron] | SupExcMin[pron] ) NCl?
+PerPronounStems[PrExc] [<obl>:] CaseMain[ErgR,-RegErg,-nullNom] NCl?
+PerPronounStems[PrExc] DatExcMin[pron] NCl?
+PerPronounStems[PrExc] SupExcMin[pron] NCl?
 PerPronounStems[-PrExc] CaseMain[ErgR] NCl?
 PerPronounExc NCl?
 PerPronounStems locMain directCase NCl?
@@ -366,6 +376,10 @@ PerPronounStems locMain directCase NCl?
 #demonstrative pronouns
 #
 DemPronoun agrFinal CaseMain[nullNom] NCl?
+#
+#adverbial pronouns
+#
+DemPronoun [:гьи]? agrMiddle AdvPronAffix
 # vocab plurals
 DemPronoun agrFinal[Npl] OblSingular[OblU] ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) NCl? # o-r-u , see vocab, 580
 DemPronoun agrFinal[Npl] OblSingular[OblU] locMain directCase NCl?
@@ -418,7 +432,7 @@ WhichPronoun agrInitial[Msg] WhichInfix[sg] ( DatExcMin[-OblPlLu,-OblPlAlu,-pron
 NumPronoun CaseMain[nullNom] PronModifiers? NCl?
 NumPronoun OblAdjSingular[OblSu] CasesGenAgr PronModifiers? NCl?
 NumPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) CasesGenNonAgr PronModifiers? NCl?
-NumPronoun OblPlural[OblPlAlu] CasesGenAgr PronModifiers? NCl?
+NumPronoun OblAdjPlural[OblPlAlu] CasesGenAgr PronModifiers? NCl?
 NumPronoun ( DatExceptions[OblSu] | ( DatExceptions[OblFLi] | DatExceptions[OblNLi] ) ) PronModifiers? NCl?
 NumPronoun ( SupExceptions[OblSu] | ( SupExceptions[OblFLi] | SupExceptions[OblNLi] ) ) PronModifiers? NCl?
 NumPronounExc[sup] directCase NCl?
@@ -440,16 +454,16 @@ InterAdjPronoun agrFinal[Npl] AddCasesNpl NCl?
 InterAdjPronoun agrFinal[Hpl] OblPlural[OblPlLu] CasesGenAgr NCl?
 InterAdjPronoun agrFinal[Npl] OblPlural[OblPlLi] CasesGenNonAgr NCl?
 #indef pronoun ser. #2
-InterPronounExc[Hsg] CaseMain[nullNom] ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) NCl?
-InterPronounExc[Nsg] CaseMain[nullNom] AltIndefPronounSuffix[Nsg] NCl?
-InterPronounExc[Hsg] CaseMain[nullNom] AltIndefPronounSuffix[Hpl] NCl?
-InterPronounExc[Npl] CaseMain[nullNom] AltIndefPronounSuffix[Npl] NCl?
+InterPronounExc[Hsg] ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) NCl?
+InterPronounExc[Nsg] AltIndefPronounSuffix[Nsg] NCl?
+InterPronounExc[Hsg] AltIndefPronounSuffix[Hpl] NCl?
+InterPronounExc[Npl] AltIndefPronounSuffix[Npl] NCl?
 InterPronoun[H] CasesGenAgr ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) ) NCl?
 InterPronoun[H] DatExcMin[pron] ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) ) NCl?
 InterPronoun[H] SupExcMin[pron] directCase ( AltIndefPronounSuffix[Hpl] | ( AltIndefPronounSuffix[Msg] | AltIndefPronounSuffix[Fsg] ) ) NCl?
-InterPronoun[N] OblAdjSingular[OblNLi] CasesGenNonAgr AltIndefPronounSuffix[Nsg] NCl?
+InterPronoun[N] OblSingular[OblNLi] CasesGenNonAgr AltIndefPronounSuffix[Nsg] NCl?
 InterPronoun[N] ( DatExcMin[OblLi] | ( SupExcMin[OblLi] directCase ) ) AltIndefPronounSuffix[Nsg] NCl?
-InterPronoun[N] OblAdjPlural[OblPlLi] CasesGenNonAgr AltIndefPronounSuffix[Npl] NCl?
+InterPronoun[N] OblPlural[OblPlLi] CasesGenNonAgr AltIndefPronounSuffix[Npl] NCl?
 InterPronoun[N] ( DatExcMin[OblLi] | ( SupExcMin[OblLi] directCase ) ) AltIndefPronounSuffix[Npl] NCl?
 #anypronoun
 AnyPronoun agrFinal[Msg] AddCasesMsg NCl?
@@ -473,17 +487,17 @@ agrInitial[Hpl] AllPronoun agrMiddle[Hpl] OblSingular[OblSu] CasesGenAgr DaPostf
 agrInitial[Nsg] AllPronoun agrMiddle[Npl] OblPlural[OblPlLi] CasesGenNonAgr DaPostfix
 #universal ser. #3, see Kibrik et al. 166
 InterPronounExc[Hsg] IndefPronounSuffix ( AddCasesMsg | AddCasesFNsg ) NCl?
-InterPronounExc[Hsg] IndefPronounSuffix OblSingular[OblSu] CasesGenAgr NCl?
-InterPronounExc[Hsg] IndefPronounSuffix OblSingular[OblLi] CasesGenNonAgr NCl?
+InterPronounExc[Hsg] IndefPronounSuffix OblAdjSingular[OblSu] CasesGenAgr NCl?
+InterPronounExc[Hsg] IndefPronounSuffix OblAdjSingular[OblLi] CasesGenNonAgr NCl?
 InterPronounExc[Nsg] IndefPronounSuffix ( OblSingular[OblLi] CasesGenNonAgr | AddCasesFNsg ) NCl?
-InterPronounExc[Npl] IndefPronounSuffix ( OblPlural[OblPlLi] CasesGenNonAgr | AddCasesNpl ) NCl?
+InterPronounExc[Npl] IndefPronounSuffix ( OblAdjPlural[OblPlLi] CasesGenNonAgr | AddCasesNpl ) NCl?
 #Misc. pronouns
 HowMuchPronoun agrFinal NCl?
 HowPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
 WhenPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
 NumPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
 LocPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
-InterAdjPronoun ( AltIndefPronounSuffix | PronModifiers )? NCl?
+InterAdjPronoun agrMiddle ( AltIndefPronounSuffix | PronModifiers )? NCl?
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
 # NOUN
@@ -528,11 +542,11 @@ NounPlJabi[hpl] JabiPl aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
 NounPlBi[hpl] NoVbiPl aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
 # 
 NounPlZabi PlMarker[plZabi] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl? #zabi adi & ari only used in animate nouns, see Kibrik 132
-NounPlAdi PlMarker[plAdi] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlAdi PlMarker[plAdi] PlOblMarker[hpl] ( AddCasesHpl | CasesGenAgr ) NCl?
 NounPlAri PlMarker[plAri] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
 #
 NounPlDari[hpl] PlMarker[plDari] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
-NounPlBadi[hpl] PlMarker[plBadi] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlBadi[hpl] PlMarker[plBadi] PlOblMarker[hpl] ( AddCasesHpl | CasesGenAgr ) NCl?
 NounPlDi[hpl] PlMarker[plDi] PlOblMarker[hpl] ( AddCasesHpl | CasesGenAgr ) NCl?
 NounPlI[hpl] PlMarker[plI] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
 NounPlA[hpl] PlMarker[plA] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
@@ -596,6 +610,7 @@ Prateritum ImperAffix[ImpI] UCl?
 # ! II imperative for intransitive, p. 97
 Prateritum ImperAffix[ImpII] UCl?
 # Positive Optative for intransitive, p. 97
+Prateritum ImperAffix[ImpI] OptEnd UCl?
 Prateritum ImperAffix[ImpII] OptEnd UCl?
 #
 ## IMPERFECT DERIVATIVES
@@ -614,7 +629,7 @@ Potentialis InfAffix[reg] UCl?
 # ! potentialis prospective converb, p. 94
 Potentialis CvbAffix[prosp] agrVerb CvbEnd[past] UCl?
 # ! potentialis future converb, p. 94
-Potentialis FutAffix CvbEnd[praes] UCl?
+Potentialis FutAffix[cvb] CvbEnd[praes] UCl?
 # ! synth future, p. 93
 Potentialis FutEnd[synth] UCl?
 # ! reactive future, p. 93
@@ -641,9 +656,9 @@ Potentialis ImperAffix[ImpI] OptEnd UCl?
 # ! regular prohibitive, pp. 94, 96
 Prohibitive ProhEnd UCl?
 # ! negative infinitive p. 96
-Prohibitive negSuffix[past] InfAffix[neg] UCl?
+Prohibitive negSuffix[pst] InfAffix[neg] #UCl?
 # ! negative future converb, p. 96
-Prohibitive negSuffix[past] CvbAffix[negFut] FutAffix CvbEnd[praes] UCl?
+Prohibitive negSuffix[pst] CvbAffix[negFut] FutAffix[cvb] CvbEnd[praes] #UCl?
 # ! negative optative
 Prohibitive ProhEnd OptEnd UCl?
 #
@@ -660,7 +675,7 @@ EmphStem ProhAdd[IIIdecl] ProhEnd UCl?
 # ! negative infinitive, p. 95
 EmphStem ProhAdd[IIIdecl] negSuffix[past] InfAffix[neg] UCl?
 # ! negative future converb, p. 95
-EmphStem ProhAdd[IIIdecl] negSuffix[past] CvbAffix[negFut] FutAffix CvbEnd[praes] UCl?
+EmphStem ProhAdd[IIIdecl] negSuffix[past] CvbAffix[negFut] FutAffix[cvb] CvbEnd[praes] UCl?
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
 # MISCELLANEOUS
@@ -867,7 +882,7 @@ LEXICON DatExcMin
 <obl><dat>:лъа[OblLi]
 <obl><dat>:ла[OblPlLu]
 <obl><dat>:лла[OblPlAlu]
-<dat>:гьа[pron]
+<obl><dat>:гьа[pron]
 
 LEXICON SupExceptions
 <M><sg><obl><sup>:ща[OblSu]
@@ -888,7 +903,7 @@ LEXICON SupExcMin
 <obl><sup>:лъа[OblLi]
 <obl><sup>:ла[OblPlLu]
 <obl><sup>:лла[OblPlAlu]
-<dat>:гьа[pron]
+<obl><sup>:гьа[pron]
 
 LEXICON genitiveCase
 <gen>:лъ
@@ -952,8 +967,9 @@ LEXICON directCase
 # 
 LEXICON PratAdd
 <aor>:[reg]
-<aor>:{ᵸ}[IIdecl,IIIdecl]
-<aor>:{v.и}{ᵸ}[Idecl] #83 for I declension and hpl forms of the II
+<aor>:{ᵸ}[IIBdecl,IIIBdecl]
+<aor>:{v.и}{ᵸ}[IBdecl] #83 for I declension and hpl forms of the II
+<aor>:{v.и}[IAdecl]
 
 LEXICON ImperfAdd
 <imperf>:{р}а[reg]
@@ -961,7 +977,9 @@ LEXICON ImperfAdd
 <imperf>:а{ᵸ}[IVdecl]
 
 LEXICON PotAdd
+<pot>:а[Adecl]
 <pot>:а{ᵸ}[reg]
+<pot>:а{л}а[IIIAdecl]
 <pot>:а{ᵸ}{л}а[IIIdecl]
 <pot>:{р}а[Vdecl]
 
@@ -991,7 +1009,8 @@ LEXICON CvbEnd
 <cvb>:ла[rsn]
 
 LEXICON FutAffix
-<fut>:лъи
+<fut>:лъи[cvb]
+<fut>:лъ[part]
 
 LEXICON FutEnd
 <fut><synth>:с[synth]
@@ -1034,8 +1053,8 @@ LEXICON OptEnd
 <opt>:ла
 
 LEXICON IrrPrtStem
-белъи<verb><part>:белъилъо
-ба<verb><part>:балъо
+белъи<verb>:белъилъо
+ба<verb>:балъо
 
 LEXICON IrrCvb
 белъи<verb><cvb>:белъилъах
@@ -1105,13 +1124,13 @@ LEXICON 2xRootDec
 # ----------------------------------------------------------------------------------------------
 # PRONOUN ROOTS
 LEXICON PerPronounStems
-де<pronoun><1P><sg><obl>:ди[PrExc]
-ме<pronoun><2P><sg><obl>:ду[PrExc]
+де<pronoun><1P><sg>:ди[PrExc]
+ме<pronoun><2P><sg>:ду[PrExc]
 ищи<pronoun><1P><pl><excl>:ищи
 илӀи<pronoun><1P><pl><incl>:илъи # Kibrik
 илӀи<pronoun><1P><pl><incl>:илӀи #Magomedova
-бишти<pronoun><2P><pl>:бишти # Magomedova
-бишти<pronoun><2P><pl>:бищди # Kibrik
+бищти<pronoun><2P><pl>:бищти # Magomedova
+бищти<pronoun><2P><pl>:бищди # Kibrik
 
 LEXICON DemPronoun
 аб<pronoun><3P>:а # Kibrik
@@ -1119,33 +1138,36 @@ LEXICON DemPronoun
 уб<pronoun><3P>:у
 угьуб<pronoun><3P>:угьу
 
+LEXICON AdvPronAffix
+<adverb>:е
+
 LEXICON LogPronoun
 эб<pronoun><log><3P>:э[nom]
 эб<pronoun><log><3P>:ин[obl]
 
 LEXICON InterPronoun
-эба<pronoun><inter><H><obl>:лъо[H]
-эба<pronoun><inter><N>:э[N]
+эб<pronoun><inter><H><obl>:лъо[H]
+эб<pronoun><inter><N>:э[N]
 
 LEXICON InterAdjPronoun
 оштуб<pronoun>:ошту
 оштуб<pronoun>:ошду
-эщдуб<pronoun><inter>:эщду
-эщтуб<pronoun><inter>:эщту
-эщдуб<pronoun><inter>:гъешду # dialectal, from Gudava
+эшдуб<pronoun><inter>:эшду
+эштуб<pronoun><inter>:эшту
+эшдуб<pronoun><inter>:гъешду # dialectal, from Gudava
 
 LEXICON WhichPronoun
 эбел<pronoun><inter>:э
 
 LEXICON EachPronoun # Kibrik et al., 167
-эбэб<pronoun>:э
+эбеб<pronoun>:э
 
 LEXICON EachInfix # Kibrik et al., 167
 :е
 
 LEXICON NumPronoun # 2 possible alternations, according to Kibrik et al., 164
 чвам<pronoun><inter>:чвам 
-чом<pronoun><inter>:чом
+чвам<pronoun><inter>:чом
 
 LEXICON HowMuchPronoun #163
 эштоб<pronoun><inter>:эшто #163
@@ -1153,13 +1175,16 @@ LEXICON HowMuchPronoun #163
 
 LEXICON HowPronoun
 эшта<pronoun><inter>:эшта #163
-эщда<pronoun><inter>:эщда
+эшта<pronoun><inter>:эщда
 эщдайа<pronoun><inter>:эщдайа
 
 LEXICON WhenPronoun
 инда<pronoun><inter>:инда
+инда<pronoun><inter>:иᵸда
 
 LEXICON LocPronoun
+иᵸджилова<pronoun><inter>:иᵸджилова
+иᵸджийа<pronoun><inter>:иᵸджийа
 инди<pronoun><inter>:инди
 
 LEXICON AllPronoun
@@ -1171,10 +1196,10 @@ LEXICON AnyPronoun
 #pronoun modifiers
 #
 LEXICON NegPronounSuffix
-<neg>:дала
+<indef>:дала
 
 LEXICON IndefPronounSuffix
-<indef>:гӀагила
+<univ>:гӀагила
 
 LEXICON AltIndefPronounSuffix
 <N><sg><indef><N><sg>:вукӀавола[Msg]
@@ -1197,25 +1222,25 @@ LEXICON WhichInfix
 #
 LEXICON PerPronounExc
 де<pronoun><1P><sg><nom>:де
-де<pronoun><1P><sg><erg>:ден
+де<pronoun><1P><sg><obl><erg>:ден
 ме<pronoun><2P><sg><nom>:ме
-ме<pronoun><2P><sg><erg>:мен
+ме<pronoun><2P><sg><obl><erg>:мен
 инлӀи<pronoun><1P><pl><excl><nom>:инлӀи
 ищи<pronoun><1P><pl><incl><nom>:ищи
-бишти<pronoun><2P><pl><obl><nom>:бишти
+бищти<pronoun><2P><pl><obl><nom>:бищти
 ищи<pronoun><1P><pl><incl><obl><dat>:ища
 ищи<pronoun><1P><pl><incl><obl><sup>:ища
 инлӀи<pronoun><1P><pl><excl><obl><dat>:инлӀа
 инлӀи<pronoun><1P><pl><excl><obl><sup>:инлӀа
-бишти<pronoun><2P><pl><obl><dat>:бишда
-бишти<pronoun><2P><pl><obl><sup>:бишда
+бищти<pronoun><2P><pl><obl><dat>:бищда
+бищти<pronoun><2P><pl><obl><sup>:бищда
 
 LEXICON InterPronounExc
-эба<pronoun><inter><H><nom>:има
-эба<pronoun><inter><N><nom>:эба
-эба<pronoun><inter><H><nom>:эм[Hsg]
-эба<pronoun><inter><N><sg><nom>:эб[Nsg]
-эба<pronoun><inter><N><pl><nom>:эр[Npl]
+эб<pronoun><inter><H><nom>:има
+эб<pronoun><inter><N><nom>:эба
+эб<pronoun><inter><H><nom>:эм[Hsg]
+эб<pronoun><inter><N><sg><nom>:эб[Nsg]
+эб<pronoun><inter><N><pl><nom>:эр[Npl]
 
 LEXICON NumPronounExc
 чвам<pronoun><inter><H><pl><obl><dat>:чвамала
@@ -11054,7 +11079,6 @@ LEXICON NounPlAbi
 ахъв<noun>:ахъв[npl]
 ахъилъ<noun>:ахъилъ[npl]
 аш<noun>:ашш[npl] # 858 rope
-ащ<noun>:ащ[npl]
 ащ<noun>:ащ[npl] # M 43 rope
 аᴴбар<noun>:аᴴбар[npl]
 аᴴж<noun>:аᴴж[npl]
@@ -11089,7 +11113,6 @@ LEXICON NounPlAbi
 бекъин<noun>:бекъин[npl]
 бекь<noun>:бекь[npl]
 бекӀун<noun>:бекӀун[npl]
-бел<noun>:бел[npl]
 бел<noun>:бел[npl] # 132
 белет<noun>:белет[npl]
 беркъа<noun>:беркъа[npl]
@@ -12503,744 +12526,744 @@ LEXICON NounPlIrreg
 # VERB ROOTS
 # 
 LEXICON VerbStem
-ахъи<verb>:ахъи[Idecl]
-ашти<verb>:ашти[Idecl]
-аᵸжбугьу<verb>:аᵸжбугьви[Idecl]
-аᵸталгьи<verb>:аᵸталгьи[Idecl]
-багьи<verb>:агьи[Idecl,AgrInit] # 104 take away (irregular)
-багьи<verb>:игьи[Idecl,AgrInit] # 104 take away (irregular)
-бакъаши<verb>:акъаши[Idecl,AgrInit]
-бакъащи<verb>:акъащи[Idecl,AgrInit]
-бакъи<verb>:акъи[Idecl,AgrInit]
-балали<verb>:алали[Idecl,AgrInit]
-балгьи<verb>:балгьи[Idecl]
-бали<verb>:али[Idecl,AgrInit]
-балли<verb>:алли[Idecl,AgrInit]
-балъиᵸ<verb>:алъиᵸ[Idecl,AgrInit]
-басуᵸ<verb>:асвиᵸ[Idecl,AgrInit] # ask Gudava
-басӀиᵸ<verb>:асӀиᵸ[Idecl,AgrInit]
-батӀалли<verb>:атӀалли[Idecl,AgrInit]
-бахахи<verb>:ахахи[Idecl,AgrInit]
-бахи<verb>:ахи[Idecl,AgrInit]
-бахъи<verb>:ахъи[Idecl,AgrInit]
-бахъӀаши<verb>:ахъӀаши[Idecl,AgrInit]
-бахъӀащи<verb>:ахъӀащи[Idecl,AgrInit]
-бахъӀи<verb>:ахъӀи[Idecl,AgrInit]
-бацӀацӀи<verb>:ацӀацӀи[Idecl,AgrInit]
-бегьери<verb>:бегьери[Idecl]
-бегьигьи<verb>:егьигьи[Idecl,AgrInit]
-бегьири<verb>:бегьири[Idecl]
-бегьри<verb>:бегьри[Idecl]
-бежажи<verb>:ежажи[Idecl,AgrInit]
-белъи<verb>:елъи[Idecl,AgrInit] # 876
-белъу<verb>:елъви[Idecl,AgrInit] # 89
-бесеси<verb>:есеси[Idecl,AgrInit]
-бесиси<verb>:есиси[Idecl,AgrInit]
-бехъехъи<verb>:ехъехъи[Idecl,AgrInit]
-бехъи<verb>:ехъи[Idecl,AgrInit]
-бецӀи<verb>:ецӀи[Idecl,AgrInit]
-бещещи<verb>:ещещи[Idecl,AgrInit]
-беъеди<verb>:еъеди[Idecl,AgrInit]
-бигьи<verb>:игьи[Idecl,AgrInit]
-бикъи<verb>:икъи[Idecl,AgrInit]
-бикъикъи<verb>:икъикъи[Idecl,AgrInit]
-билгьи<verb>:илгьи[Idecl,AgrInit]
-билгьилгьи<verb>:илгьилгьи[Idecl,AgrInit]
-билълъи<verb>:илълъи[Idecl,AgrInit]
-биси<verb>:иси[Idecl,AgrInit]
-бисиси<verb>:исиси[Idecl,AgrInit]
-бисӀиᵸ<verb>:исӀиᵸ[Idecl,AgrInit]
-битӀили<verb>:итӀили[Idecl,AgrInit]
-бихи<verb>:ихи[Idecl] # Gudava, please 
-бихъӀи<verb>:ихъӀи[Idecl,AgrInit]
+ахъи<verb>:ахъи[A,Idecl]
+ашти<verb>:ашти[A,Idecl]
+аᵸжбугьу<verb>:аᵸжбугьви[A,Idecl]
+аᵸталгьи<verb>:аᵸталгьи[A,Idecl]
+багьи<verb>:агьи[A,Idecl,AgrInit] # 104 take away (irregular)
+багьи<verb>:игьи[A,Idecl,AgrInit] # 104 take away (irregular)
+бакъаши<verb>:акъаши[A,Idecl,AgrInit]
+бакъащи<verb>:акъащи[A,Idecl,AgrInit]
+бакъи<verb>:акъи[A,Idecl,AgrInit]
+балали<verb>:алали[A,Idecl,AgrInit]
+балгьи<verb>:балгьи[A,Idecl]
+бали<verb>:али[A,Idecl,AgrInit]
+балли<verb>:алли[A,Idecl,AgrInit]
+балъиᵸ<verb>:алъиᵸ[B,Idecl,AgrInit]
+басуᵸ<verb>:асвиᵸ[B,Idecl,AgrInit] # ask Gudava
+басӀиᵸ<verb>:асӀиᵸ[B,Idecl,AgrInit]
+батӀалли<verb>:атӀалли[A,Idecl,AgrInit]
+бахахи<verb>:ахахи[A,Idecl,AgrInit]
+бахи<verb>:ахи[A,Idecl,AgrInit]
+бахъи<verb>:ахъи[A,Idecl,AgrInit]
+бахъӀаши<verb>:ахъӀаши[A,Idecl,AgrInit]
+бахъӀащи<verb>:ахъӀащи[A,Idecl,AgrInit]
+бахъӀи<verb>:ахъӀи[A,Idecl,AgrInit]
+бацӀацӀи<verb>:ацӀацӀи[A,Idecl,AgrInit]
+бегьери<verb>:бегьери[A,Idecl]
+бегьигьи<verb>:егьигьи[A,Idecl,AgrInit]
+бегьири<verb>:бегьири[A,Idecl]
+бегьри<verb>:бегьри[A,Idecl]
+бежажи<verb>:ежажи[A,Idecl,AgrInit]
+белъи<verb>:елъи[A,Idecl,AgrInit] # 876
+белъу<verb>:елъви[A,Idecl,AgrInit] # 89
+бесеси<verb>:есеси[A,Idecl,AgrInit]
+бесиси<verb>:есиси[A,Idecl,AgrInit]
+бехъехъи<verb>:ехъехъи[A,Idecl,AgrInit]
+бехъи<verb>:ехъи[A,Idecl,AgrInit]
+бецӀи<verb>:ецӀи[A,Idecl,AgrInit]
+бещещи<verb>:ещещи[A,Idecl,AgrInit]
+беъеди<verb>:еъеди[A,Idecl,AgrInit]
+бигьи<verb>:игьи[A,Idecl,AgrInit]
+бикъи<verb>:икъи[A,Idecl,AgrInit]
+бикъикъи<verb>:икъикъи[A,Idecl,AgrInit]
+билгьи<verb>:илгьи[A,Idecl,AgrInit]
+билгьилгьи<verb>:илгьилгьи[A,Idecl,AgrInit]
+билълъи<verb>:илълъи[A,Idecl,AgrInit]
+биси<verb>:иси[A,Idecl,AgrInit]
+бисиси<verb>:исиси[A,Idecl,AgrInit]
+бисиᵸ<verb>:исиᵸ[B,Idecl,AgrInit]
+бисӀиᵸ<verb>:исӀиᵸ[B,Idecl,AgrInit]
+битӀили<verb>:итӀили[A,Idecl,AgrInit]
+бихи<verb>:ихи[A,Idecl] # Gudava, please 
+бихъӀи<verb>:ихъӀи[A,Idecl,AgrInit]
 бишеᵸ<verb>:ишеᵸ[Idecl,AgrInit]
-биши<verb>:иши[Idecl,AgrInit]
-бишӀи<verb>:ишӀи[Idecl,AgrInit]
-бищи<verb>:ищи[Idecl,AgrInit]
-бищищи<verb>:ищищи[Idecl,AgrInit]
-бищӀи<verb>:ищӀи[Idecl,AgrInit]
-бищӀищӀи<verb>:ищӀищӀи[Idecl,AgrInit]
-бугъу<verb>:угъви[Idecl,AgrInit]
-бугъугъу<verb>:угъугъви[Idecl,AgrInit]
-бугьу<verb>:угьви[Idecl,AgrInit]
-бугьугьу<verb>:угьугьви[Idecl,AgrInit]
-букъу<verb>:укъви[Idecl,AgrInit]
-букъу<verb>:укъви[Idecl,AgrInit] # 863 cut
-букъу<verb>:ухъви[Idecl,AgrInit] # Gudava cut
-букъукъу<verb>:укъукъви[Idecl,AgrInit]
-буку<verb>:укви[Idecl,AgrInit]
-букӀуᵸ<verb>:укӀвиᵸ[Idecl,AgrInit] # 89
+биши<verb>:иши[A,Idecl,AgrInit]
+бишӀи<verb>:ишӀи[A,Idecl,AgrInit]
+бищи<verb>:ищи[A,Idecl,AgrInit]
+бищищи<verb>:ищищи[A,Idecl,AgrInit]
+бищӀи<verb>:ищӀи[A,Idecl,AgrInit]
+бищӀищӀи<verb>:ищӀищӀи[A,Idecl,AgrInit]
+бугъу<verb>:угъви[A,Idecl,AgrInit]
+бугъугъу<verb>:угъугъви[A,Idecl,AgrInit]
+бугьу<verb>:угьви[A,Idecl,AgrInit]
+бугьугьу<verb>:угьугьви[A,Idecl,AgrInit]
+букъу<verb>:укъви[A,Idecl,AgrInit]
+букъу<verb>:укъви[A,Idecl,AgrInit] # 863 cut
+букъу<verb>:ухъви[A,Idecl,AgrInit] # Gudava cut
+букъукъу<verb>:укъукъви[A,Idecl,AgrInit]
+буку<verb>:укви[A,Idecl,AgrInit]
+букӀуᵸ<verb>:укӀвиᵸ[B,Idecl,AgrInit] # 89
 букӀуᵸ<verb>:укӀуᵸ[Idecl,AgrInit]
-буχχу<verb>:уχχви[Idecl,AgrInit]
-бущущу<verb>:ущущви[Idecl,AgrInit]
-гвагвани<verb>:гвагвани[Idecl]
-гъенбелгьи<verb>:гъенбелгьи[Idecl]
-гъоншши<verb>:гъоншши[Idecl]
-гьванлъи<verb>:гьванлъи[Idecl]
-гьекьекьи<verb>:гьекьекьи[Idecl]
-гьекьи<verb>:гьекьи[Idecl]
-гьекьи<verb>:гьекьи[Idecl] #846
-гьецӀи<verb>:гьецӀи[Idecl]
-гьешӀи<verb>:гьешӀи[Idecl]
-гьещӀи<verb>:гьещӀи[Idecl]
-гӀагалли<verb>:гӀагалли[Idecl]
-гӀаламатли<verb>:гӀаламатли[Idecl]
-елъдви[Idecl,AgrInit]
-етӀви[Idecl,AgrInit]
-жекъви[Idecl]
-жехъӀви[Idecl]
-жукъви[Idecl]
-жухъӀви[Idecl]
-зали<verb>:зали[Idecl]
-захӀматли<verb>:захӀматли[Idecl]
-игьвалъи<verb>:игьвалъи[Idecl]
-ижви[Idecl,AgrInit]
-ичи<verb>:ичи[Idecl]
-ичи<verb>:ичи[Idecl] # 849 give
-ичичи<verb>:ичичи[Idecl]
-квали<verb>:квали[Idecl]
-квахи<verb>:квахи[Idecl]
-кваххи<verb>:кваххи[Idecl] # 89
-къважали<verb>:къважали[Idecl]
-къварали<verb>:къварали[Idecl]
-малъи<verb>:малъи[Idecl]
-малълъи<verb>:малълъи[Idecl]
-мекъли<verb>:мекъли[Idecl]
-мехъӀли<verb>:мехъӀли[Idecl]
-мигӀири<verb>:мигӀири[Idecl]
-мигӀури<verb>:мигӀури[Idecl]
-мутӀигӀли<verb>:мутӀигӀли[Idecl]
-нагӀдалгьарбищи<verb>:нагӀдалгьарбищи[Idecl]
-поли<verb>:поли[Idecl]
-разилли<verb>:разилли[Idecl]
-ракъиᵸ<verb>:ракъиᵸ[Idecl]
-рахъӀиᵸ<verb>:рахъӀиᵸ[Idecl]
-решӀи<verb>:решӀи[Idecl]
-рещӀи<verb>:рещӀи[Idecl]
-рущу<verb>:рущви[Idecl]
-сабалли<verb>:сабалли[Idecl]
-сагъли<verb>:сагъли[Idecl]
-санили<verb>:санили[Idecl]
-свадди<verb>:свадди[Idecl]
-сварди<verb>:сварди[Idecl]
-свари<verb>:свари[Idecl]
-сусукӀви[Idecl]
-сӀелли<verb>:сӀелли[Idecl]
-сӀухъви[Idecl]
-тӀоли<verb>:тӀоли[Idecl]
-угъви[Idecl,AgrInit]
-угьви[Idecl,AgrInit]
-укви[Idecl,AgrInit]
-уххви[Idecl,AgrInit]
-укъви[Idecl,AgrInit]
-укъукъви[Idecl,AgrInit]
-укъухъӀви[Idecl,AgrInit]
-укӀвиᵸ[Idecl,AgrInit]
-улъви[Idecl,AgrInit]
-усшви[Idecl,AgrInit]
-ухъӀви[Idecl,AgrInit]
-ухъӀукъви[Idecl,AgrInit]
-ухъӀухъӀви[Idecl,AgrInit]
-ушшви[Idecl,AgrInit]
-хвасарли<verb>:хвасарли[Idecl]
-хъвани<verb>:хъвани[Idecl]
-хъони<verb>:хъони[Idecl]
-хъӀважали<verb>:хъӀважали[Idecl]
-хъӀварали<verb>:хъӀварали[Idecl]
-хӀадурели<verb>:хӀадурели[Idecl]
-хӀадурли<verb>:хӀадурли[Idecl]
-цӀагьагьи<verb>:цӀагьагьи[Idecl]
-цӀагьи<verb>:цӀагьи[Idecl]
-цӀанхи–руху<verb>:цӀанхи–рухви[Idecl]
-цӀахиᵸ<verb>:цӀахиᵸ[Idecl] 
-цӀаххиᵸ<verb>:цӀаххиᵸ[Idecl]
-цӀаххиᵸ<verb>:цӀаххиᵸ[Idecl] # 89
-цӀвани<verb>:цӀвани[Idecl]
-цӀони<verb>:цӀони[Idecl]
-часбищи<verb>:часбищи[Idecl]
-чӀванйхи<verb>:чӀванйхи[Idecl]
-ширшири<verb>:ширшири[Idecl]
-шуршури<verb>:шуршури[Idecl]
-экьи<verb>:экьи[Idecl]
-элищи<verb>:элищи[Idecl]
-элрещди<verb>:элрещди[Idecl]
-эхи<verb>:эхи[Idecl]
-эхъехъи<verb>:эхъехъи[Idecl]
-эхъи<verb>:эхъи[Idecl]
-эцӀи<verb>:эцӀи[Idecl]
-эши<verb>:эши[Idecl]
-эшши<verb>:эшши[Idecl]
-эшӀи<verb>:эшӀи[Idecl]
-эщи<verb>:эщи[Idecl]
-эщӀи<verb>:эщӀи[Idecl]
-абагьа<verb>:абагьа[IIdecl]
-агьаᵸ<verb>:агьаᵸ[IIdecl] # Gudava hear
-алгьаᵸ<verb>:алгьаᵸ[IIdecl]
-алгьаᵸ<verb>:алхаᵸ[IIdecl] # M 37 hear
-ангьаᵸ<verb>:ангьаᵸ[IIdecl] # 839 hear
-аргъваᵸ<verb>:аргъваᵸ[IIdecl]
-атита<verb>:атита[IIdecl]
-ахбукӀва<verb>:ахбукӀва[IIdecl]
-ахъваᵸ[IIdecl,AgrInit]
-ачва[IIdecl,AgrInit]
-аша<verb>:аша[IIdecl]
-аща<verb>:аща[IIdecl]
-аᵸгьаᵸ<verb>:аᵸгьаᵸ[IIdecl]
-ба<verb>:а[IIdecl,AgrInit] # 101 go (irregular)
-багъаᵸ<verb>:багъаᵸ[IIdecl]
-багьа<verb>:агьа[IIdecl,AgrInit]
-багӀари<verb>:багӀа[IIdecl] # bleat Gudava
-бала<verb>:ала[IIdecl,AgrInit]
-басаᵸ<verb>:асаᵸ[IIdecl,AgrInit]
-басисаᵸ<verb>:асисаᵸ[IIdecl,AgrInit]
-бахиха<verb>:ахиха[IIdecl,AgrInit]
-бацӀа<verb>:ацӀа[IIdecl,AgrInit]
-бачӀа<verb>:ачӀа[IIdecl,AgrInit]
-бащваᵸ<verb>:ащваᵸ[IIdecl,AgrInit]
-бежа<verb>:ежа[IIdecl,AgrInit]
-бета<verb>:ета[IIdecl,AgrInit]
-бета<verb>:ета[IIdecl,AgrInit] # 89 leave
-беча<verb>:еча[IIdecl,AgrInit]
-бечича<verb>:ечича[IIdecl,AgrInit]
-бешта<verb>:ешта[IIdecl,AgrInit]
-бешхъа<verb>:ешхъа[IIdecl,AgrInit]
-бигъаᵸ<verb>:игъаᵸ[IIdecl,AgrInit]
-бигьаᵸ<verb>:игьаᵸ[IIdecl,AgrInit]
-биеилаᵸ<verb>:иеилаᵸ[IIdecl,AgrInit]
-бикӀйаᵸ:икӀйаᵸ[IIdecl] # look (irregular)
-билаᵸ<verb>:илаᵸ[IIdecl,AgrInit]
-биллаᵸ<verb>:иллаᵸ[IIdecl,AgrInit]
-биса<verb>:иса[IIdecl,AgrInit]
-бисаᵸ<verb>:исаᵸ[IIdecl,AgrInit]
-бисисаᵸ<verb>:исисаᵸ[IIdecl,AgrInit]
-битаᵸ<verb>:итаᵸ[IIdecl,AgrInit] # 89 miss
-бититаᵸ<verb>:ититаᵸ[IIdecl,AgrInit]
-бицӀа<verb>:ицӀа[IIdecl,AgrInit]
-бичӀа<verb>:ичӀа[IIdecl,AgrInit]
-бичӀаᵸ<verb>:ичӀаᵸ[IIdecl,AgrInit] # 849 look (irregular)
-бичӀичӀа<verb>:ичӀичӀа[IIdecl,AgrInit]
-бишаᵸ<verb>:ишаᵸ[IIdecl,AgrInit]
-биъа<verb>:иъа[IIdecl,AgrInit]
-божа<verb>:ожа[IIdecl,AgrInit]
-бугъа<verb>:бугъа[IIdecl] # 89
-бугьу<verb>:угьва[IIdecl,AgrInit]
-бугьугьу<verb>:угьугьва[IIdecl,AgrInit]
-букаᵸ<verb>:укаᵸ[IIdecl,AgrInit]
-букӀа<verb>:акӀа[IIdecl,AgrInit] # 101 be (irregular)
-букӀа<verb>:укӀа[IIdecl,AgrInit] # 101 be (irregular)
-букӀа<verb>:укӀва[IIdecl,AgrInit] # 101 be (irregular)
-булгьаᵸ<verb>:улгьаᵸ[IIdecl,AgrInit]
-буту<verb>:утва[IIdecl,AgrInit]
-бутуту<verb>:утутва[IIdecl,AgrInit]
-бухӀу<verb>:ухӀва[IIdecl,AgrInit]
-бухӀухӀу<verb>:ухӀухӀва[IIdecl,AgrInit]
-буцӀу<verb>:уцӀва[IIdecl,AgrInit]
-буцӀуцӀу<verb>:уцӀуцӀва[IIdecl,AgrInit]
-бучаᵸ<verb>:учаᵸ[IIdecl,AgrInit]
-бучучаᵸ<verb>:учучаᵸ[IIdecl,AgrInit]
-бучӀаᵸ<verb>:учӀаᵸ[IIdecl,AgrInit]
-бучӀучӀаᵸ<verb>:учӀучӀаᵸ[IIdecl,AgrInit]
-бущаᵸ<verb>:ущаᵸ[IIdecl,AgrInit]
-бущущаᵸ<verb>:ущущаᵸ[IIdecl,AgrInit]
-гецӀа<verb>:гецӀа[IIdecl]
-гьаᵸдибугьа<verb>:гьаᵸдибугьа[IIdecl]
-гьекьаᵸ<verb>:гьекьаᵸ[IIdecl]
-гьекьикьаᵸ<verb>:гьекьикьаᵸ[IIdecl]
-гьикьибагьа<verb>:гьикьибагьа[IIdecl]
-джеллаᵸ<verb>:джеллаᵸ[IIdecl]
-зигьваᵸ[IIdecl]
-къебукӀва<verb>:къебукӀва[IIdecl]
-къоса<verb>:къоса[IIdecl]
-къосида<verb>:къосида[IIdecl]
-къочаᵸ<verb>:къочаᵸ[IIdecl]
-къочаᵸ<verb>:къочаᵸ[IIdecl] # 856 want
-кьарашаᵸ<verb>:кьарашаᵸ[IIdecl]
-кьегъаᵸ<verb>:кьегъаᵸ[IIdecl]
-кьигьаᵸ<verb>:кьигьаᵸ[IIdecl]
-ожа[IIdecl,AgrInit]
-ракъаᵸ<verb>:ракъаᵸ[IIdecl]
-ракъи–рашваᵸ<verb>:ракъи–рашваᵸ[IIdecl]
-ракӀвачӀбукӀва<verb>:ракӀвачӀбукӀва[IIdecl]
-рахъӀаᵸ<verb>:рахъӀаᵸ[IIdecl]
-рекӀваᵸ<verb>:рекӀваᵸ[IIdecl]
-рекӀваᵸ[IIdecl]
-ригьигьаᵸ<verb>:ригьигьаᵸ[IIdecl]
-ругьаᵸ[IIdecl]
-тӀекваᵸ<verb>:тӀекваᵸ[IIdecl]
-тӀекваᵸ[IIdecl]
-уваᵸ[IIdecl,AgrInit]
-угьа[IIdecl,AgrInit]
-угьаᵸ[IIdecl,AgrInit]
-угьаᵸ[IIdecl]
-укаᵸ[IIdecl,AgrInit]
-укӀа[IIdecl,AgrInit]
-уллаᵸ[IIdecl,AgrInit]
-ута[IIdecl,AgrInit]
-ухӀа[IIdecl,AgrInit]
-учаᵸ[IIdecl,AgrInit]
-учӀаᵸ[IIdecl,AgrInit]
-ушаᵸ[IIdecl,AgrInit]
-ущаᵸ[IIdecl,AgrInit]
-хъӀочаᵸ<verb>:хъӀочаᵸ[IIdecl]
-хӀащӀабагьа<verb>:хӀащӀабагьа[IIdecl]
-чӀалгӀайна<verb>:чӀалгӀайна[IIdecl]
-чӀалгӀаᵸ<verb>:чӀалгӀаᵸ[IIdecl]
-чӀата<verb>:чӀата[IIdecl]
-чӀунтӀа[IIdecl]
-экваᵸ<verb>:экваᵸ[IIdecl]
-экваᵸ[IIdecl]
-экукаᵸ<verb>:экукаᵸ[IIdecl]
-экьаᵸ<verb>:экьаᵸ[IIdecl]
-эта<verb>:эта[IIdecl]
-эхва<verb>:эхва[IIdecl] #844
-эхъаᵸ<verb>:эхъаᵸ[IIdecl]
-эшаᵸ<verb>:эшаᵸ[IIdecl]
-эщаᵸ<verb>:эщаᵸ[IIdecl]
-эщещаᵸ<verb>:эщещаᵸ[IIdecl]
-абатате<verb>:абатате[IIIdecl]
-агьецӀе<verb>:агьецӀе[IIIdecl]
-агьибугье<verb>:агьибугье[IIIdecl]
-адже<verb>:адже[IIIdecl]
-акве<verb>:акве[IIIdecl]
-анахахе<verb>:анахахе[IIIdecl]
-анахе<verb>:анахе[IIIdecl]
-ансе<verb>:ансе[IIIdecl]
-атате<verb>:атате[IIIdecl]
-атите<verb>:атите[IIIdecl]
-ахъахъе<verb>:ахъахъе[IIIdecl]
-ачакӀихе<verb>:ачакӀихе[IIIdecl]
-аᵸталгье<verb>:аᵸталгье[IIIdecl]
-ба<verb>:е[IIIdecl,AgrInit] # 101 go (irregular)
-багъариде<verb>:агъариде[IIIdecl,AgrInit]
-багьалгье<verb>:агьалгье[IIIdecl,AgrInit]
-багьвагье<verb>:агьвагье[IIIdecl,AgrInit]
-багье<verb>:агье[IIIdecl,AgrInit]
-багӀариде<verb>:агӀариде[IIIdecl,AgrInit]
-багӀе<verb>:агӀе[IIIdecl,AgrInit]
-бажариде<verb>:ажариде[IIIdecl,AgrInit]
-бакъаше<verb>:акъаше[IIIdecl,AgrInit]
-бакъаще<verb>:акъаще[IIIdecl,AgrInit]
-балгьагье<verb>:алгьагье[IIIdecl,AgrInit]
-балгье<verb>:алгье[IIIdecl,AgrInit]
-бале<verb>:але[IIIdecl,AgrInit]
-балъиᵸлгье<verb>:алъиᵸлгье[IIIdecl,AgrInit]
-балъуᵸде<verb>:алъуᵸде[IIIdecl,AgrInit]
-басратдже<verb>:басратдже[IIIdecl]
-басӀаре<verb>:асӀаре[IIIdecl,AgrInit]
-батахве<verb>:атахве[IIIdecl,AgrInit]
-батиде<verb>:атиде[IIIdecl,AgrInit]
-батире<verb>:атире[IIIdecl,AgrInit]
-бахакӀвайде<verb>:ахакӀвайде[IIIdecl,AgrInit]
-бахе<verb>:ахе[IIIdecl,AgrInit]
-бахъӀаше<verb>:ахъӀаше[IIIdecl,AgrInit]
-бахъӀаще<verb>:ахъӀаще[IIIdecl,AgrInit]
-бахьиде<verb>:ахьиде[IIIdecl,AgrInit]
-бацӀацӀе<verb>:ацӀацӀе[IIIdecl,AgrInit]
-бацӀе<verb>:ацӀе[IIIdecl,AgrInit]
-бачачве<verb>:ачачве[IIIdecl,AgrInit]
-бачве<verb>:ачве[IIIdecl,AgrInit]
-бачиде<verb>:ачиде[IIIdecl,AgrInit]
-бащалгье<verb>:ащалгье[IIIdecl,AgrInit]
-бегъе<verb>:егъе[IIIdecl,AgrInit]
-бегъе<verb>:егъе[IIIdecl,AgrInit] #92
-бегьигье<verb>:егьигье[IIIdecl,AgrInit]
-бегьире<verb>:бегьире[IIIdecl]
-бекъве<verb>:екъве[IIIdecl,AgrInit]
-белгье<verb>:елгье[IIIdecl,AgrInit]
-белгьегье<verb>:елгьегье[IIIdecl,AgrInit]
-белъелъе<verb>:елъелъе[IIIdecl,AgrInit]
-берхве<verb>:ерхве[IIIdecl,AgrInit]
-бесулгье<verb>:бесулгье[IIIdecl]
-бетате<verb>:етате[IIIdecl,AgrInit]
-бетӀатӀе<verb>:етӀатӀе[IIIdecl,AgrInit]
-бетӀве<verb>:етӀве[IIIdecl,AgrInit]
-бехалгье<verb>:ехалгье[IIIdecl,AgrInit]
-бехе<verb>:ехе[IIIdecl,AgrInit]
-бехьвахьве<verb>:ехьвахьве[IIIdecl,AgrInit]
-бехьве<verb>:ехьве[IIIdecl,AgrInit]
-бецӀе<verb>:ецӀе[IIIdecl,AgrInit]
-бецӀиде<verb>:бецӀиде[IIIdecl]
-бецӀире<verb>:ецӀире[IIIdecl,AgrInit]
-бечелгье<verb>:бечелгье[IIIdecl]
-бечиче<verb>:ечиче[IIIdecl,AgrInit]
-бечӀве<verb>:ечӀве[IIIdecl,AgrInit]
-бечӀетӀилгье<verb>:ечӀетӀилгье[IIIdecl,AgrInit]
-беште<verb>:еште[IIIdecl,AgrInit]
-бешхъе<verb>:ешхъе[IIIdecl,AgrInit]
-бещве<verb>:ещве[IIIdecl,AgrInit]
-бещде<verb>:ещде[IIIdecl,AgrInit]
-беще<verb>:еще[IIIdecl,AgrInit]
-бибиде<verb>:бибиде[IIIdecl]
-бигъагъе<verb>:игъагъе[IIIdecl,AgrInit]
-бигъе<verb>:игъе[IIIdecl,AgrInit]
-бигъигъе<verb>:игъигъе[IIIdecl,AgrInit]
-билъе<verb>:илъе[IIIdecl,AgrInit]
-билъилъе<verb>:илъилъе[IIIdecl,AgrInit]
-бисе<verb>:исе[IIIdecl,AgrInit]
-бисисе<verb>:исисе[IIIdecl,AgrInit]
-битӀе<verb>:итӀе[IIIdecl,AgrInit]
-бихе<verb>:ихе[IIIdecl,AgrInit]
-бихихе<verb>:ихихе[IIIdecl,AgrInit]
-бицӀе<verb>:ицӀе[IIIdecl,AgrInit]
-бичӀе<verb>:ичӀе[IIIdecl,AgrInit]
-бичӀичӀе<verb>:ичӀичӀе[IIIdecl,AgrInit]
-бише<verb>:ише[IIIdecl,AgrInit]
-бище<verb>:бище[IIIdecl]
-бище<verb>:ище[IIIdecl,AgrInit]
-бищи–бихе<verb>:бищи–бихе[IIIdecl]
-боже<verb>:боже[IIIdecl]
-борлъиде<verb>:орлъиде[IIIdecl,AgrInit]
-борлъ–борлъиде<verb>:орлъ–борлъиде[IIIdecl,AgrInit]
-бугъе<verb>:угъе[IIIdecl,AgrInit]
-бугье<verb>:угье[IIIdecl,AgrInit]
-бугье<verb>:угьеᵸ[IIIdecl,AgrInit] # 863 explain
-бугьугье<verb>:угьугье[IIIdecl,AgrInit]
-бужуже<verb>:ужуже[IIIdecl,AgrInit]
-букуке<verb>:укуке[IIIdecl,AgrInit]
-букъе<verb>:укъе[IIIdecl,AgrInit]
-букьайла<verb>:укьайла[IIIdecl,AgrInit]
-букье<verb>:укье[IIIdecl,AgrInit]
-букьукье<verb>:укьукье[IIIdecl,AgrInit]
-букӀе<verb>:укӀе[IIIdecl,AgrInit]
-булъе<verb>:улъе[IIIdecl,AgrInit]
-буте<verb>:уте[IIIdecl,AgrInit]
-бутуте<verb>:утуте[IIIdecl,AgrInit]
-бухе<verb>:ухе[IIIdecl,AgrInit]
-бухухе<verb>:ухухе[IIIdecl,AgrInit]
-бухӀе<verb>:ухӀе[IIIdecl,AgrInit]
-буцӀуцӀе<verb>:уцӀуцӀе[IIIdecl,AgrInit]
-буще<verb>:уще[IIIdecl,AgrInit]
-ване<verb>:ване[IIIdecl]
-гамгамиде<verb>:гамгамиде[IIIdecl]
-гвангъиде<verb>:гвангъиде[IIIdecl]
-гецӀе<verb>:гецӀе[IIIdecl]
-гире<verb>:гире[IIIdecl]
-гочиде<verb>:гочиде[IIIdecl]
-гуле<verb>:гуле[IIIdecl]
-гургиде<verb>:гургиде[IIIdecl]
-гургинлгье<verb>:гургинлгье[IIIdecl]
-гургуриде<verb>:гургуриде[IIIdecl]
-гуриде<verb>:гуриде[IIIdecl]
-гурхӀиде<verb>:гурхӀиде[IIIdecl]
-гъабе<verb>:гъабе[IIIdecl]
-гъанкъиде<verb>:гъанкъиде[IIIdecl]
-гъанкъире<verb>:гъанкъире[IIIdecl]
-гъанхъӀире<verb>:гъанхъӀире[IIIdecl]
-гъванцӀиде<verb>:гъванцӀиде[IIIdecl]
-гъваᵸще<verb>:гъваᵸще[IIIdecl]
-гъигъине<verb>:гъигъине[IIIdecl]
-гъине<verb>:гъине[IIIdecl]
-гъоншше<verb>:гъоншше[IIIdecl]
-гъункиде<verb>:гъункиде[IIIdecl]
-гъунциде<verb>:гъунциде[IIIdecl]
-гьабуже<verb>:гьабуже[IIIdecl]
-гьагьаде<verb>:гьагьаде[IIIdecl]
-гьадашве<verb>:гьадашве[IIIdecl]
-гьалгье/ла<verb>:гьалгье/ла[IIIdecl]
-гьалгье<verb>:гьалгье[IIIdecl]
-гьалийалгье<verb>:гьалийалгье[IIIdecl]
-гьане<verb>:гьане[IIIdecl]
-гьаᵸдибугье<verb>:гьаᵸдибугье[IIIdecl]
-гьаᵸхвдалгье<verb>:гьаᵸхвдалгье[IIIdecl]
-гьаᵸхвталгье<verb>:гьаᵸхвталгье[IIIdecl]
-гьаᵸ<verb>:гьаᵸ[IIIdecl] # 104 see (irregular)
-гьвале<verb>:гьвале[IIIdecl]
-гьвалле<verb>:гьвалле[IIIdecl]
-гьваᵸлъе<verb>:гьваᵸлъе[IIIdecl]
-гьеде<verb>:гьеде[IIIdecl]
-гьекье<verb>:гьекье[IIIdecl]
-гьелалгье<verb>:гьелалгье[IIIdecl]
-гьеле<verb>:гьеле[IIIdecl]
-гьелле<verb>:гьелле[IIIdecl]
-гьере<verb>:гьере[IIIdecl]
-гьецӀе<verb>:гьецӀе[IIIdecl]
-гьецӀецӀе<verb>:гьецӀецӀе[IIIdecl]
-гьешӀе<verb>:гьешӀе[IIIdecl]
-гьещӀе<verb>:гьещӀе[IIIdecl]
-гьигьваде<verb>:гьигьваде[IIIdecl]
-гьиᵸчӀалгье<verb>:гьиᵸчӀалгье[IIIdecl]
-гьиᵸчӀе<verb>:гьиᵸчӀе[IIIdecl]
-гьолле<verb>:гьолле[IIIdecl]
-гьорчӀомадже<verb>:гьорчӀомадже[IIIdecl]
-гьуналгье<verb>:гьуналгье[IIIdecl]
-гьункьуде<verb>:гьункьуде[IIIdecl]
-гӀайбдже<verb>:гӀайбдже[IIIdecl]
-гӀайблгье<verb>:гӀайблгье[IIIdecl]
-гӀаламалгье<verb>:гӀаламалгье[IIIdecl]
-гӀамалдже<verb>:гӀамалдже[IIIdecl]
-гӀахьалгье<verb>:гӀахьалгье[IIIdecl]
-дагьле<verb>:дагьле[IIIdecl]
-дандилгье<verb>:дандилгье[IIIdecl]
-дарихе<verb>:дарихе[IIIdecl]
-дваргъаде<verb>:дваргъаде[IIIdecl]
-двардвариде<verb>:двардвариде[IIIdecl]
-джагъалгье<verb>:джагъалгье[IIIdecl]
-джане<verb>:джане[IIIdecl]
-дже<verb>:дже[IIIdecl] # 843
-дидине<verb>:дидине[IIIdecl]
-димдимиде<verb>:димдимиде[IIIdecl]
-дуриде<verb>:дуриде[IIIdecl]
-елле<verb>:елле[IIIdecl]
-ере<verb>:ере[IIIdecl]
-ехе<verb>:ехе[IIIdecl]
-ецӀе<verb>:ецӀе[IIIdecl]
-ешӀе<verb>:ешӀе[IIIdecl]
-ещӀе<verb>:ещӀе[IIIdecl]
-жамиде<verb>:жамиде[IIIdecl]
-жам–жамиде<verb>:жам–жамиде[IIIdecl]
-жвархаре<verb>:жвархаре[IIIdecl]
-жиде<verb>:жиде[IIIdecl]
-жикъиде<verb>:жикъиде[IIIdecl]
-жорде<verb>:жорде[IIIdecl]
-жубайде<verb>:жубайде[IIIdecl]
-загьирлгье<verb>:загьирлгье[IIIdecl]
-загӀиблгье<verb>:загӀиблгье[IIIdecl]
-залгье<verb>:залгье[IIIdecl]
-зале<verb>:зале[IIIdecl]
-занкъуде<verb>:занкъуде[IIIdecl]
-заᵸкъве<verb>:заᵸкъве[IIIdecl]
-илгьатилгье<verb>:илгьатилгье[IIIdecl]
-исрапдже<verb>:исрапдже[IIIdecl]
-итулгье<verb>:итулгье[IIIdecl]
-иче<verb>:иче[IIIdecl]
-камилгье<verb>:камилгье[IIIdecl]
-кантӀиде<verb>:кантӀиде[IIIdecl]
-канчӀиде<verb>:канчӀиде[IIIdecl]
-каркасе<verb>:каркасе[IIIdecl]
-кваквариде<verb>:кваквариде[IIIdecl]
-кватӀиде<verb>:кватӀиде[IIIdecl]
-коцойде<verb>:коцойде[IIIdecl]
-къабе<verb>:къабе[IIIdecl]
-къабихӀдже<verb>:къабихӀдже[IIIdecl]
-къабкъаде<verb>:къабкъаде[IIIdecl]
-къабулдже<verb>:къабулдже[IIIdecl]
-къагьалдже<verb>:къагьалдже[IIIdecl]
-къагьардже<verb>:къагьардже[IIIdecl]
-къайде<verb>:къайде[IIIdecl]
-къакъатӀве<verb>:къакъатӀве[IIIdecl]
-къане<verb>:къане[IIIdecl]
-къаре<verb>:къаре[IIIdecl]
-къваже<verb>:къваже[IIIdecl]
-къвакӀиде<verb>:къвакӀиде[IIIdecl]
-къваркъвариде<verb>:къваркъвариде[IIIdecl]
-къетӀенхе<verb>:къетӀенхе[IIIdecl]
-къиркъиде<verb>:къиркъиде[IIIdecl]
-къиркъире<verb>:къиркъире[IIIdecl]
-къирхъӀире<verb>:къирхъӀире[IIIdecl]
-къирщиде<verb>:къирщиде[IIIdecl]
-къосе<verb>:къосе[IIIdecl]
-къосиде<verb>:къосиде[IIIdecl]
-къуле<verb>:къуле[IIIdecl]
-къуркъуде<verb>:къуркъуде[IIIdecl]
-къуркьуде<verb>:къуркьуде[IIIdecl]
-къутӀиде<verb>:къутӀиде[IIIdecl]
-кьабиде<verb>:кьабиде[IIIdecl]
-кьакьатӀе<verb>:кьакьатӀе[IIIdecl]
-кьаᵸлгье<verb>:кьаᵸлгье[IIIdecl]
-кьвагьагьиде<verb>:кьвагьагьиде[IIIdecl]
-кьвагьиде<verb>:кьвагьиде[IIIdecl]
-кьвагьре<verb>:кьвагьре[IIIdecl]
-кьваᵸйхе<verb>:кьваᵸйхе[IIIdecl]
-кьетӀве<verb>:кьетӀве[IIIdecl]
-кьириде<verb>:кьириде[IIIdecl]
-кьиᵸщӀилбакъвайде<verb>:кьиᵸщӀилбакъвайде[IIIdecl]
-кьолойде<verb>:кьолойде[IIIdecl]
-кьуриде<verb>:кьуриде[IIIdecl]
-кӀабчӀаре<verb>:кӀабчӀаре[IIIdecl]
-кӀабщӀахе<verb>:кӀабщӀахе[IIIdecl]
-кӀанцӀуде<verb>:кӀанцӀуде[IIIdecl]
-кӀаркӀаре<verb>:кӀаркӀаре[IIIdecl]
-кӀашде<verb>:кӀашде[IIIdecl]
-кӀорде<verb>:кӀорде[IIIdecl]
-кӀунйще<verb>:кӀунйще[IIIdecl]
-ламиде<verb>:ламиде[IIIdecl]
-лъабде<verb>:лъабде[IIIdecl]
-лъарде<verb>:лъарде[IIIdecl]
-лъиле<verb>:лъиле[IIIdecl]
-лъитӀуде<verb>:лъитӀуде[IIIdecl]
-лъоре<verb>:лъоре[IIIdecl]
-лъуде<verb>:лъуде[IIIdecl]
-лъукъид/е<verb>:лъукъид/е[IIIdecl]
-мадардже<verb>:мадардже[IIIdecl]
-макале<verb>:макале[IIIdecl]
-макасе<verb>:макасе[IIIdecl]
-махӀрумдже<verb>:махӀрумдже[IIIdecl]
-мде<verb>:мде[IIIdecl]
-мигье<verb>:мигье[IIIdecl]
-мисӀалгье<verb>:мисӀалгье[IIIdecl]
-мисӀарахе<verb>:мисӀарахе[IIIdecl]
-мисӀе<verb>:мисӀе[IIIdecl]
-мутӀигӀлгье<verb>:мутӀигӀлгье[IIIdecl]
-мухӀканлгье<verb>:мухӀканлгье[IIIdecl]
-ничиде<verb>:ничиде[IIIdecl]
-паналгье<verb>:паналгье[IIIdecl]
-паракъалгье<verb>:паракъалгье[IIIdecl]
-паркъиде<verb>:паркъиде[IIIdecl]
-парпариде<verb>:парпариде[IIIdecl]
-парчиндже<verb>:парчиндже[IIIdecl]
-пикврадже<verb>:пикврадже[IIIdecl]
-пурхиде<verb>:пурхиде[IIIdecl]
-рагьаде<verb>:рагьаде[IIIdecl]
-ракӀвадже<verb>:ракӀвадже[IIIdecl]
-рачуче<verb>:рачуче[IIIdecl]
-рекӀвеᵸ<verb>:рекӀвеᵸ[IIIdecl] #92
-рекӀиде<verb>:рекӀиде[IIIdecl]
-рештиде<verb>:рештиде[IIIdecl]
-ругьунлгье<verb>:ругьунлгье[IIIdecl]
-руще<verb>:руще[IIIdecl]
-сагъле<verb>:сагъле[IIIdecl]
-сале<verb>:сале[IIIdecl]
-сваре<verb>:сваре[IIIdecl]
-симбахъиде<verb>:симбахъиде[IIIdecl]
-сине<verb>:сине[IIIdecl]
-солгье<verb>:солгье[IIIdecl]
-сукӀиде<verb>:сукӀиде[IIIdecl]
-суриде<verb>:суриде[IIIdecl]
-сӀабе<verb>:сӀабе[IIIdecl]
-сӀагьиде<verb>:сӀагьиде[IIIdecl]
-сӀалгьиде<verb>:сӀалгьиде[IIIdecl]
-сӀасӀаде<verb>:сӀасӀаде[IIIdecl]
-сӀвахьиде<verb>:сӀвахьиде[IIIdecl]
-сӀелгьардже<verb>:сӀелгьардже[IIIdecl]
-сӀикӀиде<verb>:сӀикӀиде[IIIdecl]
-сӀингьалгье<verb>:сӀингьалгье[IIIdecl]
-сӀинкӀиде<verb>:сӀинкӀиде[IIIdecl]
-сӀинтӀуде<verb>:сӀинтӀуде[IIIdecl]
-сӀирсӀириде<verb>:сӀирсӀириде[IIIdecl]
-сӀиᵸтулгье<verb>:сӀиᵸтулгье[IIIdecl]
-сӀуне<verb>:сӀуне[IIIdecl]
-табалгье<verb>:табалгье[IIIdecl]
-тавбодже<verb>:тавбодже[IIIdecl]
-таде<verb>:таде[IIIdecl]
-такрардже<verb>:такрардже[IIIdecl]
-талавурдже<verb>:талавурдже[IIIdecl]
-тархъандже<verb>:тархъандже[IIIdecl]
-тастикъдже<verb>:тастикъдже[IIIdecl]
-татаде<verb>:татаде[IIIdecl]
-таᵸталгье<verb>:таᵸталгье[IIIdecl]
-тегьиде<verb>:тегьиде[IIIdecl]
-тине<verb>:тине[IIIdecl]
-торде<verb>:торде[IIIdecl]
-тохгье<verb>:тохгье[IIIdecl]
-тохлгье<verb>:тохлгье[IIIdecl]
-тункиде<verb>:тункиде[IIIdecl]
-тункуде<verb>:тункуде[IIIdecl]
-туркӀиде<verb>:туркӀиде[IIIdecl]
-тӀалабдже<verb>:тӀалабдже[IIIdecl]
-тӀаркӀуде<verb>:тӀаркӀуде[IIIdecl]
-тӀатиде<verb>:тӀатиде[IIIdecl]
-тӀатӀаде<verb>:тӀатӀаде[IIIdecl]
-тӀатӀане<verb>:тӀатӀане[IIIdecl]
-тӀере<verb>:тӀере[IIIdecl]
-тӀертӀе<verb>:тӀертӀе[IIIdecl]
-тӀибитӀире<verb>:тӀибитӀире[IIIdecl]
-тӀитӀахъве<verb>:тӀитӀахъве[IIIdecl]
-тӀобойде<verb>:тӀобойде[IIIdecl]
-тӀуриде<verb>:тӀуриде[IIIdecl]
-ургъилдже<verb>:ургъилдже[IIIdecl]
-учуздже<verb>:учуздже[IIIdecl]
-хабе<verb>:хабе[IIIdecl]
-хабхаде<verb>:хабхаде[IIIdecl]
-харде<verb>:харде[IIIdecl]
-харе<verb>:харе[IIIdecl]
-хариде<verb>:хариде[IIIdecl]
-хвахване<verb>:хвахване[IIIdecl]
-хере<verb>:хере[IIIdecl]
-хехлгье<verb>:хехлгье[IIIdecl]
-хиралгье<verb>:хиралгье[IIIdecl]
-хисиде<verb>:хисиде[IIIdecl]
-хисире<verb>:хисире[IIIdecl]
-ходе<verb>:ходе[IIIdecl]
-хъаде<verb>:хъаде[IIIdecl]
-хъайлгьайла<verb>:хъайлгьайла[IIIdecl]
-хъаре<verb>:хъаре[IIIdecl]
-хъаре<verb>:хъаре[IIIdecl] # 855
-хъехъеде<verb>:хъехъеде[IIIdecl]
-хъибе<verb>:хъибе[IIIdecl]
-хъитӀиде<verb>:хъитӀиде[IIIdecl]
-хъӀаре<verb>:хъӀаре[IIIdecl]
-хъӀваже<verb>:хъӀваже[IIIdecl]
-хъӀиркъире<verb>:хъӀиркъире[IIIdecl]
-хъӀирхъӀире<verb>:хъӀирхъӀире[IIIdecl]
-хьваре<verb>:хьваре[IIIdecl]
-хьулбилгье<verb>:хьулбилгье[IIIdecl]
-хьулбугье<verb>:хьулбугье[IIIdecl]
-хьурхьуриде<verb>:хьурхьуриде[IIIdecl]
-хьутӀиде<verb>:хьутӀиде[IIIdecl]
-хӀабде<verb>:хӀабде[IIIdecl]
-хӀагьане<verb>:хӀагьане[IIIdecl]
-хӀакиде<verb>:хӀакиде[IIIdecl]
-хӀалтӀиде<verb>:хӀалтӀиде[IIIdecl]
-хӀалхьиде<verb>:хӀалхьиде[IIIdecl]
-хӀахьиде<verb>:хӀахьиде[IIIdecl]
-хӀаче<verb>:хӀаче[IIIdecl]
-хӀачиде<verb>:хӀачиде[IIIdecl]
-хӀесиде<verb>:хӀесиде[IIIdecl]
-хӀикмалгьардже<verb>:хӀикмалгьардже[IIIdecl]
-хӀиладже<verb>:хӀиладже[IIIdecl]
-хӀисабдже<verb>:хӀисабдже[IIIdecl]
-хӀулиде<verb>:хӀулиде[IIIdecl]
-хӀурматдже<verb>:хӀурматдже[IIIdecl]
-цӀагьагье<verb>:цӀагьагье[IIIdecl]
-цӀагье<verb>:цӀагье[IIIdecl]
-цӀакье<verb>:цӀакье[IIIdecl]
-цӀилъиде<verb>:цӀилъиде[IIIdecl]
-цӀункӀиде<verb>:цӀункӀиде[IIIdecl]
-чакварахе<verb>:чакварахе[IIIdecl]
-чвархаде<verb>:чвархаде[IIIdecl]
-чвахаде<verb>:чвахаде[IIIdecl]
-чичубдже<verb>:чичубдже[IIIdecl]
-чурибахе<verb>:чурибахе[IIIdecl]
-чучиде<verb>:чучиде[IIIdecl]
-чӀаголгье<verb>:чӀаголгье[IIIdecl]
-чӀалахъе<verb>:чӀалахъе[IIIdecl]
-чӀамучӀдже<verb>:чӀамучӀдже[IIIdecl]
-чӀанкӀиде<verb>:чӀанкӀиде[IIIdecl]
-чӀахъиде<verb>:чӀахъиде[IIIdecl]
-чӀване<verb>:чӀване[IIIdecl]
-чӀванйхе<verb>:чӀванйхе[IIIdecl]
-чӀвачӀване<verb>:чӀвачӀване[IIIdecl]
-чӀере<verb>:чӀере[IIIdecl]
-чӀете<verb>:чӀете[IIIdecl]
-чӀикьиде<verb>:чӀикьиде[IIIdecl]
-чӀикӀиде<verb>:чӀикӀиде[IIIdecl]
-чӀикӀитӀиде<verb>:чӀикӀитӀиде[IIIdecl]
-чӀонкъуне<verb>:чӀонкъуне[IIIdecl]
-чӀонхъӀуне<verb>:чӀонхъӀуне[IIIdecl]
-чӀуне<verb>:чӀуне[IIIdecl]
-чӀунтиде<verb>:чӀунтиде[IIIdecl]
-чӀунчӀахе<verb>:чӀунчӀахе[IIIdecl]
-чӀурканлгье<verb>:чӀурканлгье[IIIdecl]
-чӀухӀиде<verb>:чӀухӀиде[IIIdecl]
-чӀучӀуне<verb>:чӀучӀуне[IIIdecl]
-шане<verb>:шане[IIIdecl]
-шашане<verb>:шашане[IIIdecl]
-шварде<verb>:шварде[IIIdecl]
-шере<verb>:шере[IIIdecl]
-шуде<verb>:шуде[IIIdecl]
-шушухъе<verb>:шушухъе[IIIdecl]
-шӀибе<verb>:шӀибе[IIIdecl]
-щабщаде<verb>:щабщаде[IIIdecl]
-щанахе<verb>:щанахе[IIIdecl]
-щащаде<verb>:щащаде[IIIdecl]
-щварде<verb>:щварде[IIIdecl]
-щимухе<verb>:щимухе[IIIdecl]
-щучӀиде<verb>:щучӀиде[IIIdecl]
-щӀвахиде<verb>:щӀвахиде[IIIdecl]
-щӀгӀибе<verb>:щӀгӀибе[IIIdecl]
-щӀеде<verb>:щӀеде[IIIdecl]
-щӀедерлгье<verb>:щӀедерлгье[IIIdecl]
-щӀибе<verb>:щӀибе[IIIdecl]
-щӀинтӀиде<verb>:щӀинтӀиде[IIIdecl]
-щӀирилгье<verb>:щӀирилгье[IIIdecl]
-эркенлгье<verb>:эркенлгье[IIIdecl]
-эсӀе<verb>:эсӀе[IIIdecl]
-эсӀисӀе<verb>:эсӀисӀе[IIIdecl]
-эте<verb>:эте[IIIdecl]
-этете<verb>:этете[IIIdecl]
-эхе<verb>:эхе[IIIdecl]
-эщеще<verb>:эщеще[IIIdecl]
-лъаде<verb>:лъаде[IIIdecl]
+буχχу<verb>:уχχви[A,Idecl,AgrInit]
+бущущу<verb>:ущущви[A,Idecl,AgrInit]
+гвагвани<verb>:гвагвани[A,Idecl]
+гъенбелгьи<verb>:гъенбелгьи[A,Idecl]
+гъоншши<verb>:гъоншши[A,Idecl]
+гьванлъи<verb>:гьванлъи[A,Idecl]
+гьекьекьи<verb>:гьекьекьи[A,Idecl]
+гьекьи<verb>:гьекьи[A,Idecl]
+гьекьи<verb>:гьекьи[A,Idecl] #846
+гьецӀи<verb>:гьецӀи[A,Idecl]
+гьешӀи<verb>:гьешӀи[A,Idecl]
+гьещӀи<verb>:гьещӀи[A,Idecl]
+гӀагалли<verb>:гӀагалли[A,Idecl]
+гӀаламатли<verb>:гӀаламатли[A,Idecl]
+елъдви[A,Idecl,AgrInit]
+етӀви[A,Idecl,AgrInit]
+жекъви[A,Idecl]
+жехъӀви[A,Idecl]
+жукъви[A,Idecl]
+жухъӀви[A,Idecl]
+зали<verb>:зали[A,Idecl]
+захӀматли<verb>:захӀматли[A,Idecl]
+игьвалъи<verb>:игьвалъи[A,Idecl]
+ижви[A,Idecl,AgrInit]
+ичи<verb>:ичи[A,Idecl]
+ичи<verb>:ичи[A,Idecl] # 849 give
+ичичи<verb>:ичичи[A,Idecl]
+квали<verb>:квали[A,Idecl]
+квахи<verb>:квахи[A,Idecl]
+кваххи<verb>:кваххи[A,Idecl] # 89
+къважали<verb>:къважали[A,Idecl]
+къварали<verb>:къварали[A,Idecl]
+малъи<verb>:малъи[A,Idecl]
+малълъи<verb>:малълъи[A,Idecl]
+мекъли<verb>:мекъли[A,Idecl]
+мехъӀли<verb>:мехъӀли[A,Idecl]
+мигӀири<verb>:мигӀири[A,Idecl]
+мигӀури<verb>:мигӀури[A,Idecl]
+мутӀигӀли<verb>:мутӀигӀли[A,Idecl]
+нагӀдалгьарбищи<verb>:нагӀдалгьарбищи[A,Idecl]
+поли<verb>:поли[A,Idecl]
+разилли<verb>:разилли[A,Idecl]
+ракъиᵸ<verb>:ракъиᵸ[B,Idecl]
+рахъӀиᵸ<verb>:рахъӀиᵸ[B,Idecl]
+решӀи<verb>:решӀи[A,Idecl]
+рещӀи<verb>:рещӀи[A,Idecl]
+рущу<verb>:рущви[A,Idecl]
+сабалли<verb>:сабалли[A,Idecl]
+сагъли<verb>:сагъли[A,Idecl]
+санили<verb>:санили[A,Idecl]
+свадди<verb>:свадди[A,Idecl]
+сварди<verb>:сварди[A,Idecl]
+свари<verb>:свари[A,Idecl]
+сусукӀви[A,Idecl]
+сӀелли<verb>:сӀелли[A,Idecl]
+сӀухъви[A,Idecl]
+тӀоли<verb>:тӀоли[A,Idecl]
+угъви[A,Idecl,AgrInit]
+угьви[A,Idecl,AgrInit]
+укви[A,Idecl,AgrInit]
+уххви[A,Idecl,AgrInit]
+укъви[A,Idecl,AgrInit]
+укъукъви[A,Idecl,AgrInit]
+укъухъӀви[A,Idecl,AgrInit]
+укӀвиᵸ[B,Idecl,AgrInit]
+улъви[A,Idecl,AgrInit]
+усшви[A,Idecl,AgrInit]
+ухъӀви[A,Idecl,AgrInit]
+ухъӀукъви[A,Idecl,AgrInit]
+ухъӀухъӀви[A,Idecl,AgrInit]
+ушшви[A,Idecl,AgrInit]
+хвасарли<verb>:хвасарли[A,Idecl]
+хъвани<verb>:хъвани[A,Idecl]
+хъони<verb>:хъони[A,Idecl]
+хъӀважали<verb>:хъӀважали[A,Idecl]
+хъӀварали<verb>:хъӀварали[A,Idecl]
+хӀадурели<verb>:хӀадурели[A,Idecl]
+хӀадурли<verb>:хӀадурли[A,Idecl]
+цӀагьагьи<verb>:цӀагьагьи[A,Idecl]
+цӀагьи<verb>:цӀагьи[A,Idecl]
+цӀанхи–руху<verb>:цӀанхи–рухви[A,Idecl]
+цӀахиᵸ<verb>:цӀахиᵸ[B,Idecl] 
+цӀаххиᵸ<verb>:цӀаххиᵸ[B,Idecl]
+цӀаххиᵸ<verb>:цӀаххиᵸ[B,Idecl] # 89
+цӀвани<verb>:цӀвани[A,Idecl]
+цӀони<verb>:цӀони[A,Idecl]
+часбищи<verb>:часбищи[A,Idecl]
+чӀванйхи<verb>:чӀванйхи[A,Idecl]
+ширшири<verb>:ширшири[A,Idecl]
+шуршури<verb>:шуршури[A,Idecl]
+экьи<verb>:экьи[A,Idecl]
+элищи<verb>:элищи[A,Idecl]
+элрещди<verb>:элрещди[A,Idecl]
+эхи<verb>:эхи[A,Idecl]
+эхъехъи<verb>:эхъехъи[A,Idecl]
+эхъи<verb>:эхъи[A,Idecl]
+эцӀи<verb>:эцӀи[A,Idecl]
+эши<verb>:эши[A,Idecl]
+эшши<verb>:эшши[A,Idecl]
+эшӀи<verb>:эшӀи[A,Idecl]
+эщи<verb>:эщи[A,Idecl]
+эщӀи<verb>:эщӀи[A,Idecl]
+абагьа<verb>:абагьа[A,IIdecl]
+агьаᵸ<verb>:агьаᵸ[B,IIdecl] # Gudava hear
+алгьаᵸ<verb>:алгьаᵸ[B,IIdecl]
+алгьаᵸ<verb>:алхаᵸ[B,IIdecl] # M 37 hear
+ангьаᵸ<verb>:ангьаᵸ[B,IIdecl] # 839 hear
+аргъваᵸ<verb>:аргъваᵸ[B,IIdecl]
+атита<verb>:атита[A,IIdecl]
+ахбукӀва<verb>:ахбукӀва[A,IIdecl]
+ахъваᵸ[B,IIdecl,AgrInit]
+ачва[A,IIdecl,AgrInit]
+аша<verb>:аша[A,IIdecl]
+аща<verb>:аща[A,IIdecl]
+аᵸгьаᵸ<verb>:аᵸгьаᵸ[B,IIdecl]
+ба<verb>:а[A,IIdecl,AgrInit] # 101 go (irregular)
+багъаᵸ<verb>:багъаᵸ[B,IIdecl]
+багьа<verb>:агьа[A,IIdecl,AgrInit]
+багӀари<verb>:багӀа[A,IIdecl] # bleat Gudava
+бала<verb>:ала[A,IIdecl,AgrInit]
+басаᵸ<verb>:асаᵸ[B,IIdecl,AgrInit]
+басисаᵸ<verb>:асисаᵸ[B,IIdecl,AgrInit]
+бахиха<verb>:ахиха[A,IIdecl,AgrInit]
+бацӀа<verb>:ацӀа[A,IIdecl,AgrInit]
+бачӀа<verb>:ачӀа[A,IIdecl,AgrInit]
+бащваᵸ<verb>:ащваᵸ[B,IIdecl,AgrInit]
+бежа<verb>:ежа[A,IIdecl,AgrInit]
+бета<verb>:ета[A,IIdecl,AgrInit]
+бета<verb>:ета[A,IIdecl,AgrInit] # 89 leave
+беча<verb>:еча[A,IIdecl,AgrInit]
+бечича<verb>:ечича[A,IIdecl,AgrInit]
+бешта<verb>:ешта[A,IIdecl,AgrInit]
+бешхъа<verb>:ешхъа[A,IIdecl,AgrInit]
+бигъаᵸ<verb>:игъаᵸ[B,IIdecl,AgrInit]
+бигьаᵸ<verb>:игьаᵸ[B,IIdecl,AgrInit]
+биеилаᵸ<verb>:иеилаᵸ[B,IIdecl,AgrInit]
+бикӀйаᵸ:икӀйаᵸ[B,IIdecl] # look (irregular)
+билаᵸ<verb>:илаᵸ[B,IIdecl,AgrInit]
+биллаᵸ<verb>:иллаᵸ[B,IIdecl,AgrInit]
+биса<verb>:иса[A,IIdecl,AgrInit]
+бисаᵸ<verb>:исаᵸ[B,IIdecl,AgrInit]
+бисисаᵸ<verb>:исисаᵸ[B,IIdecl,AgrInit]
+битаᵸ<verb>:итаᵸ[B,IIdecl,AgrInit] # 89 miss
+бититаᵸ<verb>:ититаᵸ[B,IIdecl,AgrInit]
+бицӀа<verb>:ицӀа[A,IIdecl,AgrInit]
+бичӀа<verb>:ичӀа[A,IIdecl,AgrInit]
+бичӀаᵸ<verb>:ичӀаᵸ[B,IIdecl,AgrInit] # 849 look (irregular)
+бичӀичӀа<verb>:ичӀичӀа[A,IIdecl,AgrInit]
+бишаᵸ<verb>:ишаᵸ[B,IIdecl,AgrInit]
+биъа<verb>:иъа[A,IIdecl,AgrInit]
+божа<verb>:ожа[A,IIdecl,AgrInit]
+бугъа<verb>:бугъа[A,IIdecl] # 89
+бугьу<verb>:угьва[A,IIdecl,AgrInit]
+бугьугьу<verb>:угьугьва[A,IIdecl,AgrInit]
+букаᵸ<verb>:укаᵸ[B,IIdecl,AgrInit]
+букӀа<verb>:акӀа[A,IIdecl,AgrInit] # 101 be (irregular)
+букӀа<verb>:укӀа[A,IIdecl,AgrInit] # 101 be (irregular)
+букӀа<verb>:укӀва[A,IIdecl,AgrInit] # 101 be (irregular)
+булгьаᵸ<verb>:улгьаᵸ[B,IIdecl,AgrInit]
+буту<verb>:утва[A,IIdecl,AgrInit]
+бутуту<verb>:утутва[A,IIdecl,AgrInit]
+бухӀу<verb>:ухӀва[A,IIdecl,AgrInit]
+бухӀухӀу<verb>:ухӀухӀва[A,IIdecl,AgrInit]
+буцӀу<verb>:уцӀва[A,IIdecl,AgrInit]
+буцӀуцӀу<verb>:уцӀуцӀва[A,IIdecl,AgrInit]
+бучаᵸ<verb>:учаᵸ[B,IIdecl,AgrInit]
+бучучаᵸ<verb>:учучаᵸ[B,IIdecl,AgrInit]
+бучӀаᵸ<verb>:учӀаᵸ[B,IIdecl,AgrInit]
+бучӀучӀаᵸ<verb>:учӀучӀаᵸ[B,IIdecl,AgrInit]
+бущаᵸ<verb>:ущаᵸ[B,IIdecl,AgrInit]
+бущущаᵸ<verb>:ущущаᵸ[B,IIdecl,AgrInit]
+гецӀа<verb>:гецӀа[A,IIdecl]
+гьаᵸдибугьа<verb>:гьаᵸдибугьа[A,IIdecl]
+гьекьаᵸ<verb>:гьекьаᵸ[B,IIdecl]
+гьекьикьаᵸ<verb>:гьекьикьаᵸ[B,IIdecl]
+гьикьибагьа<verb>:гьикьибагьа[A,IIdecl]
+джеллаᵸ<verb>:джеллаᵸ[B,IIdecl]
+зигьваᵸ[B,IIdecl]
+къебукӀва<verb>:къебукӀва[A,IIdecl]
+къоса<verb>:къоса[A,IIdecl]
+къосида<verb>:къосида[A,IIdecl]
+къочаᵸ<verb>:къочаᵸ[B,IIdecl]
+къочаᵸ<verb>:къочаᵸ[B,IIdecl] # 856 want
+кьарашаᵸ<verb>:кьарашаᵸ[B,IIdecl]
+кьегъаᵸ<verb>:кьегъаᵸ[B,IIdecl]
+кьигьаᵸ<verb>:кьигьаᵸ[B,IIdecl]
+ожа[A,IIdecl,AgrInit]
+ракъаᵸ<verb>:ракъаᵸ[B,IIdecl]
+ракъи–рашваᵸ<verb>:ракъи–рашваᵸ[B,IIdecl]
+ракӀвачӀбукӀва<verb>:ракӀвачӀбукӀва[A,IIdecl]
+рахъӀаᵸ<verb>:рахъӀаᵸ[B,IIdecl]
+рекӀваᵸ<verb>:рекӀваᵸ[B,IIdecl]
+рекӀваᵸ[B,IIdecl]
+ригьигьаᵸ<verb>:ригьигьаᵸ[B,IIdecl]
+ругьаᵸ[B,IIdecl]
+тӀекваᵸ<verb>:тӀекваᵸ[B,IIdecl]
+тӀекваᵸ[B,IIdecl]
+уваᵸ[B,IIdecl,AgrInit]
+угьа[A,IIdecl,AgrInit]
+угьаᵸ[B,IIdecl,AgrInit]
+угьаᵸ[B,IIdecl]
+укаᵸ[B,IIdecl,AgrInit]
+укӀа[A,IIdecl,AgrInit]
+уллаᵸ[B,IIdecl,AgrInit]
+ута[A,IIdecl,AgrInit]
+ухӀа[A,IIdecl,AgrInit]
+учаᵸ[B,IIdecl,AgrInit]
+учӀаᵸ[B,IIdecl,AgrInit]
+ушаᵸ[B,IIdecl,AgrInit]
+ущаᵸ[B,IIdecl,AgrInit]
+хъӀочаᵸ<verb>:хъӀочаᵸ[B,IIdecl]
+хӀащӀабагьа<verb>:хӀащӀабагьа[A,IIdecl]
+чӀалгӀайна<verb>:чӀалгӀайна[A,IIdecl]
+чӀалгӀаᵸ<verb>:чӀалгӀаᵸ[B,IIdecl]
+чӀата<verb>:чӀата[A,IIdecl]
+чӀунтӀа[A,IIdecl]
+экваᵸ<verb>:экваᵸ[B,IIdecl]
+экукаᵸ<verb>:экукаᵸ[B,IIdecl]
+экьаᵸ<verb>:экьаᵸ[B,IIdecl]
+эта<verb>:эта[A,IIdecl]
+эхва<verb>:эхва[A,IIdecl] #844
+эхъаᵸ<verb>:эхъаᵸ[B,IIdecl]
+эшаᵸ<verb>:эшаᵸ[B,IIdecl]
+эщаᵸ<verb>:эщаᵸ[B,IIdecl]
+эщещаᵸ<verb>:эщещаᵸ[B,IIdecl]
+абатате<verb>:абатате[A,IIIdecl]
+агьецӀе<verb>:агьецӀе[A,IIIdecl]
+агьибугье<verb>:агьибугье[A,IIIdecl]
+адже<verb>:адже[A,IIIdecl]
+акве<verb>:акве[A,IIIdecl]
+анахахе<verb>:анахахе[A,IIIdecl]
+анахе<verb>:анахе[A,IIIdecl]
+ансе<verb>:ансе[A,IIIdecl]
+атате<verb>:атате[A,IIIdecl]
+атите<verb>:атите[A,IIIdecl]
+ахъахъе<verb>:ахъахъе[A,IIIdecl]
+ачакӀихе<verb>:ачакӀихе[A,IIIdecl]
+аᵸталгье<verb>:аᵸталгье[A,IIIdecl]
+ба<verb>:е[A,IIIdecl,AgrInit] # 101 go (irregular)
+багъариде<verb>:агъариде[A,IIIdecl,AgrInit]
+багьалгье<verb>:агьалгье[A,IIIdecl,AgrInit]
+багьвагье<verb>:агьвагье[A,IIIdecl,AgrInit]
+багье<verb>:агье[A,IIIdecl,AgrInit]
+багӀариде<verb>:агӀариде[A,IIIdecl,AgrInit]
+багӀе<verb>:агӀе[A,IIIdecl,AgrInit]
+бажариде<verb>:ажариде[A,IIIdecl,AgrInit]
+бакъаше<verb>:акъаше[A,IIIdecl,AgrInit]
+бакъаще<verb>:акъаще[A,IIIdecl,AgrInit]
+балгьагье<verb>:алгьагье[A,IIIdecl,AgrInit]
+балгье<verb>:алгье[A,IIIdecl,AgrInit]
+бале<verb>:але[A,IIIdecl,AgrInit]
+балъиᵸлгье<verb>:алъиᵸлгье[A,IIIdecl,AgrInit]
+балъуᵸде<verb>:алъуᵸде[A,IIIdecl,AgrInit]
+басратдже<verb>:басратдже[A,IIIdecl]
+басӀаре<verb>:асӀаре[A,IIIdecl,AgrInit]
+батахве<verb>:атахве[A,IIIdecl,AgrInit]
+батиде<verb>:атиде[A,IIIdecl,AgrInit]
+батире<verb>:атире[A,IIIdecl,AgrInit]
+бахакӀвайде<verb>:ахакӀвайде[A,IIIdecl,AgrInit]
+бахе<verb>:ахе[A,IIIdecl,AgrInit]
+бахъӀаше<verb>:ахъӀаше[A,IIIdecl,AgrInit]
+бахъӀаще<verb>:ахъӀаще[A,IIIdecl,AgrInit]
+бахьиде<verb>:ахьиде[A,IIIdecl,AgrInit]
+бацӀацӀе<verb>:ацӀацӀе[A,IIIdecl,AgrInit]
+бацӀе<verb>:ацӀе[A,IIIdecl,AgrInit]
+бачачве<verb>:ачачве[A,IIIdecl,AgrInit]
+бачве<verb>:ачве[A,IIIdecl,AgrInit]
+бачиде<verb>:ачиде[A,IIIdecl,AgrInit]
+бащалгье<verb>:ащалгье[A,IIIdecl,AgrInit]
+бегъе<verb>:егъе[A,IIIdecl,AgrInit]
+бегъе<verb>:егъе[A,IIIdecl,AgrInit] #92
+бегьигье<verb>:егьигье[A,IIIdecl,AgrInit]
+бегьире<verb>:бегьире[A,IIIdecl]
+бекъве<verb>:екъве[A,IIIdecl,AgrInit]
+белгье<verb>:елгье[A,IIIdecl,AgrInit]
+белгьегье<verb>:елгьегье[A,IIIdecl,AgrInit]
+белъелъе<verb>:елъелъе[A,IIIdecl,AgrInit]
+берхве<verb>:ерхве[A,IIIdecl,AgrInit]
+бесулгье<verb>:бесулгье[A,IIIdecl]
+бетате<verb>:етате[A,IIIdecl,AgrInit]
+бетӀатӀе<verb>:етӀатӀе[A,IIIdecl,AgrInit]
+бетӀве<verb>:етӀве[A,IIIdecl,AgrInit]
+бехалгье<verb>:ехалгье[A,IIIdecl,AgrInit]
+бехе<verb>:ехе[A,IIIdecl,AgrInit]
+бехьвахьве<verb>:ехьвахьве[A,IIIdecl,AgrInit]
+бехьве<verb>:ехьве[A,IIIdecl,AgrInit]
+бецӀе<verb>:ецӀе[A,IIIdecl,AgrInit]
+бецӀиде<verb>:бецӀиде[A,IIIdecl]
+бецӀире<verb>:ецӀире[A,IIIdecl,AgrInit]
+бечелгье<verb>:бечелгье[A,IIIdecl]
+бечиче<verb>:ечиче[A,IIIdecl,AgrInit]
+бечӀве<verb>:ечӀве[A,IIIdecl,AgrInit]
+бечӀетӀилгье<verb>:ечӀетӀилгье[A,IIIdecl,AgrInit]
+беште<verb>:еште[A,IIIdecl,AgrInit]
+бешхъе<verb>:ешхъе[A,IIIdecl,AgrInit]
+бещве<verb>:ещве[A,IIIdecl,AgrInit]
+бещде<verb>:ещде[A,IIIdecl,AgrInit]
+беще<verb>:еще[A,IIIdecl,AgrInit]
+бибиде<verb>:бибиде[A,IIIdecl]
+бигъагъе<verb>:игъагъе[A,IIIdecl,AgrInit]
+бигъе<verb>:игъе[A,IIIdecl,AgrInit]
+бигъигъе<verb>:игъигъе[A,IIIdecl,AgrInit]
+билъе<verb>:илъе[A,IIIdecl,AgrInit]
+билъилъе<verb>:илъилъе[A,IIIdecl,AgrInit]
+бисе<verb>:исе[A,IIIdecl,AgrInit]
+бисисе<verb>:исисе[A,IIIdecl,AgrInit]
+битӀе<verb>:итӀе[A,IIIdecl,AgrInit]
+бихе<verb>:ихе[A,IIIdecl,AgrInit]
+бихихе<verb>:ихихе[A,IIIdecl,AgrInit]
+бицӀе<verb>:ицӀе[A,IIIdecl,AgrInit]
+бичӀе<verb>:ичӀе[A,IIIdecl,AgrInit]
+бичӀичӀе<verb>:ичӀичӀе[A,IIIdecl,AgrInit]
+бише<verb>:ише[A,IIIdecl,AgrInit]
+бище<verb>:бище[A,IIIdecl]
+бище<verb>:ище[A,IIIdecl,AgrInit]
+бищи–бихе<verb>:бищи–бихе[A,IIIdecl]
+боже<verb>:боже[A,IIIdecl]
+борлъиде<verb>:орлъиде[A,IIIdecl,AgrInit]
+борлъ–борлъиде<verb>:орлъ–борлъиде[A,IIIdecl,AgrInit]
+бугъе<verb>:угъе[A,IIIdecl,AgrInit]
+бугье<verb>:угье[A,IIIdecl,AgrInit]
+бугье<verb>:угьеᵸ[B,IIIdecl,AgrInit] # 863 explain
+бугьугье<verb>:угьугье[A,IIIdecl,AgrInit]
+бужуже<verb>:ужуже[A,IIIdecl,AgrInit]
+букуке<verb>:укуке[A,IIIdecl,AgrInit]
+букъе<verb>:укъе[A,IIIdecl,AgrInit]
+букьайла<verb>:укьайла[B,IIIdecl,AgrInit]
+букье<verb>:укье[A,IIIdecl,AgrInit]
+букьукье<verb>:укьукье[A,IIIdecl,AgrInit]
+букӀе<verb>:укӀе[A,IIIdecl,AgrInit]
+булъе<verb>:улъе[A,IIIdecl,AgrInit]
+буте<verb>:уте[A,IIIdecl,AgrInit]
+бутуте<verb>:утуте[A,IIIdecl,AgrInit]
+бухе<verb>:ухе[A,IIIdecl,AgrInit]
+бухухе<verb>:ухухе[A,IIIdecl,AgrInit]
+бухӀе<verb>:ухӀе[A,IIIdecl,AgrInit]
+буцӀуцӀе<verb>:уцӀуцӀе[A,IIIdecl,AgrInit]
+буще<verb>:уще[A,IIIdecl,AgrInit]
+ване<verb>:ване[A,IIIdecl]
+гамгамиде<verb>:гамгамиде[A,IIIdecl]
+гвангъиде<verb>:гвангъиде[A,IIIdecl]
+гецӀе<verb>:гецӀе[A,IIIdecl]
+гире<verb>:гире[A,IIIdecl]
+гочиде<verb>:гочиде[A,IIIdecl]
+гуле<verb>:гуле[A,IIIdecl]
+гургиде<verb>:гургиде[A,IIIdecl]
+гургинлгье<verb>:гургинлгье[A,IIIdecl]
+гургуриде<verb>:гургуриде[A,IIIdecl]
+гуриде<verb>:гуриде[A,IIIdecl]
+гурхӀиде<verb>:гурхӀиде[A,IIIdecl]
+гъабе<verb>:гъабе[A,IIIdecl]
+гъанкъиде<verb>:гъанкъиде[A,IIIdecl]
+гъанкъире<verb>:гъанкъире[A,IIIdecl]
+гъанхъӀире<verb>:гъанхъӀире[A,IIIdecl]
+гъванцӀиде<verb>:гъванцӀиде[A,IIIdecl]
+гъваᵸще<verb>:гъваᵸще[A,IIIdecl]
+гъигъине<verb>:гъигъине[A,IIIdecl]
+гъине<verb>:гъине[A,IIIdecl]
+гъоншше<verb>:гъоншше[A,IIIdecl]
+гъункиде<verb>:гъункиде[A,IIIdecl]
+гъунциде<verb>:гъунциде[A,IIIdecl]
+гьабуже<verb>:гьабуже[A,IIIdecl]
+гьагьаде<verb>:гьагьаде[A,IIIdecl]
+гьадашве<verb>:гьадашве[A,IIIdecl]
+гьалгье/ла<verb>:гьалгье/ла[B,IIIdecl]
+гьалгье<verb>:гьалгье[A,IIIdecl]
+гьалийалгье<verb>:гьалийалгье[A,IIIdecl]
+гьане<verb>:гьане[A,IIIdecl]
+гьаᵸдибугье<verb>:гьаᵸдибугье[A,IIIdecl]
+гьаᵸхвдалгье<verb>:гьаᵸхвдалгье[A,IIIdecl]
+гьаᵸхвталгье<verb>:гьаᵸхвталгье[A,IIIdecl]
+гьаᵸ<verb>:гьаᵸ[B,IIIdecl] # 104 see (irregular)
+гьвале<verb>:гьвале[A,IIIdecl]
+гьвалле<verb>:гьвалле[A,IIIdecl]
+гьваᵸлъе<verb>:гьваᵸлъе[A,IIIdecl]
+гьеде<verb>:гьеде[A,IIIdecl]
+гьекье<verb>:гьекье[A,IIIdecl]
+гьелалгье<verb>:гьелалгье[A,IIIdecl]
+гьеле<verb>:гьеле[A,IIIdecl]
+гьелле<verb>:гьелле[A,IIIdecl]
+гьере<verb>:гьере[A,IIIdecl]
+гьецӀе<verb>:гьецӀе[A,IIIdecl]
+гьецӀецӀе<verb>:гьецӀецӀе[A,IIIdecl]
+гьешӀе<verb>:гьешӀе[A,IIIdecl]
+гьещӀе<verb>:гьещӀе[A,IIIdecl]
+гьигьваде<verb>:гьигьваде[A,IIIdecl]
+гьиᵸчӀалгье<verb>:гьиᵸчӀалгье[A,IIIdecl]
+гьиᵸчӀе<verb>:гьиᵸчӀе[A,IIIdecl]
+гьолле<verb>:гьолле[A,IIIdecl]
+гьорчӀомадже<verb>:гьорчӀомадже[A,IIIdecl]
+гьуналгье<verb>:гьуналгье[A,IIIdecl]
+гьункьуде<verb>:гьункьуде[A,IIIdecl]
+гӀайбдже<verb>:гӀайбдже[A,IIIdecl]
+гӀайблгье<verb>:гӀайблгье[A,IIIdecl]
+гӀаламалгье<verb>:гӀаламалгье[A,IIIdecl]
+гӀамалдже<verb>:гӀамалдже[A,IIIdecl]
+гӀахьалгье<verb>:гӀахьалгье[A,IIIdecl]
+дагьле<verb>:дагьле[A,IIIdecl]
+дандилгье<verb>:дандилгье[A,IIIdecl]
+дарихе<verb>:дарихе[A,IIIdecl]
+дваргъаде<verb>:дваргъаде[A,IIIdecl]
+двардвариде<verb>:двардвариде[A,IIIdecl]
+джагъалгье<verb>:джагъалгье[A,IIIdecl]
+джане<verb>:джане[A,IIIdecl]
+дже<verb>:дже[A,IIIdecl] # 843
+дидине<verb>:дидине[A,IIIdecl]
+димдимиде<verb>:димдимиде[A,IIIdecl]
+дуриде<verb>:дуриде[A,IIIdecl]
+елле<verb>:елле[A,IIIdecl]
+ере<verb>:ере[A,IIIdecl]
+ехе<verb>:ехе[A,IIIdecl]
+ецӀе<verb>:ецӀе[A,IIIdecl]
+ешӀе<verb>:ешӀе[A,IIIdecl]
+ещӀе<verb>:ещӀе[A,IIIdecl]
+жамиде<verb>:жамиде[A,IIIdecl]
+жам–жамиде<verb>:жам–жамиде[A,IIIdecl]
+жвархаре<verb>:жвархаре[A,IIIdecl]
+жиде<verb>:жиде[A,IIIdecl]
+жикъиде<verb>:жикъиде[A,IIIdecl]
+жорде<verb>:жорде[A,IIIdecl]
+жубайде<verb>:жубайде[A,IIIdecl]
+загьирлгье<verb>:загьирлгье[A,IIIdecl]
+загӀиблгье<verb>:загӀиблгье[A,IIIdecl]
+залгье<verb>:залгье[A,IIIdecl]
+зале<verb>:зале[A,IIIdecl]
+занкъуде<verb>:занкъуде[A,IIIdecl]
+заᵸкъве<verb>:заᵸкъве[A,IIIdecl]
+илгьатилгье<verb>:илгьатилгье[A,IIIdecl]
+исрапдже<verb>:исрапдже[A,IIIdecl]
+итулгье<verb>:итулгье[A,IIIdecl]
+иче<verb>:иче[A,IIIdecl]
+камилгье<verb>:камилгье[A,IIIdecl]
+кантӀиде<verb>:кантӀиде[A,IIIdecl]
+канчӀиде<verb>:канчӀиде[A,IIIdecl]
+каркасе<verb>:каркасе[A,IIIdecl]
+кваквариде<verb>:кваквариде[A,IIIdecl]
+кватӀиде<verb>:кватӀиде[A,IIIdecl]
+коцойде<verb>:коцойде[A,IIIdecl]
+къабе<verb>:къабе[A,IIIdecl]
+къабихӀдже<verb>:къабихӀдже[A,IIIdecl]
+къабкъаде<verb>:къабкъаде[A,IIIdecl]
+къабулдже<verb>:къабулдже[A,IIIdecl]
+къагьалдже<verb>:къагьалдже[A,IIIdecl]
+къагьардже<verb>:къагьардже[A,IIIdecl]
+къайде<verb>:къайде[A,IIIdecl]
+къакъатӀве<verb>:къакъатӀве[A,IIIdecl]
+къане<verb>:къане[A,IIIdecl]
+къаре<verb>:къаре[A,IIIdecl]
+къваже<verb>:къваже[A,IIIdecl]
+къвакӀиде<verb>:къвакӀиде[A,IIIdecl]
+къваркъвариде<verb>:къваркъвариде[A,IIIdecl]
+къетӀенхе<verb>:къетӀенхе[A,IIIdecl]
+къиркъиде<verb>:къиркъиде[A,IIIdecl]
+къиркъире<verb>:къиркъире[A,IIIdecl]
+къирхъӀире<verb>:къирхъӀире[A,IIIdecl]
+къирщиде<verb>:къирщиде[A,IIIdecl]
+къосе<verb>:къосе[A,IIIdecl]
+къосиде<verb>:къосиде[A,IIIdecl]
+къуле<verb>:къуле[A,IIIdecl]
+къуркъуде<verb>:къуркъуде[A,IIIdecl]
+къуркьуде<verb>:къуркьуде[A,IIIdecl]
+къутӀиде<verb>:къутӀиде[A,IIIdecl]
+кьабиде<verb>:кьабиде[A,IIIdecl]
+кьакьатӀе<verb>:кьакьатӀе[A,IIIdecl]
+кьаᵸлгье<verb>:кьаᵸлгье[A,IIIdecl]
+кьвагьагьиде<verb>:кьвагьагьиде[A,IIIdecl]
+кьвагьиде<verb>:кьвагьиде[A,IIIdecl]
+кьвагьре<verb>:кьвагьре[A,IIIdecl]
+кьваᵸйхе<verb>:кьваᵸйхе[A,IIIdecl]
+кьетӀве<verb>:кьетӀве[A,IIIdecl]
+кьириде<verb>:кьириде[A,IIIdecl]
+кьиᵸщӀилбакъвайде<verb>:кьиᵸщӀилбакъвайде[A,IIIdecl]
+кьолойде<verb>:кьолойде[A,IIIdecl]
+кьуриде<verb>:кьуриде[A,IIIdecl]
+кӀабчӀаре<verb>:кӀабчӀаре[A,IIIdecl]
+кӀабщӀахе<verb>:кӀабщӀахе[A,IIIdecl]
+кӀанцӀуде<verb>:кӀанцӀуде[A,IIIdecl]
+кӀаркӀаре<verb>:кӀаркӀаре[A,IIIdecl]
+кӀашде<verb>:кӀашде[A,IIIdecl]
+кӀорде<verb>:кӀорде[A,IIIdecl]
+кӀунйще<verb>:кӀунйще[A,IIIdecl]
+ламиде<verb>:ламиде[A,IIIdecl]
+лъабде<verb>:лъабде[A,IIIdecl]
+лъарде<verb>:лъарде[A,IIIdecl]
+лъиле<verb>:лъиле[A,IIIdecl]
+лъитӀуде<verb>:лъитӀуде[A,IIIdecl]
+лъоре<verb>:лъоре[A,IIIdecl]
+лъуде<verb>:лъуде[A,IIIdecl]
+лъукъиде<verb>:лъукъиде[A,IIIdecl]
+мадардже<verb>:мадардже[A,IIIdecl]
+макале<verb>:макале[A,IIIdecl]
+макасе<verb>:макасе[A,IIIdecl]
+махӀрумдже<verb>:махӀрумдже[A,IIIdecl]
+мде<verb>:мде[A,IIIdecl]
+мигье<verb>:мигье[A,IIIdecl]
+мисӀалгье<verb>:мисӀалгье[A,IIIdecl]
+мисӀарахе<verb>:мисӀарахе[A,IIIdecl]
+мисӀе<verb>:мисӀе[A,IIIdecl]
+мутӀигӀлгье<verb>:мутӀигӀлгье[A,IIIdecl]
+мухӀканлгье<verb>:мухӀканлгье[A,IIIdecl]
+ничиде<verb>:ничиде[A,IIIdecl]
+паналгье<verb>:паналгье[A,IIIdecl]
+паракъалгье<verb>:паракъалгье[A,IIIdecl]
+паркъиде<verb>:паркъиде[A,IIIdecl]
+парпариде<verb>:парпариде[A,IIIdecl]
+парчиндже<verb>:парчиндже[A,IIIdecl]
+пикврадже<verb>:пикврадже[A,IIIdecl]
+пурхиде<verb>:пурхиде[A,IIIdecl]
+рагьаде<verb>:рагьаде[A,IIIdecl]
+ракӀвадже<verb>:ракӀвадже[A,IIIdecl]
+рачуче<verb>:рачуче[A,IIIdecl]
+рекӀвеᵸ<verb>:рекӀвеᵸ[B,IIIdecl] #92
+рекӀиде<verb>:рекӀиде[A,IIIdecl]
+рештиде<verb>:рештиде[A,IIIdecl]
+ругьунлгье<verb>:ругьунлгье[A,IIIdecl]
+руще<verb>:руще[A,IIIdecl]
+сагъле<verb>:сагъле[A,IIIdecl]
+сале<verb>:сале[A,IIIdecl]
+сваре<verb>:сваре[A,IIIdecl]
+симбахъиде<verb>:симбахъиде[A,IIIdecl]
+сине<verb>:сине[A,IIIdecl]
+солгье<verb>:солгье[A,IIIdecl]
+сукӀиде<verb>:сукӀиде[A,IIIdecl]
+суриде<verb>:суриде[A,IIIdecl]
+сӀабе<verb>:сӀабе[A,IIIdecl]
+сӀагьиде<verb>:сӀагьиде[A,IIIdecl]
+сӀалгьиде<verb>:сӀалгьиде[A,IIIdecl]
+сӀасӀаде<verb>:сӀасӀаде[A,IIIdecl]
+сӀвахьиде<verb>:сӀвахьиде[A,IIIdecl]
+сӀелгьардже<verb>:сӀелгьардже[A,IIIdecl]
+сӀикӀиде<verb>:сӀикӀиде[A,IIIdecl]
+сӀингьалгье<verb>:сӀингьалгье[A,IIIdecl]
+сӀинкӀиде<verb>:сӀинкӀиде[A,IIIdecl]
+сӀинтӀуде<verb>:сӀинтӀуде[A,IIIdecl]
+сӀирсӀириде<verb>:сӀирсӀириде[A,IIIdecl]
+сӀиᵸтулгье<verb>:сӀиᵸтулгье[A,IIIdecl]
+сӀуне<verb>:сӀуне[A,IIIdecl]
+табалгье<verb>:табалгье[A,IIIdecl]
+тавбодже<verb>:тавбодже[A,IIIdecl]
+таде<verb>:таде[A,IIIdecl]
+такрардже<verb>:такрардже[A,IIIdecl]
+талавурдже<verb>:талавурдже[A,IIIdecl]
+тархъандже<verb>:тархъандже[A,IIIdecl]
+тастикъдже<verb>:тастикъдже[A,IIIdecl]
+татаде<verb>:татаде[A,IIIdecl]
+таᵸталгье<verb>:таᵸталгье[A,IIIdecl]
+тегьиде<verb>:тегьиде[A,IIIdecl]
+тине<verb>:тине[A,IIIdecl]
+торде<verb>:торде[A,IIIdecl]
+тохгье<verb>:тохгье[A,IIIdecl]
+тохлгье<verb>:тохлгье[A,IIIdecl]
+тункиде<verb>:тункиде[A,IIIdecl]
+тункуде<verb>:тункуде[A,IIIdecl]
+туркӀиде<verb>:туркӀиде[A,IIIdecl]
+тӀалабдже<verb>:тӀалабдже[A,IIIdecl]
+тӀаркӀуде<verb>:тӀаркӀуде[A,IIIdecl]
+тӀатиде<verb>:тӀатиде[A,IIIdecl]
+тӀатӀаде<verb>:тӀатӀаде[A,IIIdecl]
+тӀатӀане<verb>:тӀатӀане[A,IIIdecl]
+тӀере<verb>:тӀере[A,IIIdecl]
+тӀертӀе<verb>:тӀертӀе[A,IIIdecl]
+тӀибитӀире<verb>:тӀибитӀире[A,IIIdecl]
+тӀитӀахъве<verb>:тӀитӀахъве[A,IIIdecl]
+тӀобойде<verb>:тӀобойде[A,IIIdecl]
+тӀуриде<verb>:тӀуриде[A,IIIdecl]
+ургъилдже<verb>:ургъилдже[A,IIIdecl]
+учуздже<verb>:учуздже[A,IIIdecl]
+хабе<verb>:хабе[A,IIIdecl]
+хабхаде<verb>:хабхаде[A,IIIdecl]
+харде<verb>:харде[A,IIIdecl]
+харе<verb>:харе[A,IIIdecl]
+хариде<verb>:хариде[A,IIIdecl]
+хвахване<verb>:хвахване[A,IIIdecl]
+хере<verb>:хере[A,IIIdecl]
+хехлгье<verb>:хехлгье[A,IIIdecl]
+хиралгье<verb>:хиралгье[A,IIIdecl]
+хисиде<verb>:хисиде[A,IIIdecl]
+хисире<verb>:хисире[A,IIIdecl]
+ходе<verb>:ходе[A,IIIdecl]
+хъаде<verb>:хъаде[A,IIIdecl]
+хъайлгьайла<verb>:хъайлгьайла[B,IIIdecl]
+хъаре<verb>:хъаре[A,IIIdecl]
+хъаре<verb>:хъаре[A,IIIdecl] # 855
+хъехъеде<verb>:хъехъеде[A,IIIdecl]
+хъибе<verb>:хъибе[A,IIIdecl]
+хъитӀиде<verb>:хъитӀиде[A,IIIdecl]
+хъӀаре<verb>:хъӀаре[A,IIIdecl]
+хъӀваже<verb>:хъӀваже[A,IIIdecl]
+хъӀиркъире<verb>:хъӀиркъире[A,IIIdecl]
+хъӀирхъӀире<verb>:хъӀирхъӀире[A,IIIdecl]
+хьваре<verb>:хьваре[A,IIIdecl]
+хьулбилгье<verb>:хьулбилгье[A,IIIdecl]
+хьулбугье<verb>:хьулбугье[A,IIIdecl]
+хьурхьуриде<verb>:хьурхьуриде[A,IIIdecl]
+хьутӀиде<verb>:хьутӀиде[A,IIIdecl]
+хӀабде<verb>:хӀабде[A,IIIdecl]
+хӀагьане<verb>:хӀагьане[A,IIIdecl]
+хӀакиде<verb>:хӀакиде[A,IIIdecl]
+хӀалтӀиде<verb>:хӀалтӀиде[A,IIIdecl]
+хӀалхьиде<verb>:хӀалхьиде[A,IIIdecl]
+хӀахьиде<verb>:хӀахьиде[A,IIIdecl]
+хӀаче<verb>:хӀаче[A,IIIdecl]
+хӀачиде<verb>:хӀачиде[A,IIIdecl]
+хӀесиде<verb>:хӀесиде[A,IIIdecl]
+хӀикмалгьардже<verb>:хӀикмалгьардже[A,IIIdecl]
+хӀиладже<verb>:хӀиладже[A,IIIdecl]
+хӀисабдже<verb>:хӀисабдже[A,IIIdecl]
+хӀулиде<verb>:хӀулиде[A,IIIdecl]
+хӀурматдже<verb>:хӀурматдже[A,IIIdecl]
+цӀагьагье<verb>:цӀагьагье[A,IIIdecl]
+цӀагье<verb>:цӀагье[A,IIIdecl]
+цӀакье<verb>:цӀакье[A,IIIdecl]
+цӀилъиде<verb>:цӀилъиде[A,IIIdecl]
+цӀункӀиде<verb>:цӀункӀиде[A,IIIdecl]
+чакварахе<verb>:чакварахе[A,IIIdecl]
+чвархаде<verb>:чвархаде[A,IIIdecl]
+чвахаде<verb>:чвахаде[A,IIIdecl]
+чичубдже<verb>:чичубдже[A,IIIdecl]
+чурибахе<verb>:чурибахе[A,IIIdecl]
+чучиде<verb>:чучиде[A,IIIdecl]
+чӀаголгье<verb>:чӀаголгье[A,IIIdecl]
+чӀалахъе<verb>:чӀалахъе[A,IIIdecl]
+чӀамучӀдже<verb>:чӀамучӀдже[A,IIIdecl]
+чӀанкӀиде<verb>:чӀанкӀиде[A,IIIdecl]
+чӀахъиде<verb>:чӀахъиде[A,IIIdecl]
+чӀване<verb>:чӀване[A,IIIdecl]
+чӀванйхе<verb>:чӀванйхе[A,IIIdecl]
+чӀвачӀване<verb>:чӀвачӀване[A,IIIdecl]
+чӀере<verb>:чӀере[A,IIIdecl]
+чӀете<verb>:чӀете[A,IIIdecl]
+чӀикьиде<verb>:чӀикьиде[A,IIIdecl]
+чӀикӀиде<verb>:чӀикӀиде[A,IIIdecl]
+чӀикӀитӀиде<verb>:чӀикӀитӀиде[A,IIIdecl]
+чӀонкъуне<verb>:чӀонкъуне[A,IIIdecl]
+чӀонхъӀуне<verb>:чӀонхъӀуне[A,IIIdecl]
+чӀуне<verb>:чӀуне[A,IIIdecl]
+чӀунтиде<verb>:чӀунтиде[A,IIIdecl]
+чӀунчӀахе<verb>:чӀунчӀахе[A,IIIdecl]
+чӀурканлгье<verb>:чӀурканлгье[A,IIIdecl]
+чӀухӀиде<verb>:чӀухӀиде[A,IIIdecl]
+чӀучӀуне<verb>:чӀучӀуне[A,IIIdecl]
+шане<verb>:шане[A,IIIdecl]
+шашане<verb>:шашане[A,IIIdecl]
+шварде<verb>:шварде[A,IIIdecl]
+шере<verb>:шере[A,IIIdecl]
+шуде<verb>:шуде[A,IIIdecl]
+шушухъе<verb>:шушухъе[A,IIIdecl]
+шӀибе<verb>:шӀибе[A,IIIdecl]
+щабщаде<verb>:щабщаде[A,IIIdecl]
+щанахе<verb>:щанахе[A,IIIdecl]
+щащаде<verb>:щащаде[A,IIIdecl]
+щварде<verb>:щварде[A,IIIdecl]
+щимухе<verb>:щимухе[A,IIIdecl]
+щучӀиде<verb>:щучӀиде[A,IIIdecl]
+щӀвахиде<verb>:щӀвахиде[A,IIIdecl]
+щӀгӀибе<verb>:щӀгӀибе[A,IIIdecl]
+щӀеде<verb>:щӀеде[A,IIIdecl]
+щӀедерлгье<verb>:щӀедерлгье[A,IIIdecl]
+щӀибе<verb>:щӀибе[A,IIIdecl]
+щӀинтӀиде<verb>:щӀинтӀиде[A,IIIdecl]
+щӀирилгье<verb>:щӀирилгье[A,IIIdecl]
+эркенлгье<verb>:эркенлгье[A,IIIdecl]
+эсӀе<verb>:эсӀе[A,IIIdecl]
+эсӀисӀе<verb>:эсӀисӀе[A,IIIdecl]
+эте<verb>:эте[A,IIIdecl]
+этете<verb>:этете[A,IIIdecl]
+эхе<verb>:эхе[A,IIIdecl]
+эщеще<verb>:эщеще[A,IIIdecl]
+лъаде<verb>:лъаде[A,IIIdecl]
 абати<verb>:абати[IVdecl]
 абди<verb>:абди[IVdecl]
 агьикъайди<verb>:агьикъайди[IVdecl]

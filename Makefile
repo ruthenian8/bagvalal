@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := bagval_numbers.gen.hfst
 analyser=./merged.tr.hfstol
 tests=tests.csv
-test_sources=$(shell sed -s 1d $(tests) | cut -d, -f5 | sort -u)
+test_sources=$(shell sed -s 1d $(tests) | cut -d, -f4 | sort -u)
 .PHONY: check
 
 %.tr.hfst: %.ana.hfst
