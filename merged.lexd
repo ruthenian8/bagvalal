@@ -164,11 +164,13 @@ DaSuffixedNums OblAdjSingular[OblNLi]
 DaSuffixedNums OblAdjPlural[OblPlLi]
 
 PATTERN OrdNumbersSer1
-decLinks? singles ordinalOpt? ordinal[ser1] 
+singles ordinalOpt? ordinal[ser1]
+decLinks singles ordinalOpt? ordinal[ser1] 
 DaSuffixedNums ordinalOpt? ordinal[ser1]
 
 PATTERN OrdNumbersSer2
-decLinks? singles ordinalOpt ordinal[ser2] 
+singles ordinalOpt ordinal[ser2] 
+decLinks singles ordinalOpt ordinal[ser2] 
 DaSuffixedNums ordinalOpt ordinal[ser2]
 
 # ----------------------------------------------------------------------------------------------
@@ -367,11 +369,12 @@ adjSingle OblAdjSup NCl?
 #
 PerPronounStems genitiveCase[GenAgr] NCl?
 PerPronounStems[PrExc] [<obl>:] CaseMain[ErgR,-RegErg,-nullNom] NCl?
-PerPronounStems[PrExc] DatExcMin[pron] NCl?
-PerPronounStems[PrExc] SupExcMin[pron] NCl?
-PerPronounStems[-PrExc] CaseMain[ErgR] NCl?
+PerPronounStems[PrExc] [<obl>:] DatExcMin[pron] NCl?
+PerPronounStems[PrExc] [<obl>:] SupExcMin[pron] NCl?
+PerPronounStems[-PrExc] CaseMain[nullNom] NCl?
+PerPronounStems[-PrExc] [<obl>:] CaseMain[ErgR,-nullNom] NCl?
 PerPronounExc NCl?
-PerPronounStems locMain directCase NCl?
+PerPronounStems [<obl>:] locMain directCase NCl?
 #
 #demonstrative pronouns
 #
@@ -543,7 +546,7 @@ NounPlBi[hpl] NoVbiPl aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
 # 
 NounPlZabi PlMarker[plZabi] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl? #zabi adi & ari only used in animate nouns, see Kibrik 132
 NounPlAdi PlMarker[plAdi] PlOblMarker[hpl] ( AddCasesHpl | CasesGenAgr ) NCl?
-NounPlAri PlMarker[plAri] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
+NounPlAri PlMarker[plAri] OblPlural[OblPlU] ( AddCasesHpl | CasesGenAgr ) NCl?
 #
 NounPlDari[hpl] PlMarker[plDari] aPlusHpl ( AddCasesHpl | CasesGenAgr ) NCl?
 NounPlBadi[hpl] PlMarker[plBadi] PlOblMarker[hpl] ( AddCasesHpl | CasesGenAgr ) NCl?
@@ -1065,7 +1068,7 @@ LEXICON IrrCvb
 # 
 LEXICON rootOne # 1
 цеб<num>:це[norm]
-цеб<num><dist>:цеце[red]
+цеб<num><distr>:цеце[red]
 цеб<num><ord>:гьечӀисес[ord]
 
 LEXICON rootInit
@@ -1202,11 +1205,11 @@ LEXICON IndefPronounSuffix
 <univ>:гӀагила
 
 LEXICON AltIndefPronounSuffix
-<N><sg><indef><N><sg>:вукӀавола[Msg]
-<N><sg><indef><N><sg>:йукӀайола[Fsg]
+<M><sg><indef><M><sg>:вукӀавола[Msg]
+<F><sg><indef><F><sg>:йукӀайола[Fsg]
 <N><sg><indef><N><sg>:букӀабола[Nsg]
-<N><sg><indef><N><sg>:букӀурола[Hpl]
-<N><sg><indef><N><sg>:рукӀарола[Npl]
+<H><pl><indef><H><pl>:букӀурола[Hpl]
+<N><pl><indef><N><pl>:рукӀарола[Npl]
 
 LEXICON RefSuffix
 <ref>:да

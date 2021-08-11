@@ -65,7 +65,7 @@ X:0 <=> _ ( ᵸ:0 ) ( %>: ) ( %{ᵸ%}: ) V|%{prt%}; where X in reps;
 %{ᵸ%}:н <=> _ ( %>: ) [с|ч|л|?:0 в];
 
 "nasalization deletion"
-ᵸ:0 <=> _ ( %>: ) [ V | ?* ncons:* ];
+ᵸ:0 <=> _ %>: [ V | ?* ncons:* ];
 
 "Р after nasalized vowels"
 %{р%}:н <=> ᵸ:0 [ ? | ?^2 | ?^3 ] _;
