@@ -1,302 +1,302 @@
 analysis,form,mustpass,source,page,description
 гьабда<num>,гьабда,pass,Magomedova,582,reg.numbers
 буъуда<num>,буъура,pass,Kibrik,155,reg.numbers
-гьабда<num><col>,гьабдала,pass,Kibrik,157,reg.numbers with -la
-буъуда<num><col>,буъурала,pass,Kibrik,157,reg.numbers with -la
+гьабда<num><coll>,гьабдала,pass,Kibrik,157,reg.numbers with -la
+буъуда<num><coll>,буъурала,pass,Kibrik,157,reg.numbers with -la
 гьабда<num><*>гьацӀа<num><ten>,гьабацӀа,pass,Magomedova,582,divisible.by.10
-гьабда<num><*>гьацӀа<num><ten><lnk>,гьабацӀ,pass,Kibrik,156,when used in a compound numeral
-гьабда<num><*>гьацӀа<num><ten><col>,гьабацӀала,pass,Kibrik,157,divisible.by.10 with -la
+гьабда<num><*>гьацӀа<num><ten><cmp>,гьабацӀ,pass,Kibrik,156,when used in a compound numeral
+гьабда<num><*>гьацӀа<num><ten><coll>,гьабацӀала,pass,Kibrik,157,divisible.by.10 with -la
 гьабда<num><*>бешенда<num><hundred>,гьаббешен,pass,Kibrik,156,divisible.by.100
 гьабда<num><*>азарда<num><thousand>,гьабазарда,pass,Kibrik,156,divisible.by.1000
-цеб<num><*>бешенда<num><hundred><M><sg><obl><gen><N><sg>,бешендащуб,pass,Magomedova,582,nums with agreement
-цеб<num><*>бешенда<num><hundred><H><pl><obl><gen><N><sg>,бешендалуб,pass,Magomedova,582,nums with agreement
-цеб<num><*>бешенда<num><hundred><N><sg><obl><gen>,бешендалъилъ,pass,Magomedova,582,nums without agreement
-цеб<num><*>гьацӀа<num><ten><lnk>,гьацӀал,pass,Magomedova,582,linking ten
-цеб<num><*>бешенда<num><hundred><lnk>,бешенчӀекӀуб,pass,Kibrik,156,linking 100
-цеб<num><*>азарда<num><thousand><lnk>,азарчӀекӀуб,pass,Kibrik,156,linking 1000
-гьабда<num><*>бешенда<num><hundred><lnk>,гьаббешенчӀекӀуб,pass,Kibrik,156,linking divisible.by.100
-гьабда<num><*>азарда<num><thousand><lnk>,гьабазарчӀекӀуб,pass,Kibrik,156,linking divisible.by.1000
+цеб<num><*>бешенда<num><hundred><hu><m><sg><obl><gen><nn><nt><sg>,бешендащуб,pass,Magomedova,582,nums with agreement
+цеб<num><*>бешенда<num><hundred><hu><mf><pl><obl><gen><nn><nt><sg>,бешендалуб,pass,Magomedova,582,nums with agreement
+цеб<num><*>бешенда<num><hundred><nn><nt><sg><obl><gen>,бешендалъилъ,pass,Magomedova,582,nums without agreement
+цеб<num><*>гьацӀа<num><ten><cmp>,гьацӀал,pass,Magomedova,582,linking ten
+цеб<num><*>бешенда<num><hundred><cmp>,бешенчӀекӀуб,pass,Kibrik,156,linking 100
+цеб<num><*>азарда<num><thousand><cmp>,азарчӀекӀуб,pass,Kibrik,156,linking 1000
+гьабда<num><*>бешенда<num><hundred><cmp>,гьаббешенчӀекӀуб,pass,Kibrik,156,linking divisible.by.100
+гьабда<num><*>азарда<num><thousand><cmp>,гьабазарчӀекӀуб,pass,Kibrik,156,linking divisible.by.1000
 гьабда<num><mult>,гьабацӀис,pass,Kibrik,158,multiplicative nums below 10
 гьабда<num><*>гьацӀа<num><ten><mult>,гьабацӀалъир,pass,Kibrik,158,multiplicative nums over 10
 гьабда<num><distr><*>бешенда<num><hundred>,гьаббешибешенда,pass,Kibrik,158,distributional nums
 гьабда<num><distr><*>азарда<num><thousand>,гьабазиазарда,pass,Kibrik,158,distributional nums
 цеб<num><distr><*>бешенда<num><hundred>,бешибешенда,pass,Kibrik,158,distributional nums
 цеб<num><distr><*>азарда<num><thousand>,азиазарда,pass,Kibrik,158,distributional nums
-цеб<num><distr><N><sg>,цецеб,pass,Kibrik,158,distributional nums
+цеб<num><distr><nn><nt><sg>,цецеб,pass,Kibrik,158,distributional nums
 гьабда<num><distr><*>гьацӀа<num><ten>,гьабигьабацӀа,pass,Kibrik,158,distributional nums
 цеб<num><mult>,гьечӀисес,pass,Magomedova,582,ordinal one
-гьакьуда<num><ord><N><sg><nom>,гьакьуралалъоб,pass,Kibrik,159,ordinal
-гьакьуда<num><ord><N><sg><nom>,гьакьудалалъоб,pass,Kibrik,159,ordinal
-гьакьуда<num><ord><N><sg><nom>,гьакьудалъоб,pass,Kibrik,159,ordinal without -la- infix
-цеб<num><*>бешенда<num><hundred><ord><N><sg>,бешендалалъоб,pass,Kibrik,159,ordinal
-цеб<num><*>азарда<num><thousand><ord><N><sg>,азардалалъоб,pass,Kibrik,159,ordinal
-цеб<num><*>гьацӀа<num><ten><lnk>иᵸщтуда<num><ord><N><sg>,гьацӀалиᵸщтуралалъоб,pass,Kibrik,159,ordinal complex
-гьакьуда<num><ord><N><sg><obl><erg>,гьакьудалалъоблъир,pass,Kibrik,159,ordinal oblique case
+гьакьуда<num><ord><nn><nt><sg><nom>,гьакьуралалъоб,pass,Kibrik,159,ordinal
+гьакьуда<num><ord><nn><nt><sg><nom>,гьакьудалалъоб,pass,Kibrik,159,ordinal
+гьакьуда<num><ord><nn><nt><sg><nom>,гьакьудалъоб,pass,Kibrik,159,ordinal without -la- infix
+цеб<num><*>бешенда<num><hundred><ord><nn><nt><sg>,бешендалалъоб,pass,Kibrik,159,ordinal
+цеб<num><*>азарда<num><thousand><ord><nn><nt><sg>,азардалалъоб,pass,Kibrik,159,ordinal
+цеб<num><*>гьацӀа<num><ten><cmp>иᵸщтуда<num><ord><nn><nt><sg>,гьацӀалиᵸщтуралалъоб,pass,Kibrik,159,ordinal complex
+гьакьуда<num><ord><nn><nt><sg><obl><erg>,гьакьудалалъоблъир,pass,Kibrik,159,ordinal oblique case
 гьабда<num><distr>,гьабдигьабда,pass,Kibrik,158,regular distributional numeral
-де<pronoun><1P><sg><nom>,де,pass,Kibrik,161,per.pronoun 1 person absolutive
-де<pronoun><1P><sg><obl><erg>,ден,pass,Kibrik,161,per.pronoun 1 person oblique
-де<pronoun><1P><sg><obl><sup><ess>,дила,pass,Kibrik,161,per.pronoun 1 person oblique
-ме<pronoun><2P><sg><nom>,ме,pass,Magomedova,161,per.pronoun 2 person absolutive
-ме<pronoun><2P><sg><obl><erg>,мен,pass,Kibrik,161,per.pronoun 2 person oblique
-ме<pronoun><2P><sg><obl><sup><ess>,дула,pass,Magomedova,161,per.pronoun 2 person oblique
-ищи<pronoun><1P><pl><excl><nom>,ищи,pass,Kibrik,161,1p exclusive absolutive
-ищи<pronoun><1P><pl><excl><obl><erg>,ищир,pass,Magomedova,161,1p exclusive oblique
-илӀи<pronoun><1P><pl><incl><nom>,илъи,pass,Kibrik,161,1p inclusive absolutive
-илӀи<pronoun><1P><pl><incl><obl><erg>,илъир,pass,Kibrik,161,1p inclusive oblique
-бищти<pronoun><2P><pl><nom>,бищди,pass,Magomedova,161,2p absolutive
-бищти<pronoun><2P><pl><obl><erg>,бищдир,pass,Kibrik,161,2p oblique
-аб<pronoun><3P><M><sg><nom>,ав,pass,Kibrik,162,demonstratives
-аб<pronoun><3P><M><sg><obl><erg>,ащур,pass,Kibrik,162,demonstratives
-аб<pronoun><3P><H><pl><nom>,аба,pass,Kibrik,162,demonstratives
-аб<pronoun><3P><H><pl><obl><erg>,арур,pass,Kibrik,162,demonstratives
-аб<pronoun><3P><H><pl><obl><gen><N><sg>,аруб,pass,Kibrik,162,demonstratives
-аб<pronoun><3P><N><pl><nom>,ар,pass,Kibrik,162,demonstratives
-аб<pronoun><3P><N><pl><obl><erg>,арир,pass,Kibrik,162,demonstratives
-аб<pronoun><3P><N><pl><obl><gen>,арилъ,pass,Kibrik,162,demonstratives
-аб<pronoun><3P><H><pl><obl><dat>,ара,pass,Kibrik,162,demonstratives exclusive form
-аб<pronoun><3P><H><pl><obl><dat>,арва,pass,Kibrik,162,demonstratives exclusive form
-аб<pronoun><3P><H><pl><obl><sup>,ара,pass,Kibrik,162,demonstratives exclusive form
-аб<pronoun><3P><H><pl><obl><sup>,арва,pass,Kibrik,162,demonstratives exclusive form
-аб<pronoun><3P><M><sg><obl><dat>,ащва,pass,Kibrik,162,demonstratives exclusive form
-аб<pronoun><3P><M><sg><obl><sup>,ащва,pass,Kibrik,162,demonstratives exclusive form
-об<pronoun><3P><M><sg><nom>,ов,pass,Kibrik,162,demonstratives
-об<pronoun><3P><M><sg><obl><erg>,ощур,pass,Kibrik,162,demonstratives
-уб<pronoun><3P><M><sg><nom>,ув,pass,Kibrik,162,demonstratives
-уб<pronoun><3P><M><sg><obl><erg>,ущур,pass,Kibrik,162,demonstratives
-угьуб<pronoun><3P><M><sg><nom>,угьув,pass,Kibrik,162,demonstratives
-угьуб<pronoun><3P><M><sg><obl><erg>,угьувщур,pass,Kibrik,162,demonstratives
-об<pronoun><3P><N><sg><adverb>,обе,pass,Kibrik,161,adverbial pronoun
-угьуб<pronoun><3P><N><sg><adverb>,угьубе,pass,Kibrik,161,adverbial pronoun
-аб<pronoun><3P><N><sg><adverb>,агьибе,pass,Kibrik,161,adverbial pronoun
-эб<pronoun><log><3P><M><sg><nom>,эв,pass,Kibrik,162,logophoric absolutive
-эб<pronoun><log><3P><M><sg><nom><ref>,эвда,pass,Kibrik,161,reflexive absolutive
-эб<pronoun><log><3P><M><sg><obl><erg>,инщур,pass,Kibrik,162,logophoric oblique
-эб<pronoun><log><3P><M><sg><obl><erg><ref>,инщурда,pass,Kibrik,161,reflexive oblique
-эб<pronoun><log><3P><N><sg><obl><erg>,инлъир,pass,Kibrik,162,logophoric oblique
-эб<pronoun><log><3P><N><sg><obl><erg><ref>,инлъирда,pass,Kibrik,161,reflexive oblique
-эб<pronoun><log><3P><H><pl><obl><erg>,индур,pass,Kibrik,162,logophoric oblique
-эб<pronoun><log><3P><H><pl><obl><erg><ref>,индурда,pass,Kibrik,161,reflexive oblique
-эб<pronoun><log><3P><N><pl><obl><erg>,индирир,pass,Kibrik,162,logophoric oblique
-эб<pronoun><log><3P><N><pl><obl><erg><ref>,индирирда,pass,Kibrik,161,reflexive oblique
-чвам<pronoun><inter><nom>,чвам,pass,Kibrik,164,inter.pronoun absolutive
-чвам<pronoun><inter><M><sg><obl><erg>,чвамщур,pass,Kibrik,164,inter.pronoun oblique
-чвам<pronoun><inter><F><sg><obl><erg>,чвамлъир,pass,Kibrik,164,inter.pronoun oblique
-чвам<pronoun><inter><N><sg><obl><erg>,чвамлъир,pass,Kibrik,164,inter.pronoun oblique
-чвам<pronoun><inter><H><pl><obl><erg>,чвамалур,pass,Kibrik,164,inter.pronoun oblique
-чвам<pronoun><inter><nom>,чом,pass,Kibrik,163,inter.pronoun absolutive
-эшта<pronoun><inter>,эшта,pass,Kibrik,163,inter.pronoun
-инди<pronoun><inter>,инди,pass,Kibrik,163,inter.pronoun
-эб<pronoun><inter><H><nom>,эм,pass,Kibrik,164,inter.pronoun
-эб<pronoun><inter><N><sg><nom>,эб,pass,Kibrik,164,inter.pronoun
-эб<pronoun><inter><N><pl><nom>,эр,pass,Kibrik,164,inter.pronoun
-эб<pronoun><inter><H><obl><erg>,лъор,pass,Kibrik,164,inter.pronoun
-эб<pronoun><inter><N><obl><erg>,элъир,pass,Kibrik,164,inter.pronoun
-эб<pronoun><inter><H><nom><indef>,эмдала,pass,Kibrik,165,indef.pronoun ser1
-эб<pronoun><inter><H><nom><M><sg><indef><M><sg>,эмвукӀавола,pass,Kibrik,165,indef.pronoun ser2 Msg
-эб<pronoun><inter><N><sg><nom><N><sg><indef><N><sg>,эббукӀабола,pass,Kibrik,165,indef.pronoun ser2 Msg
-эб<pronoun><inter><H><nom><H><pl><indef><H><pl>,эмбукӀурола,pass,Kibrik,165,indef.pronoun ser2 Msg
-эб<pronoun><inter><N><pl><nom><N><pl><indef><N><pl>,эррукӀарола,pass,Kibrik,165,indef.pronoun ser2 Msg
-эб<pronoun><inter><H><nom><univ><nom>,эмгӀагила,pass,Kibrik,166,univ.pronoun absolutive
-эб<pronoun><inter><H><nom><univ><M><sg><obl><erg>,эмгӀагилащур,pass,Kibrik,166,univ.pronoun Msg oblique
-эбеб<pronoun><M><sg><M><sg><nom>,эвев,pass,Kibrik,167,"Each" pronoun MSG absolutive
-эбеб<pronoun><F><sg><F><sg><nom>,эйей,pass,Kibrik,167,"Each" pronoun FSG absolutive
-эбеб<pronoun><N><sg><N><sg><nom>,эбеб,pass,Kibrik,167,"Each" pronoun NSG absolutive
-эбеб<pronoun><M><sg><M><sg><obl><erg>,эвевщур,pass,Kibrik,167,"Each" pronoun MSG oblique
-эбеб<pronoun><M><sg><M><sg><obl><gen><N><sg>,эвевщуб,pass,Kibrik,167,"Each" pronoun MSG genitive
-эбеб<pronoun><F><sg><F><sg><obl><erg>,эйейлъир,pass,Kibrik,167,"Each" pronoun FSG oblique
-эбеб<pronoun><N><sg><N><sg><obl><erg>,эбеблъир,pass,Kibrik,167,"Each" pronoun NSG oblique
-<M><sg>бусӀабда<pronoun><M><sg><nom>,вусӀавда,pass,Kibrik,167,Non-distribut.univ.pronoun MSG absolutive
-<M><sg>бусӀабда<pronoun><M><sg><obl><erg>,вусӀавщурда,pass,Kibrik,167,Non-distribut.univ.pronoun MSG oblique
-<M><sg>бусӀабда<pronoun><M><sg><obl><gen><N><sg>,вусӀавщубда,pass,Kibrik,167,Non-distribut.univ.pronoun MSG genitive
-<N><sg>бусӀабда<pronoun><N><sg><nom>,бусӀабда,pass,Kibrik,167,Non-distribut.univ.pronoun NSG absolutive
-<N><sg>бусӀабда<pronoun><N><sg><obl><erg>,бусӀаблъирда,pass,Kibrik,167,Non-distribut.univ.pronoun NSG oblique
-эштуб<pronoun><inter><M><sg><nom>,эштув,pass,Kibrik,164,
-эштуб<pronoun><inter><M><sg><obl><erg>,эштувщур,pass,Kibrik,164,
-эштуб<pronoun><inter><M><sg><obl><gen><N><sg>,эштувщуб,pass,Kibrik,164,
-эштуб<pronoun><inter><N><sg><nom>,эштуб,pass,Kibrik,164,
-эштуб<pronoun><inter><N><sg><obl><erg>,эштублъир,pass,Kibrik,164,
-эштуб<pronoun><inter><N><sg><univ>,эштубгӀагила,pass,Kibrik,164,
-кьираб<adjective><M><sg><nom>,кьирав,pass,Kibrik,154,class-final adjective absolutive MSG
-кьираб<adjective><M><sg><obl><erg>,кьиравщур,pass,Kibrik,154,class-final adjective oblique MSG
-<M><sg>багьаруб<adjective><M><sg><nom>,вагьарув,pass,Kibrik,153,class-initial adjective absolutive MSG
-<M><sg>багьаруб<adjective><M><sg><obl><erg>,вагьарувщур,pass,Kibrik,153,class-initial adjective oblique MSG
-<H><pl>багьаруб<adjective><H><pl><nom>,багьаруба,pass,Kibrik,154,class-initial adjective absolutive HPL
-<H><pl>багьаруб<adjective><H><pl><obl><erg>,багьарубалур,pass,Kibrik,154,class-initial adjective oblique HPL
-эб<pronoun><inter><H><nom>,има,pass,Magomedova,580,"What kind"pronoun MSG absolutive
-эб<pronoun><inter><N><nom>,эба,pass,Magomedova,580,"What kind"pronoun NSG absolutive
-эб<pronoun><inter><H><nom>,эм,pass,Kibrik,164,"What kind"pronoun MSG absolutive
-эб<pronoun><inter><N><sg><nom>,эб,pass,Kibrik,164,"What kind"pronoun NSG absolutive
-эб<pronoun><inter><N><pl><nom>,эр,pass,Kibrik,164,"What kind"pronoun absolutive
-эб<pronoun><inter><H><obl><erg>,лъор,pass,Magomedova,580,"What kind"pronoun MSG oblique
-эб<pronoun><inter><H><obl><gen><N><sg>,лъоб,pass,Magomedova,580,"What kind"pronoun MSG genitive
-эб<pronoun><inter><N><obl><erg>,элъир,pass,Magomedova,580,"What kind"pronoun NSG oblique
-агьи<pronoun>,агьи,pass,Kibrik,837,Adverbial loc pronoun
-аща<pronoun>,аща,pass,Kibrik,837,Adverbial pronoun (Gudava)
-ашта<pronoun>,ашда,pass,Kibrik,837,Adverbial pronoun (Gudava)
-ашта<pronoun>,ашта,pass,Kibrik,838,Adverbial pronoun
-эджа<pronoun><inter>,эджа,pass,Kibrik,846,Adverbial inter.pronoun
-эджа<pronoun><inter>,эджала,pass,Kibrik,846,Adverbial inter.pronoun
-эджа<pronoun><inter>,эджали,pass,Kibrik,846,Adverbial inter.pronoun
-эщда<pronoun><inter>,эщда,pass,Magomedova,522,Adverbial inter.pronoun
-элъила<pronoun><inter>,элъила,pass,Magomedova,522,Adverbial inter.pronoun
-ашти<verb><aor>,ашти,pass,Kibrik,91,aorist Idecl
-багъаᵸ<verb><aor>,багъаᵸ,pass,Kibrik,91,aorist IIdecl
-эхе<verb><aor>,эхе,pass,Kibrik,91,aorist IIIdecl
-багӀари<verb><aor>,багӀари,pass,Kibrik,91,aorist IVdecl
-тӀа<verb><aor>,тӀа,pass,Kibrik,91,aorist Vdecl
-экӀва<verb><cop>,экӀва,pass,Kibrik,106,verb copula
-ашти<verb><aor><neg>,аштичӀи,pass,Kibrik,91,Neg aorist Idecl
-багъаᵸ<verb><aor><neg>,багъанчӀи,pass,Kibrik,91,Neg aorist IIdecl
-эхе<verb><aor><neg>,эхечӀи,pass,Kibrik,91,Neg aorist IIIdecl
-багӀари<verb><aor><neg>,багӀаричӀи,pass,Kibrik,91,Neg aorist IVdecl
-тӀа<verb><aor><neg>,тӀачӀи,pass,Kibrik,91,Neg aorist Vdecl
-экӀва<verb><cop><neg>,вечӀе,pass,Kibrik,99,Neg verb copula
-ашти<verb><aor><part><M><sg><nom>,аштув,pass,Kibrik,91,aorist participle Idecl
-багъаᵸ<verb><aor><part><M><sg><nom>,багъанв,pass,Kibrik,91,aorist participle IIdecl
-эхе<verb><aor><part><M><sg><nom>,эхов,pass,Kibrik,91,aorist participle IIIdecl
-багӀари<verb><aor><part><M><sg><nom>,багӀарув,pass,Kibrik,91,aorist participle IVdecl
-тӀа<verb><aor><part><M><sg><nom>,тӀав,pass,Kibrik,91,aorist participle Vdecl
-экӀва<verb><cop><part><M><sg><nom>,экӀвав,pass,Kibrik,99,verb copula participle.abs
-экӀва<verb><cop><part><M><sg><obl><erg>,экӀвавщур,pass,Kibrik,99,verb copula participle.erg
-ашти<verb><aor><neg><part><M><sg><nom>,аштичӀув,pass,Kibrik,91,Neg aorist participle Idecl
-багъаᵸ<verb><aor><neg><part><M><sg><nom>,багъанчӀув,pass,Kibrik,91,Neg aorist participle IIdecl
-эхе<verb><aor><neg><part><M><sg><nom>,эхечӀув,pass,Kibrik,91,Neg aorist participle IIIdecl
-багӀари<verb><aor><neg><part><M><sg><nom>,багӀаричӀув,pass,Kibrik,91,Neg aorist participle IVdecl
-тӀа<verb><aor><neg><part><M><sg><nom>,тӀачӀув,pass,Kibrik,91,Neg aorist participle Vdecl
-ашти<verb><imperf><neg><part><M><sg><nom>,аштирадачӀув,pass,Kibrik,95,Emphatetic Neg aorist participle
-ашти<verb><aor><N><sg><cvb>,аштибо,pass,Kibrik,91,aorist converb Idecl
-багъаᵸ<verb><aor><N><sg><cvb>,багъамо,pass,Kibrik,91,aorist converb IIdecl
-эхе<verb><aor><N><sg><cvb>,эхебо,pass,Kibrik,91,aorist converb IIIdecl
-багӀари<verb><aor><N><sg><cvb>,багӀарибо,pass,Kibrik,91,aorist converb IVdecl
-тӀа<verb><aor><N><sg><cvb>,тӀабо,pass,Kibrik,91,aorist converb Vdecl
-ашти<verb><aor><neg><N><sg><cvb>,аштичӀирабо,pass,Kibrik,91,Neg aorist converb Idecl
-багъаᵸ<verb><aor><neg><N><sg><cvb>,багъанчӀирабо,pass,Kibrik,91,Neg aorist converb IIdecl
-эхе<verb><aor><neg><N><sg><cvb>,эхечӀирабо,pass,Kibrik,91,Neg aorist converb IIIdecl
-багӀари<verb><aor><neg><N><sg><cvb>,багӀаричӀирабо,pass,Kibrik,91,Neg aorist converb IVdecl
-тӀа<verb><aor><neg><N><sg><cvb>,тӀачӀирабо,pass,Kibrik,91,Neg aorist converb Vdecl
-ашти<verb><imperf><neg><N><sg><cvb>,аштирадачӀирабо,pass,Kibrik,95,Emphatetic Neg aorist converb
-ашти<verb><imperf><inf>,аштира,pass,Kibrik,92,Imperf infinitive Idecl
-рекӀвеᵸ<verb><imperf><inf>,рекӀвена,pass,Kibrik,92,Imperf infinitive IIIdecl
-ашти<verb><imperf><fut><neg>,аштирачӀе,pass,Kibrik,92,Neg future Idecl
-ашти<verb><imperf><part><M><sg><nom>,аштиров,pass,Kibrik,92,Imperf.participle.abs Idecl
-ашти<verb><imperf><part><M><sg><obl><erg>,аштировщур,pass,Kibrik,92,Imperf.participle.erg Idecl
-ашти<verb><imperf><cvb>,аштирах,pass,Kibrik,92,Imperf.converb Idecl
-ашти<verb><pot><fut><synth>,аштас,pass,Kibrik,93,Synth.future Idecl
-ашти<verb><pot><fut><react>,аштаса,pass,Kibrik,93,React.future Idecl
-ашти<verb><pot><fut><cvb>,ашталъих,pass,Kibrik,94,future converb Idecl
-ашти<verb><pot><fut><part><M><sg><nom>,ашталъов,pass,Kibrik,94,future participle.abs
-ашти<verb><pot><fut><part><M><sg><obl><erg>,ашталъовщур,pass,Kibrik,94,future participle.erg
-ашти<verb><pot><inf>,ашта,pass,Kibrik,94,infinitive Idecl
-ашти<verb><pot><prosp><N><sg><cvb>,аштадибо,pass,Kibrik,94,prospective converb
-ашти<verb><proh>,аштибисе,pass,Kibrik,96,prohibitive Idecl
-ашти<verb><proh><neg><inf>,аштибичӀа,pass,Kibrik,96,neg.infinitive Idecl
-ашти<verb><proh><neg><fut><cvb>,аштибичӀалъих,pass,Kibrik,96,neg.future converb Idecl
-ашти<verb><proh><neg><part><M><sg><nom>,аштибичӀув,pass,Kibrik,96,neg.future participle I.abs Idecl
-ашти<verb><proh><neg><part><M><sg><obl><erg>,аштибичӀувщур,pass,Kibrik,96,neg.future participle I.erg Idecl
-ашти<verb><proh><neg><fut><part><M><sg><nom>,аштибичӀалъов,pass,Kibrik,96,neg.future participle II.abs Idecl
-ашти<verb><proh><neg><fut><part><M><sg><obl><erg>,аштибичӀалъовщур,pass,Kibrik,96,neg.future participle II.erg Idecl
-ашти<verb><aor><imp>,ашти,pass,Kibrik,97,imperative1 Idecl
-ашти<verb><aor><imp>,аштибе,pass,Kibrik,97,imperative2 Idecl
-ашти<verb><aor><imp><opt>,аштила,pass,Kibrik,98,optative1 Idecl
-ашти<verb><aor><imp><opt>,аштибела,pass,Kibrik,98,optative2 Idecl
-ашти<verb><proh><opt>,аштибисела,pass,Kibrik,98,Neg optative Idecl
-ашти<verb><aor><masd><nom>,аштир,pass,Kibrik,90,Masdar absolutive
-ашти<verb><aor><masd><obl><erg>,аштирлъир,pass,Kibrik,90,Masdar oblique
-ракъиᵸ<verb><aor><masd><nom>,ракъин,pass,Kibrik,90,Masdar for nasalized, absolutive
-ашти<verb><aor><neg><masd><nom>,аштичӀир,pass,Kibrik,91,Neg. Masdar
-ашти<verb><aor><neg><masd><obl><erg>,аштичӀирлъир,pass,Kibrik,91,Neg. Masdar
-ракъиᵸ<verb><aor><neg><masd><nom>,ракъинчӀир,pass,Kibrik,91,Neg.Masdar for nasalized, absolutive
-ашти<verb><imperf><neg><masd><nom>,аштирадачӀир,pass,Kibrik,95,Emphatetic Neg. Masdar
-ашти<verb><imperf><neg><masd><obl><erg>,аштирадачӀирлъир,pass,Kibrik,95,Emphatetic Neg. Masdar
-ракъиᵸ<verb><imperf><neg><masd><nom>,ракъинадачӀир,pass,Kibrik,95,Emphatetic Neg.Masdar for nasalized, absolutive
-има<noun><nom>,има,pass,Kibrik,130,Noun absolutive
-агьан<noun><obl><erg>,агьанр,pass,Kibrik,130,Noun + (-) oblique
-агьан<noun><obl><gen>,агьанлъ,pass,Kibrik,130,Noun + (-) genitive
-аграном<noun><obl><erg>,аграномщур,pass,Kibrik,130,Animate noun + (Su) oblique
-аграном<noun><obl><gen><N><sg>,аграномщуб,pass,Kibrik,130,Animate noun + (Su) genitive
-абтека<noun><obl><erg>,абтекалъир,pass,Kibrik,130,Noun + (Li) oblique
-абтека<noun><obl><gen>,абтекалъилъ,pass,Kibrik,130,Noun + (Li) genitive
-абтамат<noun><obl><erg>,абтаматир,pass,Kibrik,130,Noun + (I) oblique
-абтамат<noun><obl><gen>,абтаматилъ,pass,Kibrik,130,Noun + (I) genitive
-бакьун<noun><obl><erg>,бакьунар,pass,Kibrik,130,Noun + (A) oblique
-бакьун<noun><obl><gen>,бакьуналъ,pass,Kibrik,130,Noun + (A) genitive
-абтобус<noun><obl><erg>,абтобусур,pass,Kibrik,130,Noun + (U) oblique
-абтобус<noun><obl><gen>,абтобусулъ,pass,Kibrik,130,Noun + (U) genitive
-бечӀва<noun><obl><erg>,бечӀвер,pass,Kibrik,130,Noun + (E) oblique
-бечӀва<noun><obl><gen>,бечӀвелъ,pass,Kibrik,130,Noun + (E) genitive
-бежун<noun><obl><erg>,бежванр,pass,Kibrik,130,Noun + (n alt) oblique
-бежун<noun><obl><gen>,бежванлъ,pass,Kibrik,130,Noun + (n alt) genitive
-муч<noun><obl><erg>,мучулар,pass,Kibrik,132,Noun (irreg) oblique
-муч<noun><obl><gen>,мучулалъ,pass,Kibrik,132,Noun (irreg) genitive
-акушерка<noun><pl><nom>,акушеркаби,pass,Kibrik,132,Animate noun + (bi) plural absolutive
-акушерка<noun><pl><obl><erg>,акушеркабалур,pass,Kibrik,133,Animate noun + (bi) plural oblique
-акушерка<noun><pl><obl><gen><N><sg>,акушеркабалуб,pass,Kibrik,133,Animate noun + (bi) plural genitive
-аварийа<noun><pl><nom>,аварийаби,pass,Kibrik,132,Noun+ (bi) plural absolutive
-аварийа<noun><pl><obl><erg>,аварийабар,pass,Kibrik,138,Noun + (bi) plural oblique
-аварийа<noun><pl><obl><gen>,аварийабалъ,pass,Kibrik,138,Noun + (bi) plural genitive
-айрадром<noun><pl><nom>,айрадромаби,pass,Kibrik,132,Noun + (abi) plural absolutive
-айрадром<noun><pl><obl><erg>,айрадромабар,pass,Kibrik,138,Noun + (abi) plural oblique
-айрадром<noun><pl><obl><gen>,айрадромабалъ,pass,Kibrik,138,Noun + (abi) plural genitive
-гъараваш<noun><pl><nom>,гъаравашаби,pass,Kibrik,132,Animate noun + (abi) plural absolutive
-гъараваш<noun><pl><obl><erg>,гъаравашабалур,pass,Kibrik,133,Animate noun + (abi) plural oblique
-гъараваш<noun><pl><obl><gen><N><sg>,гъаравашабалуб,pass,Kibrik,133,Animate noun + (abi) plural genitive
-тӀусӀ<noun><pl><nom>,тӀусӀуби,pass,Kibrik,132,Noun + (ubi) plural absolutive
-тӀусӀ<noun><pl><obl><erg>,тӀусӀубар,pass,Kibrik,138,Noun + (ubi) plural oblique
-тӀусӀ<noun><pl><obl><gen>,тӀусӀубалъ,pass,Kibrik,138,Noun + (ubi) plural genitive
-анча<noun><pl><nom>,анчиби,pass,Kibrik,132,Noun + (ibi) plural absolutive
-анча<noun><pl><obl><erg>,анчибар,pass,Kibrik,138,Noun + (ibi) plural oblique
-анча<noun><pl><obl><gen>,анчибалъ,pass,Kibrik,138,Noun + (ibi) plural genitive
-има<noun><pl><nom>,имиби,pass,Kibrik,132,Animate noun + (ibi) plural absolutive
-има<noun><pl><obl><erg>,имибалур,pass,Kibrik,133,Animate noun + (ibi) plural oblique
-има<noun><pl><obl><gen><N><sg>,имибалуб,pass,Kibrik,133,Animate noun + (ibi) plural genitive
-гама<noun><pl><nom>,гамеби,pass,Kibrik,132,Noun + (ebi) plural absolutive
-гама<noun><pl><obl><erg>,гамебар,pass,Kibrik,138,Noun + (ebi) plural oblique
-гама<noun><pl><obl><gen>,гамебалъ,pass,Kibrik,138,Noun + (ebi) plural genitive
-дада<noun><pl><nom>,дадеби,pass,Kibrik,132,Animate noun + (ebi) plural absolutive
-дада<noun><pl><obl><erg>,дадебалур,pass,Kibrik,133,Animate noun + (ebi) plural oblique
-дада<noun><pl><obl><gen><N><sg>,дадебалуб,pass,Kibrik,133,Animate noun + (ebi) plural genitive
-гьорко<noun><pl><nom>,гьоркойаби,pass,Kibrik,132,Noun + (jabi) plural absolutive
-гьорко<noun><pl><obl><erg>,гьоркойабар,pass,Kibrik,138,Noun + (jabi) plural oblique
-гьорко<noun><pl><obl><gen>,гьоркойабалъ,pass,Kibrik,138,Noun + (jabi) plural genitive
-абицар<noun><pl><nom>,абицарзаби,pass,Kibrik,132,Animate noun + (jabi) plural absolutive
-абицар<noun><pl><obl><erg>,абицарзабалур,pass,Kibrik,133,Animate noun + (jabi) plural oblique
-абицар<noun><pl><obl><gen><N><sg>,абицарзабалуб,pass,Kibrik,133,Animate noun + (jabi) plural genitive
-бесун<noun><pl><nom>,бесвами,pass,Kibrik,132,Noun + (mi) plural absolutive
-бесун<noun><pl><obl><erg>,бесвамар,pass,Kibrik,138,Noun + (mi) plural oblique
-бесун<noun><pl><obl><gen>,бесвамалъ,pass,Kibrik,138,Noun + (mi) plural genitive
-гӀолохъан<noun><pl><nom>,гӀолохъами,pass,Kibrik,132,Animate noun + (mi) plural absolutive
-гӀолохъан<noun><pl><obl><erg>,гӀолохъамалур,pass,Kibrik,133,Animate noun + (mi) plural oblique
-гӀолохъан<noun><pl><obl><gen><N><sg>,гӀолохъамалуб,pass,Kibrik,133,Animate noun + (mi) plural genitive
-абагун<noun><pl><nom>,абагундари,pass,Kibrik,132,Noun + (dari) plural absolutive
-абагун<noun><pl><obl><erg>,абагундарар,pass,Kibrik,138,Noun + (dari) plural oblique
-абагун<noun><pl><obl><gen>,абагундаралъ,pass,Kibrik,138,Noun + (dari) plural genitive
-васаб<noun><pl><nom>,васабдари,pass,Kibrik,132,Animate noun + (dari) plural absolutive
-васаб<noun><pl><obl><erg>,васабдаралур,pass,Kibrik,133,Animate noun + (dari) plural oblique
-васаб<noun><pl><obl><gen><N><sg>,васабдаралуб,pass,Kibrik,133,Animate noun + (dari) plural genitive
-гьемер<noun><pl><nom>,гьемерди,pass,Kibrik,132,Noun + (di) plural absolutive
-гьемер<noun><pl><obl><erg>,гьемердар,pass,Kibrik,138,Noun + (di) plural oblique
-гьемер<noun><pl><obl><gen>,гьемердалъ,pass,Kibrik,138,Noun + (di) plural genitive
-вахьур<noun><pl><nom>,вахьурди,pass,Kibrik,132,Animate noun + (di) plural absolutive
-вахьур<noun><pl><obl><erg>,вахьурдилур,pass,Kibrik,133,Animate noun + (di) plural oblique
-вахьур<noun><pl><obl><gen><N><sg>,вахьурдилуб,pass,Kibrik,133,Animate noun + (di) plural genitive
-дум<noun><pl><nom>,думали,pass,Kibrik,132,Noun + (ali) plural absolutive
-дум<noun><pl><obl><erg>,думалар,pass,Kibrik,138,Noun + (ali) plural oblique
-дум<noun><pl><obl><gen>,думалалъ,pass,Kibrik,138,Noun + (ali) plural genitive
-пасажир<noun><pl><nom>,пасажиради,pass,Kibrik,132,Animate noun + (adi) plural absolutive
-пасажир<noun><pl><obl><erg>,пасажирадилур,pass,Kibrik,133,Animate noun + (adi) plural oblique
-пасажир<noun><pl><obl><gen><N><sg>,пасажирадилуб,pass,Kibrik,133,Animate noun + (adi) plural genitive
-тухтур<noun><pl><nom>,тухтурари,pass,Kibrik,137,Animate noun + (ari) plural absolutive
-тухтур<noun><pl><obl><erg>,тухтурарур,pass,Kibrik,137,Animate noun + (ari) plural oblique
-тухтур<noun><pl><obl><gen><N><sg>,тухтураруб,pass,Kibrik,137,Animate noun + (ari) plural genitive
-вас<noun><pl><nom>,васибади,pass,Kibrik,135,Animate noun + (ibadi) plural absolutive
-вас<noun><pl><obl><erg>,васибадилур,pass,Kibrik,135,Animate noun + (ibadi) plural oblique
-вас<noun><pl><obl><gen><N><sg>,васибадилуб,pass,Kibrik,135,Animate noun + (ibadi) plural genitive
-гъаб<noun><pl><nom>,гъаба,pass,Kibrik,138,Noun + (a) plural absolutive
-гъаб<noun><pl><obl><erg>,гъабер,pass,Kibrik,138,Noun + (a) plural oblique
-гъаб<noun><pl><obl><gen>,гъабелъ,pass,Kibrik,138,Noun + (a) plural genitive
-гъеж<noun><pl><nom>,гъежи,pass,Kibrik,134,Noun + (i) plural absolutive
-гъеж<noun><pl><obl><erg>,гъежир,pass,Kibrik,138,Noun + (i) plural oblique
-гъеж<noun><pl><obl><gen>,гъежилъ,pass,Kibrik,138,Noun + (i) plural genitive
-мачӀ<noun><pl><nom>,мачӀи,pass,Kibrik,134,Animate noun + (i) plural absolutive
-мачӀ<noun><pl><obl><erg>,мачӀалур,pass,Kibrik,137,Animate noun + (i) plural oblique
-мачӀ<noun><pl><obl><gen><N><sg>,мачӀалуб,pass,Kibrik,137,Animate noun + (i) plural genitive
+де<prn><p1><sg><nom>,де,pass,Kibrik,161,per.pronoun 1 person absolutive
+де<prn><p1><sg><obl><erg>,ден,pass,Kibrik,161,per.pronoun 1 person oblique
+де<prn><p1><sg><obl><sup><ess>,дила,pass,Kibrik,161,per.pronoun 1 person oblique
+ме<prn><p2><sg><nom>,ме,pass,Magomedova,161,per.pronoun 2 person absolutive
+ме<prn><p2><sg><obl><erg>,мен,pass,Kibrik,161,per.pronoun 2 person oblique
+ме<prn><p2><sg><obl><sup><ess>,дула,pass,Magomedova,161,per.pronoun 2 person oblique
+ищи<prn><p1><pl><excl><nom>,ищи,pass,Kibrik,161,1p exclusive absolutive
+ищи<prn><p1><pl><excl><obl><erg>,ищир,pass,Magomedova,161,1p exclusive oblique
+илӀи<prn><p1><pl><incl><nom>,илъи,pass,Kibrik,161,1p inclusive absolutive
+илӀи<prn><p1><pl><incl><obl><erg>,илъир,pass,Kibrik,161,1p inclusive oblique
+бищти<prn><p2><pl><nom>,бищди,pass,Magomedova,161,2p absolutive
+бищти<prn><p2><pl><obl><erg>,бищдир,pass,Kibrik,161,2p oblique
+аб<prn><p3><hu><m><sg><nom>,ав,pass,Kibrik,162,demonstratives
+аб<prn><p3><hu><m><sg><obl><erg>,ащур,pass,Kibrik,162,demonstratives
+аб<prn><p3><hu><mf><pl><nom>,аба,pass,Kibrik,162,demonstratives
+аб<prn><p3><hu><mf><pl><obl><erg>,арур,pass,Kibrik,162,demonstratives
+аб<prn><p3><hu><mf><pl><obl><gen><nn><nt><sg>,аруб,pass,Kibrik,162,demonstratives
+аб<prn><p3><nn><nt><pl><nom>,ар,pass,Kibrik,162,demonstratives
+аб<prn><p3><nn><nt><pl><obl><erg>,арир,pass,Kibrik,162,demonstratives
+аб<prn><p3><nn><nt><pl><obl><gen>,арилъ,pass,Kibrik,162,demonstratives
+аб<prn><p3><hu><mf><pl><obl><dat>,ара,pass,Kibrik,162,demonstratives exclusive form
+аб<prn><p3><hu><mf><pl><obl><dat>,арва,pass,Kibrik,162,demonstratives exclusive form
+аб<prn><p3><hu><mf><pl><obl><sup>,ара,pass,Kibrik,162,demonstratives exclusive form
+аб<prn><p3><hu><mf><pl><obl><sup>,арва,pass,Kibrik,162,demonstratives exclusive form
+аб<prn><p3><hu><m><sg><obl><dat>,ащва,pass,Kibrik,162,demonstratives exclusive form
+аб<prn><p3><hu><m><sg><obl><sup>,ащва,pass,Kibrik,162,demonstratives exclusive form
+об<prn><p3><hu><m><sg><nom>,ов,pass,Kibrik,162,demonstratives
+об<prn><p3><hu><m><sg><obl><erg>,ощур,pass,Kibrik,162,demonstratives
+уб<prn><p3><hu><m><sg><nom>,ув,pass,Kibrik,162,demonstratives
+уб<prn><p3><hu><m><sg><obl><erg>,ущур,pass,Kibrik,162,demonstratives
+угьуб<prn><p3><hu><m><sg><nom>,угьув,pass,Kibrik,162,demonstratives
+угьуб<prn><p3><hu><m><sg><obl><erg>,угьувщур,pass,Kibrik,162,demonstratives
+об<prn><p3><nn><nt><sg><adv>,обе,pass,Kibrik,161,adverbial pronoun
+угьуб<prn><p3><nn><nt><sg><adv>,угьубе,pass,Kibrik,161,adverbial pronoun
+аб<prn><p3><nn><nt><sg><adv>,агьибе,pass,Kibrik,161,adverbial pronoun
+эб<prn><log><p3><hu><m><sg><nom>,эв,pass,Kibrik,162,logophoric absolutive
+эб<prn><log><p3><hu><m><sg><nom><ref>,эвда,pass,Kibrik,161,reflexive absolutive
+эб<prn><log><p3><hu><m><sg><obl><erg>,инщур,pass,Kibrik,162,logophoric oblique
+эб<prn><log><p3><hu><m><sg><obl><erg><ref>,инщурда,pass,Kibrik,161,reflexive oblique
+эб<prn><log><p3><nn><nt><sg><obl><erg>,инлъир,pass,Kibrik,162,logophoric oblique
+эб<prn><log><p3><nn><nt><sg><obl><erg><ref>,инлъирда,pass,Kibrik,161,reflexive oblique
+эб<prn><log><p3><hu><mf><pl><obl><erg>,индур,pass,Kibrik,162,logophoric oblique
+эб<prn><log><p3><hu><mf><pl><obl><erg><ref>,индурда,pass,Kibrik,161,reflexive oblique
+эб<prn><log><p3><nn><nt><pl><obl><erg>,индирир,pass,Kibrik,162,logophoric oblique
+эб<prn><log><p3><nn><nt><pl><obl><erg><ref>,индирирда,pass,Kibrik,161,reflexive oblique
+чвам<prn><itg><nom>,чвам,pass,Kibrik,164,inter.pronoun absolutive
+чвам<prn><itg><hu><m><sg><obl><erg>,чвамщур,pass,Kibrik,164,inter.pronoun oblique
+чвам<prn><itg><hu><f><sg><obl><erg>,чвамлъир,pass,Kibrik,164,inter.pronoun oblique
+чвам<prn><itg><nn><nt><sg><obl><erg>,чвамлъир,pass,Kibrik,164,inter.pronoun oblique
+чвам<prn><itg><hu><mf><pl><obl><erg>,чвамалур,pass,Kibrik,164,inter.pronoun oblique
+чвам<prn><itg><nom>,чом,pass,Kibrik,163,inter.pronoun absolutive
+эшта<prn><itg>,эшта,pass,Kibrik,163,inter.pronoun
+инди<prn><itg>,инди,pass,Kibrik,163,inter.pronoun
+эб<prn><itg><hu><mf><nom>,эм,pass,Kibrik,164,inter.pronoun
+эб<prn><itg><nn><nt><sg><nom>,эб,pass,Kibrik,164,inter.pronoun
+эб<prn><itg><nn><nt><pl><nom>,эр,pass,Kibrik,164,inter.pronoun
+эб<prn><itg><hu><mf><obl><erg>,лъор,pass,Kibrik,164,inter.pronoun
+эб<prn><itg><nn><nt><obl><erg>,элъир,pass,Kibrik,164,inter.pronoun
+эб<prn><itg><hu><mf><nom><indef>,эмдала,pass,Kibrik,165,indef.pronoun ser1
+эб<prn><itg><hu><mf><nom><hu><m><sg><indef><hu><m><sg>,эмвукӀавола,pass,Kibrik,165,indef.pronoun ser2 Msg
+эб<prn><itg><nn><nt><sg><nom><nn><nt><sg><indef><nn><nt><sg>,эббукӀабола,pass,Kibrik,165,indef.pronoun ser2 Msg
+эб<prn><itg><hu><mf><nom><hu><mf><pl><indef><hu><mf><pl>,эмбукӀурола,pass,Kibrik,165,indef.pronoun ser2 Msg
+эб<prn><itg><nn><nt><pl><nom><nn><nt><pl><indef><nn><nt><pl>,эррукӀарола,pass,Kibrik,165,indef.pronoun ser2 Msg
+эб<prn><itg><hu><mf><nom><univ><nom>,эмгӀагила,pass,Kibrik,166,univ.pronoun absolutive
+эб<prn><itg><hu><mf><nom><univ><hu><m><sg><obl><erg>,эмгӀагилащур,pass,Kibrik,166,univ.pronoun Msg oblique
+эбеб<prn><hu><m><sg><hu><m><sg><nom>,эвев,pass,Kibrik,167,"Each" pronoun MSG absolutive
+эбеб<prn><hu><f><sg><hu><f><sg><nom>,эйей,pass,Kibrik,167,"Each" pronoun FSG absolutive
+эбеб<prn><nn><nt><sg><nn><nt><sg><nom>,эбеб,pass,Kibrik,167,"Each" pronoun NSG absolutive
+эбеб<prn><hu><m><sg><hu><m><sg><obl><erg>,эвевщур,pass,Kibrik,167,"Each" pronoun MSG oblique
+эбеб<prn><hu><m><sg><hu><m><sg><obl><gen><nn><nt><sg>,эвевщуб,pass,Kibrik,167,"Each" pronoun MSG genitive
+эбеб<prn><hu><f><sg><hu><f><sg><obl><erg>,эйейлъир,pass,Kibrik,167,"Each" pronoun FSG oblique
+эбеб<prn><nn><nt><sg><nn><nt><sg><obl><erg>,эбеблъир,pass,Kibrik,167,"Each" pronoun NSG oblique
+<hu><m><sg>бусӀабда<prn><hu><m><sg><nom>,вусӀавда,pass,Kibrik,167,Non-distribut.univ.pronoun MSG absolutive
+<hu><m><sg>бусӀабда<prn><hu><m><sg><obl><erg>,вусӀавщурда,pass,Kibrik,167,Non-distribut.univ.pronoun MSG oblique
+<hu><m><sg>бусӀабда<prn><hu><m><sg><obl><gen><nn><nt><sg>,вусӀавщубда,pass,Kibrik,167,Non-distribut.univ.pronoun MSG genitive
+<nn><nt><sg>бусӀабда<prn><nn><nt><sg><nom>,бусӀабда,pass,Kibrik,167,Non-distribut.univ.pronoun NSG absolutive
+<nn><nt><sg>бусӀабда<prn><nn><nt><sg><obl><erg>,бусӀаблъирда,pass,Kibrik,167,Non-distribut.univ.pronoun NSG oblique
+эштуб<prn><itg><hu><m><sg><nom>,эштув,pass,Kibrik,164,
+эштуб<prn><itg><hu><m><sg><obl><erg>,эштувщур,pass,Kibrik,164,
+эштуб<prn><itg><hu><m><sg><obl><gen><nn><nt><sg>,эштувщуб,pass,Kibrik,164,
+эштуб<prn><itg><nn><nt><sg><nom>,эштуб,pass,Kibrik,164,
+эштуб<prn><itg><nn><nt><sg><obl><erg>,эштублъир,pass,Kibrik,164,
+эштуб<prn><itg><nn><nt><sg><univ>,эштубгӀагила,pass,Kibrik,164,
+кьираб<adj><hu><m><sg><nom>,кьирав,pass,Kibrik,154,class-final adjective absolutive MSG
+кьираб<adj><hu><m><sg><obl><erg>,кьиравщур,pass,Kibrik,154,class-final adjective oblique MSG
+<hu><m><sg>багьаруб<adj><hu><m><sg><nom>,вагьарув,pass,Kibrik,153,class-initial adjective absolutive MSG
+<hu><m><sg>багьаруб<adj><hu><m><sg><obl><erg>,вагьарувщур,pass,Kibrik,153,class-initial adjective oblique MSG
+<hu><mf><pl>багьаруб<adj><hu><mf><pl><nom>,багьаруба,pass,Kibrik,154,class-initial adjective absolutive HPL
+<hu><mf><pl>багьаруб<adj><hu><mf><pl><obl><erg>,багьарубалур,pass,Kibrik,154,class-initial adjective oblique HPL
+эб<prn><itg><hu><mf><nom>,има,pass,Magomedova,580,"What kind"pronoun MSG absolutive
+эб<prn><itg><nn><nt><nom>,эба,pass,Magomedova,580,"What kind"pronoun NSG absolutive
+эб<prn><itg><hu><mf><nom>,эм,pass,Kibrik,164,"What kind"pronoun MSG absolutive
+эб<prn><itg><nn><nt><sg><nom>,эб,pass,Kibrik,164,"What kind"pronoun NSG absolutive
+эб<prn><itg><nn><nt><pl><nom>,эр,pass,Kibrik,164,"What kind"pronoun absolutive
+эб<prn><itg><hu><mf><obl><erg>,лъор,pass,Magomedova,580,"What kind"pronoun MSG oblique
+эб<prn><itg><hu><mf><obl><gen><nn><nt><sg>,лъоб,pass,Magomedova,580,"What kind"pronoun MSG genitive
+эб<prn><itg><nn><nt><obl><erg>,элъир,pass,Magomedova,580,"What kind"pronoun NSG oblique
+агьи<prn>,агьи,pass,Kibrik,837,Adverbial loc pronoun
+аща<prn>,аща,pass,Kibrik,837,Adverbial pronoun (Gudava)
+ашта<prn>,ашда,pass,Kibrik,837,Adverbial pronoun (Gudava)
+ашта<prn>,ашта,pass,Kibrik,838,Adverbial pronoun
+эджа<prn><itg>,эджа,pass,Kibrik,846,Adverbial inter.pronoun
+эджа<prn><itg>,эджала,pass,Kibrik,846,Adverbial inter.pronoun
+эджа<prn><itg>,эджали,pass,Kibrik,846,Adverbial inter.pronoun
+эщда<prn><itg>,эщда,pass,Magomedova,522,Adverbial inter.pronoun
+элъила<prn><itg>,элъила,pass,Magomedova,522,Adverbial inter.pronoun
+ашти<v><aor>,ашти,pass,Kibrik,91,aorist Idecl
+багъаᵸ<v><aor>,багъаᵸ,pass,Kibrik,91,aorist IIdecl
+эхе<v><aor>,эхе,pass,Kibrik,91,aorist IIIdecl
+багӀари<v><aor>,багӀари,pass,Kibrik,91,aorist IVdecl
+тӀа<v><aor>,тӀа,pass,Kibrik,91,aorist Vdecl
+экӀва<v><cop>,экӀва,pass,Kibrik,106,verb copula
+ашти<v><aor><neg>,аштичӀи,pass,Kibrik,91,Neg aorist Idecl
+багъаᵸ<v><aor><neg>,багъанчӀи,pass,Kibrik,91,Neg aorist IIdecl
+эхе<v><aor><neg>,эхечӀи,pass,Kibrik,91,Neg aorist IIIdecl
+багӀари<v><aor><neg>,багӀаричӀи,pass,Kibrik,91,Neg aorist IVdecl
+тӀа<v><aor><neg>,тӀачӀи,pass,Kibrik,91,Neg aorist Vdecl
+экӀва<v><cop><neg>,вечӀе,pass,Kibrik,99,Neg verb copula
+ашти<v><aor><pp><hu><m><sg><nom>,аштув,pass,Kibrik,91,aorist participle Idecl
+багъаᵸ<v><aor><pp><hu><m><sg><nom>,багъанв,pass,Kibrik,91,aorist participle IIdecl
+эхе<v><aor><pp><hu><m><sg><nom>,эхов,pass,Kibrik,91,aorist participle IIIdecl
+багӀари<v><aor><pp><hu><m><sg><nom>,багӀарув,pass,Kibrik,91,aorist participle IVdecl
+тӀа<v><aor><pp><hu><m><sg><nom>,тӀав,pass,Kibrik,91,aorist participle Vdecl
+экӀва<v><cop><pp><hu><m><sg><nom>,экӀвав,pass,Kibrik,99,verb copula participle.abs
+экӀва<v><cop><pp><hu><m><sg><obl><erg>,экӀвавщур,pass,Kibrik,99,verb copula participle.erg
+ашти<v><aor><neg><pp><hu><m><sg><nom>,аштичӀув,pass,Kibrik,91,Neg aorist participle Idecl
+багъаᵸ<v><aor><neg><pp><hu><m><sg><nom>,багъанчӀув,pass,Kibrik,91,Neg aorist participle IIdecl
+эхе<v><aor><neg><pp><hu><m><sg><nom>,эхечӀув,pass,Kibrik,91,Neg aorist participle IIIdecl
+багӀари<v><aor><neg><pp><hu><m><sg><nom>,багӀаричӀув,pass,Kibrik,91,Neg aorist participle IVdecl
+тӀа<v><aor><neg><pp><hu><m><sg><nom>,тӀачӀув,pass,Kibrik,91,Neg aorist participle Vdecl
+ашти<v><pii><neg><pp><hu><m><sg><nom>,аштирадачӀув,pass,Kibrik,95,Emphatetic Neg aorist participle
+ашти<v><aor><nn><nt><sg><gna>,аштибо,pass,Kibrik,91,aorist converb Idecl
+багъаᵸ<v><aor><nn><nt><sg><gna>,багъамо,pass,Kibrik,91,aorist converb IIdecl
+эхе<v><aor><nn><nt><sg><gna>,эхебо,pass,Kibrik,91,aorist converb IIIdecl
+багӀари<v><aor><nn><nt><sg><gna>,багӀарибо,pass,Kibrik,91,aorist converb IVdecl
+тӀа<v><aor><nn><nt><sg><gna>,тӀабо,pass,Kibrik,91,aorist converb Vdecl
+ашти<v><aor><neg><nn><nt><sg><gna>,аштичӀирабо,pass,Kibrik,91,Neg aorist converb Idecl
+багъаᵸ<v><aor><neg><nn><nt><sg><gna>,багъанчӀирабо,pass,Kibrik,91,Neg aorist converb IIdecl
+эхе<v><aor><neg><nn><nt><sg><gna>,эхечӀирабо,pass,Kibrik,91,Neg aorist converb IIIdecl
+багӀари<v><aor><neg><nn><nt><sg><gna>,багӀаричӀирабо,pass,Kibrik,91,Neg aorist converb IVdecl
+тӀа<v><aor><neg><nn><nt><sg><gna>,тӀачӀирабо,pass,Kibrik,91,Neg aorist converb Vdecl
+ашти<v><pii><neg><nn><nt><sg><gna>,аштирадачӀирабо,pass,Kibrik,95,Emphatetic Neg aorist converb
+ашти<v><pii><inf>,аштира,pass,Kibrik,92,Imperf infinitive Idecl
+рекӀвеᵸ<v><pii><inf>,рекӀвена,pass,Kibrik,92,Imperf infinitive IIIdecl
+ашти<v><pii><fut><neg>,аштирачӀе,pass,Kibrik,92,Neg future Idecl
+ашти<v><pii><pp><hu><m><sg><nom>,аштиров,pass,Kibrik,92,Imperf.participle.abs Idecl
+ашти<v><pii><pp><hu><m><sg><obl><erg>,аштировщур,pass,Kibrik,92,Imperf.participle.erg Idecl
+ашти<v><pii><gna>,аштирах,pass,Kibrik,92,Imperf.converb Idecl
+ашти<v><pot><fut><synth>,аштас,pass,Kibrik,93,Synth.future Idecl
+ашти<v><pot><fut><react>,аштаса,pass,Kibrik,93,React.future Idecl
+ашти<v><pot><fut><gna>,ашталъих,pass,Kibrik,94,future converb Idecl
+ашти<v><pot><fut><pp><hu><m><sg><nom>,ашталъов,pass,Kibrik,94,future participle.abs
+ашти<v><pot><fut><pp><hu><m><sg><obl><erg>,ашталъовщур,pass,Kibrik,94,future participle.erg
+ашти<v><pot><inf>,ашта,pass,Kibrik,94,infinitive Idecl
+ашти<v><pot><prosp><nn><nt><sg><gna>,аштадибо,pass,Kibrik,94,prospective converb
+ашти<v><proh>,аштибисе,pass,Kibrik,96,prohibitive Idecl
+ашти<v><proh><neg><inf>,аштибичӀа,pass,Kibrik,96,neg.infinitive Idecl
+ашти<v><proh><neg><fut><gna>,аштибичӀалъих,pass,Kibrik,96,neg.future converb Idecl
+ашти<v><proh><neg><pp><hu><m><sg><nom>,аштибичӀув,pass,Kibrik,96,neg.future participle I.abs Idecl
+ашти<v><proh><neg><pp><hu><m><sg><obl><erg>,аштибичӀувщур,pass,Kibrik,96,neg.future participle I.erg Idecl
+ашти<v><proh><neg><fut><pp><hu><m><sg><nom>,аштибичӀалъов,pass,Kibrik,96,neg.future participle II.abs Idecl
+ашти<v><proh><neg><fut><pp><hu><m><sg><obl><erg>,аштибичӀалъовщур,pass,Kibrik,96,neg.future participle II.erg Idecl
+ашти<v><aor><imp>,ашти,pass,Kibrik,97,imperative1 Idecl
+ашти<v><aor><imp>,аштибе,pass,Kibrik,97,imperative2 Idecl
+ашти<v><aor><imp><opt>,аштила,pass,Kibrik,98,optative1 Idecl
+ашти<v><aor><imp><opt>,аштибела,pass,Kibrik,98,optative2 Idecl
+ашти<v><proh><opt>,аштибисела,pass,Kibrik,98,Neg optative Idecl
+ашти<v><aor><ger><nom>,аштир,pass,Kibrik,90,Masdar absolutive
+ашти<v><aor><ger><obl><erg>,аштирлъир,pass,Kibrik,90,Masdar oblique
+ракъиᵸ<v><aor><ger><nom>,ракъин,pass,Kibrik,90,Masdar for nasalized, absolutive
+ашти<v><aor><neg><ger><nom>,аштичӀир,pass,Kibrik,91,Neg. Masdar
+ашти<v><aor><neg><ger><obl><erg>,аштичӀирлъир,pass,Kibrik,91,Neg. Masdar
+ракъиᵸ<v><aor><neg><ger><nom>,ракъинчӀир,pass,Kibrik,91,Neg.Masdar for nasalized, absolutive
+ашти<v><pii><neg><ger><nom>,аштирадачӀир,pass,Kibrik,95,Emphatetic Neg. Masdar
+ашти<v><pii><neg><ger><obl><erg>,аштирадачӀирлъир,pass,Kibrik,95,Emphatetic Neg. Masdar
+ракъиᵸ<v><pii><neg><ger><nom>,ракъинадачӀир,pass,Kibrik,95,Emphatetic Neg.Masdar for nasalized, absolutive
+има<n><nom>,има,pass,Kibrik,130,Noun absolutive
+агьан<n><obl><erg>,агьанр,pass,Kibrik,130,Noun + (-) oblique
+агьан<n><obl><gen>,агьанлъ,pass,Kibrik,130,Noun + (-) genitive
+аграном<n><obl><erg>,аграномщур,pass,Kibrik,130,Animate noun + (Su) oblique
+аграном<n><obl><gen><nn><nt><sg>,аграномщуб,pass,Kibrik,130,Animate noun + (Su) genitive
+абтека<n><obl><erg>,абтекалъир,pass,Kibrik,130,Noun + (Li) oblique
+абтека<n><obl><gen>,абтекалъилъ,pass,Kibrik,130,Noun + (Li) genitive
+абтамат<n><obl><erg>,абтаматир,pass,Kibrik,130,Noun + (I) oblique
+абтамат<n><obl><gen>,абтаматилъ,pass,Kibrik,130,Noun + (I) genitive
+бакьун<n><obl><erg>,бакьунар,pass,Kibrik,130,Noun + (A) oblique
+бакьун<n><obl><gen>,бакьуналъ,pass,Kibrik,130,Noun + (A) genitive
+абтобус<n><obl><erg>,абтобусур,pass,Kibrik,130,Noun + (U) oblique
+абтобус<n><obl><gen>,абтобусулъ,pass,Kibrik,130,Noun + (U) genitive
+бечӀва<n><obl><erg>,бечӀвер,pass,Kibrik,130,Noun + (E) oblique
+бечӀва<n><obl><gen>,бечӀвелъ,pass,Kibrik,130,Noun + (E) genitive
+бежун<n><obl><erg>,бежванр,pass,Kibrik,130,Noun + (n alt) oblique
+бежун<n><obl><gen>,бежванлъ,pass,Kibrik,130,Noun + (n alt) genitive
+муч<n><obl><erg>,мучулар,pass,Kibrik,132,Noun (irreg) oblique
+муч<n><obl><gen>,мучулалъ,pass,Kibrik,132,Noun (irreg) genitive
+акушерка<n><pl><nom>,акушеркаби,pass,Kibrik,132,Animate noun + (bi) plural absolutive
+акушерка<n><pl><obl><erg>,акушеркабалур,pass,Kibrik,133,Animate noun + (bi) plural oblique
+акушерка<n><pl><obl><gen><nn><nt><sg>,акушеркабалуб,pass,Kibrik,133,Animate noun + (bi) plural genitive
+аварийа<n><pl><nom>,аварийаби,pass,Kibrik,132,Noun+ (bi) plural absolutive
+аварийа<n><pl><obl><erg>,аварийабар,pass,Kibrik,138,Noun + (bi) plural oblique
+аварийа<n><pl><obl><gen>,аварийабалъ,pass,Kibrik,138,Noun + (bi) plural genitive
+айрадром<n><pl><nom>,айрадромаби,pass,Kibrik,132,Noun + (abi) plural absolutive
+айрадром<n><pl><obl><erg>,айрадромабар,pass,Kibrik,138,Noun + (abi) plural oblique
+айрадром<n><pl><obl><gen>,айрадромабалъ,pass,Kibrik,138,Noun + (abi) plural genitive
+гъараваш<n><pl><nom>,гъаравашаби,pass,Kibrik,132,Animate noun + (abi) plural absolutive
+гъараваш<n><pl><obl><erg>,гъаравашабалур,pass,Kibrik,133,Animate noun + (abi) plural oblique
+гъараваш<n><pl><obl><gen><nn><nt><sg>,гъаравашабалуб,pass,Kibrik,133,Animate noun + (abi) plural genitive
+тӀусӀ<n><pl><nom>,тӀусӀуби,pass,Kibrik,132,Noun + (ubi) plural absolutive
+тӀусӀ<n><pl><obl><erg>,тӀусӀубар,pass,Kibrik,138,Noun + (ubi) plural oblique
+тӀусӀ<n><pl><obl><gen>,тӀусӀубалъ,pass,Kibrik,138,Noun + (ubi) plural genitive
+анча<n><pl><nom>,анчиби,pass,Kibrik,132,Noun + (ibi) plural absolutive
+анча<n><pl><obl><erg>,анчибар,pass,Kibrik,138,Noun + (ibi) plural oblique
+анча<n><pl><obl><gen>,анчибалъ,pass,Kibrik,138,Noun + (ibi) plural genitive
+има<n><pl><nom>,имиби,pass,Kibrik,132,Animate noun + (ibi) plural absolutive
+има<n><pl><obl><erg>,имибалур,pass,Kibrik,133,Animate noun + (ibi) plural oblique
+има<n><pl><obl><gen><nn><nt><sg>,имибалуб,pass,Kibrik,133,Animate noun + (ibi) plural genitive
+гама<n><pl><nom>,гамеби,pass,Kibrik,132,Noun + (ebi) plural absolutive
+гама<n><pl><obl><erg>,гамебар,pass,Kibrik,138,Noun + (ebi) plural oblique
+гама<n><pl><obl><gen>,гамебалъ,pass,Kibrik,138,Noun + (ebi) plural genitive
+дада<n><pl><nom>,дадеби,pass,Kibrik,132,Animate noun + (ebi) plural absolutive
+дада<n><pl><obl><erg>,дадебалур,pass,Kibrik,133,Animate noun + (ebi) plural oblique
+дада<n><pl><obl><gen><nn><nt><sg>,дадебалуб,pass,Kibrik,133,Animate noun + (ebi) plural genitive
+гьорко<n><pl><nom>,гьоркойаби,pass,Kibrik,132,Noun + (jabi) plural absolutive
+гьорко<n><pl><obl><erg>,гьоркойабар,pass,Kibrik,138,Noun + (jabi) plural oblique
+гьорко<n><pl><obl><gen>,гьоркойабалъ,pass,Kibrik,138,Noun + (jabi) plural genitive
+абицар<n><pl><nom>,абицарзаби,pass,Kibrik,132,Animate noun + (jabi) plural absolutive
+абицар<n><pl><obl><erg>,абицарзабалур,pass,Kibrik,133,Animate noun + (jabi) plural oblique
+абицар<n><pl><obl><gen><nn><nt><sg>,абицарзабалуб,pass,Kibrik,133,Animate noun + (jabi) plural genitive
+бесун<n><pl><nom>,бесвами,pass,Kibrik,132,Noun + (mi) plural absolutive
+бесун<n><pl><obl><erg>,бесвамар,pass,Kibrik,138,Noun + (mi) plural oblique
+бесун<n><pl><obl><gen>,бесвамалъ,pass,Kibrik,138,Noun + (mi) plural genitive
+гӀолохъан<n><pl><nom>,гӀолохъами,pass,Kibrik,132,Animate noun + (mi) plural absolutive
+гӀолохъан<n><pl><obl><erg>,гӀолохъамалур,pass,Kibrik,133,Animate noun + (mi) plural oblique
+гӀолохъан<n><pl><obl><gen><nn><nt><sg>,гӀолохъамалуб,pass,Kibrik,133,Animate noun + (mi) plural genitive
+абагун<n><pl><nom>,абагундари,pass,Kibrik,132,Noun + (dari) plural absolutive
+абагун<n><pl><obl><erg>,абагундарар,pass,Kibrik,138,Noun + (dari) plural oblique
+абагун<n><pl><obl><gen>,абагундаралъ,pass,Kibrik,138,Noun + (dari) plural genitive
+васаб<n><pl><nom>,васабдари,pass,Kibrik,132,Animate noun + (dari) plural absolutive
+васаб<n><pl><obl><erg>,васабдаралур,pass,Kibrik,133,Animate noun + (dari) plural oblique
+васаб<n><pl><obl><gen><nn><nt><sg>,васабдаралуб,pass,Kibrik,133,Animate noun + (dari) plural genitive
+гьемер<n><pl><nom>,гьемерди,pass,Kibrik,132,Noun + (di) plural absolutive
+гьемер<n><pl><obl><erg>,гьемердар,pass,Kibrik,138,Noun + (di) plural oblique
+гьемер<n><pl><obl><gen>,гьемердалъ,pass,Kibrik,138,Noun + (di) plural genitive
+вахьур<n><pl><nom>,вахьурди,pass,Kibrik,132,Animate noun + (di) plural absolutive
+вахьур<n><pl><obl><erg>,вахьурдилур,pass,Kibrik,133,Animate noun + (di) plural oblique
+вахьур<n><pl><obl><gen><nn><nt><sg>,вахьурдилуб,pass,Kibrik,133,Animate noun + (di) plural genitive
+дум<n><pl><nom>,думали,pass,Kibrik,132,Noun + (ali) plural absolutive
+дум<n><pl><obl><erg>,думалар,pass,Kibrik,138,Noun + (ali) plural oblique
+дум<n><pl><obl><gen>,думалалъ,pass,Kibrik,138,Noun + (ali) plural genitive
+пасажир<n><pl><nom>,пасажиради,pass,Kibrik,132,Animate noun + (adi) plural absolutive
+пасажир<n><pl><obl><erg>,пасажирадилур,pass,Kibrik,133,Animate noun + (adi) plural oblique
+пасажир<n><pl><obl><gen><nn><nt><sg>,пасажирадилуб,pass,Kibrik,133,Animate noun + (adi) plural genitive
+тухтур<n><pl><nom>,тухтурари,pass,Kibrik,137,Animate noun + (ari) plural absolutive
+тухтур<n><pl><obl><erg>,тухтурарур,pass,Kibrik,137,Animate noun + (ari) plural oblique
+тухтур<n><pl><obl><gen><nn><nt><sg>,тухтураруб,pass,Kibrik,137,Animate noun + (ari) plural genitive
+вас<n><pl><nom>,васибади,pass,Kibrik,135,Animate noun + (ibadi) plural absolutive
+вас<n><pl><obl><erg>,васибадилур,pass,Kibrik,135,Animate noun + (ibadi) plural oblique
+вас<n><pl><obl><gen><nn><nt><sg>,васибадилуб,pass,Kibrik,135,Animate noun + (ibadi) plural genitive
+гъаб<n><pl><nom>,гъаба,pass,Kibrik,138,Noun + (a) plural absolutive
+гъаб<n><pl><obl><erg>,гъабер,pass,Kibrik,138,Noun + (a) plural oblique
+гъаб<n><pl><obl><gen>,гъабелъ,pass,Kibrik,138,Noun + (a) plural genitive
+гъеж<n><pl><nom>,гъежи,pass,Kibrik,134,Noun + (i) plural absolutive
+гъеж<n><pl><obl><erg>,гъежир,pass,Kibrik,138,Noun + (i) plural oblique
+гъеж<n><pl><obl><gen>,гъежилъ,pass,Kibrik,138,Noun + (i) plural genitive
+мачӀ<n><pl><nom>,мачӀи,pass,Kibrik,134,Animate noun + (i) plural absolutive
+мачӀ<n><pl><obl><erg>,мачӀалур,pass,Kibrik,137,Animate noun + (i) plural oblique
+мачӀ<n><pl><obl><gen><nn><nt><sg>,мачӀалуб,pass,Kibrik,137,Animate noun + (i) plural genitive
