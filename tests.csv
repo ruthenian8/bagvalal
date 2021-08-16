@@ -45,29 +45,29 @@ analysis,form,mustpass,source,page,description
 илӀи<prn><p1><pl><incl><obl><erg>,илъир,pass,Kibrik,161,1p inclusive oblique
 бищти<prn><p2><pl><nom>,бищди,pass,Magomedova,161,2p absolutive
 бищти<prn><p2><pl><obl><erg>,бищдир,pass,Kibrik,161,2p oblique
-аб<prn><p3><hu><m><sg><nom>,ав,pass,Kibrik,162,demonstratives
-аб<prn><p3><hu><m><sg><obl><erg>,ащур,pass,Kibrik,162,demonstratives
-аб<prn><p3><hu><mf><pl><nom>,аба,pass,Kibrik,162,demonstratives
-аб<prn><p3><hu><mf><pl><obl><erg>,арур,pass,Kibrik,162,demonstratives
-аб<prn><p3><hu><mf><pl><obl><gen><nn><nt><sg>,аруб,pass,Kibrik,162,demonstratives
-аб<prn><p3><nn><nt><pl><nom>,ар,pass,Kibrik,162,demonstratives
-аб<prn><p3><nn><nt><pl><obl><erg>,арир,pass,Kibrik,162,demonstratives
-аб<prn><p3><nn><nt><pl><obl><gen>,арилъ,pass,Kibrik,162,demonstratives
-аб<prn><p3><hu><mf><pl><obl><dat>,ара,pass,Kibrik,162,demonstratives exclusive form
-аб<prn><p3><hu><mf><pl><obl><dat>,арва,pass,Kibrik,162,demonstratives exclusive form
-аб<prn><p3><hu><mf><pl><obl><sup>,ара,pass,Kibrik,162,demonstratives exclusive form
-аб<prn><p3><hu><mf><pl><obl><sup>,арва,pass,Kibrik,162,demonstratives exclusive form
-аб<prn><p3><hu><m><sg><obl><dat>,ащва,pass,Kibrik,162,demonstratives exclusive form
-аб<prn><p3><hu><m><sg><obl><sup>,ащва,pass,Kibrik,162,demonstratives exclusive form
-об<prn><p3><hu><m><sg><nom>,ов,pass,Kibrik,162,demonstratives
-об<prn><p3><hu><m><sg><obl><erg>,ощур,pass,Kibrik,162,demonstratives
-уб<prn><p3><hu><m><sg><nom>,ув,pass,Kibrik,162,demonstratives
-уб<prn><p3><hu><m><sg><obl><erg>,ущур,pass,Kibrik,162,demonstratives
-угьуб<prn><p3><hu><m><sg><nom>,угьув,pass,Kibrik,162,demonstratives
-угьуб<prn><p3><hu><m><sg><obl><erg>,угьувщур,pass,Kibrik,162,demonstratives
-об<prn><p3><nn><nt><sg><adv>,обе,pass,Kibrik,161,adverbial pronoun
-угьуб<prn><p3><nn><nt><sg><adv>,угьубе,pass,Kibrik,161,adverbial pronoun
-аб<prn><p3><nn><nt><sg><adv>,агьибе,pass,Kibrik,161,adverbial pronoun
+аб<det><dem><hu><m><sg><nom>,ав,pass,Kibrik,162,demonstratives
+аб<det><dem><hu><m><sg><obl><erg>,ащур,pass,Kibrik,162,demonstratives
+аб<det><dem><hu><mf><pl><nom>,аба,pass,Kibrik,162,demonstratives
+аб<det><dem><hu><mf><pl><obl><erg>,арур,pass,Kibrik,162,demonstratives
+аб<det><dem><hu><mf><pl><obl><gen><nn><nt><sg>,аруб,pass,Kibrik,162,demonstratives
+аб<det><dem><nn><nt><pl><nom>,ар,pass,Kibrik,162,demonstratives
+аб<det><dem><nn><nt><pl><obl><erg>,арир,pass,Kibrik,162,demonstratives
+аб<det><dem><nn><nt><pl><obl><gen>,арилъ,pass,Kibrik,162,demonstratives
+аб<det><dem><hu><mf><pl><obl><dat>,ара,pass,Kibrik,162,demonstratives exclusive form
+аб<det><dem><hu><mf><pl><obl><dat>,арва,pass,Kibrik,162,demonstratives exclusive form
+аб<det><dem><hu><mf><pl><obl><sup>,ара,pass,Kibrik,162,demonstratives exclusive form
+аб<det><dem><hu><mf><pl><obl><sup>,арва,pass,Kibrik,162,demonstratives exclusive form
+аб<det><dem><hu><m><sg><obl><dat>,ащва,pass,Kibrik,162,demonstratives exclusive form
+аб<det><dem><hu><m><sg><obl><sup>,ащва,pass,Kibrik,162,demonstratives exclusive form
+об<det><dem><hu><m><sg><nom>,ов,pass,Kibrik,162,demonstratives
+об<det><dem><hu><m><sg><obl><erg>,ощур,pass,Kibrik,162,demonstratives
+уб<det><dem><hu><m><sg><nom>,ув,pass,Kibrik,162,demonstratives
+уб<det><dem><hu><m><sg><obl><erg>,ущур,pass,Kibrik,162,demonstratives
+угьуб<det><dem><hu><m><sg><nom>,угьув,pass,Kibrik,162,demonstratives
+угьуб<det><dem><hu><m><sg><obl><erg>,угьувщур,pass,Kibrik,162,demonstratives
+об<det><dem><nn><nt><sg><adv>,обе,pass,Kibrik,161,adverbial pronoun
+угьуб<det><dem><nn><nt><sg><adv>,угьубе,pass,Kibrik,161,adverbial pronoun
+аб<det><dem><nn><nt><sg><adv>,агьибе,pass,Kibrik,161,adverbial pronoun
 эб<prn><log><p3><hu><m><sg><nom>,эв,pass,Kibrik,162,logophoric absolutive
 эб<prn><log><p3><hu><m><sg><nom><ref>,эвда,pass,Kibrik,161,reflexive absolutive
 эб<prn><log><p3><hu><m><sg><obl><erg>,инщур,pass,Kibrik,162,logophoric oblique
@@ -139,76 +139,76 @@ analysis,form,mustpass,source,page,description
 эджа<prn><itg>,эджали,pass,Kibrik,846,Adverbial inter.pronoun
 эщда<prn><itg>,эщда,pass,Magomedova,522,Adverbial inter.pronoun
 элъила<prn><itg>,элъила,pass,Magomedova,522,Adverbial inter.pronoun
-ашти<v><aor>,ашти,pass,Kibrik,91,aorist Idecl
-багъаᵸ<v><aor>,багъаᵸ,pass,Kibrik,91,aorist IIdecl
-эхе<v><aor>,эхе,pass,Kibrik,91,aorist IIIdecl
-багӀари<v><aor>,багӀари,pass,Kibrik,91,aorist IVdecl
-тӀа<v><aor>,тӀа,pass,Kibrik,91,aorist Vdecl
-экӀва<v><cop>,экӀва,pass,Kibrik,106,verb copula
-ашти<v><aor><neg>,аштичӀи,pass,Kibrik,91,Neg aorist Idecl
-багъаᵸ<v><aor><neg>,багъанчӀи,pass,Kibrik,91,Neg aorist IIdecl
-эхе<v><aor><neg>,эхечӀи,pass,Kibrik,91,Neg aorist IIIdecl
-багӀари<v><aor><neg>,багӀаричӀи,pass,Kibrik,91,Neg aorist IVdecl
-тӀа<v><aor><neg>,тӀачӀи,pass,Kibrik,91,Neg aorist Vdecl
-экӀва<v><cop><neg>,вечӀе,pass,Kibrik,99,Neg verb copula
-ашти<v><aor><pp><hu><m><sg><nom>,аштув,pass,Kibrik,91,aorist participle Idecl
-багъаᵸ<v><aor><pp><hu><m><sg><nom>,багъанв,pass,Kibrik,91,aorist participle IIdecl
-эхе<v><aor><pp><hu><m><sg><nom>,эхов,pass,Kibrik,91,aorist participle IIIdecl
-багӀари<v><aor><pp><hu><m><sg><nom>,багӀарув,pass,Kibrik,91,aorist participle IVdecl
-тӀа<v><aor><pp><hu><m><sg><nom>,тӀав,pass,Kibrik,91,aorist participle Vdecl
-экӀва<v><cop><pp><hu><m><sg><nom>,экӀвав,pass,Kibrik,99,verb copula participle.abs
-экӀва<v><cop><pp><hu><m><sg><obl><erg>,экӀвавщур,pass,Kibrik,99,verb copula participle.erg
-ашти<v><aor><neg><pp><hu><m><sg><nom>,аштичӀув,pass,Kibrik,91,Neg aorist participle Idecl
-багъаᵸ<v><aor><neg><pp><hu><m><sg><nom>,багъанчӀув,pass,Kibrik,91,Neg aorist participle IIdecl
-эхе<v><aor><neg><pp><hu><m><sg><nom>,эхечӀув,pass,Kibrik,91,Neg aorist participle IIIdecl
-багӀари<v><aor><neg><pp><hu><m><sg><nom>,багӀаричӀув,pass,Kibrik,91,Neg aorist participle IVdecl
-тӀа<v><aor><neg><pp><hu><m><sg><nom>,тӀачӀув,pass,Kibrik,91,Neg aorist participle Vdecl
-ашти<v><pii><neg><pp><hu><m><sg><nom>,аштирадачӀув,pass,Kibrik,95,Emphatetic Neg aorist participle
-ашти<v><aor><nn><nt><sg><gna>,аштибо,pass,Kibrik,91,aorist converb Idecl
-багъаᵸ<v><aor><nn><nt><sg><gna>,багъамо,pass,Kibrik,91,aorist converb IIdecl
-эхе<v><aor><nn><nt><sg><gna>,эхебо,pass,Kibrik,91,aorist converb IIIdecl
-багӀари<v><aor><nn><nt><sg><gna>,багӀарибо,pass,Kibrik,91,aorist converb IVdecl
-тӀа<v><aor><nn><nt><sg><gna>,тӀабо,pass,Kibrik,91,aorist converb Vdecl
-ашти<v><aor><neg><nn><nt><sg><gna>,аштичӀирабо,pass,Kibrik,91,Neg aorist converb Idecl
-багъаᵸ<v><aor><neg><nn><nt><sg><gna>,багъанчӀирабо,pass,Kibrik,91,Neg aorist converb IIdecl
-эхе<v><aor><neg><nn><nt><sg><gna>,эхечӀирабо,pass,Kibrik,91,Neg aorist converb IIIdecl
-багӀари<v><aor><neg><nn><nt><sg><gna>,багӀаричӀирабо,pass,Kibrik,91,Neg aorist converb IVdecl
-тӀа<v><aor><neg><nn><nt><sg><gna>,тӀачӀирабо,pass,Kibrik,91,Neg aorist converb Vdecl
-ашти<v><pii><neg><nn><nt><sg><gna>,аштирадачӀирабо,pass,Kibrik,95,Emphatetic Neg aorist converb
-ашти<v><pii><inf>,аштира,pass,Kibrik,92,Imperf infinitive Idecl
-рекӀвеᵸ<v><pii><inf>,рекӀвена,pass,Kibrik,92,Imperf infinitive IIIdecl
-ашти<v><pii><fut><neg>,аштирачӀе,pass,Kibrik,92,Neg future Idecl
-ашти<v><pii><pp><hu><m><sg><nom>,аштиров,pass,Kibrik,92,Imperf.participle.abs Idecl
-ашти<v><pii><pp><hu><m><sg><obl><erg>,аштировщур,pass,Kibrik,92,Imperf.participle.erg Idecl
-ашти<v><pii><gna>,аштирах,pass,Kibrik,92,Imperf.converb Idecl
-ашти<v><pot><fut><synth>,аштас,pass,Kibrik,93,Synth.future Idecl
-ашти<v><pot><fut><react>,аштаса,pass,Kibrik,93,React.future Idecl
-ашти<v><pot><fut><gna>,ашталъих,pass,Kibrik,94,future converb Idecl
-ашти<v><pot><fut><pp><hu><m><sg><nom>,ашталъов,pass,Kibrik,94,future participle.abs
-ашти<v><pot><fut><pp><hu><m><sg><obl><erg>,ашталъовщур,pass,Kibrik,94,future participle.erg
-ашти<v><pot><inf>,ашта,pass,Kibrik,94,infinitive Idecl
-ашти<v><pot><prosp><nn><nt><sg><gna>,аштадибо,pass,Kibrik,94,prospective converb
-ашти<v><proh>,аштибисе,pass,Kibrik,96,prohibitive Idecl
-ашти<v><proh><neg><inf>,аштибичӀа,pass,Kibrik,96,neg.infinitive Idecl
-ашти<v><proh><neg><fut><gna>,аштибичӀалъих,pass,Kibrik,96,neg.future converb Idecl
-ашти<v><proh><neg><pp><hu><m><sg><nom>,аштибичӀув,pass,Kibrik,96,neg.future participle I.abs Idecl
-ашти<v><proh><neg><pp><hu><m><sg><obl><erg>,аштибичӀувщур,pass,Kibrik,96,neg.future participle I.erg Idecl
-ашти<v><proh><neg><fut><pp><hu><m><sg><nom>,аштибичӀалъов,pass,Kibrik,96,neg.future participle II.abs Idecl
-ашти<v><proh><neg><fut><pp><hu><m><sg><obl><erg>,аштибичӀалъовщур,pass,Kibrik,96,neg.future participle II.erg Idecl
-ашти<v><aor><imp>,ашти,pass,Kibrik,97,imperative1 Idecl
-ашти<v><aor><imp>,аштибе,pass,Kibrik,97,imperative2 Idecl
-ашти<v><aor><imp><opt>,аштила,pass,Kibrik,98,optative1 Idecl
-ашти<v><aor><imp><opt>,аштибела,pass,Kibrik,98,optative2 Idecl
-ашти<v><proh><opt>,аштибисела,pass,Kibrik,98,Neg optative Idecl
-ашти<v><aor><ger><nom>,аштир,pass,Kibrik,90,Masdar absolutive
-ашти<v><aor><ger><obl><erg>,аштирлъир,pass,Kibrik,90,Masdar oblique
-ракъиᵸ<v><aor><ger><nom>,ракъин,pass,Kibrik,90,Masdar for nasalized, absolutive
-ашти<v><aor><neg><ger><nom>,аштичӀир,pass,Kibrik,91,Neg. Masdar
-ашти<v><aor><neg><ger><obl><erg>,аштичӀирлъир,pass,Kibrik,91,Neg. Masdar
-ракъиᵸ<v><aor><neg><ger><nom>,ракъинчӀир,pass,Kibrik,91,Neg.Masdar for nasalized, absolutive
-ашти<v><pii><neg><ger><nom>,аштирадачӀир,pass,Kibrik,95,Emphatetic Neg. Masdar
-ашти<v><pii><neg><ger><obl><erg>,аштирадачӀирлъир,pass,Kibrik,95,Emphatetic Neg. Masdar
-ракъиᵸ<v><pii><neg><ger><nom>,ракъинадачӀир,pass,Kibrik,95,Emphatetic Neg.Masdar for nasalized, absolutive
+ашти<vblex><aor>,ашти,pass,Kibrik,91,aorist Idecl
+багъаᵸ<vblex><aor>,багъаᵸ,pass,Kibrik,91,aorist IIdecl
+эхе<vblex><aor>,эхе,pass,Kibrik,91,aorist IIIdecl
+багӀари<vblex><aor>,багӀари,pass,Kibrik,91,aorist IVdecl
+тӀа<vblex><aor>,тӀа,pass,Kibrik,91,aorist Vdecl
+экӀва<vblex><cop>,экӀва,pass,Kibrik,106,verb copula
+ашти<vblex><aor><neg>,аштичӀи,pass,Kibrik,91,Neg aorist Idecl
+багъаᵸ<vblex><aor><neg>,багъанчӀи,pass,Kibrik,91,Neg aorist IIdecl
+эхе<vblex><aor><neg>,эхечӀи,pass,Kibrik,91,Neg aorist IIIdecl
+багӀари<vblex><aor><neg>,багӀаричӀи,pass,Kibrik,91,Neg aorist IVdecl
+тӀа<vblex><aor><neg>,тӀачӀи,pass,Kibrik,91,Neg aorist Vdecl
+экӀва<vblex><cop><neg>,вечӀе,pass,Kibrik,99,Neg verb copula
+ашти<vblex><aor><pp><hu><m><sg><nom>,аштув,pass,Kibrik,91,aorist participle Idecl
+багъаᵸ<vblex><aor><pp><hu><m><sg><nom>,багъанв,pass,Kibrik,91,aorist participle IIdecl
+эхе<vblex><aor><pp><hu><m><sg><nom>,эхов,pass,Kibrik,91,aorist participle IIIdecl
+багӀари<vblex><aor><pp><hu><m><sg><nom>,багӀарув,pass,Kibrik,91,aorist participle IVdecl
+тӀа<vblex><aor><pp><hu><m><sg><nom>,тӀав,pass,Kibrik,91,aorist participle Vdecl
+экӀва<vblex><cop><pp><hu><m><sg><nom>,экӀвав,pass,Kibrik,99,verb copula participle.abs
+экӀва<vblex><cop><pp><hu><m><sg><obl><erg>,экӀвавщур,pass,Kibrik,99,verb copula participle.erg
+ашти<vblex><aor><neg><pp><hu><m><sg><nom>,аштичӀув,pass,Kibrik,91,Neg aorist participle Idecl
+багъаᵸ<vblex><aor><neg><pp><hu><m><sg><nom>,багъанчӀув,pass,Kibrik,91,Neg aorist participle IIdecl
+эхе<vblex><aor><neg><pp><hu><m><sg><nom>,эхечӀув,pass,Kibrik,91,Neg aorist participle IIIdecl
+багӀари<vblex><aor><neg><pp><hu><m><sg><nom>,багӀаричӀув,pass,Kibrik,91,Neg aorist participle IVdecl
+тӀа<vblex><aor><neg><pp><hu><m><sg><nom>,тӀачӀув,pass,Kibrik,91,Neg aorist participle Vdecl
+ашти<vblex><pii><neg><pp><hu><m><sg><nom>,аштирадачӀув,pass,Kibrik,95,Emphatetic Neg aorist participle
+ашти<vblex><aor><nn><nt><sg><gna>,аштибо,pass,Kibrik,91,aorist converb Idecl
+багъаᵸ<vblex><aor><nn><nt><sg><gna>,багъамо,pass,Kibrik,91,aorist converb IIdecl
+эхе<vblex><aor><nn><nt><sg><gna>,эхебо,pass,Kibrik,91,aorist converb IIIdecl
+багӀари<vblex><aor><nn><nt><sg><gna>,багӀарибо,pass,Kibrik,91,aorist converb IVdecl
+тӀа<vblex><aor><nn><nt><sg><gna>,тӀабо,pass,Kibrik,91,aorist converb Vdecl
+ашти<vblex><aor><neg><nn><nt><sg><gna>,аштичӀирабо,pass,Kibrik,91,Neg aorist converb Idecl
+багъаᵸ<vblex><aor><neg><nn><nt><sg><gna>,багъанчӀирабо,pass,Kibrik,91,Neg aorist converb IIdecl
+эхе<vblex><aor><neg><nn><nt><sg><gna>,эхечӀирабо,pass,Kibrik,91,Neg aorist converb IIIdecl
+багӀари<vblex><aor><neg><nn><nt><sg><gna>,багӀаричӀирабо,pass,Kibrik,91,Neg aorist converb IVdecl
+тӀа<vblex><aor><neg><nn><nt><sg><gna>,тӀачӀирабо,pass,Kibrik,91,Neg aorist converb Vdecl
+ашти<vblex><pii><neg><nn><nt><sg><gna>,аштирадачӀирабо,pass,Kibrik,95,Emphatetic Neg aorist converb
+ашти<vblex><pii><inf>,аштира,pass,Kibrik,92,Imperf infinitive Idecl
+рекӀвеᵸ<vblex><pii><inf>,рекӀвена,pass,Kibrik,92,Imperf infinitive IIIdecl
+ашти<vblex><pii><fut><neg>,аштирачӀе,pass,Kibrik,92,Neg future Idecl
+ашти<vblex><pii><pp><hu><m><sg><nom>,аштиров,pass,Kibrik,92,Imperf.participle.abs Idecl
+ашти<vblex><pii><pp><hu><m><sg><obl><erg>,аштировщур,pass,Kibrik,92,Imperf.participle.erg Idecl
+ашти<vblex><pii><gna>,аштирах,pass,Kibrik,92,Imperf.converb Idecl
+ашти<vblex><pot><fut><synth>,аштас,pass,Kibrik,93,Synth.future Idecl
+ашти<vblex><pot><fut><react>,аштаса,pass,Kibrik,93,React.future Idecl
+ашти<vblex><pot><fut><gna>,ашталъих,pass,Kibrik,94,future converb Idecl
+ашти<vblex><pot><fut><pp><hu><m><sg><nom>,ашталъов,pass,Kibrik,94,future participle.abs
+ашти<vblex><pot><fut><pp><hu><m><sg><obl><erg>,ашталъовщур,pass,Kibrik,94,future participle.erg
+ашти<vblex><pot><inf>,ашта,pass,Kibrik,94,infinitive Idecl
+ашти<vblex><pot><prosp><nn><nt><sg><gna>,аштадибо,pass,Kibrik,94,prospective converb
+ашти<vblex><proh>,аштибисе,pass,Kibrik,96,prohibitive Idecl
+ашти<vblex><proh><neg><inf>,аштибичӀа,pass,Kibrik,96,neg.infinitive Idecl
+ашти<vblex><proh><neg><fut><gna>,аштибичӀалъих,pass,Kibrik,96,neg.future converb Idecl
+ашти<vblex><proh><neg><pp><hu><m><sg><nom>,аштибичӀув,pass,Kibrik,96,neg.future participle I.abs Idecl
+ашти<vblex><proh><neg><pp><hu><m><sg><obl><erg>,аштибичӀувщур,pass,Kibrik,96,neg.future participle I.erg Idecl
+ашти<vblex><proh><neg><fut><pp><hu><m><sg><nom>,аштибичӀалъов,pass,Kibrik,96,neg.future participle II.abs Idecl
+ашти<vblex><proh><neg><fut><pp><hu><m><sg><obl><erg>,аштибичӀалъовщур,pass,Kibrik,96,neg.future participle II.erg Idecl
+ашти<vblex><aor><imp>,ашти,pass,Kibrik,97,imperative1 Idecl
+ашти<vblex><aor><imp>,аштибе,pass,Kibrik,97,imperative2 Idecl
+ашти<vblex><aor><imp><opt>,аштила,pass,Kibrik,98,optative1 Idecl
+ашти<vblex><aor><imp><opt>,аштибела,pass,Kibrik,98,optative2 Idecl
+ашти<vblex><proh><opt>,аштибисела,pass,Kibrik,98,Neg optative Idecl
+ашти<vblex><aor><ger><nom>,аштир,pass,Kibrik,90,Masdar absolutive
+ашти<vblex><aor><ger><obl><erg>,аштирлъир,pass,Kibrik,90,Masdar oblique
+ракъиᵸ<vblex><aor><ger><nom>,ракъин,pass,Kibrik,90,Masdar for nasalized, absolutive
+ашти<vblex><aor><neg><ger><nom>,аштичӀир,pass,Kibrik,91,Neg. Masdar
+ашти<vblex><aor><neg><ger><obl><erg>,аштичӀирлъир,pass,Kibrik,91,Neg. Masdar
+ракъиᵸ<vblex><aor><neg><ger><nom>,ракъинчӀир,pass,Kibrik,91,Neg.Masdar for nasalized, absolutive
+ашти<vblex><pii><neg><ger><nom>,аштирадачӀир,pass,Kibrik,95,Emphatetic Neg. Masdar
+ашти<vblex><pii><neg><ger><obl><erg>,аштирадачӀирлъир,pass,Kibrik,95,Emphatetic Neg. Masdar
+ракъиᵸ<vblex><pii><neg><ger><nom>,ракъинадачӀир,pass,Kibrik,95,Emphatetic Neg.Masdar for nasalized, absolutive
 има<n><nom>,има,pass,Kibrik,130,Noun absolutive
 агьан<n><obl><erg>,агьанр,pass,Kibrik,130,Noun + (-) oblique
 агьан<n><obl><gen>,агьанлъ,pass,Kibrik,130,Noun + (-) genitive

@@ -15,3 +15,7 @@
 	hfst-lookup -i ../merged.tr.hfst -I $< -o $@
 	grep . $@ > tmp.txt
 	mv tmp.txt $@
+%-check: %.tr.analyzed
+	bash tr_stats.sh $<
+%-show-unrecog: %.tr.analyzed
+	grep "+" $< | sed "s/\t/,/g" | awk -F "," '{ print $$1 }' | sort | uniq -c | sort -nr
