@@ -1,11 +1,15 @@
-.DEFAULT_GOAL := bagval_numbers.gen.hfst
 analyser=./merged.tr.hfstol
+.DEFAULT_GOAL := $(analyser)
 tests=tests.csv
 test_sources=$(shell sed -s 1d $(tests) | cut -d, -f4 | sort -u)
 .PHONY: check
 
-%.tr.hfst: %.ana.hfst
-	hfst-compose translit/translit.hfst $< -o $@
+translit/translit.hfst: translit/translit translit/translit.multi translit/translit-initial.hfst
+	cd translit; make translit.hfst
+translit/translit-initial.hfst: translit/translit-initial
+	cd translit; make translit-initial.hfst
+%.tr.hfst: translit/translit.hfst %.ana.hfst 
+	hfst-compose $^ -o $@
 %.lexd.hfst: %.lexd
 	lexd $< | hfst-txt2fst -o $@
 %.ana.hfst: %.gen.hfst
@@ -14,8 +18,6 @@ test_sources=$(shell sed -s 1d $(tests) | cut -d, -f4 | sort -u)
 	hfst-twolc $< -o $@
 %.gen.hfst: %.lexd.hfst %.twol.hfst
 	hfst-compose-intersect $^ -o $@
-%.tr.hfst: %.ana.hfst
-	hfst-compose translit/translit.hfst $< -o $@
 %.tr.hfstol: %.tr.hfst
 	hfst-fst2fst --optimized-lookup-unweighted -i $< -o $@
 %.pass.txt: $(tests)
