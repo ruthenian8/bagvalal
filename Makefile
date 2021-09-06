@@ -12,6 +12,8 @@ translit/translit-initial.hfst: translit/translit-initial
 	hfst-compose $^ -o $@
 %.lexd.hfst: %.lexd
 	lexd $< | hfst-txt2fst -o $@
+%.lexd.hfstol: %.lexd.hfst
+	hfst-fst2fst --optimized-lookup-unweighted $< -o $@
 %.ana.hfst: %.gen.hfst
 	hfst-invert $< -o $@
 %.twol.hfst: %.twol
