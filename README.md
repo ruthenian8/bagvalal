@@ -11,7 +11,7 @@ This repository contains a prototype for a Bagvalal morphological analyzer.
 * cd to corpora & run make \*corpus name\*.analyzed to analyze with the cyrillic transducer
 * cd to corpora & run make \*corpus name\*.tr.analyzed to analyze with the IPA transducer
 
-###Examples:
+### Examples:
 * make check-coverage-stats
 * cd corpora
 * make k_newline.tr.analyzed
