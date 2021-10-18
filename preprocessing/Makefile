@@ -4,7 +4,7 @@
 	cd ..; make merged.tr.hfstol;
 
 Kibrik_dict.xlsx:
-	python3 extractKibrik.py
+	python3 extractKibrik.py save
 
 analyses.csv: gudtexts.txt
 	python3 asynccsv.py
