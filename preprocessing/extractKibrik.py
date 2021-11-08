@@ -6,7 +6,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from typing import List, Dict, Union
 import sys
-import subprocess
+from transliterate import transliterate
 
 
 def read_docx(filename:str) -> BeautifulSoup:
@@ -28,17 +28,9 @@ def get_entry_strings(soup: BeautifulSoup) -> List[str]:
         if len(text_chunks) <= 1:
             continue
         strings.append("".join([t.text for t in text_chunks if t.text]))
-    return [re.sub("‘", "’", string) for string in strings]
 
-
-def transliterate(word: str) -> str:
-    """Transliterate a single word. Linux-only"""
-
-    echo = subprocess.Popen(["echo", word], stdout=subprocess.PIPE)
-    translit = subprocess.Popen(["hfst-lookup", "../translit/translit.hfst"], stdin=echo.stdout, stdout=subprocess.PIPE)
-    out = translit.stdout.readlines()
-    result = out[0].decode().split("\t")[1]
-    return result
+    expell_numbers = lambda x: re.sub(r"\d", "", x.replace("‘", "’"))
+    return [item for item in map(expell_numbers, strings)]
 
 
 def strings_to_records(ent_strings: List[str]) -> List[Dict[str, str]]:
@@ -50,7 +42,7 @@ def strings_to_records(ent_strings: List[str]) -> List[Dict[str, str]]:
             continue
         try:
             entry = re.match(r"[^а-я]+?(?= [A-Z])", string)
-            entrytext = entry.group().strip().split("||").strip()
+            entrytext = entry.group().strip().split(" || ")
             entryend = entry.span()[1]
             meanings = re.search(r" [а-я\., ]+ *", string).group().strip().split(", ")
             POS = re.search(r" [A-Z][^а-я]*? (?=[а-я])", string[entryend:]).group().strip()
@@ -70,7 +62,7 @@ mapping = {
     "nouns":{
         "pos_filter":" N ",
         "regex_filter":"^.+(?= N )",
-        "cut_filter":"^.+(?= N )"
+        "cut_filter":"^.+?(?= N )"
     },
     "adj":{
         "pos_filter":" Adj ",
@@ -148,23 +140,24 @@ def write_slice_to_stdout(
     outs:List[str] = []
     for item in pos_slice:
         if re.search(regex_filter, item):
-            new_word = transliterate(re.search(cut_filter, item).group())
-            outs.append(new_word)
+            found = re.search(cut_filter, item).group().split(" || ")
+            for new_word in found:
+                outs.append(transliterate(new_word))
     sys.stdout.write("\n".join([f"LEXICON {name}", *outs]))
 
 
 if __name__ == "__main__":
-    soup = read_docx("bag.docx")
-    ent_list = get_entry_strings(soup)
-    rec_list = strings_to_records(ent_list)
     if len(sys.argv) != 2:
         print("Expected arguments: <save> | <nouns/adj/adv/verbI/verbII>")
         sys.exit(1)
+    soup = read_docx("bag.docx")
+    ent_list = get_entry_strings(soup)
+    rec_list = strings_to_records(ent_list)
     goal = sys.argv[1]     
     if goal == "save":
         k_dict = pd.DataFrame.from_records(rec_list)
         k_dict.to_excel("Kibrik_dict.xlsx", index=False)
     elif goal in mapping:
-        write_slice_to_stdout(goal, **mapping[goal])
+        write_slice_to_stdout(goal, ent_list, **mapping[goal])
     else:
         sys.exit(1)
