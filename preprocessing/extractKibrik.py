@@ -1,10 +1,13 @@
+#usr/bin/python3
 import zipfile
 import re
 import os
 import pandas as pd
 from bs4 import BeautifulSoup
-from typing import List, Dict
+from typing import List, Dict, Union
 import sys
+import subprocess
+
 
 def read_docx(filename:str) -> BeautifulSoup:
     with zipfile.ZipFile(filename, "r") as zipf:
@@ -14,7 +17,10 @@ def read_docx(filename:str) -> BeautifulSoup:
     soup = BeautifulSoup(content, "html.parser")
     return soup
 
+
 def get_entry_strings(soup: BeautifulSoup) -> List[str]:
+    """Get meaningful strings from a vocabulary soup"""
+
     paras = soup.find_all("w:p")
     strings = []
     for para in paras[4:]:
@@ -24,22 +30,36 @@ def get_entry_strings(soup: BeautifulSoup) -> List[str]:
         strings.append("".join([t.text for t in text_chunks if t.text]))
     return [re.sub("‘", "’", string) for string in strings]
 
+
+def transliterate(word: str) -> str:
+    """Transliterate a single word. Linux-only"""
+
+    echo = subprocess.Popen(["echo", word], stdout=subprocess.PIPE)
+    translit = subprocess.Popen(["hfst-lookup", "../translit/translit.hfst"], stdin=echo.stdout, stdout=subprocess.PIPE)
+    out = translit.stdout.readlines()
+    result = out[0].decode().split("\t")[1]
+    return result
+
+
 def strings_to_records(ent_strings: List[str]) -> List[Dict[str, str]]:
+    """read lines from docx with Kibrik vocabulary. Produce a table of format {word/pos/entry}"""
+
     records = []
     for string in ent_strings:
         if not re.match(r"[^а-я ]+", string): #assert that the line starts with a latin entry
             continue
         try:
             entry = re.match(r"[^а-я]+?(?= [A-Z])", string)
-            entrytext = entry.group().strip().split(" || ")
+            entrytext = entry.group().strip().split("||").strip()
             entryend = entry.span()[1]
             meanings = re.search(r" [а-я\., ]+ *", string).group().strip().split(", ")
             POS = re.search(r" [A-Z][^а-я]*? (?=[а-я])", string[entryend:]).group().strip()
             for et in entrytext:
+                et = transliterate(et)
                 for m in meanings:
                     records.append(dict(
-                        entry=et,
-                        meaning=m,
+                        word=et,
+                        ru_word=m,
                         POS=POS
                     ))
         except AttributeError:
@@ -47,29 +67,104 @@ def strings_to_records(ent_strings: List[str]) -> List[Dict[str, str]]:
     return records
 
 mapping = {
-    "nouns":{"pos_filter":"", "regex_filter":"", "cut_filter":""},
-    "adj":{"pos_filter":"", "regex_filter":"", "cut_filter":""},
-    "adv":{"pos_filter":"", "regex_filter":"", "cut_filter":""},
-    "verbI":{"pos_filter":"", "regex_filter":"", "cut_filter":""},
-    "verbII":{"pos_filter":"", "regex_filter":"", "cut_filter":""}
+    "nouns":{
+        "pos_filter":" N ",
+        "regex_filter":"^.+(?= N )",
+        "cut_filter":"^.+(?= N )"
+    },
+    "adj":{
+        "pos_filter":" Adj ",
+        "regex_filter":"^.*?(?= Adj)",
+        "cut_filter":"^.*?(?= Adj)"
+    },
+    "adv":{
+        "pos_filter":"(Adv|PronAdv)", 
+        "regex_filter":"^.*?(?= (Adv|PronAdv))", 
+        "cut_filter":"^.*?(?= (Adv|PronAdv))"
+    },
+    "verbIa":{
+        "pos_filter":" V ", 
+        "regex_filter":"[uū]̃* V.*", 
+        "cut_filter":"^.*?(?= V)"
+    },
+    "verbIb":{
+        "pos_filter":" V ", 
+        "regex_filter":"[iĩ] V.*?conv.*?[rn]āχ.*?[aāãã],", 
+        "cut_filter":"^.*?(?= V)"
+    },
+    "verbIIa":{
+        "pos_filter":" V ", 
+        "regex_filter":"[^iĩ] V.*?conv.*?i.āχ", 
+        "cut_filter":"^.*?(?= V)"
+    },
+    "verbIIb":{
+        "pos_filter":" V ", 
+        "regex_filter":"[^iĩ] V.*?conv.*?u.āχ", 
+        "cut_filter":"^.*?(?= V)"
+    },
+    "verbIII":{
+        "pos_filter":" V ", 
+        "regex_filter":"inf āla", 
+        "cut_filter":"^.*?(?= V)"
+    },
+    "verbIV":{
+        "pos_filter":" V ", 
+        "regex_filter":"conv.*?[^r]ā.+inf {1,2}ā", 
+        "cut_filter":"^.*?(?= V)"
+    },
+    "verbV":{
+        "pos_filter":" V ", 
+        "regex_filter":"conv.*?r.+inf.*?rā", 
+        "cut_filter":"^.*?(?= V)"
+    }
 }
 
-def write_slice(filename, strings, pos_filter, regex_filter, cut_filter) -> None:
+def write_slice_to_file(
+    name: str,
+    strings: List[str],
+    pos_filter: str,
+    regex_filter: Union[str, re.Pattern],
+    cut_filter: Union[str, re.Pattern]
+) -> None:
+    """Write a subset of the vocabulary to a text file"""
+
     pos_slice = [i for i in filter(lambda x: pos_filter in x, strings)]
-    with open(f'kibrik_{filename}.txt', "w+", encoding="UTF-8") as file:
+    with open(f'kibrik_{name}.txt', "w+", encoding="UTF-8") as file:
         for item in pos_slice:
             if re.search(regex_filter, item):
-                file.write(re.search(cut_filter, item).group() + "\n")
+                file.write(transliterate(re.search(cut_filter, item).group()) + "\n")
+
+
+def write_slice_to_stdout(
+    name: str,
+    strings: List[str],
+    pos_filter: str,
+    regex_filter: Union[str, re.Pattern],
+    cut_filter: Union[str, re.Pattern]
+) -> None:
+    """Write a subset of the vocabulary to the standart output as a lexicon"""
+
+    pos_slice = [i for i in filter(lambda x: pos_filter in x, strings)]
+    outs:List[str] = []
+    for item in pos_slice:
+        if re.search(regex_filter, item):
+            new_word = transliterate(re.search(cut_filter, item).group())
+            outs.append(new_word)
+    sys.stdout.write("\n".join([f"LEXICON {name}", *outs]))
+
 
 if __name__ == "__main__":
     soup = read_docx("bag.docx")
     ent_list = get_entry_strings(soup)
     rec_list = strings_to_records(ent_list)
-        if sys.argv[1] == "save":
-            k_dict = pd.DataFrame.from_records(rec_list)
-            k_dict.to_excel("Kibrik_dict.xlsx", index=False)
-        elif sys.argv[1] in mapping:
-            pass
-        else:
-            print("Expected arguments: <save> | <nouns/adj/adv/verbI/verbII>")
-            sys.exit(1)
+    if len(sys.argv) != 2:
+        print("Expected arguments: <save> | <nouns/adj/adv/verbI/verbII>")
+        sys.exit(1)
+    goal = sys.argv[1]     
+    if goal == "save":
+        k_dict = pd.DataFrame.from_records(rec_list)
+        k_dict.to_excel("Kibrik_dict.xlsx", index=False)
+    elif goal in mapping:
+        write_slice_to_stdout(goal, **mapping[goal])
+    else:
+        sys.exit(1)

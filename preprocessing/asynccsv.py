@@ -1,16 +1,14 @@
-import asyncio
-import aiofiles
-
-async def readFile(filename):
-    async with aiofiles.open(filename, "r", encoding="utf-8") as f:
-        contents = await f.read()
+"""Produce a csv file with analyses"""
+def read_file(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        contents = f.read()
         return contents
 
-async def main():
+def main():
     """Read some lines with tab-separated values.
     Extract to a csv document.
     """
-    content = await readFile("gudtexts.txt")
+    content = read_file("gudtexts.txt")
     file = open("analyses.csv", "w+", encoding="utf-8")
     all_lines = content.splitlines()
     for i in range(0, len(all_lines), 2):
@@ -26,4 +24,5 @@ async def main():
             file.write(item + "," + item2 + "\n")
     file.close()
 
-asyncio.run(main())
+if __name__ == "__main__":
+    main()
