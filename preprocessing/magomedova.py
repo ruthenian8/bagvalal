@@ -53,6 +53,7 @@ def main(
     filename: str,
     out_file: str,
     word_col_id: Union[str, int]=3,
+    pos_col_id: Union[str, int]=8,
     trans_col_id: Union[str, int]=10,
 ) -> None:
 
@@ -60,7 +61,7 @@ def main(
     pipe = Pipe([lower_strategy, transform_strategy, substitute_strategy, clear_strategy])
     bag[word_col_id] = bag[word_col_id].apply(lambda x: pipe(x))
     bag = bag.loc[bag[trans_col_id].isna() == False]
-    bag = bag[[word_col_id, 8, trans_col_id]]
+    bag = bag[[word_col_id, pos_col_id, trans_col_id]]
     bag.columns = ["word", "POS", "ru_word"]
     bag.to_excel(out_file)
 

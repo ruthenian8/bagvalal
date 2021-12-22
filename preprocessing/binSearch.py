@@ -1,4 +1,6 @@
 """Binary search function for entry lookup"""
+
+
 def index(elements, element):
     start = 0
     end = len(elements)

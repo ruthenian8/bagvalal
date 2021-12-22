@@ -1,11 +1,13 @@
 """Map entries from a ready lexd file to their equivalents in russian, avar etc.
 """
+import re
+from typing import List, Dict, Tuple, Union
+
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 import pandas as pd
-import re
+
 from binSearch import index
-from typing import List, Dict, Tuple
 
 
 def get_analysis(tag) -> Dict[str, str]:
@@ -30,7 +32,7 @@ def parse_xml(filename: str) -> pd.DataFrame:
     with open(filename, encoding="utf-8") as file:
         contents = file.read()
     bs = BeautifulSoup(contents, "html.parser")
-    es:List[Tag] = bs.find_all("e")
+    es: List[Tag] = bs.find_all("e")
     l_tags: List[Dict[str, str]]
     r_tags: List[Dict[str, str]]
     l_tags, r_tags = ([], [])
@@ -41,30 +43,38 @@ def parse_xml(filename: str) -> pd.DataFrame:
     data["word_right"] = [item["word"] for item in r_tags]
     data["analysis_right"] = [item["analysis"] for item in r_tags]
     filter_bool = data.apply(
-        lambda x: x["word"] != "" and x["word_right"] != "", 
-        axis=1
+        lambda x: x["word"] != "" and x["word_right"] != "", axis=1
     )
     data = data.loc[filter_bool]
     data.sort_values(ignore_index=True, by=["word"], inplace=True)
     return data
+
 
 def parse_lexd(filename: str) -> Tuple[List[str], List[Dict[str, str]]]:
     """Extract words & analyses from a lexd file"""
 
     with open(filename, encoding="utf-8") as file:
         contents = file.read()
-    not_a_comment = lambda x: True if x and not x.startswith("#") and ":" in x else False # assert that line is not a comment
-    not_a_rule = lambda x: True if "(" not in x and re.match(r"^[а-я]", x) else False # assert that line starts with letters, e.g. not a rule
-    valid_strings = sorted([i for i in filter(all([not_a_comment(x), not_a_rule(x)]), contents.splitlines())])
+    not_a_comment = (
+        lambda x: True if x and not x.startswith("#") and ":" in x else False
+    )  # assert that line is not a comment
+    not_a_rule = (
+        lambda x: True if "(" not in x and re.match(r"^[а-я]", x) else False
+    )  # assert that line starts with letters, e.g. not a rule
+    valid_strings = sorted(
+        [
+            i for i in filter(
+                lambda x: all([not_a_comment(x), not_a_rule(x)]), contents.splitlines()
+            )
+        ]
+    )
     valid_dicts = [i for i in map(extract_entry, valid_strings)]
     valid_words = [i["word"] for i in valid_dicts]
     return valid_words, valid_dicts
 
 
 def find_mapping(
-    source: pd.DataFrame,
-    target: pd.DataFrame,
-    target_key: Union[str, int]=10
+    source: pd.DataFrame, target: pd.DataFrame, target_key: Union[str, int] = 10
 ) -> pd.DataFrame:
     """Find translation pairs by russian translation"""
 
@@ -79,36 +89,32 @@ def find_mapping(
         idx += 1
         try:
             newindex = index(source["word"], line[target_key])
-            source_line = source.iloc[newindex,:]
-            target.iloc[idx-1,-3] = source_line["analysis"]
-            target.iloc[idx-1,-2] = source_line["word_right"]
-            target.iloc[idx-1,-1] = source_line["analysis_right"] 
+            source_line = source.iloc[newindex, :]
+            target.iloc[idx - 1, -3] = source_line["analysis"]
+            target.iloc[idx - 1, -2] = source_line["word_right"]
+            target.iloc[idx - 1, -1] = source_line["analysis_right"]
         except KeyError:
             continue
     return target
 
 
 def non_empty_rows(
-    target: pd.DataFrame,
-    filter_key: Union[str, int],
-    target_key: Union[str, int]
+    target: pd.DataFrame, filter_key: Union[str, int], target_key: Union[str, int]
 ) -> pd.DataFrame:
     """Leave rows where the value of a column is non-empty + sort"""
 
     target = target.copy()
     boolean = target[target_key].apply(lambda x: bool(x))
     new_target = target.loc[boolean]
-    new_target.sort_values(ignore_index=True,
-                            by=["analysis", target_key],
-                            inplace=True)
+    new_target.sort_values(ignore_index=True, by=["analysis", target_key], inplace=True)
     return new_target
 
 
 def write_to_list(
-    df:pd.DataFrame,
-    src_list:list,
-    src_dicts:list,
-    key:str="word",
+    df: pd.DataFrame,
+    src_list: list,
+    src_dicts: list,
+    key: str = "word",
 ) -> List[Dict[str, str]]:
     """Create a list of word+analysis strings"""
 
@@ -117,21 +123,20 @@ def write_to_list(
         try:
             source_idx = index(src_list, line[key])
             entry = src_dicts[source_idx]["full"]
-            res_list.append(dict(
-                orig=entry,
-                rus=line["ru_word"]+line["analysis"],
-                other=line["word_right"]+line["analysis_right"]
-            ))
+            res_list.append(
+                dict(
+                    orig=entry,
+                    rus=line["ru_word"] + line["analysis"],
+                    other=line["word_right"] + line["analysis_right"],
+                )
+            )
         except KeyError:
             continue
     return res_list
 
 
 def write_to_lexd(
-    filename:str,
-    source: List[Dict[str, str]],
-    lang1:str,
-    lang2:str
+    filename: str, source: List[Dict[str, str]], lang1: str, lang2: str
 ) -> None:
 
     with open(filename, "w+", encoding="utf-8") as file:
@@ -140,48 +145,49 @@ def write_to_lexd(
 
 
 if __name__ == "__main__":
-    words, dicts = parse_lexd("merged.lexd") # read lexd
-    
-    rus_ava_df = parse_xml("apertium-ava-rus.ava-rus.dix") # read & convert xml for a lang pair
-    rus_ava_df.to_excel("rus-avar.xlsx") # ...
+    words, dicts = parse_lexd("merged.lexd")  # read lexd
 
-    m_dict = pd.read_excel("Magomedova_dict.xlsx") # read parsed vocabularies
-    k_dict = pd.read_excel("Kibrik_dict.xlsx") # ...
+    rus_ava_df = parse_xml(
+        "apertium-ava-rus.ava-rus.dix"
+    )  # read & convert xml for a lang pair
+    rus_ava_df.to_excel("rus-avar.xlsx")  # ...
 
-    m_mapping = non_empty_rows(target=find_mapping(rus_ava_df, m_dict),
+    m_dict = pd.read_excel("Magomedova_dict.xlsx")  # read parsed vocabularies
+    k_dict = pd.read_excel("Kibrik_dict.xlsx")  # ...
+
+    m_mapping = non_empty_rows(
+        target=find_mapping(rus_ava_df, m_dict),
         filter_key="word_right",
-        target_key="word") # find matches by translation for vocabulary 1
-    assert m_mapping.shape[1] == 6 # ensure the format is correct
-    m_mapping.to_excel("Magomedova-rus-ava.xlsx") # save
+        target_key="word",
+    )  # find matches by translation for vocabulary 1
+    assert m_mapping.shape[1] == 6  # ensure the format is correct
+    m_mapping.to_excel("Magomedova-rus-ava.xlsx")  # save
 
-    k_mapping = non_empty_rows(target=find_mapping(rus_ava_df, k_dict, "meaning"),
+    k_mapping = non_empty_rows(
+        target=find_mapping(rus_ava_df, k_dict, "meaning"),
         filter_key="word_right",
-        target_key="word") # find matches by translation for vocabulary 2
-    assert k_mapping.shape[1] == 6 # ...
-    k_mapping.to_excel("Kibrik-rus-ava.xlsx") # ...
+        target_key="word",
+    )  # find matches by translation for vocabulary 2
+    assert k_mapping.shape[1] == 6  # ...
+    k_mapping.to_excel("Kibrik-rus-ava.xlsx")  # ...
 
-    k_pairs = write_to_list(k_mapping, words, dicts) # create lexd-like strings
-    m_pairs = write_to_list(m_mapping, words, dicts) # ...
-    saves = [{
-        "filename":"k_ava.lexd",
-        "source":k_pairs,
-        "lang1":"orig",
-        "lang2":"other"
-    }, {
-        "filename":"k_rus.lexd",
-        "source":k_pairs,
-        "lang1":"orig",
-        "lang2":"rus"
-    }, {
-        "filename":"m_ava.lexd",
-        "source":m_pairs,
-        "lang1":"orig",
-        "lang2":"other"
-    }, {
-        "filename":"m_rus.lexd",
-        "source":m_pairs,
-        "lang1":"orig",
-        "lang2":"rus"
-    }]
+    k_pairs = write_to_list(k_mapping, words, dicts)  # create lexd-like strings
+    m_pairs = write_to_list(m_mapping, words, dicts)  # ...
+    saves = [
+        {
+            "filename": "k_ava.lexd",
+            "source": k_pairs,
+            "lang1": "orig",
+            "lang2": "other",
+        },
+        {"filename": "k_rus.lexd", "source": k_pairs, "lang1": "orig", "lang2": "rus"},
+        {
+            "filename": "m_ava.lexd",
+            "source": m_pairs,
+            "lang1": "orig",
+            "lang2": "other",
+        },
+        {"filename": "m_rus.lexd", "source": m_pairs, "lang1": "orig", "lang2": "rus"},
+    ]
     for save in saves:
-        write_to_lexd(**save) # save lexd files
+        write_to_lexd(**save)  # save lexd files
