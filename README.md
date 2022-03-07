@@ -1,7 +1,7 @@
 # Bagvalal Morphology
 ## Background
 [Bagvalal](https://en.wikipedia.org/wiki/Bagvalal_language) is an endangered language from the Nakh-Daghestanian family.
-This repository contains a prototype for a Bagvalal morphological analyzer.
+This repository contains a prototype for a Bagvalal morphological analyzer. It is a part of a larger project by the students of the [School of Linguistics](https://ling.hse.ru/en/) at the NRU HSE that aims to provide digital tools for endangered languages.
 See the [paper draft](https://docs.google.com/document/d/1-jmHmJKq803GnBjPasgo-X8pdjsX88qaX1eYLcp17Og/edit?usp=sharing) for a detailed description.
 
 A working project demo can be found [here](http://87.247.157.119:5000/parsers).
@@ -50,4 +50,4 @@ make k_newline.tr.analyzed
 Current performance: Naive Coverage ~82%
 
 ### Platforms:
-The project has been tested and is guaranteed to run on Debian and Ubuntu. We make no promises 
+The project has been tested and is guaranteed to run on Debian and Ubuntu. We make no promises regarding the performance on other platforms.
