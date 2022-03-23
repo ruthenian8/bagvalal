@@ -6,6 +6,7 @@ See the [paper draft](https://docs.google.com/document/d/1-jmHmJKq803GnBjPasgo-X
 
 You can cite the paper draft using one of the forms listed below:
 
+* Developing morphological analyzers for low-resource languages of the Caucasus. D. Arakelova, D. Ignatiev. Term paper at the School of Linguistics, NRU HSE, 2021.
 * Daria Arakelova, Daniil Ignatiev. “Developing morphological analyzers for low-resource languages of the Caucasus”. NRU HSE (2021): 22. pag.
 * Аракелова Д., Игнатьев Д. Разработка морфологических анализаторов для малоресурсных языков Кавказа. НИУ ВШЭ. Москва, 2021. 22 с.
 
