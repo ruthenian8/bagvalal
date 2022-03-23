@@ -1,20 +1,22 @@
-import asyncio
-import aiofiles
+"""Produce a csv file with analyses"""
 
-async def readFile(filename):
-    async with aiofiles.open(filename, "r", encoding="utf-8") as f:
-        contents = await f.read()
+
+def read_file(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        contents = f.read()
         return contents
 
-async def main():
-    """Read some lines with tab-separated values.
+
+def main():
+    """
+    Read some lines with tab-separated values.
     Extract to a csv document.
     """
-    content = await readFile("gudtexts.txt")
+    content = read_file("gudtexts.txt")
     file = open("analyses.csv", "w+", encoding="utf-8")
     all_lines = content.splitlines()
     for i in range(0, len(all_lines), 2):
-        line1, line2 = all_lines[i].split("\t"), all_lines[i+1].split("\t")
+        line1, line2 = all_lines[i].split("\t"), all_lines[i + 1].split("\t")
         try:
             assert len(line1) == len(line2)
         except AssertionError:
@@ -26,4 +28,6 @@ async def main():
             file.write(item + "," + item2 + "\n")
     file.close()
 
-asyncio.run(main())
+
+if __name__ == "__main__":
+    main()
