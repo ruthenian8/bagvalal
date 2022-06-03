@@ -8,7 +8,7 @@ def transliterate(word: str) -> str:
 
     echo = subprocess.Popen(["echo", word], stdout=subprocess.PIPE)
     translit = subprocess.Popen(
-        ["hfst-lookup", "../translit/translit.hfst"],
+        ["hfst-lookup", "../translit/kibrik-translit.hfst"],
         stdin=echo.stdout,
         stdout=subprocess.PIPE,
         stderr=subprocess.DEVNULL,

@@ -1,0 +1,6 @@
+
+LEXICON DeclType
+<TypeNom>:[TypeNom]
+<TypeVerb>:[TypeVerb]
+<TypeAdj>:[TypeAdj]
+<Type2xAdj>:[Type2xAdj]

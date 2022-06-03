@@ -1,5 +1,11 @@
 **/*.hfst
+**/*.zhfst
+**/*.hfstol
 **/*.att
 *-test.*
 *.txt*
 *_*/*
+*__pycache__
+*_rels
+preprocessing/word
+preprocessing/[Content_Types].xml

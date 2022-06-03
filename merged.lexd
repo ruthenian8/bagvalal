@@ -1,43 +1,75 @@
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
 # VERB PATTERNS
+PATTERN IAdeclension
+(( agrInitial VerbStem[Idecl,A,AgrInit] ) | VerbStem[Idecl,A,-AgrInit] )
+
+PATTERN IBdeclension
+(( agrInitial VerbStem[Idecl,B,AgrInit] ) | VerbStem[Idecl,B,-AgrInit] )
+
+PATTERN IIAdeclension
+(( agrInitial VerbStem[IIdecl,A,AgrInit] ) | VerbStem[IIdecl,A,-AgrInit] )
+adjSingle Verbalizer
+
+PATTERN IIBdeclension
+(( agrInitial VerbStem[IIdecl,B,AgrInit] ) | VerbStem[IIdecl,B,-AgrInit] )
+
+PATTERN IVdeclension
+(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] )
+
+PATTERN Vdeclension
+(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] )
+
+PATTERN IIIAdeclension
+(( agrInitial VerbStem[IIIdecl,A,AgrInit] ) | VerbStem[IIIdecl,A,-AgrInit] )
+IAdeclension Causative
+IIAdeclension Causative
+IVdeclension Causative
+Vdeclension Causative
+adjSingle Causative
+
+PATTERN IIIBdeclension
+(( agrInitial VerbStem[IIIdecl,B,AgrInit] ) | VerbStem[IIIdecl,B,-AgrInit] )
+IBdeclension Causative
+IIBdeclension Causative
+
 PATTERN Prateritum
-(( agrInitial VerbStem[Idecl,B,AgrInit] ) | VerbStem[Idecl,B,-AgrInit] ) [:>] PratAdd[IBdecl]
-(( agrInitial VerbStem[Idecl,A,AgrInit] ) | VerbStem[Idecl,A,-AgrInit] ) [:>] PratAdd[reg]
-(( agrInitial VerbStem[IIdecl,B,AgrInit] ) | VerbStem[IIdecl,B,-AgrInit] ) [:>] PratAdd[IBdecl]
-(( agrInitial VerbStem[IIdecl,B,AgrInit] ) | VerbStem[IIdecl,B,-AgrInit] ) [:>] PratAdd[IIBdecl]
-(( agrInitial VerbStem[IIdecl,A,AgrInit] ) | VerbStem[IIdecl,A,-AgrInit] ) [:>] PratAdd[IAdecl]
-(( agrInitial VerbStem[IIdecl,A,AgrInit] ) | VerbStem[IIdecl,A,-AgrInit] ) [:>] PratAdd[reg]
-(( agrInitial VerbStem[IIIdecl,B,AgrInit] ) | VerbStem[IIIdecl,B,-AgrInit] ) [:>] PratAdd[IIIBdecl]
-(( agrInitial VerbStem[IIIdecl,A,AgrInit] ) | VerbStem[IIIdecl,A,-AgrInit] ) [:>] PratAdd[reg]
-(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] PratAdd[reg]
-(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] PratAdd[reg]
+IBdeclension [:>] PratAdd[IBdecl]
+IAdeclension [:>] PratAdd[reg]
+IIBdeclension [:>] PratAdd[IBdecl]
+IIBdeclension [:>] PratAdd[IIBdecl]
+IIAdeclension [:>] PratAdd[IAdecl]
+IIAdeclension [:>] PratAdd[reg]
+IIIBdeclension [:>] PratAdd[IIIBdecl]
+IIIAdeclension [:>] PratAdd[reg]
+IVdeclension [:>] PratAdd[reg]
+Vdeclension [:>] PratAdd[reg]
 
 PATTERN Imperfect
-(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] ImperfAdd[IVdecl]
-(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] ImperfAdd[IIdecl]
-(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] ImperfAdd[Idecl]
-(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] ImperfAdd[reg]
-(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] ImperfAdd[reg]
+IVdeclension [:>] ImperfAdd[IVdecl]
+( IIAdeclension | IIBdeclension ) [:>] ImperfAdd[IIdecl]
+( IAdeclension | IBdeclension ) [:>] ImperfAdd[Idecl]
+( IIIAdeclension | IIIBdeclension ) [:>] ImperfAdd[reg]
+Vdeclension [:>] ImperfAdd[reg]
 
 PATTERN Potentialis
-(( agrInitial VerbStem[IIIdecl,B,AgrInit] ) | VerbStem[IIIdecl,B,-AgrInit] ) [:>] PotAdd[IIIdecl]
-(( agrInitial VerbStem[IIIdecl,B,AgrInit] ) | VerbStem[IIIdecl,B,-AgrInit] ) [:>] PotAdd[reg]
-(( agrInitial VerbStem[IIIdecl,A,AgrInit] ) | VerbStem[IIIdecl,A,-AgrInit] ) [:>] PotAdd[IIIAdecl]
-(( agrInitial VerbStem[IIIdecl,A,AgrInit] ) | VerbStem[IIIdecl,A,-AgrInit] ) [:>] PotAdd[Adecl]
-(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] PotAdd[Vdecl]
-(( agrInitial VerbStem[Idecl,B,AgrInit] ) | VerbStem[Idecl,B,-AgrInit] ) [:>] PotAdd[reg]
-(( agrInitial VerbStem[Idecl,A,AgrInit] ) | VerbStem[Idecl,A,-AgrInit] ) [:>] PotAdd[Adecl]
-(( agrInitial VerbStem[IIdecl,B,AgrInit] ) | VerbStem[IIdecl,B,-AgrInit] ) [:>] PotAdd[reg]
-(( agrInitial VerbStem[IIdecl,A,AgrInit] ) | VerbStem[IIdecl,A,-AgrInit] ) [:>] PotAdd[Adecl]
-(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] PotAdd[reg]
+IIIBdeclension [:>] PotAdd[IIIdecl]
+IIIBdeclension [:>] PotAdd[reg]
+IIIAdeclension [:>] PotAdd[IIIAdecl]
+IIIAdeclension [:>] PotAdd[Adecl]
+Vdeclension [:>] PotAdd[Vdecl]
+IBdeclension [:>] PotAdd[reg]
+IAdeclension [:>] PotAdd[Adecl]
+IIBdeclension [:>] PotAdd[reg]
+IIAdeclension [:>] PotAdd[Adecl]
+IVdeclension [:>] PotAdd[reg]
 
 PATTERN Prohibitive
-(( agrInitial VerbStem[IIIdecl,AgrInit] ) | VerbStem[IIIdecl,-AgrInit] ) [:>] ProhAdd[IIIdecl]
-(( agrInitial VerbStem[Idecl,AgrInit] ) | VerbStem[Idecl,-AgrInit] ) [:>] ProhAdd[Idecl]
-(( agrInitial VerbStem[IIdecl,AgrInit] ) | VerbStem[IIdecl,-AgrInit] ) [:>] ProhAdd[IIdecl]
-(( agrInitial VerbStem[IVdecl,AgrInit] ) | VerbStem[IVdecl,-AgrInit] ) [:>] ProhAdd[IVdecl]
-(( agrInitial VerbStem[Vdecl,AgrInit] ) | VerbStem[Vdecl,-AgrInit] ) [:>] ProhAdd[Vdecl]
+( IIIAdeclension | IIIBdeclension ) [:>] ProhAdd[IIIdecl]
+( IAdeclension | IBdeclension ) [:>] ProhAdd[Idecl]
+( IIAdeclension | IIBdeclension ) [:>] ProhAdd[IIdecl]
+IVdeclension [:>] ProhAdd[IVdecl]
+( Vdeclension | VerbStem[Vdecl,-AgrInit] ) [:>] ProhAdd[Vdecl]
 
 PATTERN EmphStem
 Imperfect EmphAffix
@@ -205,40 +237,47 @@ SupExceptions[OblNLi]
 DatExceptions[OblFLi]
 DatExceptions[OblNLi]
 
+PATTERN AllLocs
+locMain directCase atrAffix?
+
 PATTERN CasesGenAgr
 CaseMain[ErgR,-nullNom]
 genitiveCase[GenAgr]
-locMain directCase
+AllLocs
 
 PATTERN CasesGenNonAgr
 CaseMain[ErgR,-nullNom]
 genitiveCase[-GenAgr]
-locMain directCase
+AllLocs
 
 PATTERN CasesAll
 CaseMain[ErgR,-nullNom]
 genitiveCase
-locMain directCase
+AllLocs
 
 PATTERN AddCasesMsg
 CaseMain[nullNom]
 DatExcMin[OblSu]
 SupExcMin[OblSu] directCase
+irrLoc
 
 PATTERN AddCasesFNsg
 CaseMain[nullNom]
 DatExcMin[OblLi]
 SupExcMin[OblLi] directCase
+irrLoc
 
 PATTERN AddCasesHpl
 CaseMain[nullNom]
 DatExcMin[OblPlLu]
 SupExcMin[OblPlLu] directCase
+irrLoc
 
 PATTERN AddCasesNpl
 CaseMain[nullNom]
 DatExcMin[OblLi]
 SupExcMin[OblLi] directCase
+irrLoc
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
@@ -254,6 +293,8 @@ ModalParticle
 UQparticle
 QuestParticle PostClitic[all]?
 negSuffix[pst] QuestParticle? PostClitic[all]?
+EqSuffix[eq1] PostClitic?
+EqSuffix[eq2] agrFinal PostClitic*
 
 PATTERN NCl # = Nominal clitics
 PostClitic
@@ -262,6 +303,11 @@ ModalParticle
 UQparticle
 QuestParticle PostClitic?
 negSuffix[pst] QuestParticle? PostClitic?
+PostClitic[da]? EqSuffix[eq1] PostClitic?
+EqSuffix[eq2] agrFinal PostClitic?
+EqSuffix[eq3] agrFinal PostClitic?
+VocMarker
+cisLoc
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
@@ -374,7 +420,7 @@ PerPronounStems[PrExc] [<obl>:] SupExcMin[pron] NCl?
 PerPronounStems[-PrExc] CaseMain[nullNom] NCl?
 PerPronounStems[-PrExc] [<obl>:] CaseMain[ErgR,-nullNom] NCl?
 PerPronounExc NCl?
-PerPronounStems [<obl>:] locMain directCase NCl?
+PerPronounStems [<obl>:] AllLocs NCl?
 #
 #demonstrative pronouns
 #
@@ -385,22 +431,22 @@ DemPronoun agrFinal CaseMain[nullNom] NCl?
 DemPronoun [:гьи]? agrMiddle AdvPronAffix
 # vocab plurals
 DemPronoun agrFinal[Npl] OblSingular[OblU] ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) NCl? # o-r-u , see vocab, 580
-DemPronoun agrFinal[Npl] OblSingular[OblU] locMain directCase NCl?
+DemPronoun agrFinal[Npl] OblSingular[OblU] AllLocs NCl?
 DemPronoun agrFinal[Hpl] OblPlural[OblPlLu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) NCl? # o-ba-lu- , see vocab, 580
-DemPronoun agrFinal[Hpl] OblPlural[OblPlLu] locMain directCase NCl?
+DemPronoun agrFinal[Hpl] OblPlural[OblPlLu] AllLocs NCl?
 # Kibrik plurals
 DemPronoun OblAdjPlural[OblPlRu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) NCl?
 DemPronoun ( DatExceptions[OblPlRu] | SupExceptions[OblPlRu] ) NCl?
 DemPronoun OblAdjPlural[OblPlRi] ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) NCl?
-DemPronoun ( OblAdjPlural[OblPlRu] | OblAdjPlural[OblPlRi] ) locMain directCase NCl?
+DemPronoun ( OblAdjPlural[OblPlRu] | OblAdjPlural[OblPlRi] ) AllLocs NCl?
 # F / N sg
 DemPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) ( CaseMain[ErgR,-nullNom] | genitiveCase[-GenAgr] ) NCl?
 DemPronoun LiFusion NCl?
-DemPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) locMain directCase NCl?
+DemPronoun ( OblAdjSingular[OblFLi] | OblAdjSingular[OblNLi] ) AllLocs NCl?
 # M sg
 DemPronoun OblAdjSingular[OblSu] ( CaseMain[ErgR,-nullNom] | genitiveCase[GenAgr] ) NCl?
 DemPronoun ( DatExceptions[OblSu] | SupExceptions[OblSu] ) NCl?
-DemPronoun OblAdjSingular[OblSu] locMain directCase NCl?
+DemPronoun OblAdjSingular[OblSu] AllLocs NCl?
 #
 #logophoric pronouns + reflexive pronouns, see Kibrik et al. 162-163
 #
@@ -609,9 +655,9 @@ Potentialis CvbEnd[post] UCl?
 Prateritum CvbEnd[lim] UCl?
 Potentialis CvbEnd[lim] UCl?
 # ! I imperative for intransitive, p. 97
-Prateritum ImperAffix[ImpI] UCl?
+Prateritum ImperAffix[ImpI] ImperParticle? UCl?
 # ! II imperative for intransitive, p. 97
-Prateritum ImperAffix[ImpII] UCl?
+Prateritum ImperAffix[ImpII] ImperParticle? UCl?
 # Positive Optative for intransitive, p. 97
 Prateritum ImperAffix[ImpI] OptEnd UCl?
 Prateritum ImperAffix[ImpII] OptEnd UCl?
@@ -628,7 +674,7 @@ Imperfect CvbEnd[praes] UCl?
 ## POTENTIALIS DERIVATIVES
 #
 # ! potentialis infinitive, p. 94
-Potentialis InfAffix[reg] UCl?
+Potentialis InfAffix[reg] AboParticle? UCl?
 # ! potentialis prospective converb, p. 94
 Potentialis CvbAffix[prosp] agrVerb CvbEnd[past] UCl?
 # ! potentialis future converb, p. 94
@@ -650,16 +696,16 @@ Potentialis CvbEnd[antI] UCl?
 # ! II anterior converb, p. 93
 Potentialis CvbEnd[antII] UCl?
 # ! imperative for transitive, pp. 96-97
-Potentialis ImperAffix[ImpI] UCl?
+Potentialis ImperAffix[ImpI] ImperParticle? UCl?
 # ! positive optative for transitive, p. 97
-Potentialis ImperAffix[ImpI] OptEnd UCl?
+Potentialis ImperAffix[ImpI] ImperParticle? OptEnd UCl?
 #
 ## PROHIBITIVE DERIVATIVES
 #
 # ! regular prohibitive, pp. 94, 96
-Prohibitive ProhEnd UCl?
+Prohibitive ProhEnd ImperParticle? UCl?
 # ! negative infinitive p. 96
-Prohibitive negSuffix[pst] InfAffix[neg] #UCl?
+Prohibitive negSuffix[pst] InfAffix[neg] AboParticle? #UCl?
 # ! negative future converb, p. 96
 Prohibitive negSuffix[pst] CvbAffix[negFut] FutAffix[cvb] CvbEnd[praes] #UCl?
 # ! negative optative
@@ -686,9 +732,10 @@ TimeMarker
 Clitic
 agrInitial AgrParticle
 Particle
-Adverb UCl?
+Adverb atrAffix? UCl?
 MiscPronounExc UCl?
 Interjection
+Punctuation
 
 # ----------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------
@@ -698,9 +745,18 @@ Interjection
 #
 # COMMON MARKERS
 #
+LEXICON Punctuation
+<punct>:<.>
+
 LEXICON negSuffix
 <neg>:чӀи[pst]
 <fut><neg>:чӀе[fut]
+
+LEXICON EqSuffix
+<eq>:мухаᵸ[eq1]
+<eq>:{ep.й}угъуру[eq2]
+<eq>:игъуру[eq2]
+<eq>:{ep.й}о[eq3]
 
 LEXICON TimeMarker
 <temp>:къалъани[temp] # 597
@@ -708,28 +764,36 @@ LEXICON TimeMarker
 <temp>:къолъани[temp] # M 483
 <temp>:къалъир[temp] # M 483
 
+LEXICON VocMarker
+<voc>:е
+<voc>:е # long
+
 LEXICON PostClitic
+<advers><mi>:ми[all]
+<je>:йе[all]
+<je>:йе[all] # long
 <restr>:{ep.й}ел[all]
-<quot>:ди[all]
-<quot>:гъа[all]
-<quot>:гъади[all]
-<quot><add>:гъадила[all]
-<quot>:гъала[all]
-<quot>:гъалади[all]
-<quot><add>:гъаладила[all]
-<quot>:гъе[all]
-<quot>:гъеди[all]
-<quot><add>:гъедила[all]
-<quot><add>:дила[all]
-<all>:аби[all]
-<all>:гъаби[all]
+<quote><di>:ди[all]
+<quote><Ra>:гъа[all]
+<quote><Ra><di>:гъади[all]
+<quote><add>:гъадила[all]
+<quote><Rala>:гъала[all]
+<quote><Rala><quote><di>:гъалади[all]
+<quote><Rala><quote><di><add>:гъаладила[all]
+<quote><Re>:гъе[all]
+<quote><Redi>:гъеди[all]
+<quote><Redi><add>:гъедила[all]
+<quote><di><add>:дила[all]
+<all><Abi>:аби[all]
+<all><Rabi>:гъаби[all]
+<quote><la>:ла[all]
 <add>:ла[all] # 179
 <add>:лъа[all] # 179
-<ident>:да[all] # 180
+<ident>:да[all,da] # 180
 <ident><add>:дала[all] # 180
 <comit>:лена[nom]
 <comit>:ена[nom]
-<rula>:гъула[all] # 180
+<Rula>:гъула[all] # 180
 <uq>:хъал[all] # 182
 
 # -----------------------------------------------------------------------------------------------
@@ -801,6 +865,7 @@ LEXICON OblSingular
 <obl>:е[OblE]
 <obl>:у[OblU]
 <obl>:щу[OblSu]
+<obl>:щӀва[OblSu]
 <obl>:лу[OblLu]
 <obl>:лъи[OblLi]
 
@@ -823,6 +888,7 @@ LEXICON PlOblMarker
 
 LEXICON OblAdjSingular
 <hu><m><sg><obl>:щу[OblSu]
+<hu><m><sg><obl>:щӀва[OblSu]
 <hu><f><sg><obl>:лъи[OblFLi]
 <nn><nt><sg><obl>:лъи[OblNLi]
 
@@ -952,12 +1018,24 @@ LEXICON agrVerb
 # LOCALIZATION MARKERS
 LEXICON locMain
 <sup>:ла
+<sup>:лла
 <sub>:кьи
 <in>:{n.и}ни # irregular, must be configured separately, see Kibrik et al. 142
 <int>:лъи
 <cont>:чӀ
 <ad>:х
-<locposs>:лъа
+<locposs>:лъа # long
+
+LEXICON irrLoc
+<loc>:ха # gudava
+<loc>:лъа
+<loc><lat>:лъа # long
+
+LEXICON cisLoc
+<cisloc>:хинди # long h
+
+LEXICON atrAffix
+<atr>:с # long
 
 LEXICON directCase
 <ess>:
@@ -969,6 +1047,9 @@ LEXICON directCase
 # -----------------------------------------------------------------------------------------------
 # VERB DERIVATION
 # 
+LEXICON Verbalizer
+<vblex>:ли
+
 LEXICON PratAdd
 <aor>:[reg]
 <aor>:{ᵸ}[IIBdecl,IIIBdecl]
@@ -988,8 +1069,8 @@ LEXICON PotAdd
 <pot>:{р}а[Vdecl]
 
 LEXICON ProhAdd
-<proh>:{б}и[IIIdecl]
-<proh>:{v.и}{ᵸ}{б}и[IIdecl,Idecl] #83
+<bi><proh>:{б}и[IIIdecl]
+<bi><proh>:{v.и}{ᵸ}{б}и[IIdecl,Idecl] #83
 <proh>:аби[IVdecl]
 <proh>:раби[Vdecl]
 
@@ -1001,16 +1082,17 @@ LEXICON InfAffix
 LEXICON CvbEnd
 <gna>:о[past]
 <gna>:х[praes]
-<gna>:лис[post]
-<gna>:била[antI]
-<gna>:лъена[antII]
-<gna>:лъиба[lim]
-<gna>:къалъани[temp] # 597
-<gna>:къолъани[temp] # M 483
-<gna>:къалъир[temp] # M 483
-<gna>:ра[cond]
-<gna>:рала[conc]
-<gna>:ла[rsn]
+<gna><POST>:лис[post]
+<gna><anter>:била[antI]
+<gna><anter>:лъена[antII]
+<gna><lim>:лъиба[lim]
+<gna><temp>:къалъани[temp] # 597
+<gna><temp>:къолъани[temp] # M 483
+<gna><temp>:къалъир[temp] # M 483
+<gna><temp>:къарлъир[temp] # M 483
+<gna><cond>:ра[cond]
+<gna><conc>:рала[conc]
+<gna><cls>:ла[rsn]
 
 LEXICON FutAffix
 <fut>:лъи[cvb]
@@ -1030,12 +1112,13 @@ LEXICON IrrAffix
 <irr>:гъалир
 
 LEXICON CvbAffix
-<prosp>:ди[prosp]
+<quot><di>:ди[prosp]
 :ра[negCvb]
 :а[negFut]
 
 LEXICON PartAffix
 <pp>:{prt}[irreg]
+<pp>:до[irreg]
 <pp>:о[reg]
 
 #verb copulas
@@ -1043,7 +1126,8 @@ LEXICON VerbCopula
 экӀва<vblex><cop>:экӀва # 106
 экӀва<vblex><cop><neg>:вечӀе # 99
 экӀва<vblex><cop><neg>:вочӀе
-#ида<cop>:ида # М. 584
+ида<vblex><cop>:ида # М. 584
+ида<vblex><cop>:идо
 
 LEXICON MasdarEnd
 <ger>:{р}[reg]
@@ -1063,6 +1147,9 @@ LEXICON IrrPrtStem
 LEXICON IrrCvb
 белъи<vblex><gna>:белъилъах
 ба<vblex><gna>:балъах
+
+LEXICON Causative
+<caus>:е
 
 # ---------------------------------------------------------------------------------------------
 # NUMBER ROOTS
@@ -2192,6 +2279,7 @@ LEXICON Adverb
 эщдоб<adv><itg>:эщдоб
 эщдобӀир<adv><itg>:эщдобӀир
 элъила<adv><itg>:элъила
+жела<adv>:жела # up there
 абадин–абадалъир<adv>:абадин–абадалъир
 абадин–абадилъи<adv>:абадин–абадилъи
 абцекъалъир<adv>:абцекъалъир
@@ -2283,6 +2371,7 @@ LEXICON Adverb
 гьаддидан<adv>:гьаддидан
 гьаддиданлъир<adv>:гьаддиданлъир
 гьадибулгьах<adv>:гьадибулгьах
+гьайна<adv>:гьайна
 гьалашабалъ<adv>:гьалашабалъ
 гьалащабалъ<adv>:гьалащабалъ
 гьалгьаридаео<adv>:гьалгьаридаео
@@ -2766,16 +2855,26 @@ LEXICON UQparticle
 <uq>:хъал
 
 LEXICON ModalParticle
-<ra><hu><m>:гъо
-<ra><hu><f>:гъа
-<raso><hu><m>:гъасо
-<raso><hu><f>:гъаса
-<rabo><hu><m>:гъабо
-<rabo><hu><f>:гъаба
+<Ro><hu><m>:гъо
+<Ro><hu><f>:гъа
+<Raso><hu><m>:гъасо
+<Raso><hu><f>:гъаса
+<Rabo><hu><m>:гъабо
+<Rabo><hu><f>:гъаба
+<all><Rabi>:гъаби
+
+LEXICON AboParticle
 <abo><hu><m>:або
 <abo><hu><f>:аба
 <abo><hu><m>:лъабо
 <abo><hu><f>:лъаба
+
+LEXICON ImperParticle
+<gora>:гора
+<wele>:веле
+<X><hu><m>:хо # long
+<X><hu><f>:ха # long
+<X><nn><nt>:хе # long
 
 LEXICON QuestParticle
 <quest><hu><m>:{ep.й}ишто
@@ -2789,6 +2888,7 @@ LEXICON QuestParticle
 <quest>:{ep.й}илах
 <quest>:йлах
 <quest>:{ep.й}и
+<quest><lasi>:ласи
 <quest>:{ep.й}иᵸ
 
 LEXICON RestrParticle

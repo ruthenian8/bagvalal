@@ -1,0 +1,25 @@
+# Add your error:correct string pairs here (not complete words, they have
+# a separate file), followed by TAB and the weight for the edit operation:
+г1:гӀ	0.2
+х1:хӀ	0.2
+ч1:чӀ	0.2
+к1:кӀ	0.2
+т1:тӀ	0.2
+ц1:цӀ	0.2
+гI:гӀ	0.2
+хI:хӀ	0.2
+чI:чӀ	0.2
+кI:кӀ	0.2
+тI:тӀ	0.2
+ц1:цӀ	0.2
+ль:лъ	0.2
+хь:хъ	0.2
+ц:цӀ	0.1
+ч:чӀ	0.1
+е:е̄	0.1
+а:а̄	0.1
+и:ӣ	0.1
+с:с̄	0.1
+х:х̄	0.1
+о:о̄	0.1
+лъ:л̄ъ	0.1
